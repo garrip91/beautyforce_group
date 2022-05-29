@@ -1,0 +1,150 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="," />
+            <item index="1" class="java.lang.String" itemvalue="src" />
+            <item index="2" class="java.lang.String" itemvalue="index.html" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="p" />
+            <item index="7" class="java.lang.String" itemvalue="a" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+            <item index="1" class="java.lang.String" itemvalue="3.11" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="coverage" />
+            <item index="1" class="java.lang.String" itemvalue="wheel" />
+            <item index="2" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="3" class="java.lang.String" itemvalue="pycodestyle" />
+            <item index="4" class="java.lang.String" itemvalue="setuptools" />
+            <item index="5" class="java.lang.String" itemvalue="pytz" />
+            <item index="6" class="java.lang.String" itemvalue="Pillow" />
+            <item index="7" class="java.lang.String" itemvalue="Django" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+          <option value="N802" />
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="crm.crm.urls.dj_crm" />
+          <option value="crm.crm.urls.page_1" />
+          <option value="agency.agency.schema.db" />
+          <option value="SPA_Project.SPA_Project.views" />
+          <option value="super.response_change" />
+          <option value="src.KinomonsterProject.urls.KinomonsterApp" />
+          <option value="src.KinomonsterProject.urls.HomePageView" />
+          <option value="src.KinomonsterProject.urls.FilmsTemplateView" />
+          <option value="src.KinomonsterProject.urls.FilmDetailView" />
+          <option value="src.KinomonsterProject.urls.SeriesTemplateView" />
+          <option value="src.KinomonsterProject.urls.SeriesDetailView" />
+          <option value="src.KinomonsterProject.urls.FilmsRatingTemplateView" />
+          <option value="src.KinomonsterProject.urls.SeriesRatingTemplateView" />
+          <option value="src.KinomonsterProject.urls.ContactsTemplateView" />
+          <option value="src.KinomonsterProject.urls.SearchResultsView" />
+          <option value="src.KinomonsterProject.urls.login_done_view" />
+          <option value="src.KinomonsterProject.urls.logout_try_view" />
+          <option value="src.KinomonsterProject.urls.login_try_view" />
+          <option value="src.KinomonsterApp.forms.FilmComments" />
+          <option value="src.KinomonsterProject.urls.ContactsTestView" />
+          <option value="landing.landing.urls.main" />
+          <option value="landing.landing.urls.Main" />
+          <option value="rakurs.rakurs.urls.main" />
+          <option value="rakurs.rakurs.urls.Rakurs" />
+          <option value="rakurs.main.views.LoginForm" />
+          <option value="rakurs.rakurs.urls.UserLoginView" />
+          <option value="rakurs.main.views.SignUpForm" />
+          <option value="rakurs.main.views.*" />
+          <option value="rakurs.rakurs.urls.SignUpView" />
+          <option value="rakurs.rakurs.urls.Favorites_View" />
+          <option value="rakurs.rakurs.urls.SignUp_View" />
+          <option value="rakurs.rakurs.urls.UserLogin_View" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.main" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Main_Page" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Second_Budes_With_Photos" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Second_Budes_List" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Desserts_With_Photos" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Desserts_List" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Salads_With_Photos" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Salads_List" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Soups_With_Photos" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Soups_List" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Contacts" />
+          <option value="oh_so_like_it.main.admin.main" />
+          <option value="oh_so_like_it.main.admin.Recepts" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Help" />
+          <option value="oh_so_like_it.main.views.main" />
+          <option value="oh_so_like_it.main.views.Recepts" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Recipe" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.New_Recipe" />
+          <option value="rakurs.rakurs.urls.handler_404" />
+          <option value="rakurs.rakurs.urls.handler_500" />
+          <option value="rakurs.rakurs.urls.handler_403" />
+          <option value="rakurs.rakurs.urls.load_file" />
+          <option value="rakurs.rakurs.urls.Get_Pdf" />
+          <option value="rakurs.rakurs.urls.Offer" />
+          <option value="rakurs.rakurs.urls.Agreement" />
+          <option value="rakurs.rakurs.urls.activate" />
+          <option value="rakurs.rakurs.urls.reset" />
+          <option value="oh_so_like_it.main.views.Login_Form" />
+          <option value="oh_so_like_it.main.views.User" />
+          <option value="oh_so_like_it.main.views.Category" />
+          <option value="oh_so_like_it.main.views.Sub_Category" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Register" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Confirmation_Of_Registration" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.Profile" />
+          <option value="oh_so_like_it.oh_so_like_it.urls.activate" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="XmlDuplicatedId" enabled="false" level="ERROR" enabled_by_default="false" />
+  </profile>
+</component>
