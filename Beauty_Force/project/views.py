@@ -12,3 +12,9 @@ class Brands_Page(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'brands.html')
+
+
+class Catalog_Page(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'catalog.html')
