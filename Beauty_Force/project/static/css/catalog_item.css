@@ -1,0 +1,133 @@
+.carousel-inner img {
+    width: 100%
+}
+
+.carousel-item img {
+    width: 400px;
+    height: 400px !important;
+
+}
+
+#myCarousel .carousel-indicators {
+    position: static;
+    margin-top: 0px;
+}
+
+#myCarousel .carousel-indicators> li {
+    width: 100px;
+
+}
+
+#myCarousel .carousel-indicators li img {
+    display: block;
+    opacity: 0.5;
+}
+
+#myCarousel .carousel-indicators li.active img {
+    opacity: 1;
+}
+
+#myCarousel .carousel-indicators li:hover img {
+    opacity: 0.75;
+}
+
+.item-header{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #8F8C9E;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 5rem;
+}
+
+.span-item{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.item-border{
+    border-bottom: 2px solid #8F8C9E;
+}
+
+.item-header-h2{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.about-item {
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #8F8C9E;
+}
+
+#loadMore-2 {
+  width: 130px;
+  color: #fff;
+  display: block;
+  text-align: start;
+  margin-top: 1rem;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: .3s;
+}
+#loadMore-2:hover {
+  color: #fff;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.card-item{
+    border-top: 1px solid #FFFFFF;
+}
+
+.accordion-item{
+    margin-top: 2rem;
+}
+
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f068";
+    float: right;
+    color: #FFFFFF;
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067";
+    color: #FFFFFF;
+}
+
+.card-title-item {
+  font-family: 'Futura PT';
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 30.77px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.75rem; }

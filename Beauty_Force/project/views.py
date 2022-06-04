@@ -18,3 +18,9 @@ class Catalog_Page(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'catalog.html')
+
+
+class Catalog_Item(View):
+    #def get(self, request, name, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'catalog_item.html')

@@ -10,6 +10,8 @@ urlpatterns = [
     path('', Main_Page.as_view(), name='main_page'),
     path('brands/', Brands_Page.as_view(), name='brands'),
     path('catalog/', Catalog_Page.as_view(), name='catalog'),
+    #path('catalog/<str:name>/', Catalog_Item.as_view(), name='catalog_item'),
+    path('catalog/item/', Catalog_Item.as_view(), name='catalog_item'),
 ]
 
 if settings.DEBUG:

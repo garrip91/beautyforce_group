@@ -1,0 +1,321 @@
+{% extends  'home.html' %}
+{% block title %} Товар {% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- Item Section -->
+
+	<div class="section-item">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+							<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
+						</div> <div class="carousel-item">
+							<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
+						</div>
+							<div class="carousel-item">
+								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
+							</div>
+						</div>
+						<ol class="carousel-indicators list-inline">
+							<li class="list-inline-item active">
+								<a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
+									<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
+								</a>
+							</li>
+							<li class="list-inline-item"> <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
+								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
+							</a>
+							</li>
+							<li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
+								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
+							</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div class="col">
+					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light item-border">
+						<p class="item-header">
+							Бренд: <span class="span-item">Dr.Gloderm</span>
+						</p>
+						<p class="item-header">
+							Артикул: <span class="span-item">DG-TBLCM-001</span>
+						</p>
+						<p class="item-header">
+							Штрихкод: <span class="span-item">8809530200025</span>
+						</p>
+					</nav>
+					<p class="item-header-h2">
+						DR.GLODERM TabRX Liftup Cream Крем для лица подтягивающий, 45 гр
+					</p>
+					  <div class="about-item">
+						Запатентованная технология изготовления крема в виде эмульсионных шариков, позволяет создать оптимальные условия для сохранения его уникальных свойств. Эмульсионные шарики, обогащенные коллагеном с состоят на 70% из морского гидрогеля и на 30% из эссенции.
+					  </div>
+					<div class="collapse" id="collapseExample">
+					  <div class="about-item">
+						  Морской гидрогель, изготовлен из морских минералов, полученных путем ферментации морских растений. Морской гидрогель, изготовлен из морских минералов, полученных путем ферментации
+					  </div>
+					</div>
+					<p>
+					  <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="about">
+						Смотреть полностью
+					  </button>
+					</p>
+					<div class="">
+						<button type="button" class="btn btn-circle btn-xl">запросить оптовый прайс-лист </button>
+						<button type="button" class="btn btn-circle-brands btn-xl-brands">купить в магазине 2660 ₽</button>
+					</div>
+						<div id="accordion" class="accordion accordion-item">
+							<div class="card card-item">
+								<div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+									<a class="card-title-item">
+										способ применения
+									</a>
+								</div>
+								<div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
+									<p>Текст 1
+									</p>
+								</div>
+							</div>
+							<div class="card card-item">
+								<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+									<a class="card-title-item">
+									  Состав
+									</a>
+								</div>
+								<div id="collapseTwo" class="card-body collapse" data-parent="#accordion" >
+									<p>Текст 2
+									</p>
+								</div>
+								<div class="card card-item">
+								<div class="card-header collapsed " data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+									<a class="card-title-item">
+									  Меры предосторожности
+									</a>
+								</div>
+							</div>
+								<div id="collapseThree" class="collapse card-body" data-parent="#accordion" >
+									<p>Текст 3
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+</div>
+
+<!-- brand goods -->
+
+<div class="catalog-button">
+	<section class="ftco-section">
+			<div class="container container-blue">
+				<div class="row">
+					<div class="col">
+						</div>
+					</div>
+				</div>
+	</section>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="p-4">
+						товары бренда
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="card-deck-category">
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+				</div>
+					<div class="collapse" id="more">
+					<div class="card-deck-category">
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+					  <div class="card">
+						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<div class="card-body">
+						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+						  <p class="card-text">₽₽₽ Premium</p>
+						</div>
+					  </div>
+				</div>
+				</div>
+				</div>
+				<div class="col text-center">
+					<button class="btn text-center" data-toggle="collapse" href="#more" role="button" aria-expanded="false" aria-controls="more">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+				</div>
+			</div>
+        </div>
+    </section>
+</div>
+
+<footer class="bg-light text-center text-lg-start footer-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+		  <h2 class="footer-heading list-unstyled"><img src="{% static 'images/Vector_footer.svg' %}"  alt=""></h2>
+        <ul class="list-unstyled">
+			  <li class="li-footer">
+				Лидеры мирового рынка косметики Эксклюзивные корейские бренды
+			  </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h2 class="footer-heading list-unstyled text-uppercase">меню</h2>
+        <ul class="list-unstyled footer-links">
+          <li>
+            <a href="" class="footer-links">Бренды</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">Каталог</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">Партнерство</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">О компании</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">Пресса</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">Контакты</a>
+          </li>
+          <li>
+            <a href="" class="footer-links">Интернет-магазин</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h2 class="footer-heading list-unstyled text-uppercase">бренды</h2>
+
+        <ul class="list-unstyled footer-links">
+          <li>
+            <a href="#!" class="footer-links">Wella</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">Londa</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">OPI</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">Swarovski</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">Nioxin</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">Haruharu</a>
+          </li>
+          <li>
+            <a href="#!" class="footer-links">Nioxin</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h2 class="footer-heading list-unstyled text-uppercase">контакты</h2>
+
+        <ul class="list-unstyled footer-links">
+          <li class="">
+			  +7 (499) 409-21-80
+			115093 Россия, г. Москва,
+			ул. Павловская, д. 27, стр. 4
+			info@beforce.ru
+
+          </li>
+          <li>
+			Италия +39 02 3046-2659
+			</li>
+			<li>
+			Республика Корея +82 070 4680-5682
+          </li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mt-5 pt-4 border-top">
+	<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+		<p class=" mb-0">Design & development by © BeautyForce™</p>
+	</div>
+	  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+		<ul class="">
+		  <a href="" class=""><img src="{% static 'images/Group 1024.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1028.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1025.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1026.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1029.svg' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1030.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1031.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1027.png' %}"  alt=""></a>
+		  <a href="" ><img src="{% static 'images/Group 1032.png' %}"  alt=""></a>
+		</ul>
+	  </div>
+		  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+		  	<p class=" mb-0">Политика конфиденциальности</p>
+		  </div>
+	</div>
+  </div>
+</footer>
+
+{% endblock content %}
