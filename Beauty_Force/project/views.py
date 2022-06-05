@@ -29,3 +29,8 @@ class Catalog_Item(View):
 class Brand_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'brand_page.html')
+
+
+class Partnership_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'partnership.html')

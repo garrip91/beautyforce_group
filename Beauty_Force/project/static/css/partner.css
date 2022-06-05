@@ -1,0 +1,173 @@
+.p-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #8F8C9E;
+}
+
+.p-3-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #8F8C9E;
+}
+
+.p-3-range{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.card-title-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 64px;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.card-title-partner-white{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #1F1A3D;
+}
+
+.card-text-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.card-text-partner-white{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: #8F8C9E;
+}
+
+.card-body-partner {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-left: 1.25rem; }
+
+
+.card-deck-partner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 50rem;
+  background-color: #FFFFFF; }
+  .card-deck-partner .card-white {
+    margin-bottom: 15px;
+    background-color: #FFFFFF; }
+  @media (min-width: 576px) {
+    .card-deck-partner {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      background-color: #FFFFFF; }
+      .card-deck-partner .card-white {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        background-color: #FFFFFF; } }
+
+.card-img-top-partner {
+  width: 70px;
+  height: 70px;
+
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px); }
+
+.btn-circle-partner.btn-xl-partner {
+    width: 150px;
+    height: 150px;
+    padding: 13px 18px;
+    border-radius: 80px;
+    font-size: 11px;
+    text-align: center;
+    background-color: #1F1A3D;
+    color: #FFFFFF !important;
+    font-family: 'Futura PT';
+    line-height: 15.38px;
+    letter: 5%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.td-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+}
+
+.th-partner{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #8F8C9E;
+}
+
+.td-partner-2{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.table-partner{
+    margin-top: 2rem;
+}
