@@ -21,7 +21,7 @@ class Catalog_Page(View):
 
 
 class Catalog_Item(View):
-    #def get(self, request, name, *args, **kwargs):
+    # def get(self, request, name, *args, **kwargs):
     def get(self, request, *args, **kwargs):
         return render(request, 'catalog_item.html')
 
@@ -39,3 +39,8 @@ class Partnership_Page(View):
 class Press_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'press.html')
+
+
+class Contacts_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'contacts.html')

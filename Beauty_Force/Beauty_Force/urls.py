@@ -15,6 +15,7 @@ urlpatterns = [
     path('brand/', Brand_Page.as_view(), name='brand'),
     path('partnership/', Partnership_Page.as_view(), name='partnership'),
     path('press/', Press_Page.as_view(), name='press'),
+    path('contacts/', Contacts_Page.as_view(), name='contacts'),
 ]
 
 if settings.DEBUG:
