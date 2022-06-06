@@ -34,3 +34,8 @@ class Brand_Page(View):
 class Partnership_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'partnership.html')
+
+
+class Press_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'press.html')

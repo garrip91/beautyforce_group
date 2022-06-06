@@ -14,6 +14,7 @@ urlpatterns = [
     path('catalog/item/', Catalog_Item.as_view(), name='catalog_item'),
     path('brand/', Brand_Page.as_view(), name='brand'),
     path('partnership/', Partnership_Page.as_view(), name='partnership'),
+    path('press/', Press_Page.as_view(), name='press'),
 ]
 
 if settings.DEBUG:
