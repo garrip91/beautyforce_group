@@ -44,3 +44,8 @@ class Press_Page(View):
 class Contacts_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'contacts.html')
+
+
+class Privacy_Policy_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'privacy.html')
