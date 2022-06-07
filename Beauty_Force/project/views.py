@@ -49,3 +49,13 @@ class Contacts_Page(View):
 class Privacy_Policy_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'privacy.html')
+
+
+class Register_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'register.html')
+
+
+class Login_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'login.html')

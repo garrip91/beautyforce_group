@@ -17,6 +17,8 @@ urlpatterns = [
     path('press/', Press_Page.as_view(), name='press'),
     path('contacts/', Contacts_Page.as_view(), name='contacts'),
     path('privacy/', Privacy_Policy_Page.as_view(), name='privacy'),
+    path('register/', Register_Page.as_view(), name='register'),
+    path('login/', Login_Page.as_view(), name='login'),
 ]
 
 if settings.DEBUG:
