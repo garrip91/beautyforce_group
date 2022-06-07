@@ -59,3 +59,13 @@ class Register_Page(View):
 class Login_Page(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'login.html')
+
+
+class B2B_Catalog_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'b2b_catalog.html')
+
+
+class Basket_Page(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'basket.html')

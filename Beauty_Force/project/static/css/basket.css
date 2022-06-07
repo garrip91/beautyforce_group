@@ -1,0 +1,119 @@
+
+.cart{
+    background-color: #1F1A3D;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+@media(max-width:767px){
+    .cart{
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+.summary{
+    background-color: #fff;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+    height: 100%;
+}
+@media(max-width:767px){
+    .summary{
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+    }
+}
+.summary .col-2{
+    padding: 0;
+}
+.summary .col-10
+{
+    padding: 0;
+}.row{
+    margin: 0;
+}
+.title b{
+    font-size: 1.5rem;
+}
+.main{
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.close{
+    margin-left: auto;
+    font-size: 2rem;
+    color: #FFFFFF;
+    border: transparent;
+    margin-bottom: 1rem;
+}
+
+select{
+    border: transparent;
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+input{
+    border: transparent;
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.border-basket{
+    border: 1px solid #504C67;
+}
+
+.btn-basket{
+    background: #1F1A3D;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.p-basket{
+    margin-top: 2rem;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1F1A3D;
+    opacity: 0.5;
+}
+
+.basket-h5{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #1F1A3D;
+}
+
+.basket-h5-2{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #1F1A3D;
+}

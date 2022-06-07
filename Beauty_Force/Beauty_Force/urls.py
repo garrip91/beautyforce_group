@@ -19,6 +19,8 @@ urlpatterns = [
     path('privacy/', Privacy_Policy_Page.as_view(), name='privacy'),
     path('register/', Register_Page.as_view(), name='register'),
     path('login/', Login_Page.as_view(), name='login'),
+    path('b2b_catalog/', B2B_Catalog_Page.as_view(), name='b2b_catalog'),
+    path('basket/', Basket_Page.as_view(), name='basket'),
 ]
 
 if settings.DEBUG:
