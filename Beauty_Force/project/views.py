@@ -12,6 +12,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.http import HttpResponse
+from django.contrib.messages.views import SuccessMessageMixin
 
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
@@ -71,10 +72,11 @@ class Privacy_Policy_Page(View):
         return render(request, 'privacy.html')
 
 
-class Register_Page(CreateView):
+class Register_Page(SuccessMessageMixin, CreateView):
     form_class = Sign_Up_Form
     success_url = reverse_lazy('main_page')
     template_name = 'register.html'
+    success_message = 'Вам на почту отправлено письмо для активации аккаунта'
 
     def form_valid(self, form):
         user = form.save(commit=False)
@@ -95,17 +97,18 @@ class Register_Page(CreateView):
             [mail],
             fail_silently=False,
         )
-        return HttpResponse('Please confirm your email address to complete the registration')
+        return super().form_valid(form)
 
     def form_invalid(self, form):
         print(form)
         return super().form_invalid(form)
 
 
-class Login_Page(LoginView):
+class Login_Page(SuccessMessageMixin, LoginView):
     form_class = Login_Form
     success_url = reverse_lazy('main_page')
     template_name = 'login.html'
+    success_message = 'Вы успешно вошли в систему'
 
     def form_valid(self, form):
         return super(Login_Page, self).form_valid(form)

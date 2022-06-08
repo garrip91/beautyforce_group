@@ -21,7 +21,6 @@
   </head>
 	<body>
 		<!-- Navbar -->
-
 	<section class="ftco-section">
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -59,7 +58,6 @@
 	    </div>
 	  </nav>
 	</section>
-
      {% block content %}
 
 	<!--Main Section-->
@@ -687,6 +685,27 @@
 	</div>
   </div>
 </footer>
+ {% if messages %}
+	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+						<div class="text-center p-t-30">
+							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+							<span class="modal-text">
+								{% for msg in messages %}
+									{{msg.message}}
+								{% endfor %}
+							</span>
+						</div>
+				</div>
+			  <div class="modal-footer d-flex justify-content-center">
+				<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
 		{% endblock content %}
 	<script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.js' %}"></script>
@@ -696,5 +715,13 @@
 	<script type="text/javascript" src="{% static 'js/video_slider.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/b2b_form.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/comments-slider.js' %}"></script>
+	<script>
+	$(document).ready(function() {
+		$("#messagesModal").modal("show");
+		$("#messagesBtn").click(function() {
+			$("#messagesModal").modal("hide");
+		});
+	});
+	</script>
 	</body>
 </html>
