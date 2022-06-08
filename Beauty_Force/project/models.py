@@ -15,8 +15,10 @@ class Users(AbstractUser):
         (manager, 'Менеджер'),
         (client, 'Клиент'),
     )
-    inn = models.IntegerField(default=0, unique=True, null=False)
-    email = models.EmailField(blank=True, unique=True, null=False)
+    inn = models.IntegerField(default=0, unique=True, null=False, verbose_name='ИНН')
+    email = models.EmailField(blank=True, unique=True, null=False, verbose_name='Email')
     phoneNumberRegex = RegexValidator(regex=r"^\+?1?\d{8,15}$")
-    phoneNumber = models.CharField(validators=[phoneNumberRegex], max_length=16, unique=True, default=0)
-    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, null=True, default=3)
+    phoneNumber = models.CharField(validators=[phoneNumberRegex], max_length=16, unique=True, default=0, verbose_name='Телефон')
+    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, null=True, default=3, verbose_name='Роль')
+    discount_percentage = models.IntegerField(default=0, null=True, verbose_name='Песональная скидка')
+    total_amount_of_orders = models.IntegerField(default=0, null=True, verbose_name='Общая сумма покупок')

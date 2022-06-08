@@ -3,6 +3,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from project.views import *
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,8 +21,10 @@ urlpatterns = [
     path('login/', Login_Page.as_view(), name='login'),
     path('b2b_catalog/', B2B_Catalog_Page.as_view(), name='b2b_catalog'),
     path('basket/', Basket_Page.as_view(), name='basket'),
+    path('personal_account/', Users_Lk_Page.as_view(), name='personal_account'),
     path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/', activate,
          name='activate'),
+    path('password_reset/', Password_Reset.as_view(), name='password_reset')
 ]
 
 if settings.DEBUG:

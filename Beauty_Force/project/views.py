@@ -11,11 +11,16 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
-
+from django.contrib import messages
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from django.views.generic.edit import FormView
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 from .forms import *
 from .models import *
@@ -82,7 +87,6 @@ class Register_Page(SuccessMessageMixin, CreateView):
         user = form.save(commit=False)
         user.is_active = False
         user.save()
-        username = form.cleaned_data['username']
         mail = form.cleaned_data['email']
         message = render_to_string('acc_active_email.html', {
             'user': user,
@@ -100,7 +104,6 @@ class Register_Page(SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        print(form)
         return super().form_invalid(form)
 
 
@@ -127,6 +130,85 @@ class Basket_Page(View):
         return render(request, 'basket.html')
 
 
+class Users_Lk_Page(View):
+
+    def get(self, request, *args, **kwargs):
+
+        current_user = Users.objects.get(username=request.user)
+        total_amount = current_user.total_amount_of_orders
+        total_amount_all_percent = 0
+        sale = current_user.discount_percentage + 1
+
+        if current_user.discount_percentage == 5:
+            sale = 5
+
+        if total_amount < 50000:
+            total_amount_all_percent = 50000 - total_amount
+        elif 50000 <= total_amount < 100000:
+            total_amount_all_percent = 100000 - total_amount
+        elif 100000 <= total_amount < 150000:
+            total_amount_all_percent = 150000 - total_amount
+        elif 150000 <= total_amount < 200000:
+            total_amount_all_percent = 200000 - total_amount
+        elif 200000 <= total_amount < 250000:
+            total_amount_all_percent = 250000 - total_amount
+        elif total_amount >= 250000:
+            total_amount_all_percent = total_amount
+
+        context = {
+            'sale': sale,
+            'total_amount_all_percent': total_amount_all_percent,
+        }
+        return render(
+            request,
+            'users_lk.html',
+            context=context
+        )
+
+    def post(self, request, *args, **kwargs):
+        user = Users.objects.get(username=request.user)
+        if request.POST.get('acсount-email'):
+            mail = request.POST.get('acсount-email')
+            message = render_to_string('password_reset_email.html', {
+                'user': user,
+                'domain': '127.0.0.1:8000',
+            })
+            send_mail(
+                'Подтверждение регистрации на сайте Beauty Force',
+                message,
+                'reg@beforce.ru',
+                [mail],
+                fail_silently=False,
+            )
+        return render(
+            request,
+            'users_lk.html',
+        )
+
+
+class Password_Reset(View):
+
+    def get(self, request, *args, **kwargs):
+        form = PasswordChangeForm(request.user)
+        return render(request, 'change_password.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            form = PasswordChangeForm(request.user, request.POST)
+            if form.is_valid():
+                user = form.save()
+                update_session_auth_hash(request, user)
+                messages.success(request, 'Ваш пароль успешно изменен')
+                return HttpResponseRedirect('/')
+            else:
+                messages.error(request, 'Пароль не был изменен.')
+        else:
+            form = PasswordChangeForm(request.user)
+        return render(request, 'change_password.html', {
+            'form': form
+        })
+
+
 def activate(request, uidb64, token):
     User = get_user_model()
     try:
@@ -137,6 +219,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        messages.success(request, 'Вы успешно прошли верификацию.')
+        return HttpResponseRedirect('/')
     else:
-        return HttpResponse('Activation link is invalid!')
+        messages.error(request, 'Верификация не пройдена.')
+        return HttpResponseRedirect('/')
