@@ -5,70 +5,95 @@
 
 	<section class="ftco-section">
 		<div class="container" style="margin-top: 3rem;">
-			<div class="row">
+			<div class="row ">
 				<div class="col">
-					<p class="p-4">
-						Регистрация
-					</p>
-
-		<div class="container" style="margin-top: 3rem;">
-		  <div class="row">
-			  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
-				  <form id="contact-form" class="form" action="#" method="POST" role="form">
-                      <h5 class="card-title-2">1/3 инн</h5>
-					  <div class="form-group">
-						  <label class="form-label" for="name">Введите ИНН компании*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите ИНН компании*" tabindex="1" required>
-					  </div>
-                      <h5 class="card-title-2">2/3 контакты</h5>
-					  <div class="form-group form-group-register">
-						  <label class="form-label" for="name">Введите ваше имя*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите ваше имя*" tabindex="1" required>
-					  </div>
-					  <div class="form-group form-group-register">
-						  <label class="form-label" for="name">Введите ваш номер*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите ваш номер*" tabindex="1" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="name">Введите вашу почту*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите вашу почту*" tabindex="1" required>
-					  </div>
-                      <h5 class="card-title-2">3/3 пароль</h5>
-					  <div class="form-group form-group-register">
-						  <label class="form-label" for="name">Придумайте пароль*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Придумайте пароль*" tabindex="1" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="name">Повторите новый пароль*</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Повторите новый пароль*" tabindex="1" required>
-					  </div>
-					  <label class="toggle">
-						<input class="toggle__input" type="checkbox" checked>
-						<span class="toggle__label">
-						  <span class="toggle__text">Я согласен с политикой конфиденциальности</span>
-						</span>
-					  </label>
+					<div class="card bg-dark text-white card-register">
 					  <div class="">
-						<button type="button" class="register-button">зарегистрироваться</button>
+						<h5 class="card-title card-text-register card-title-register">функции <br>нового<br> b2b-портала:</h5>
+					  <div class="row no-gutters">
+						<div class="">
+						  <img class="img-fluid card-text-register" src="{% static 'images/Vector-register.png' %}">
+						</div>
+						<div class="">
+						  <div class="card-body">
+							<p class="card-text card-text-register card-text-register-1 text-white">Доступ<br> к оптовым ценам</p>
+						  </div>
+						</div>
 					  </div>
-				  </form>
-			  </div>
-		  </div>
-		</div>
+					  <div class="row no-gutters">
+						<div class="">
+						  <img class="img-fluid card-text-register" src="{% static 'images/Vector-register1.png' %}">
+						</div>
+						<div class="">
+						  <div class="card-body">
+							<p class="card-text card-text-register card-text-register-1 text-white">Быстрый выбор <br>популярных товаров</p>
+						  </div>
+						</div>
+					  </div>
+					  <div class="row no-gutters">
+						<div class="">
+						  <img class="img-fluid card-text-register-2" src="{% static 'images/Vector-register2.png' %}">
+						</div>
+						<div class="">
+						  <div class="card-body" style="margin-bottom: 3rem;">
+							<p class="card-text card-text-register card-text-register-1 text-white">Имиджевые <br>презентации брендов</p>
+						  </div>
+						</div>
+					  </div>
+					  </div>
+					</div>
 				</div>
-				<div class="col">
-				<div class="card bg-dark text-white card-register">
-				  <div class="">
-					<h5 class="card-title card-text-register card-title-register">Функции личного кабинета</h5>
-					<p class="card-text card-text-register">- оптовые цены</p>
-					<p class="card-text card-text-register">- материалы для скачивания</p>
-					<p class="card-text card-text-register">- оптовый онлайн-заказ из каталога</p>
-					<p class="card-text"></p>
+			<div class="col">
+			  <form id="contact-form" class="form-register" action="#" method="POST" role="form">
+				  {% csrf_token %}
+				<div class="row">
+					<div class="col">
+						<h5 class="header-register">регистрация<br> в b2b-портале<br>BEAUTY FORCE</h5>
+					</div>
+					<div class="col text-right" style="margin-right: 1rem; margin-top: 1rem;">
+						<a href="" class="href-register">
+							войти в аккаунт<br>
+						</a>
+						<a href="" class="href-register">
+							помощь при регистрации
+						</a>
+					</div>
+				</div>
+
+				  <h5 class="card-title-register-1">1/3 инн</h5>
+				  <div class="form-group">
+					  {{ form.inn }}
 				  </div>
-				</div>
-				</div>
-			</div>
-		</div>
+				  <h5 class="card-title-register-1">2/3 контакты</h5>
+				  <div class="form-group form-group-register">
+					  {{ form.username }}
+				  </div>
+				  <div class="form-group form-group-register">
+					  {{ form.phoneNumber }}
+				  </div>
+				  <div class="form-group">
+					  {{ form.email }}
+				  </div>
+				  <h5 class="card-title-register-1">3/3 пароль</h5>
+				  <div class="form-group form-group-register">
+					  {{ form.password1 }}
+				  </div>
+				  <div class="form-group">
+					  {{ form.password2 }}
+				  </div>
+				  <label class="toggle">
+					<input class="toggle__input" type="checkbox" checked>
+					<span class="toggle__label">
+					  <span class="toggle__text">Я согласен с <a class="href-register-1"> политикой конфиденциальности</a></span>
+					</span>
+				  </label>
+				  <div class="">
+					<button type="submit" class="register-button-1">зарегистрироваться</button>
+				  </div>
+			  </form>
+		  </div>
+	  </div>
+	</div>
 	</section>
 
 <footer class="bg-light text-center text-lg-start footer-10">

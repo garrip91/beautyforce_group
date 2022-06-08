@@ -1,9 +1,13 @@
 from pathlib import Path
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-b0-t^gpnp#-!1@ct%)ng=rj%84)*tb-+so4v80%b&#^^1=*m!a'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 DEBUG = True
 
@@ -16,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'project.apps.ProjectConfig'
+    'project.apps.ProjectConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,12 +83,23 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'project.Users'
+AUTHENTICATION_BACKENDS = ['project.backends.EmailBackend']
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = str(os.getenv('EMAIL_HOST'))
+EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
+EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
+EMAIL_USE_TLS = str(os.getenv('EMAIL_USE_TLS'))

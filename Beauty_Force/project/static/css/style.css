@@ -8835,7 +8835,22 @@ textarea {
 	opacity: 1;
 	-webkit-transition: .333s ease top, .333s ease opacity;
 	transition: .333s ease top, .333s ease opacity;
-	background-color: #1F1A3D;
+	background: linear-gradient(0deg, rgba(143, 140, 158, 0.3), rgba(143, 140, 158, 0.3)), #504C67;
+	width: 60%;
+	margin: 0 auto;
+}
+.form-label-register {
+    font-family: 'Futura PT';
+    font-size: 16px;
+    line-height: 150%;
+	color: #8F8C9E;
+	display: block;
+	opacity: 1;
+	-webkit-transition: .333s ease top, .333s ease opacity;
+	transition: .333s ease top, .333s ease opacity;
+	background: #E9E8EC;
+	width: 50%;
+	margin: 2rem;
 }
 .form-control {
     font-family: 'Futura PT';

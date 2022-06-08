@@ -4,43 +4,35 @@
 {% block content %}
 
 	<section class="ftco-section">
-		<div class="container" style="margin-top: 3rem;">
-			<div class="row">
-				<div class="col">
-					<p class="p-4">
-						вход
-					</p>
-
-		<div class="container" style="margin-top: 3rem; margin-bottom: 10rem;">
-		  <div class="row">
-			  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
-				  <form id="contact-form" class="form" action="#" method="POST" role="form">
-					  <div class="form-group ">
-						  <label class="form-label" for="name">Введите вашу почту</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите вашу почту" tabindex="1" required>
-					  </div>
-					  <div class="form-group ">
-						  <label class="form-label" for="name">Введите ваш пароль</label>
-						  <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите ваш пароль" tabindex="1" required>
-					  </div>
-					  <div class="">
-						<button type="button" class="register-button">войти</button>
-					  </div>
-				  </form>
-			  </div>
-		  </div>
-		</div>
-				</div>
-				<div class="col">
-				<div class="card bg-dark text-white card-login">
-				  <div class="">
-					<h5 class="card-title card-text-register card-title-register">Функции личного кабинета</h5>
-					<p class="card-text card-text-register">- оптовые цены</p>
-					<p class="card-text card-text-register">- материалы для скачивания</p>
-					<p class="card-text card-text-register">- оптовый онлайн-заказ из каталога</p>
-					<p class="card-text"></p>
-				  </div>
-				</div>
+		<div class="container " style="margin-top: 3rem; margin-bottom: 5rem;">
+			<div class="row ">
+				<div class="col d-flex justify-content-center">
+					  <form id="contact-form" class="form-login" action="#" method="POST" role="form">
+						  <h5 class="text-center form-header">Вход<br> в b2b-портал</h5>
+                          <p class="text-center text-form"><img class="img-fluid" src="{% static 'images/Group 1902.png' %}"> Доступ к оптовым ценам</p>
+                          <p class="text-center text-form"><img class="img-fluid" src="{% static 'images/Group 1902.png' %}"> Быстрый выбор популярных товаров</p>
+                          <p class="text-center text-form"><img class="img-fluid" src="{% static 'images/Group 1902.png' %}"> Имиджевые презентации брендов</p>
+						  {% csrf_token %}
+						  <div class="form-group">
+							  {{ form.username }}
+							 <!-- <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите вашу почту" tabindex="1" required>-->
+						  </div>
+						  <div class="form-group">
+							  {{ form.password }}
+							 <!-- <input type="text" class="form-control-register" id="name" name="name" placeholder="Введите ваш пароль" tabindex="1" required>-->
+						  </div>
+						  <div class="text-center" style="margin-bottom: 1rem;">
+							<button type="submit" class="register-button ">войти</button>
+						  </div>
+						  <div class="text-center" style="margin-bottom: 3rem;">
+							<a class="href-login" style="margin-right: 1rem;" href="{% url 'register' %}">
+                                регистрация
+                            </a>
+							<a class="href-login" href="#">
+                                забыли пароль?
+                            </a>
+						  </div>
+					  </form>
 				</div>
 			</div>
 		</div>

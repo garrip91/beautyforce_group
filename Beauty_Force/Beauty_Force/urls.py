@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
@@ -10,7 +9,7 @@ urlpatterns = [
     path('', Main_Page.as_view(), name='main_page'),
     path('brands/', Brands_Page.as_view(), name='brands'),
     path('catalog/', Catalog_Page.as_view(), name='catalog'),
-    #path('catalog/<str:name>/', Catalog_Item.as_view(), name='catalog_item'),
+    # path('catalog/<str:name>/', Catalog_Item.as_view(), name='catalog_item'),
     path('catalog/item/', Catalog_Item.as_view(), name='catalog_item'),
     path('brand/', Brand_Page.as_view(), name='brand'),
     path('partnership/', Partnership_Page.as_view(), name='partnership'),
@@ -21,6 +20,8 @@ urlpatterns = [
     path('login/', Login_Page.as_view(), name='login'),
     path('b2b_catalog/', B2B_Catalog_Page.as_view(), name='b2b_catalog'),
     path('basket/', Basket_Page.as_view(), name='basket'),
+    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/', activate,
+         name='activate'),
 ]
 
 if settings.DEBUG:

@@ -1,7 +1,7 @@
 .form-control-register {
   height: 4rem !important;
-  background-color: #1F1A3D;
-  color: #fff !important;
+  background: #E9E8EC;
+  color: #8F8C9E;
   font-size: 14px;
   border-radius: 0px;
   -webkit-box-shadow: none !important;
@@ -13,17 +13,18 @@
 
 
 .form-control-register {
+  margin-left: 2rem;
   display: block;
-  width: 123%;
+  width: 50%;
   height: calc(1.5rem + 1.5rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
-  background-color: #1F1A3D;
+  color: #8F8C9E;
+  background: #E9E8EC;
   background-clip: padding-box;
-  border: 1px solid #504C67;
+  border: 1px solid #E9E8EC;
   border-radius: 0.25rem;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -36,29 +37,29 @@
       -o-transition: none;
       transition: none; } }
   .form-control-register::-ms-expand {
-    background-color: transparent;
-    border: 0; }
+    background: #E9E8EC;
+    border: 1px solid #E9E8EC; }
   .form-control-register:focus {
-    color: #495057;
-    background-color: #1F1A3D;
-    border: 1px solid #504C67;
+    color: #8F8C9E;
+    background: #E9E8EC;
+    border: 1px solid #E9E8EC;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .form-control-register::-webkit-input-placeholder {
-    color: #6c757d;
+    color: #8F8C9E;
     opacity: 1; }
   .form-control-register:-ms-input-placeholder {
-    color: #6c757d;
+    color: #8F8C9E;
     opacity: 1; }
   .form-control-register::-ms-input-placeholder {
-    color: #6c757d;
+    color: #8F8C9E;
     opacity: 1; }
   .form-control-register::placeholder {
-    color: #6c757d;
+    color: #8F8C9E;
     opacity: 1; }
   .form-control-register:disabled, .form-control[readonly] {
-    background-color: #1F1A3D;
+    background: #E9E8EC;
     opacity: 1; }
 
 .form-group-register {
@@ -72,8 +73,7 @@
 .toggle{
   --uiToggleSize: var(--toggleSize, 1.25rem);
   --uiToggleBorderWidth: var(--toggleBorderWidth, 0px);
-
-  background-color: #1F1A3D;
+  margin-left: 2rem;
   display: var(--toggleDisplay, inline-flex);
   position: relative;
 }
@@ -106,7 +106,7 @@
   font-size: var(--uiToggleSize);
 
   background-color: transparent;
-  border: 1px solid #FFFFFF;
+  border: 1px solid transparent;
 
   position: absolute;
   left: 0;
@@ -115,7 +115,7 @@
 }
 
 .toggle__input:checked ~ .toggle__label::after{
-  background-color: var(--uiToggleColor);
+  background-color: #E9E8EC;
 }
 
 .toggle__text{
@@ -123,15 +123,13 @@
   margin-bottom: auto;
     font-family: 'Futura PT';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 15px;
     line-height: 150%;
     display: flex;
     align-items: flex-end;
     font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #FFFFFF;
-
-    opacity: 0.5;
+    color: #8F8C9E;
     }
 .toggle__label::before{
   content: "";
@@ -143,7 +141,8 @@
   border-bottom-width: 0;
   border-left-style: solid;
   border-bottom-style: solid;
-  border-color: var(--toggleArrowColor, #fff);
+  border-color: var(--toggleArrowColor, #8F8C9E);
+  background-color: #E9E8EC;
 
   position: absolute;
   top: .5428em;
@@ -188,11 +187,6 @@
 }
 
 .register-button{
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 68px;
-    background: #FFFFFF;
     font-family: 'Futura PT';
     font-style: normal;
     font-weight: bold;
@@ -201,12 +195,39 @@
     letter-spacing: 0.05em;
     color: #1F1A3D;
     text-transform: uppercase;
-    border: 1px solid #1F1A3D;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    background: #E9E8EC;
+    border-radius: 10px;
+    width: 60%;
+    height: 65px;
 }
 
+.register-button-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    background: #1F1A3D;
+    border-radius: 10px;
+    width: 50%;
+    height: 55px;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+
 .card-register{
-    width: 100%;
-    height: 50%;
+    width: 90%;
+    background: linear-gradient(0deg, rgba(80, 76, 103, 0.2), rgba(80, 76, 103, 0.2)), #1F1A3D;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
 .card-login{
@@ -216,8 +237,202 @@
 
 .card-title-register{
     margin-top: 2rem;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
 }
 
 .card-text-register{
+    margin-left: 3rem;
+}
+
+.card-text-register-2{
+    margin-left: 3.5rem;
+}
+
+.card-text-register-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #E9E8EC;
+}
+
+.form-login{
+    background: #504C67;
+    border-radius: 20px;
+    width: 480px;
+}
+
+.form-register{
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 600px;
+}
+
+.form-header{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    margin-top: 2rem;
+}
+
+.text-form{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    align-items: center;
+    color: #E9E8EC;
+}
+
+.form-control-login {
+  height: 4rem !important;
+  background-color: #1F1A3D;
+  color: #fff !important;
+  font-size: 14px;
+  border-radius: 0px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  text-indent: 1rem;
+  border: 1px solid #504C67; }
+  .form-control:focus, .form-control:active {
+    border-color: #fff; }
+
+
+.form-control-login {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: calc(1.5rem + 1.5rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+    background: linear-gradient(0deg, rgba(143, 140, 158, 0.3), rgba(143, 140, 158, 0.3)), #504C67;
+  background-clip: padding-box;
+  border: 1px solid #504C67;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .form-control-login {
+      -webkit-transition: none;
+      -o-transition: none;
+      transition: none; } }
+  .form-control-login::-ms-expand {
+    background-color: transparent;
+    border: 0; }
+  .form-control-login:focus {
+    color: #495057;
+    background-color: #1F1A3D;
+    border: 1px solid #504C67;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+  .form-control-login::-webkit-input-placeholder {
+    color: #6c757d;
+    opacity: 1; }
+  .form-control-login:-ms-input-placeholder {
+    color: #6c757d;
+    opacity: 1; }
+  .form-control-login::-ms-input-placeholder {
+    color: #6c757d;
+    opacity: 1; }
+  .form-control-login::placeholder {
+    color: #6c757d;
+    opacity: 1; }
+  .form-control-login:disabled, .form-control[readonly] {
+    background-color: #1F1A3D;
+    opacity: 1; }
+
+
+.href-login{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #B4B2BB;
+}
+
+
+.href-register{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #8F8C9E;
+}
+
+.href-register-1{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.3rem;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 150%;
+    display: flex;
+    align-items: flex-end;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1F1A3D;
+}
+
+.header-register{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1F1A3D;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.card-title-register-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    align-items: center;
+    text-transform: uppercase;
+    color: #1F1A3D;
     margin-left: 2rem;
 }
+
