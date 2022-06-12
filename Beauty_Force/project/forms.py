@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 
 
 class Sign_Up_Form(UserCreationForm):
@@ -67,13 +67,13 @@ class Sign_Up_Form(UserCreationForm):
 
 class Login_Form(AuthenticationForm):
     username = forms.CharField(required=True,
-                             widget=forms.TextInput(attrs={
-                                 'class': 'form-control-login',
-                                 'placeholder': "Введите вашу почту",
-                                 'tabindex': '1',
-                                 'id': 'name',
-                                 'name': 'name',
-                             }))
+                               widget=forms.TextInput(attrs={
+                                   'class': 'form-control-login',
+                                   'placeholder': "Введите вашу почту",
+                                   'tabindex': '1',
+                                   'id': 'name',
+                                   'name': 'name',
+                               }))
     password = forms.CharField(required=True,
                                widget=forms.PasswordInput(attrs={
                                    'class': 'form-control-login',
@@ -88,4 +88,39 @@ class Login_Form(AuthenticationForm):
         fields = [
             'username',
             'password',
+        ]
+
+
+class Change_Password_Form(PasswordChangeForm):
+    old_password = forms.CharField(required=True,
+                                   widget=forms.PasswordInput(attrs={
+                                       'class': 'form-control-login',
+                                       'placeholder': "Введите старый пароль",
+                                       'tabindex': '1',
+                                       'id': 'name',
+                                       'name': 'name',
+                                   }))
+    new_password1 = forms.CharField(required=True,
+                                    widget=forms.PasswordInput(attrs={
+                                        'class': 'form-control-login',
+                                        'placeholder': "Введите новый пароль",
+                                        'tabindex': '1',
+                                        'id': 'name',
+                                        'name': 'name',
+                                    }))
+    new_password2 = forms.CharField(required=True,
+                                    widget=forms.PasswordInput(attrs={
+                                        'class': 'form-control-login',
+                                        'placeholder': "Повторите новый пароль",
+                                        'tabindex': '1',
+                                        'id': 'name',
+                                        'name': 'name',
+                                    }))
+
+    class Meta:
+        model = Users
+        fields = [
+            'old_password',
+            'new_password1',
+            'new_password2',
         ]

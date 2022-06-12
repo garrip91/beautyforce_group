@@ -256,6 +256,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="ftco-section">
             <div class="container">
@@ -408,6 +409,7 @@
                         <button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <section class="ftco-section">
@@ -562,6 +564,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="ftco-section">
             <div class="container">
@@ -714,6 +717,7 @@
                         <button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <section class="ftco-section">
@@ -868,6 +872,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="ftco-section">
             <div class="container">
@@ -1020,6 +1025,7 @@
                         <button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <section class="ftco-section">
@@ -1174,6 +1180,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="ftco-section">
             <div class="container">
@@ -1326,6 +1333,7 @@
                         <button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <section class="ftco-section">
@@ -1480,6 +1488,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="ftco-section">
             <div class="container">
@@ -1632,6 +1641,7 @@
                         <button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <section class="ftco-section">
@@ -1786,9 +1796,8 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
-    </div>
-
 	<div class="section-7">
 		<section class="ftco-section">
 			<div class="container container-blue">
@@ -1797,6 +1806,7 @@
 						</div>
 					</div>
 				</div>
+        </section>
 <section class="ftco-section">
     <div class="container ">
         <div class="row">
@@ -1854,7 +1864,7 @@
   </div>
 </div>
 </section>
-
+    </div>
 <footer class="bg-light text-center text-lg-start footer-10">
 <div class="container">
 <div class="row">
@@ -2024,27 +2034,28 @@
             <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
         </div>
         <div class="modal-body">
-            <form>
+          <form id="update-info" name="update-info" action="" method="POST" role="form">
+              {% csrf_token %}
               <div class="form-group">
-                <input type="text" class="form-control-acount-1" id="inputAddress" placeholder="Город">
+                <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control-acount-1" id="inputAddress2" placeholder="Улица">
+                <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" id="inputEmail4" placeholder="Дом">
+                  <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" id="inputPassword4" placeholder="Подъезд">
+                  <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" id="inputEmail4" placeholder="Этаж">
+                  <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" id="inputPassword4" placeholder="Квартира/Офис">
+                  <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
                 </div>
               </div>
                 <div class="text-center">
@@ -2055,4 +2066,26 @@
       </div>
     </div>
 </div>
+ {% if messages %}
+	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+						<div class="text-center p-t-30">
+							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+							<span class="modal-text">
+								{% for msg in messages %}
+									{{msg.message}}
+								{% endfor %}
+							</span>
+						</div>
+				</div>
+			  <div class="modal-footer d-flex justify-content-center">
+				<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+    </div>
 {% endblock content %}

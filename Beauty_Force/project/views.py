@@ -131,6 +131,11 @@ class Basket_Page(View):
 
 
 class Users_Lk_Page(View):
+    success_message = 'Вам на почту отправлена ссылка на изменение пароля'
+    error_message = 'Что-то пошло не так, письмо не было отправлено'
+
+    success_message_add_adresses = "Адрес доставки успешно добавлен"
+    error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
 
     def get(self, request, *args, **kwargs):
 
@@ -167,39 +172,96 @@ class Users_Lk_Page(View):
 
     def post(self, request, *args, **kwargs):
         user = Users.objects.get(username=request.user)
+        current_user = Users.objects.get(username=request.user)
+        total_amount = current_user.total_amount_of_orders
+        total_amount_all_percent = 0
+        sale = current_user.discount_percentage + 1
+
+        if current_user.discount_percentage == 5:
+            sale = 5
+
+        if total_amount < 50000:
+            total_amount_all_percent = 50000 - total_amount
+        elif 50000 <= total_amount < 100000:
+            total_amount_all_percent = 100000 - total_amount
+        elif 100000 <= total_amount < 150000:
+            total_amount_all_percent = 150000 - total_amount
+        elif 150000 <= total_amount < 200000:
+            total_amount_all_percent = 200000 - total_amount
+        elif 200000 <= total_amount < 250000:
+            total_amount_all_percent = 250000 - total_amount
+        elif total_amount >= 250000:
+            total_amount_all_percent = total_amount
+
+        context = {
+            'sale': sale,
+            'total_amount_all_percent': total_amount_all_percent,
+        }
+
         if request.POST.get('acсount-email'):
             mail = request.POST.get('acсount-email')
             message = render_to_string('password_reset_email.html', {
                 'user': user,
                 'domain': '127.0.0.1:8000',
             })
-            send_mail(
-                'Подтверждение регистрации на сайте Beauty Force',
-                message,
-                'reg@beforce.ru',
-                [mail],
-                fail_silently=False,
-            )
+            try:
+                messages.success(request, self.success_message)
+                send_mail(
+                    'Изменение пароля на сайте Beauty Force',
+                    message,
+                    'reg@beforce.ru',
+                    [mail],
+                    fail_silently=False,
+                )
+            except:
+                messages.error(request, self.error_message)
+
+        elif request.POST.get('city'):
+            city = request.POST.get('city')
+            street = request.POST.get('street')
+            home = request.POST.get('home')
+            entrance = request.POST.get('entrance')
+            floor = request.POST.get('floor')
+            apartment_or_office = request.POST.get('apartment_or_office')
+            try:
+                Delivery_Addresses.objects.create(
+                    recipient=user,
+                    city=city,
+                    street=street,
+                    home=home,
+                    entrance=entrance,
+                    floor=floor,
+                    apartment_or_office=apartment_or_office
+                )
+                messages.success(request, self.success_message_add_adresses)
+            except:
+                messages.error(request, self.error_message_add_adresses)
+
         return render(
             request,
             'users_lk.html',
+            context=context
         )
 
 
 class Password_Reset(View):
 
     def get(self, request, *args, **kwargs):
-        form = PasswordChangeForm(request.user)
-        return render(request, 'change_password.html', {'form': form})
+
+        form = Change_Password_Form(request.user)
+        context = {
+            'form': form
+        }
+        return render(request, 'change_password.html', context=context)
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
-            form = PasswordChangeForm(request.user, request.POST)
+            form = Change_Password_Form(request.user, request.POST)
             if form.is_valid():
                 user = form.save()
                 update_session_auth_hash(request, user)
                 messages.success(request, 'Ваш пароль успешно изменен')
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/personal_account/')
             else:
                 messages.error(request, 'Пароль не был изменен.')
         else:
