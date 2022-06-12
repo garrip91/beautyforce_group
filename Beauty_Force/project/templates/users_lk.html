@@ -118,7 +118,9 @@
                           <div class="card ">
                             <img class="card-img-top-catalog" src="{{ haruharu_wonder.image.url }}" alt="Card image cap">
                             <div class="card-body">
+                                <a href="{{ haruharu_wonder.get_absolute_url }}">
                               <h5 class="card-title-catalog">{{ haruharu_wonder.title }} {{ haruharu_wonder.about }}</h5>
+                                    </a>
                               <div class="quantity_inner">
                                 <button type="button" class=" b2b-btn-1" disabled>{{ haruharu_wonder.price }}</button>
                                   <button class="bt_minus">

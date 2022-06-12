@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
+from django.urls import reverse
 
 """
 Пользователи
@@ -39,7 +40,8 @@ class Users(AbstractUser):
 
 
 class Delivery_Addresses(models.Model):
-    recipient = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False, verbose_name='Заказчик')
+    recipient = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                  verbose_name='Заказчик')
     city = models.CharField(max_length=100, null=True, verbose_name='Город')
     street = models.CharField(max_length=100, null=True, verbose_name='Улица')
     home = models.CharField(max_length=100, null=True, verbose_name='Номер дома')
@@ -104,6 +106,10 @@ class Product(models.Model):
     available = models.BooleanField(default=True, verbose_name='Доступность товара')
     slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
 
+    def get_absolute_url(self):
+        return reverse('catalog_item',
+                       args=[self.id, self.slug])
+
     def __str__(self):
         return f'{self.title}'
 
@@ -125,9 +131,11 @@ class Purchase_History(models.Model):
         (online, 'Онлайн покупка'),
         (offline, 'Оффлайн покупка'),
     )
-    customer = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False, verbose_name='Заказчик')
+    customer = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                 verbose_name='Заказчик')
     date = models.DateField(verbose_name='Дата доставки')
-    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False, verbose_name='Адрес доставки')
+    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                verbose_name='Адрес доставки')
     online_or_offline = models.PositiveSmallIntegerField(choices=PURCHASE_CHOICES, blank=True, null=True, default=0,
                                                          verbose_name='Онлайн/Оффлайн')
     number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
