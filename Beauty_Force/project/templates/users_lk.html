@@ -3,7 +3,6 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/acounts.css' %}">
-
     <div class="catalog-button">
 	<section class="ftco-section">
 		<div class="container">
@@ -2004,6 +2003,9 @@
                         <button type="button" class="btn btn-modal" data-toggle="modal" data-target="#addAdress">
                             <i class="fa fa-plus" aria-hidden="true"></i> Добавить адрес
                         </button>
+                        <button type="button" class="btn btn-modal">
+                            <i class="fa fa-cog" aria-hidden="true"></i> Перейти к расширенным настройкам
+                        </button>
 				</div>
 
 			</div>
@@ -2018,8 +2020,9 @@
 					<button type="button" class="close-acount" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="modal-header-acount">закрыть</span></button>
 				</div>
 				<div class="modal-body">
-                <div class="card" style="">
+                <div class="card">
                   <div class="card-body">
+                      <h4 class="modal-title modal-title-acount">Ваш послений заказ</h4>
 					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
 						<p class="d-flex justify-content-start date_and_price" style="width: 100%">
 							12.03.2020
@@ -2108,6 +2111,9 @@
                           </button>
                         </div>
                   </div>
+                        <button type="button" class="btn btn-modal">
+                            <i class="fa fa-truck" aria-hidden="true"></i> Посмотреть все заказы
+                        </button>
                 </div>
 				</div>
 
@@ -2175,5 +2181,4 @@
 		</div>
 	</div>
 	{% endif %}
-    </div>
 {% endblock content %}
