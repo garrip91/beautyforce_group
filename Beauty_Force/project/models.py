@@ -102,6 +102,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
     available = models.BooleanField(default=True, verbose_name='Доступность товара')
+    slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
 
     def __str__(self):
         return f'{self.title}'
