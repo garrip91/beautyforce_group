@@ -109,7 +109,7 @@ class Register_Page(SuccessMessageMixin, CreateView):
 
 class Login_Page(SuccessMessageMixin, LoginView):
     form_class = Login_Form
-    success_url = reverse_lazy('main_page')
+    success_url = reverse_lazy('personal_account')
     template_name = 'login.html'
     success_message = 'Вы успешно вошли в систему'
 
