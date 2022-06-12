@@ -114,12 +114,13 @@
                             бестселлеры
                         </p>
                         <div class="card-deck-category text-center">
+                            {% for haruharu_wonder in HARUHARU_WONDER %}
                           <div class="card ">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+                            <img class="card-img-top-catalog" src="{{ haruharu_wonder.image.url }}" alt="Card image cap">
                             <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+                              <h5 class="card-title-catalog">{{ haruharu_wonder.title }} {{ haruharu_wonder.about }}</h5>
                               <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
+                                <button type="button" class=" b2b-btn-1" disabled>{{ haruharu_wonder.price }}</button>
                                   <button class="bt_minus">
                                       <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                   </button>
@@ -130,54 +131,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
+                            {% endfor %}
                     </div>
                         <div class="collapse" id="haruharu">
                         <p class="p-catalog-brands-category">
@@ -268,12 +222,13 @@
                             бестселлеры
                         </p>
                         <div class="card-deck-category text-center">
+                            {% for dr_gloderm in DR_GLODERM %}
                           <div class="card ">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+                            <img class="card-img-top-catalog" src="{{ dr_gloderm.image.url }}" alt="Card image cap">
                             <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
+                              <h5 class="card-title-catalog">{{ dr_gloderm.title }} {{ dr_gloderm.about }}</h5>
                               <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
+                                <button type="button" class=" b2b-btn-1" disabled>{{ dr_gloderm.price }}</button>
                                   <button class="bt_minus">
                                       <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                   </button>
@@ -284,54 +239,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-                              <div class="quantity_inner">
-                                <button type="button" class=" b2b-btn-1" disabled>1500 ₽</button> 
-                                  <button class="bt_minus">
-                                      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                                  <input type="text" value="0" size="2" class="quantity" data-max-count="20"/>
-                                  <button class="bt_plus">
-                                      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
+                            {% endfor %}
                     </div>
                         <div class="collapse" id="gloderm">
                         <p class="p-catalog-brands-category">

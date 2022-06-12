@@ -1,31 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from django.views import View
-from django.urls import reverse_lazy
+from django.views.generic.edit import FormView
 from django.views.generic import CreateView
+
+from django.urls import reverse_lazy
 
 from django.core.mail import send_mail
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import authenticate, login
-from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes, force_str
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib import messages
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.models import User
-from django.core.mail import EmailMessage
-from django.views.generic.edit import FormView
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import get_user_model
+
+from django.contrib.sites.shortcuts import get_current_site
+
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+
+from django.template.loader import render_to_string
+
+from django.http import HttpResponse, HttpResponseRedirect
+
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 from .forms import *
 from .models import *
 from .token import *
-from django.contrib.auth import get_user_model
 
 
 class Main_Page(View):
@@ -44,12 +50,6 @@ class Catalog_Page(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'catalog.html')
-
-
-class Catalog_Item(View):
-    # def get(self, request, name, *args, **kwargs):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'catalog_item.html')
 
 
 class Brand_Page(View):
@@ -137,8 +137,10 @@ class Users_Lk_Page(View):
     success_message_add_adresses = "Адрес доставки успешно добавлен"
     error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
 
-    def get(self, request, *args, **kwargs):
+    HARUHARU_WONDER = Product.objects.filter(brand=2)
+    DR_GLODERM = Product.objects.filter(brand=1)
 
+    def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
         total_amount = current_user.total_amount_of_orders
         total_amount_all_percent = 0
@@ -163,6 +165,8 @@ class Users_Lk_Page(View):
         context = {
             'sale': sale,
             'total_amount_all_percent': total_amount_all_percent,
+            'HARUHARU_WONDER': self.HARUHARU_WONDER,
+            'DR_GLODERM': self.DR_GLODERM,
         }
         return render(
             request,
@@ -242,6 +246,17 @@ class Users_Lk_Page(View):
             'users_lk.html',
             context=context
         )
+
+
+class Catalog_Item(View):
+
+    def get(self, request, id, slug, *args, **kwargs):
+
+        product = get_object_or_404(Product, id=id, slug=slug)
+        context = {
+            'product': product,
+        }
+        return render(request, 'catalog_item.html', context=context)
 
 
 class Password_Reset(View):
