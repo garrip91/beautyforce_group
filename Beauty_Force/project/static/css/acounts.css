@@ -20,7 +20,7 @@
 .modal.left .modal-dialog {
     position: fixed;
     margin: auto;
-    width: 320px;
+    width: 440px;
     height: 100%;
     -webkit-transform: translate3d(0%, 0, 0);
         -ms-transform: translate3d(0%, 0, 0);
@@ -474,4 +474,109 @@
     width: 50%;
     height: 55px;
     margin-bottom: 3rem;
+}
+
+.item-header-order{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    align-items: center;
+    color: #27AE60;
+}
+
+.item-header-order-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    color: #8F8C9E;
+}
+
+.card-order{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    height: 100%;
+    width: 140px;
+    margin-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.item-header-card-order{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #8F8C9E;
+
+}
+.item-header-text-order{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #1F1A3D;
+}
+
+.card-orders{
+    height: 100px;
+}
+
+.orders-img{
+    width: 100px;
+    height: 100px;
+}
+
+.carousel-item-order img {
+    width: 100px;
+    height: 100px !important;
+}
+
+.item-header-order-history{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.item-header-order-1-history{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+.item-header-order-1-history-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.date_and_price{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+
 }
