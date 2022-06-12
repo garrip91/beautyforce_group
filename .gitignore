@@ -3,3 +3,4 @@ __pycache__
 *.env
 .idea
 .env
+Beauty_Force/project/migrations/*
