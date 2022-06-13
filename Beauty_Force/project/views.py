@@ -250,9 +250,9 @@ class Users_Lk_Page(View):
 
 class Catalog_Item(View):
 
-    def get(self, request, id, slug, *args, **kwargs):
+    def get(self, request, title, slug, *args, **kwargs):
 
-        product = get_object_or_404(Product, id=id, slug=slug)
+        product = get_object_or_404(Product, title=title, slug=slug)
         context = {
             'product': product,
         }

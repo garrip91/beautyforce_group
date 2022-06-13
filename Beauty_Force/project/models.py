@@ -105,10 +105,15 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
     available = models.BooleanField(default=True, verbose_name='Доступность товара')
     slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
+    vendor_code = models.CharField(max_length=50, null=True, verbose_name='Артикул')
+    barcode = models.IntegerField(default=0, null=True, verbose_name='Штрихкод')
+    mode_of_application = models.TextField(max_length=1000, null=True, verbose_name='Способ применения')
+    compound = models.TextField(max_length=1000, null=True, verbose_name='Состав')
+    precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности')
 
     def get_absolute_url(self):
         return reverse('catalog_item',
-                       args=[self.id, self.slug])
+                       args=[self.slug, self.title])
 
     def __str__(self):
         return f'{self.title}'
