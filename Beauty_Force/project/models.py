@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from django.urls import reverse
+from django.utils import timezone
 
 """
 Пользователи
@@ -48,9 +49,12 @@ class Delivery_Addresses(models.Model):
     entrance = models.CharField(max_length=100, null=True, verbose_name='Номер подъезда')
     floor = models.CharField(max_length=100, null=True, verbose_name='Этаж')
     apartment_or_office = models.CharField(max_length=100, null=True, verbose_name='Номер квартиры/Офиса')
+    delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
 
     def __str__(self):
-        return f'{self.city}'
+        return str("Заказчик: {0}, Город: {1}, Улица: {2}".format(
+            self.recipient, self.city, self.street)
+            )
 
     class Meta:
         verbose_name = "Адреса доставки"
@@ -66,7 +70,7 @@ class Brands(models.Model):
     brand_name = models.CharField(max_length=100, null=True, verbose_name='Название бренда')
 
     def __str__(self):
-        return f'{self.brand_name}'
+        return str(self.brand_name)
 
     class Meta:
         verbose_name = "Бренды"
@@ -83,7 +87,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
 
     def __str__(self):
-        return f'{self.name}'
+        return str(self.name)
 
     class Meta:
         verbose_name = "Категория товара"
@@ -98,8 +102,9 @@ class Category(models.Model):
 class Product(models.Model):
     brand = models.ForeignKey('Brands', on_delete=models.CASCADE, null=True, blank=True, unique=False,
                               verbose_name='Название бренда')
-    title = models.CharField(max_length=50, null=True, verbose_name='Название товара')
+    title = models.CharField(max_length=1000, null=True, verbose_name='Название товара')
     about = models.TextField(max_length=1000, null=True, verbose_name='Описание')
+    hidden_description = models.TextField(max_length=1000, null=True, verbose_name='Скрытое описание')
     image = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Фото товара')
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
@@ -116,7 +121,7 @@ class Product(models.Model):
                        args=[self.slug, self.title])
 
     def __str__(self):
-        return f'{self.title}'
+        return str(self.title)
 
     class Meta:
         verbose_name = "Товар"
@@ -150,8 +155,76 @@ class Purchase_History(models.Model):
     total_products = models.PositiveIntegerField(default=0, verbose_name='Количество товара')
 
     def __str__(self):
-        return f'{self.address}'
+        return str(self.address)
 
     class Meta:
         verbose_name = "История заказов"
         verbose_name_plural = "История заказов"
+
+
+"""
+Заказы
+"""
+
+class Orders(models.Model):
+    STATUS_NEW = 'Новый заказ'
+    STATUS_IN_PROGRESS = 'В процессе'
+    STATUS_READY = 'Готов'
+    STATUS_COMPLETED = 'Завершен'
+
+    BUYING_TYPE_SELF = 'Самовывоз'
+    BUYING_TYPE_DELIVERY = 'Доставка'
+
+    STATUS_CHOICES = (
+        (STATUS_NEW, 'Новый заказ'),
+        (STATUS_IN_PROGRESS, 'Заказ в обработке'),
+        (STATUS_READY, 'Заказ готов'),
+        (STATUS_COMPLETED, 'Заказ выполнен')
+    )
+
+    BUYING_TYPE_CHOICES = (
+        (BUYING_TYPE_SELF, 'Самовывоз'),
+        (BUYING_TYPE_DELIVERY, 'Доставка')
+    )
+
+    recipient = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                verbose_name='Заказчик')
+    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                verbose_name='Адрес доставки')
+    paid = models.BooleanField(default=False, verbose_name='Статус оплаты')
+    status = models.CharField(
+        max_length=100,
+        verbose_name='Статус заказ',
+        choices=STATUS_CHOICES,
+        default=STATUS_NEW
+    )
+    buying_type = models.CharField(
+        max_length=100,
+        verbose_name='Тип заказа',
+        choices=BUYING_TYPE_CHOICES,
+        default=BUYING_TYPE_SELF
+    )
+    created_at = models.DateTimeField(auto_now=True, verbose_name='Дата создания заказа')
+    order_date = models.DateField(verbose_name='Дата получения заказа', default=timezone.now)
+
+    def __str__(self):
+        return str("Заказ №{}".format(self.id))
+
+    def get_total_cost(self):
+        return sum(item.get_cost() for item in self.items.all())
+
+    class Meta:
+        verbose_name = 'Заказы'
+        verbose_name_plural = 'Заказы'
+
+class Order_Items(models.Model):
+    order = models.ForeignKey(Orders, related_name='items', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Заказ')
+    product = models.ForeignKey(Product, related_name='order_items', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Товар')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
+    quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
+
+    def __str__(self):
+        return '{}'.format(self.id)
+
+    def get_cost(self):
+        return self.price * self.quantity

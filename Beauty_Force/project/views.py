@@ -32,6 +32,7 @@ from django.contrib import messages
 from .forms import *
 from .models import *
 from .token import *
+from .mixins import *
 
 
 class Main_Page(View):
@@ -125,11 +126,6 @@ class B2B_Catalog_Page(View):
         return render(request, 'b2b_catalog.html')
 
 
-class Basket_Page(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'basket.html')
-
-
 class Users_Lk_Page(View):
     success_message = 'Вам на почту отправлена ссылка на изменение пароля'
     error_message = 'Что-то пошло не так, письмо не было отправлено'
@@ -139,6 +135,7 @@ class Users_Lk_Page(View):
 
     HARUHARU_WONDER = Product.objects.filter(brand=2)
     DR_GLODERM = Product.objects.filter(brand=1)
+    add_to_cart = Add_To_Cart_Form
 
     def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
@@ -167,6 +164,7 @@ class Users_Lk_Page(View):
             'total_amount_all_percent': total_amount_all_percent,
             'HARUHARU_WONDER': self.HARUHARU_WONDER,
             'DR_GLODERM': self.DR_GLODERM,
+            'add_to_cart': self.add_to_cart,
         }
         return render(
             request,
@@ -174,7 +172,8 @@ class Users_Lk_Page(View):
             context=context
         )
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, product_id, *args, **kwargs):
+
         user = Users.objects.get(username=request.user)
         current_user = Users.objects.get(username=request.user)
         total_amount = current_user.total_amount_of_orders
@@ -200,6 +199,9 @@ class Users_Lk_Page(View):
         context = {
             'sale': sale,
             'total_amount_all_percent': total_amount_all_percent,
+            'HARUHARU_WONDER': self.HARUHARU_WONDER,
+            'DR_GLODERM': self.DR_GLODERM,
+            'add_to_cart': self.add_to_cart,
         }
 
         if request.POST.get('acсount-email'):
@@ -251,7 +253,6 @@ class Users_Lk_Page(View):
 class Catalog_Item(View):
 
     def get(self, request, title, slug, *args, **kwargs):
-
         product = get_object_or_404(Product, title=title, slug=slug)
         context = {
             'product': product,
@@ -284,6 +285,48 @@ class Password_Reset(View):
         return render(request, 'change_password.html', {
             'form': form
         })
+
+
+class Add_To_Cart(View):
+
+    def post(self, request, product_id, *args, **kwargs):
+        cart = Cart_Mixin(request)
+        product = get_object_or_404(Product, id=product_id)
+        form = Add_To_Cart_Form(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            cart.add(product=product,
+                     quantity=cd['quantity'],
+                     update_quantity=cd['update'])
+        return HttpResponseRedirect('/personal_account/')
+
+
+class Delete_From_Cart(View):
+
+    def get(self, request, product_id, *args, **kwargs):
+        cart = Cart_Mixin(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.remove(product)
+        return HttpResponseRedirect('/basket/')
+
+    def post(self, request, product_id, *args, **kwargs):
+        cart = Cart_Mixin(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.remove(product)
+        return HttpResponseRedirect('/basket/')
+
+
+class Basket_Page(View):
+    def get(self, request, *args, **kwargs):
+        delivery = Delivery_Addresses.objects.get(recipient=request.user)
+        cart = Cart_Mixin(request)
+        total_and_delivery_sum = delivery.delivery + cart.get_total_price()
+        context = {
+            'cart': cart,
+            'delivery': delivery,
+            'total_and_delivery_sum': total_and_delivery_sum,
+        }
+        return render(request, 'basket.html', context=context)
 
 
 def activate(request, uidb64, token):

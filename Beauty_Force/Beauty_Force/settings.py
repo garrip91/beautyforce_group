@@ -94,6 +94,10 @@ AUTH_USER_MODEL = 'project.Users'
 AUTHENTICATION_BACKENDS = ['project.backends.EmailBackend']
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
+SESSION_COOKIE_SECURE = True
+CART_SESSION_ID = 'cart'
+
+
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 

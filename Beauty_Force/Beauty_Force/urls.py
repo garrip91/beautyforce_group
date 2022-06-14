@@ -23,7 +23,9 @@ urlpatterns = [
     path('personal_account/', Users_Lk_Page.as_view(), name='personal_account'),
     path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/', activate,
          name='activate'),
-    path('password_reset/', Password_Reset.as_view(), name='password_reset')
+    path('password_reset/', Password_Reset.as_view(), name='password_reset'),
+    path('add_to_cart/<product_id>/', Add_To_Cart.as_view(), name='add_to_cart'),
+    path('remove_from_cart/<product_id>/', Delete_From_Cart.as_view(), name='remove_from_cart'),
 ]
 
 if settings.DEBUG:

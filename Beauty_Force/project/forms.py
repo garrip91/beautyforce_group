@@ -2,6 +2,8 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 
+PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(0, 100)]
+
 
 class Sign_Up_Form(UserCreationForm):
     inn = forms.CharField(required=True,
@@ -123,4 +125,19 @@ class Change_Password_Form(PasswordChangeForm):
             'old_password',
             'new_password1',
             'new_password2',
+        ]
+
+
+class Add_To_Cart_Form(forms.Form):
+    quantity = forms.TypedChoiceField(choices=PRODUCT_QUANTITY_CHOICES, coerce=int, widget=forms.Select(
+        attrs={
+            'class': 'quantity'
+        }
+    ))
+    update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)
+
+    class Meta:
+        fields = [
+            'quantity',
+            'update',
         ]

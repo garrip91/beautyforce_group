@@ -7,61 +7,32 @@
                     <div class="row">
                         <div class="col-md-8 cart">
                             <div class="row">
+                              {% for item in cart %}
+                                {% with product=item.product %}
                                 <div class="row main align-items-center border-basket">
-                                    <div class="col-2"><img class="img-fluid" src="{% static 'images/Rectangle 113.png' %}"></div>
+                                    <div class="col-2"><img class="img-fluid" src="{{ product.image.url }}"></div>
                                     <div class="col">
-                                        <div class="row card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</div>
+                                        <div class="row card-title-catalog">{{ product.title }}</div>
                                     </div>
-                                    <div class="col-2"><p class="card-text b2b-p"><span class="b2b-span"> 100</span> шт</p></div>
-                                    <div class="col-1"><p class="card-text b2b-p">60000₽</p></div>
-                                    <div class="col-1"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                    <div class="col-2"><p class="card-text b2b-p"><span class="b2b-span">{{ item.quantity }}</span> шт</p></div>
+                                    <div class="col-1"><p class="card-text b2b-p">{{ item.total_price }}</p></div>
+                                    <div class="col-1"><button class="close" onclick="location.href='{% url 'remove_from_cart' product.id %}'"><span aria-hidden="true">×</span></button></div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="row main align-items-center border-basket">
-                                    <div class="col-2"><img class="img-fluid" src="{% static 'images/Rectangle 113.png' %}"></div>
-                                    <div class="col">
-                                        <div class="row card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</div>
-                                    </div>
-                                    <div class="col-2"><p class="card-text b2b-p"><span class="b2b-span"> 100</span> шт</p></div>
-                                    <div class="col-1"><p class="card-text b2b-p">15000₽</p></div>
-                                    <div class="col-1"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="row main align-items-center border-basket">
-                                    <div class="col-2"><img class="img-fluid" src="{% static 'images/Rectangle 113.png' %}"></div>
-                                    <div class="col">
-                                        <div class="row card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</div>
-                                    </div>
-                                    <div class="col-2"><p class="card-text b2b-p"><span class="b2b-span"> 100</span> шт</p></div>
-                                    <div class="col-1"><p class="card-text b2b-p">15000₽</p></div>
-                                    <div class="col-1"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="row main align-items-center border-basket">
-                                    <div class="col-2"><img class="img-fluid" src="{% static 'images/Rectangle 113.png' %}"></div>
-                                    <div class="col">
-                                        <div class="row card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</div>
-                                    </div>
-                                    <div class="col-2"><p class="card-text b2b-p"><span class="b2b-span"> 100</span> шт</p></div>
-                                    <div class="col-1"><p class="card-text b2b-p">30000₽</p></div>
-                                    <div class="col-1"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                </div>
+                                {% endwith %}
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-md-4 summary">
                             <hr>
                             <div class="row">
                                 <div><h5 class="basket-h5"><b>Сумма заказа</b></h5></div>
-                                <div class="col text-right"><h5 class="basket-h5"><b>120 000 ₽</b></h5></div>
+                                <div class="col text-right"><h5 class="basket-h5"><b>{{ cart.get_total_price }} ₽</b></h5></div>
                                 <div><h5 class="basket-h5"><b>Доставка <br>(по адресу инн)</b></h5></div>
-                                <div class="col text-right"><h5 class="basket-h5"><b>2 000 ₽</b></h5></div>
+                                <div class="col text-right"><h5 class="basket-h5"><b>{{ delivery.delivery }} ₽</b></h5></div>
                             </div>
                             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                                 <div><h5 class="basket-h5"><b>Итого</b></h5></div>
-                                <div class="col text-right"><h5 class="basket-h5-2"><b>122 000 ₽</b></h5></div>
+                                <div class="col text-right"><h5 class="basket-h5-2"><b>{{ total_and_delivery_sum }} ₽</b></h5></div>
                             </div>
                             <button type="button" class="btn  btn-lg btn-block btn-basket">оформить заявку</button>
                             <p class="p-basket">
@@ -69,7 +40,6 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
     </section>
 <footer class="bg-light text-center text-lg-start footer-10">

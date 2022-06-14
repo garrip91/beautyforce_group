@@ -43,21 +43,21 @@
 							Бренд: <span class="span-item">{{ product.brand }}</span>
 						</p>
 						<p class="item-header">
-							Артикул: <span class="span-item">DG-TBLCM-001</span>
+							Артикул: <span class="span-item">{{ product.vendor_code }}</span>
 						</p>
 						<p class="item-header">
-							Штрихкод: <span class="span-item">8809530200025</span>
+							Штрихкод: <span class="span-item">{{ product.barcode }}</span>
 						</p>
 					</nav>
 					<p class="item-header-h2">
-						DR.GLODERM TabRX Liftup Cream Крем для лица подтягивающий, 45 гр
+						{{ product.title }}
 					</p>
 					  <div class="about-item">
-						Запатентованная технология изготовления крема в виде эмульсионных шариков, позволяет создать оптимальные условия для сохранения его уникальных свойств. Эмульсионные шарики, обогащенные коллагеном с состоят на 70% из морского гидрогеля и на 30% из эссенции.
+						{{ product.about }}
 					  </div>
 					<div class="collapse" id="collapseExample">
 					  <div class="about-item">
-						  Морской гидрогель, изготовлен из морских минералов, полученных путем ферментации морских растений. Морской гидрогель, изготовлен из морских минералов, полученных путем ферментации
+						  {{ product.hidden_description }}
 					  </div>
 					</div>
 					<p>
@@ -67,7 +67,7 @@
 					</p>
 					<div class="">
 						<button type="button" class="btn btn-circle btn-xl">запросить оптовый прайс-лист </button>
-						<button type="button" class="btn btn-circle-brands btn-xl-brands">купить в магазине 2660 ₽</button>
+						<button type="button" class="btn btn-circle-brands btn-xl-brands">купить в магазине {{ product.price }} ₽</button>
 					</div>
 						<div id="accordion" class="accordion accordion-item">
 							<div class="card card-item">
@@ -77,7 +77,8 @@
 									</a>
 								</div>
 								<div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
-									<p>Текст 1
+									<p>
+										{{ product.mode_of_application|linebreaks}}
 									</p>
 								</div>
 							</div>
@@ -88,7 +89,8 @@
 									</a>
 								</div>
 								<div id="collapseTwo" class="card-body collapse" data-parent="#accordion" >
-									<p>Текст 2
+									<p>
+										{{ product.compound|linebreaks }}
 									</p>
 								</div>
 								<div class="card card-item">
@@ -99,7 +101,8 @@
 								</div>
 							</div>
 								<div id="collapseThree" class="collapse card-body" data-parent="#accordion" >
-									<p>Текст 3
+									<p>
+										{{ product.precautionary_measures|linebreaks }}
 									</p>
 								</div>
 							</div>
