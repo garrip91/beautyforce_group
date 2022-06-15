@@ -351,7 +351,7 @@ class Basket_Page(View):
         except:
             messages.error(request, "Заказ не сформирован, попробуйте снова")
             return HttpResponseRedirect('/basket/')
-
+        messages.success(request, "Успешно! Скоро с вами свяжется наш менеджер \n Для подтверждения заказа и места доставки")
         return HttpResponseRedirect('/basket/')
 
 

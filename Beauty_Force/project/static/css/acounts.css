@@ -580,3 +580,25 @@
     color: #FFFFFF;
 
 }
+
+.sucсess-text-message{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 45px;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1F1A3D;
+
+}
+
+.sucсess-text-message-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #1F1A3D;
+}
