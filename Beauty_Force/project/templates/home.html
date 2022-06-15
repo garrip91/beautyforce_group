@@ -733,7 +733,7 @@
 				var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
 				// if success:
 				posting.done(function(data) {
-					console.log('done')
+					$('#add_to_cart_modal').modal('show')
 				});
 				// if failure:
 				posting.fail(function(data) {

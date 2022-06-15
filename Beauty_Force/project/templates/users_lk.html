@@ -2009,5 +2009,22 @@
 		</div>
 	</div>
 	{% endif %}
-
+<div class="modal fade" tabindex="-1" id="add_to_cart_modal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+            <div class="text-center p-t-30">
+                <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+                <span class="modal-text">
+                    Товар успешно добавлен в корзину
+                </span>
+            </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 {% endblock content %}
