@@ -360,10 +360,11 @@ class Basket_Page(View):
             )
 
             cart.clear()
+
         except:
             messages.error(request, "Заказ не сформирован, попробуйте снова")
             return HttpResponseRedirect('/basket/')
-
+        messages.success(request, "1")
         return HttpResponseRedirect('/basket/')
 
 

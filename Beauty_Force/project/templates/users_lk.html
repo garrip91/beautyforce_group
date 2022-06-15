@@ -1988,7 +1988,11 @@
       </div>
     </div>
 </div>
+
  {% if messages %}
+{% for msg in messages %}
+    {% if msg.message == '1' %}
+{% else %}
 	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -1996,9 +2000,9 @@
 						<div class="text-center p-t-30">
 							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
 							<span class="modal-text">
-								{% for msg in messages %}
+
 									{{msg.message}}
-								{% endfor %}
+
 							</span>
 						</div>
 				</div>
@@ -2008,6 +2012,8 @@
 			</div>
 		</div>
 	</div>
+{% endif %}
+{% endfor %}
 	{% endif %}
 <div class="modal fade" tabindex="-1" id="add_to_cart_modal">
 		<div class="modal-dialog modal-dialog-centered" role="document">
@@ -2025,6 +2031,5 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 {% endblock content %}
