@@ -54,7 +54,7 @@ class Delivery_Addresses(models.Model):
     def __str__(self):
         return str("Заказчик: {0}, Город: {1}, Улица: {2}".format(
             self.recipient, self.city, self.street)
-            )
+        )
 
     class Meta:
         verbose_name = "Адреса доставки"
@@ -166,6 +166,7 @@ class Purchase_History(models.Model):
 Заказы
 """
 
+
 class Orders(models.Model):
     STATUS_NEW = 'Новый заказ'
     STATUS_IN_PROGRESS = 'В процессе'
@@ -188,7 +189,7 @@ class Orders(models.Model):
     )
 
     recipient = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
-                                verbose_name='Заказчик')
+                                  verbose_name='Заказчик')
     address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
                                 verbose_name='Адрес доставки')
     paid = models.BooleanField(default=False, verbose_name='Статус оплаты')
@@ -217,9 +218,12 @@ class Orders(models.Model):
         verbose_name = 'Заказы'
         verbose_name_plural = 'Заказы'
 
+
 class Order_Items(models.Model):
-    order = models.ForeignKey(Orders, related_name='items', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Заказ')
-    product = models.ForeignKey(Product, related_name='order_items', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Товар')
+    order = models.ForeignKey(Orders, related_name='items', on_delete=models.CASCADE, null=True, blank=True,
+                              verbose_name='Заказ')
+    product = models.ForeignKey(Product, related_name='order_items', on_delete=models.CASCADE, null=True, blank=True,
+                                verbose_name='Товар')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
     quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
 

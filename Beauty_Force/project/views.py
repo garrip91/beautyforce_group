@@ -317,6 +317,7 @@ class Delete_From_Cart(View):
 
 
 class Basket_Page(View):
+
     def get(self, request, *args, **kwargs):
         delivery = Delivery_Addresses.objects.get(recipient=request.user)
         cart = Cart_Mixin(request)
@@ -327,6 +328,31 @@ class Basket_Page(View):
             'total_and_delivery_sum': total_and_delivery_sum,
         }
         return render(request, 'basket.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+        cart = Cart_Mixin(request)
+        recipient = request.user
+        address = Delivery_Addresses.objects.get(recipient=recipient)
+        try:
+            order = Orders.objects.create(
+                recipient=recipient,
+                address=address
+            )
+            order.save()
+
+            for item in cart:
+                Order_Items.objects.create(
+                    order=order,
+                    product=item['product'],
+                    price=item['price'],
+                    quantity=item['quantity']
+                )
+            cart.clear()
+        except:
+            messages.error(request, "Заказ не сформирован, попробуйте снова")
+            return HttpResponseRedirect('/basket/')
+
+        return HttpResponseRedirect('/basket/')
 
 
 def activate(request, uidb64, token):

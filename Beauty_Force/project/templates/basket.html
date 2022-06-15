@@ -34,7 +34,10 @@
                                 <div><h5 class="basket-h5"><b>Итого</b></h5></div>
                                 <div class="col text-right"><h5 class="basket-h5-2"><b>{{ total_and_delivery_sum }} ₽</b></h5></div>
                             </div>
-                            <button type="button" class="btn  btn-lg btn-block btn-basket">оформить заявку</button>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                            <button type="submit" class="btn  btn-lg btn-block btn-basket">оформить заявку</button>
+                            </form>
                             <p class="p-basket">
                                 Нажимая на кнопку «оплатить заказ», я принимаю условия публичной оферты и политики конфиденциальности
                             </p>
