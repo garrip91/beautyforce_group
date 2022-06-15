@@ -1,0 +1,116 @@
+{% extends  'home.html' %}
+{% block title %} История заказов {% endblock %}
+{% load static %}
+{% block content %}
+
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="p-catalog">
+                            Заказы
+                        </p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                <div class="card card-order-history">
+                  <div class="card-body">
+					<div class="card-group">
+					  <div class="card">
+						<div class="card-body-brand-history">
+						  <p class="item-header-orders-history">Доставлен</p>
+						  <p class="item-header-orders-1">Старая Басманная ул., 10, кв 124, Москва, 105064</p>
+						  <p class="item-header-orders-1">Онлайн-оплата Mastercard **0024</p>
+						  <p class="item-header-orders-1-green">12.10.2021</p>
+                            <div class="btn-group dropright">
+                              <button type="button" class="btn btn-toggle" data-toggle="dropdown" aria-expanded="false">
+                                2 474 ₽ <i class="fa fa-caret-down" aria-hidden="true"></i>
+                              </button>
+                                <div class="dropdown-menu text-muted dropdown-menu-history">
+                                  <p class="item-header-card-order-user">Сумма</p>
+                                  <p class="item-header-card-order-user-1">1 989 ₽</p>
+                                  <p class="item-header-card-order-user">Доставка:</p>
+                                  <p class="item-header-card-order-user-1">300 ₽</p>
+                                </div>
+                            </div>
+						</div>
+					  </div>
+					  <div class="card">
+						<div class="card-body-brand">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item carousel-item-order carousel-item-order-history active">
+                                <div class="card-group">
+                                  <div class="card card-carousel card-carousel-history">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                  <div class="card card-carousel">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item carousel-item-order">
+                                <div class="card-group">
+                                  <div class="card card-carousel">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                  <div class="card card-carousel">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item carousel-item-order">
+                                <div class="card-group">
+                                  <div class="card card-carousel">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                  <div class="card card-carousel">
+                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
+                                    <div class="card-body-brand">
+                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
+                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                          <button class="carousel-control-next btn" type="button" data-target="#carouselExampleControls" data-slide="next">
+                              <img src="{% static 'images/chevron_right_black_24dp 1.png' %}" alt="...">
+                          </button>
+						</div>
+					  </div>
+					</div>
+                        </div>
+                  </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+{% endblock content %}

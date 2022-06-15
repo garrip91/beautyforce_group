@@ -368,6 +368,13 @@ class Basket_Page(View):
         return HttpResponseRedirect('/basket/')
 
 
+class Users_Orders_History(View):
+
+    def get(self, request, *args, **kwargs):
+
+        return render(request, 'user_history_orders.html')
+
+
 def activate(request, uidb64, token):
     User = get_user_model()
     try:

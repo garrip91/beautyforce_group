@@ -1,0 +1,87 @@
+.card-order-history{
+    background: rgba(80, 76, 103, .5);
+    border-radius: 10px;
+}
+
+.item-header-orders-history{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: #27AE60;
+
+}
+
+.card-body-brand-history {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  }
+
+  .item-header-orders-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+  }
+.item-header-orders-1-green{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #27AE60;
+}
+
+.card-orders-user-history{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+.dropdown-menu-history{
+    background: #504C67;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.item-header-card-order-user{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #8F8C9E;
+
+}
+.item-header-card-order-user-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.btn-toggle{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: right;
+    color: #FFFFFF;
+}

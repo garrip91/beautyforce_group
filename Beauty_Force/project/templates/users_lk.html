@@ -2,7 +2,7 @@
 {% block title %} Личный кабинет {% endblock %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/acounts.css' %}">
+
     <div class="catalog-button">
 	<section class="ftco-section">
 		<div class="container">
@@ -1867,7 +1867,7 @@
 						  <p class="item-header-order-1">Онлайн-оплата Mastercard **0024</p>
 						</div>
 					  </div>
-					  <div class=" card-order">
+					  <div class="card-order">
 						<div class="card-body-brand">
 						  <p class="item-header-card-order">Сумма</p>
 						  <p class="item-header-text-order">1 989 ₽</p>
@@ -1939,7 +1939,7 @@
                           </button>
                         </div>
                   </div>
-                        <button type="button" class="btn btn-modal">
+                        <button onclick="location.href='{% url 'orders_history' %}'" type="button" class="btn btn-modal">
                             <i class="fa fa-truck" aria-hidden="true"></i> Посмотреть все заказы
                         </button>
                 </div>
@@ -1947,7 +1947,6 @@
 
 			</div>
 		</div>
-	</div>
 <div class="modal" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -2000,9 +1999,7 @@
 						<div class="text-center p-t-30">
 							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
 							<span class="modal-text">
-
 									{{msg.message}}
-
 							</span>
 						</div>
 				</div>
