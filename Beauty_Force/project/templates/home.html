@@ -24,7 +24,7 @@
 	<section class="ftco-section">
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'main_page' %}">
                 <img src="{% static 'images/Vector.svg' %}"  alt="">
               </a>
 	    	<form class="searchform order-sm-start order-lg-last">
@@ -46,13 +46,13 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item"><a href="#" class="nav-link">Бренды</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Каталог</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Партнерство</a></li>
+	        	<li class="nav-item"><a href="{% url 'brands' %}" class="nav-link">Бренды</a></li>
+	        	<li class="nav-item"><a href="{% url 'catalog' %}" class="nav-link">Каталог</a></li>
+	        	<li class="nav-item"><a href="{% url 'partnership' %}" class="nav-link">Партнерство</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">О компании</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Пресса</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
-              <li class="nav-item active"><a href="#" class="nav-link">Интернет магазин</a></li>
+	          <li class="nav-item"><a href="{% url 'press' %}" class="nav-link">Пресса</a></li>
+              <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+              <li class="nav-item active"><a href="{% url 'personal_account' %}" class="nav-link">Интернет магазин</a></li>
 	        </ul>
 	      </div>
 	    </div>

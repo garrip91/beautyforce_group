@@ -347,11 +347,23 @@ class Basket_Page(View):
                     price=item['price'],
                     quantity=item['quantity']
                 )
+
+            send_mail(
+                'Заказ №{}'.format(order.id),
+                'Заказчик {}, телефон заказчика {}'.format(
+                    recipient,
+                    order.recipient.phoneNumber,
+                ),
+                'reg@beforce.ru',
+                ['reg@beforce.ru'],
+                fail_silently=False,
+            )
+
             cart.clear()
         except:
             messages.error(request, "Заказ не сформирован, попробуйте снова")
             return HttpResponseRedirect('/basket/')
-        messages.success(request, "Успешно! Скоро с вами свяжется наш менеджер \n Для подтверждения заказа и места доставки")
+
         return HttpResponseRedirect('/basket/')
 
 
