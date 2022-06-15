@@ -723,5 +723,24 @@
 		});
 	});
 	</script>
+	<script>
+		$(function() {
+			$(".ad_to_cart").submit(function(event) {
+				// Stop form from submitting normally
+				event.preventDefault();
+				var friendForm = $(this);
+				// Send the data using post
+				var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+				// if success:
+				posting.done(function(data) {
+					console.log('done')
+				});
+				// if failure:
+				posting.fail(function(data) {
+					// 4xx or 5xx response, alert user about failure
+				});
+			});
+		});
+	</script>
 	</body>
 </html>

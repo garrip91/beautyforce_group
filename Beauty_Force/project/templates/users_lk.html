@@ -126,7 +126,7 @@
                                     </a>
                               <div class="quantity_inner">
                                 <button type="button" class="b2b-btn-1" disabled>{{ haruharu_wonder.price }}</button>
-                                  <form action="{% url 'add_to_cart' haruharu_wonder.id %}" method="post">
+                                  <form action="{% url 'add_to_cart' haruharu_wonder.id %}" method="post" class="ad_to_cart">
                                     {% csrf_token %}
                                       {{ add_to_cart.quantity }}
                                       <button class="bt_plus">
@@ -152,7 +152,7 @@
                                     </a>
                               <div class="quantity_inner">
                                 <button type="button" class="b2b-btn-1" disabled>{{ haruharu_wonder.price }}</button>
-                                  <form action="{% url 'add_to_cart' haruharu_wonder.id %}" method="post">
+                                  <form action="{% url 'add_to_cart' haruharu_wonder.id %}" method="post" class="ad_to_cart">
                                     {% csrf_token %}
                                       {{ add_to_cart.quantity }}
                                       <button class="bt_plus">
@@ -192,7 +192,7 @@
                                     </a>
                               <div class="quantity_inner">
                                 <button type="button" class="b2b-btn-1" disabled>{{ dr_gloderm.price }}</button>
-                                  <form action="{% url 'add_to_cart' dr_gloderm.id %}" method="post">
+                                  <form action="{% url 'add_to_cart' dr_gloderm.id %}" method="post" class="ad_to_cart">
                                     {% csrf_token %}
                                       {{ add_to_cart.quantity }}
                                       <button class="bt_plus">
@@ -218,7 +218,7 @@
                                     </a>
                               <div class="quantity_inner">
                                 <button type="button" class="b2b-btn-1" disabled>{{ dr_gloderm.price }}</button>
-                                  <form action="{% url 'add_to_cart' dr_gloderm.id %}" method="post">
+                                  <form action="{% url 'add_to_cart' dr_gloderm.id %}" method="post" class="ad_to_cart">
                                     {% csrf_token %}
                                       {{ add_to_cart.quantity }}
                                       <button class="bt_plus">
@@ -2009,4 +2009,5 @@
 		</div>
 	</div>
 	{% endif %}
+
 {% endblock content %}
