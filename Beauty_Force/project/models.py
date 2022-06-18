@@ -139,8 +139,8 @@ class Orders(models.Model):
     STATUS_READY = 'Передан в доставку'
     STATUS_COMPLETED = 'Доставлен'
 
-    BUYING_TYPE_SELF = 'Самовывоз'
-    BUYING_TYPE_DELIVERY = 'Доставка'
+    BUYING_TYPE_SELF = 'Онлайн'
+    BUYING_TYPE_DELIVERY = 'Оффлайн'
 
     STATUS_CHOICES = (
         (STATUS_NEW, 'Новый заказ'),
@@ -150,8 +150,8 @@ class Orders(models.Model):
     )
 
     BUYING_TYPE_CHOICES = (
-        (BUYING_TYPE_SELF, 'Самовывоз'),
-        (BUYING_TYPE_DELIVERY, 'Доставка')
+        (BUYING_TYPE_SELF, 'Онлайн'),
+        (BUYING_TYPE_DELIVERY, 'Оффлайн')
     )
 
     recipient = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,

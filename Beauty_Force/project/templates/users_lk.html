@@ -1853,88 +1853,59 @@
                       <h4 class="modal-title modal-title-acount">Ваш послений заказ</h4>
 					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
 						<p class="d-flex justify-content-start date_and_price" style="width: 100%">
-							12.03.2020
+							{{ orders_history.created_at }}
 						</p>
 						<p class="d-flex justify-content-end date_and_price" style="width: 100%">
-							2 474 ₽
+							{{ orders_history.total_amount }} ₽
 						</p>
 					</nav>
 					<div class="card-group">
 					  <div class="card">
 						<div class="card-body-brand">
-						  <p class="item-header-order">Доставлен</p>
-						  <p class="item-header-order-1">Старая Басманная ул., 10, кв 124, Москва, 105064</p>
-						  <p class="item-header-order-1">Онлайн-оплата Mastercard **0024</p>
+						  <p class="item-header-order">{{ orders_history.status }}</p>
+						  <p class="item-header-order-1">
+                            ул. {{ orders_history.address.street }},
+                            {{ orders_history.address.home }} кв. {{ orders_history.address.apartment_or_office }},
+                            {{ orders_history.address.city }}, {{ orders_history.address.index }}
+                          </p>
+						  <p class="item-header-order-1">{{ orders_history.buying_type }} {{ orders_history.masking_cart }}</p>
 						</div>
 					  </div>
 					  <div class="card-order">
 						<div class="card-body-brand">
 						  <p class="item-header-card-order">Сумма</p>
-						  <p class="item-header-text-order">1 989 ₽</p>
+						  <p class="item-header-text-order">{{ orders_history.get_total_cost }} ₽</p>
 						  <p class="item-header-card-order">Доставка:</p>
-						  <p class="item-header-text-order">300 ₽</p>
+						  <p class="item-header-text-order">{{ orders_history.delivery }} ₽</p>
 						</div>
 					  </div>
 					</div>
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div id="carouselcard" class="carousel slide" data-ride="carousel">
                           <div class="carousel-inner">
-                            <div class="carousel-item carousel-item-order active">
-                                <div class="card-group">
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
+                              {% for item in products %}
+                                {% for product_carousel in item %}
+                                    {% if forloop.counter == 1  %}
+                                        <div class="carousel-item carousel-item-order active">
+                                            {% else %}
+                                            <div class="carousel-item carousel-item-order">
+                                                {% endif %}
+                                            <div class="card-group">
+                                              <div class="card card-carousel">
+                                                  <img class="orders-img" src="{{ product_carousel.product.image.url }}" alt="Card image cap">
+                                                <div class="card-body-brand">
+                                                  <p class="item-header-order-history">{{ product_carousel.product.title }}</p>
+                                                  <p class="item-header-order-1-history">{{ product_carousel.product.price }} ₽ <span class="item-header-order-1-history-1"> x{{ item.quantity }}</span></p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    {% endfor %}
                                     </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-item-order">
-                                <div class="card-group">
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-item-order">
-                                <div class="card-group">
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  </div>
                                 </div>
                             </div>
                           </div>
-                          <button class="carousel-control-next btn" type="button" data-target="#carouselExampleControls" data-slide="next">
+                          <button class="carousel-control-next btn" type="button" data-target="#carouselcard" data-slide="next">
                               <img src="{% static 'images/chevron_right_black_24dp 1.png' %}" alt="...">
                           </button>
                         </div>
@@ -1944,89 +1915,87 @@
                         </button>
                 </div>
 				</div>
-
 			</div>
-		</div>
-<div class="modal" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title modal-title-acount-1">Добавление адреса</h4>
-            <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
-        </div>
-        <div class="modal-body">
-          <form id="update-info" name="update-info" action="" method="POST" role="form">
-              {% csrf_token %}
-              <div class="form-group">
-                <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
+            <div class="modal" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title modal-title-acount-1">Добавление адреса</h4>
+                        <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="update-info" name="update-info" action="" method="POST" role="form">
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
+                            </div>
+                          </div>
+                            <div class="text-center">
+                          <button type="submit" class="btn register-button-acount-1">Добавить адрес</button>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
-                </div>
-              </div>
-                <div class="text-center">
-              <button type="submit" class="btn register-button-acount-1">Добавить адрес</button>
-                </div>
-            </form>
-        </div>
-      </div>
-    </div>
-</div>
-
- {% if messages %}
-{% for msg in messages %}
-    {% if msg.message == '1' %}
-{% else %}
-	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-						<div class="text-center p-t-30">
-							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
-							<span class="modal-text">
-									{{msg.message}}
-							</span>
-						</div>
-				</div>
-			  <div class="modal-footer d-flex justify-content-center">
-				<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
-			  </div>
-			</div>
-		</div>
-	</div>
-{% endif %}
-{% endfor %}
-	{% endif %}
-<div class="modal fade" tabindex="-1" id="add_to_cart_modal">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-            <div class="text-center p-t-30">
-                <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
-                <span class="modal-text">
-                    Товар успешно добавлен в корзину
-                </span>
             </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+
+{% if messages %}
+    {% for msg in messages %}
+        {% if msg.message == '1' %}
+            {% else %}
+                <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                    <div class="text-center p-t-30">
+                                        <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+                                        <span class="modal-text">
+                                                {{msg.message}}
+                                        </span>
+                                    </div>
+                            </div>
+                          <div class="modal-footer d-flex justify-content-center">
+                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="modal fade" tabindex="-1" id="add_to_cart_modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                <div class="text-center p-t-30">
+                    <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+                    <span class="modal-text">
+                        Товар успешно добавлен в корзину
+                    </span>
+                </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 {% endblock content %}
