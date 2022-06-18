@@ -135,18 +135,18 @@ class Product(models.Model):
 
 class Orders(models.Model):
     STATUS_NEW = 'Новый заказ'
-    STATUS_IN_PROGRESS = 'В процессе'
-    STATUS_READY = 'Готов'
-    STATUS_COMPLETED = 'Завершен'
+    STATUS_IN_PROGRESS = 'Обрабатывается складом'
+    STATUS_READY = 'Передан в доставку'
+    STATUS_COMPLETED = 'Доставлен'
 
     BUYING_TYPE_SELF = 'Самовывоз'
     BUYING_TYPE_DELIVERY = 'Доставка'
 
     STATUS_CHOICES = (
         (STATUS_NEW, 'Новый заказ'),
-        (STATUS_IN_PROGRESS, 'Заказ в обработке'),
-        (STATUS_READY, 'Заказ готов'),
-        (STATUS_COMPLETED, 'Заказ выполнен')
+        (STATUS_IN_PROGRESS, 'Обрабатывается складом'),
+        (STATUS_READY, 'Передан в доставку'),
+        (STATUS_COMPLETED, 'Доставлен')
     )
 
     BUYING_TYPE_CHOICES = (
@@ -206,63 +206,3 @@ class Order_Items(models.Model):
 
     def get_cost(self):
         return self.price * self.quantity
-
-
-"""
-История заказов
-"""
-
-
-class Purchase_History(models.Model):
-    STATUS_DELIVERED = 'Доставлен'
-    STATUS_IN_PROGRESS = 'Обрабатывается складом'
-    STATUS_SENT_FOR_DELIVERY = 'Передан в доставку'
-
-    BUYING_TYPE_SELF = 'Самовывоз'
-    BUYING_TYPE_DELIVERY = 'Доставка'
-
-    STATUS_CHOICES = (
-        (STATUS_DELIVERED, 'Доставлен'),
-        (STATUS_IN_PROGRESS, 'Обрабатывается складом'),
-        (STATUS_SENT_FOR_DELIVERY, 'Передан в доставку'),
-    )
-    online = 'Онлайн покупка'
-    offline = 'Оффлайн покупка'
-
-    PURCHASE_CHOICES = (
-        (online, 'Онлайн покупка'),
-        (offline, 'Оффлайн покупка'),
-    )
-    customer = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
-                                 verbose_name='Заказчик')
-    date = models.DateField(verbose_name='Дата доставки')
-    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
-                                verbose_name='Адрес доставки')
-    online_or_offline = models.CharField(choices=PURCHASE_CHOICES, default=online,
-                                                         verbose_name='Онлайн/Оффлайн', max_length=100)
-    number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
-    purchase_amount = models.IntegerField(default=0, null=True, verbose_name='Сумма покупки')
-    delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
-    #product = models.ManyToManyField(Product, blank=True, verbose_name='Товар')
-    total_products = models.PositiveIntegerField(default=0, verbose_name='Количество товара')
-    status = models.CharField(
-        max_length=100,
-        verbose_name='Статус заказ',
-        choices=STATUS_CHOICES,
-        default=STATUS_IN_PROGRESS,
-    )
-    order = models.ForeignKey(Orders, blank=True, verbose_name='Заказы', on_delete=models.CASCADE, null=True)
-
-    def __str__(self):
-        return str(self.address)
-
-    def masking_cart(self):
-        return str(self.number_card)[-4:].rjust(len(str(self.number_card)), "*")
-
-    def total_amount(self):
-        return self.purchase_amount + self.delivery
-
-    class Meta:
-        verbose_name = "История заказов"
-        verbose_name_plural = "История заказов"
-
