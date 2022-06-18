@@ -1,6 +1,7 @@
 .card-order-history{
     background: rgba(80, 76, 103, .5);
     border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
 .item-header-orders-history{
@@ -84,4 +85,82 @@
     line-height: 130%;
     text-align: right;
     color: #FFFFFF;
+}
+
+.btn-modal-history{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.card-history{
+    background: #504C67;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.card-deck-history {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 70rem;
+    background-color: #1F1A3D; }
+    .card-deck-history.card {
+      margin-bottom: 15px;
+      background-color: #1F1A3D; }
+    @media (min-width: 576px) {
+      .card-deck-history {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        background-color: #1F1A3D; }
+        .card-deck-history .card {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1;
+          -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          margin-right: 15px;
+          margin-bottom: 0;
+          margin-left: 15px;
+          background-color: #1F1A3D; } }
+
+.register-button-acount-history{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1F1A3D;
+    border: #1F1A3D;
+    background: #E9E8EC;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
 }

@@ -18,99 +18,186 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
+                      {% for history in orders_history %}
                 <div class="card card-order-history">
                   <div class="card-body">
 					<div class="card-group">
 					  <div class="card">
 						<div class="card-body-brand-history">
-						  <p class="item-header-orders-history">Доставлен</p>
-						  <p class="item-header-orders-1">Старая Басманная ул., 10, кв 124, Москва, 105064</p>
-						  <p class="item-header-orders-1">Онлайн-оплата Mastercard **0024</p>
-						  <p class="item-header-orders-1-green">12.10.2021</p>
+						  <p class="item-header-orders-history">{{ history.status }}</p>
+						  <p class="item-header-orders-1">
+                            ул. {{ history.address.street }},
+                            {{ history.address.home }} кв. {{ history.address.apartment_or_office }},
+                            {{ history.address.city }}, {{ history.address.index }}
+                          </p>
+						  <p class="item-header-orders-1">{{ history.buying_type }} {{ history.masking_cart }}</p>
+						  <p class="item-header-orders-1-green">{{ history.created_at }}</p>
                             <div class="btn-group dropright">
                               <button type="button" class="btn btn-toggle" data-toggle="dropdown" aria-expanded="false">
-                                2 474 ₽ <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                {{ history.total_amount }} ₽ <i class="fa fa-caret-down" aria-hidden="true"></i>
                               </button>
                                 <div class="dropdown-menu text-muted dropdown-menu-history">
                                   <p class="item-header-card-order-user">Сумма</p>
-                                  <p class="item-header-card-order-user-1">1 989 ₽</p>
+                                  <p class="item-header-card-order-user-1">{{ history.get_total_cost }} ₽</p>
                                   <p class="item-header-card-order-user">Доставка:</p>
-                                  <p class="item-header-card-order-user-1">300 ₽</p>
+                                  <p class="item-header-card-order-user-1">{{ history.delivery }} ₽</p>
                                 </div>
                             </div>
-						</div>
+						  </div>
 					  </div>
 					  <div class="card">
 						<div class="card-body-brand">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item carousel-item-order carousel-item-order-history active">
-                                <div class="card-group">
-                                  <div class="card card-carousel card-carousel-history">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
+                  <div id="carouselcard{{ forloop.counter }}" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      {% for item in products %}
+                        {% for product_carousel in item %}
+                            {% if product_carousel.order.id == history.id %}
+                                {% if forloop.counter == 1  %}
+                                  <div class="carousel-item carousel-item-order carousel-item-order-history active">
+                                {% else %}
+                                  <div class="carousel-item carousel-item-order carousel-item-order-history">
+                                {% endif %}
+                                  <div class="card card-carousel ">
+                                    <img class="orders-img" src="{{ product_carousel.product.image.url }}" alt="Card image cap">
+                                  <div class="card-body-brand">
+                                    <p class="item-header-order-history">{{ product_carousel.product.title }} </p>
+                                    <p class="item-header-order-1-history">{{ product_carousel.price }}₽ <span class="item-header-order-1-history-1"> x{{ product.quantity }}</span></p>
                                   </div>
                                 </div>
                             </div>
-
-                            <div class="carousel-item carousel-item-order">
-                                <div class="card-group">
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-item-order">
-                                <div class="card-group">
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  <div class="card card-carousel">
-                                      <img class="orders-img" src="{% static 'images/Rectangle 10.png' %}" alt="Card image cap">
-                                    <div class="card-body-brand">
-                                      <p class="item-header-order-history">Хлопковые гигиенические травяные прокладки 16 шт маленькие, 23 см</p>
-                                      <p class="item-header-order-1-history">999₽ <span class="item-header-order-1-history-1"> x2</span></p>
-                                    </div>
-                                  </div>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <button class="carousel-control-next btn" type="button" data-target="#carouselExampleControls" data-slide="next">
-                              <img src="{% static 'images/chevron_right_black_24dp 1.png' %}" alt="...">
-                          </button>
-						</div>
-					  </div>
-					</div>
-                        </div>
+                          {% endif %}
+                      {% endfor %}
+                      {% endfor %}
+                    </div>
+                        <a class="carousel-control-next" href="#carouselcard{{ forloop.counter }}" role="button" data-slide="next">
+                          <img src="{% static 'images/chevron_right_black_24dp 1.png' %}">
+                        </a>
+                    </div>
+                    </div>
+                    </div>
                   </div>
-                    </div>
-                    </div>
+                </div>
+              </div>
+              {% endfor %}
             </div>
+                </div>
+            </div>
+        </div>
         </section>
+        <section class="ftco-section">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <p class="p-catalog">
+                          настройки
+                      </p>
+                  </div>
+                  </div>
+          </div>
+      </section>
+        <section class="ftco-section">
+          <div class="container d-flex justify-content-center">
+              <div class="row">
+                  <div class="col">
+                    <div class="card-deck-history">
+                      <div class="card">
+                        <div class="card-body card-history">
+                          <h5 class="card-title">Сменить<br> имя</h5>
+                          <form id="change_name" name="change_name" class="change_name" action="" method="POST" role="form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control-acount" name="change_name" placeholder="Введите новое" tabindex="2" required>
+                            </div>
+                                <button type="submit" class="register-button-acount">Сменить имя</button>
+                        </form>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body card-history">
+                          <h5 class="card-title">Сменить<br> пароль</h5>
+                          <form id="update-password" name="update-email" action="" method="POST" role="form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="email" class="form-control-acount" name="acсount-email" placeholder="Введите почту для восстановления пароля" tabindex="2" required>
+                            </div>
+                                <button type="submit" class="register-button-acount">Отправить письмо</button>
+                        </form>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body card-history">
+                          <h5 class="card-title">Адрес<br> доставки</h5>
+                          <button type="button " class="btn btn-modal-history" data-toggle="modal" data-target="#addAdress">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Добавить адрес
+                        </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="modal" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title modal-title-acount-1">Добавление адреса</h4>
+                      <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="update-info" name="update-info" action="" method="POST" role="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
+                          </div>
+                        </div>
+                          <div class="text-center">
+                        <button type="submit" class="btn register-button-acount-1">Добавить адрес</button>
+                          </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+ {% if messages %}
+	<div class="modal fade" id="changeName" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+						<div class="text-center p-t-30">
+							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+							<span class="modal-text">
+								{% for msg in messages %}
+									{{ msg.message }}
+								{% endfor %}
+							</span>
+						</div>
+				</div>
+			  <div class="modal-footer d-flex justify-content-center">
+				<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
 {% endblock content %}

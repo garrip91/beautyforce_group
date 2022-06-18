@@ -49,6 +49,7 @@ class Delivery_Addresses(models.Model):
     entrance = models.CharField(max_length=100, null=True, verbose_name='Номер подъезда')
     floor = models.CharField(max_length=100, null=True, verbose_name='Этаж')
     apartment_or_office = models.CharField(max_length=100, null=True, verbose_name='Номер квартиры/Офиса')
+    index = models.CharField(max_length=100, null=True, verbose_name='Индекс')
     delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
 
     def __str__(self):
@@ -127,41 +128,6 @@ class Product(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
 
-
-"""
-История заказов
-"""
-
-
-class Purchase_History(models.Model):
-    online = 0
-    offline = 1
-
-    PURCHASE_CHOICES = (
-        (online, 'Онлайн покупка'),
-        (offline, 'Оффлайн покупка'),
-    )
-    customer = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
-                                 verbose_name='Заказчик')
-    date = models.DateField(verbose_name='Дата доставки')
-    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
-                                verbose_name='Адрес доставки')
-    online_or_offline = models.PositiveSmallIntegerField(choices=PURCHASE_CHOICES, blank=True, null=True, default=0,
-                                                         verbose_name='Онлайн/Оффлайн')
-    number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
-    purchase_amount = models.IntegerField(default=0, null=True, verbose_name='Сумма покупки')
-    delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
-    product = models.ManyToManyField(Product, blank=True, verbose_name='Товар')
-    total_products = models.PositiveIntegerField(default=0, verbose_name='Количество товара')
-
-    def __str__(self):
-        return str(self.address)
-
-    class Meta:
-        verbose_name = "История заказов"
-        verbose_name_plural = "История заказов"
-
-
 """
 Заказы
 """
@@ -193,6 +159,8 @@ class Orders(models.Model):
     address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
                                 verbose_name='Адрес доставки')
     paid = models.BooleanField(default=False, verbose_name='Статус оплаты')
+    number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
+    delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
     status = models.CharField(
         max_length=100,
         verbose_name='Статус заказ',
@@ -214,6 +182,12 @@ class Orders(models.Model):
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
+    def masking_cart(self):
+        return str(self.number_card)[-4:].rjust(len(str(self.number_card)), "*")
+
+    def total_amount(self):
+        return sum(item.get_cost() for item in self.items.all()) + self.delivery
+
     class Meta:
         verbose_name = 'Заказы'
         verbose_name_plural = 'Заказы'
@@ -232,3 +206,63 @@ class Order_Items(models.Model):
 
     def get_cost(self):
         return self.price * self.quantity
+
+
+"""
+История заказов
+"""
+
+
+class Purchase_History(models.Model):
+    STATUS_DELIVERED = 'Доставлен'
+    STATUS_IN_PROGRESS = 'Обрабатывается складом'
+    STATUS_SENT_FOR_DELIVERY = 'Передан в доставку'
+
+    BUYING_TYPE_SELF = 'Самовывоз'
+    BUYING_TYPE_DELIVERY = 'Доставка'
+
+    STATUS_CHOICES = (
+        (STATUS_DELIVERED, 'Доставлен'),
+        (STATUS_IN_PROGRESS, 'Обрабатывается складом'),
+        (STATUS_SENT_FOR_DELIVERY, 'Передан в доставку'),
+    )
+    online = 'Онлайн покупка'
+    offline = 'Оффлайн покупка'
+
+    PURCHASE_CHOICES = (
+        (online, 'Онлайн покупка'),
+        (offline, 'Оффлайн покупка'),
+    )
+    customer = models.ForeignKey('Users', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                 verbose_name='Заказчик')
+    date = models.DateField(verbose_name='Дата доставки')
+    address = models.ForeignKey('Delivery_Addresses', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+                                verbose_name='Адрес доставки')
+    online_or_offline = models.CharField(choices=PURCHASE_CHOICES, default=online,
+                                                         verbose_name='Онлайн/Оффлайн', max_length=100)
+    number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
+    purchase_amount = models.IntegerField(default=0, null=True, verbose_name='Сумма покупки')
+    delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
+    #product = models.ManyToManyField(Product, blank=True, verbose_name='Товар')
+    total_products = models.PositiveIntegerField(default=0, verbose_name='Количество товара')
+    status = models.CharField(
+        max_length=100,
+        verbose_name='Статус заказ',
+        choices=STATUS_CHOICES,
+        default=STATUS_IN_PROGRESS,
+    )
+    order = models.ForeignKey(Orders, blank=True, verbose_name='Заказы', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return str(self.address)
+
+    def masking_cart(self):
+        return str(self.number_card)[-4:].rjust(len(str(self.number_card)), "*")
+
+    def total_amount(self):
+        return self.purchase_amount + self.delivery
+
+    class Meta:
+        verbose_name = "История заказов"
+        verbose_name_plural = "История заказов"
+

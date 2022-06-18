@@ -1,3 +1,4 @@
+from itertools import product
 from django.shortcuts import render, get_object_or_404
 
 from django.views import View
@@ -230,7 +231,7 @@ class Users_Lk_Page(View):
             floor = request.POST.get('floor')
             apartment_or_office = request.POST.get('apartment_or_office')
             try:
-                Delivery_Addresses.objects.create(
+                Delivery_Addresses.objects.update_or_create(
                     recipient=user,
                     city=city,
                     street=street,
@@ -369,10 +370,89 @@ class Basket_Page(View):
 
 
 class Users_Orders_History(View):
+    success_message = 'Вам на почту отправлена ссылка на изменение пароля'
+    error_message = 'Что-то пошло не так, письмо не было отправлено'
+
+    success_message_add_adresses = "Адрес доставки успешно добавлен"
+    error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
 
     def get(self, request, *args, **kwargs):
 
-        return render(request, 'user_history_orders.html')
+        products = []
+        orders_history = Orders.objects.filter(recipient=request.user)
+        for i in orders_history:
+            product_quantity = Order_Items.objects.filter(order__id=i.id)
+            products.append(product_quantity)
+        context = {
+            'orders_history': orders_history,
+            'products': products,
+        }
+
+        return render(request, 'user_history_orders.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+
+        products = []
+        orders_history = Orders.objects.filter(recipient=request.user)
+        for i in orders_history:
+            product_quantity = Order_Items.objects.filter(order__id=i.id)
+            products.append(product_quantity)
+        context = {
+            'orders_history': orders_history,
+            'products': products,
+        }
+
+        if request.POST.get('change_name'):
+            try:
+                username = Users.objects.get(username=request.user)
+                username.username = request.POST.get('change_name')
+                username.save()
+                messages.success(request, 'Вы успешно сменили имя на {}'.format(request.POST.get('change_name')))
+            except:
+                messages.error(request, 'Что-то пошло не так, попробуйте снова')
+
+        elif request.POST.get('acсount-email'):
+
+            mail = request.POST.get('acсount-email')
+            message = render_to_string('password_reset_email.html', {
+                'user': user,
+                'domain': '127.0.0.1:8000',
+            })
+            try:
+                messages.success(request, self.success_message)
+                send_mail(
+                    'Изменение пароля на сайте Beauty Force',
+                    message,
+                    'reg@beforce.ru',
+                    [mail],
+                    fail_silently=False,
+                )
+            except:
+                messages.error(request, self.error_message)
+
+        elif request.POST.get('city'):
+
+            city = request.POST.get('city')
+            street = request.POST.get('street')
+            home = request.POST.get('home')
+            entrance = request.POST.get('entrance')
+            floor = request.POST.get('floor')
+            apartment_or_office = request.POST.get('apartment_or_office')
+            try:
+                Delivery_Addresses.objects.update_or_create(
+                    recipient=request.user,
+                    city=city,
+                    street=street,
+                    home=home,
+                    entrance=entrance,
+                    floor=floor,
+                    apartment_or_office=apartment_or_office
+                )
+                messages.success(request, self.success_message_add_adresses)
+            except:
+                messages.error(request, self.error_message_add_adresses)
+
+        return render(request, 'user_history_orders.html', context=context)
 
 
 def activate(request, uidb64, token):
