@@ -1832,9 +1832,9 @@
                         <button type="button" class="btn btn-modal" data-toggle="modal" data-target="#addAdress">
                             <i class="fa fa-plus" aria-hidden="true"></i> Добавить адрес
                         </button>
-                        <button type="button" class="btn btn-modal">
+                        <!--<button type="button" class="btn btn-modal">
                             <i class="fa fa-cog" aria-hidden="true"></i> Перейти к расширенным настройкам
-                        </button>
+                        </button>-->
 				</div>
 
 			</div>
@@ -1853,6 +1853,23 @@
                   <div class="card-body">
                       {% if orders_history == None %}
                         <h4 class="modal-title modal-title-acount">У Вас пока нет ни одного заказа</h4>
+					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
+					</nav>
+					<div class="card-group">
+					  <div class="card">
+						<div class="card-body-brand">
+					  </div>
+					  <div class="card-order">
+					  </div>
+					</div>
+                        <div id="carouselcard" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
                       {% else %}
                       <h4 class="modal-title modal-title-acount">Ваш послений заказ</h4>
 					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
@@ -1887,12 +1904,11 @@
                         <div id="carouselcard" class="carousel slide" data-ride="carousel">
                           <div class="carousel-inner">
                               {% for item in products %}
-                                {# for product_carousel in item #}
                                     {% if forloop.counter == 1  %}
                                         <div class="carousel-item carousel-item-order active">
                                             {% else %}
                                             <div class="carousel-item carousel-item-order">
-                                                {% endif %}
+                                            {% endif %}
                                             <div class="card-group">
                                               <div class="card card-carousel">
                                                   <img class="orders-img" src="{{ item.product.image.url }}" alt="Card image cap">
@@ -1903,7 +1919,6 @@
                                               </div>
                                             </div>
                                         </div>
-                                        {# endfor #}
                                     {% endfor %}
                                     </div>
                                 </div>
@@ -1914,7 +1929,6 @@
                           </button>
                         </div>
                   </div>
-
                         <button onclick="location.href='{% url 'orders_history' %}'" type="button" class="btn btn-modal">
                             <i class="fa fa-truck" aria-hidden="true"></i> Посмотреть все заказы
                         </button>
@@ -1923,7 +1937,7 @@
                     </div>
                 </div>
 
-            <div class="modal center fade" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
+            <div class="modal fade" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
