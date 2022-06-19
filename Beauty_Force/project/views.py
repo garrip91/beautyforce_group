@@ -145,11 +145,65 @@ class Users_Lk_Page(View):
         sale = current_user.discount_percentage + 1
 
         products = []
-        orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
-        product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
-        for i in product_quantity:
-            product_quantity = Order_Items.objects.filter(order__id=i.id)
-            products.append(product_quantity)
+        try:
+            orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
+            product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
+        except:
+            orders_history = None
+            product_quantity = None
+
+
+
+        if current_user.discount_percentage == 5:
+            sale = 5
+
+        if total_amount < 50000:
+            total_amount_all_percent = 50000 - total_amount
+        elif 50000 <= total_amount < 100000:
+            total_amount_all_percent = 100000 - total_amount
+        elif 100000 <= total_amount < 150000:
+            total_amount_all_percent = 150000 - total_amount
+        elif 150000 <= total_amount < 200000:
+            total_amount_all_percent = 200000 - total_amount
+        elif 200000 <= total_amount < 250000:
+            total_amount_all_percent = 250000 - total_amount
+        elif total_amount >= 250000:
+            total_amount_all_percent = total_amount
+
+        context = {
+            'sale': sale,
+            'total_amount_all_percent': total_amount_all_percent,
+            'HARUHARU_WONDER': self.HARUHARU_WONDER,
+            'DR_GLODERM': self.DR_GLODERM,
+            'add_to_cart': self.add_to_cart,
+            'orders_history': orders_history,
+            'products': product_quantity,
+        }
+        return render(
+            request,
+            'users_lk.html',
+            context=context
+        )
+
+    def post(self, request, product_id, *args, **kwargs):
+
+        user = Users.objects.get(username=request.user)
+        current_user = Users.objects.get(username=request.user)
+        total_amount = current_user.total_amount_of_orders
+        total_amount_all_percent = 0
+        sale = current_user.discount_percentage + 1
+        products = []
+
+        try:
+            orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
+            product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
+            for i in product_quantity:
+                product_quantity = Order_Items.objects.filter(order__id=i.id)
+                products.append(product_quantity)
+        except:
+            orders_history = None
+            product_quantity = None
+
         if current_user.discount_percentage == 5:
             sale = 5
 
@@ -174,43 +228,6 @@ class Users_Lk_Page(View):
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
             'products': products,
-        }
-        return render(
-            request,
-            'users_lk.html',
-            context=context
-        )
-
-    def post(self, request, product_id, *args, **kwargs):
-
-        user = Users.objects.get(username=request.user)
-        current_user = Users.objects.get(username=request.user)
-        total_amount = current_user.total_amount_of_orders
-        total_amount_all_percent = 0
-        sale = current_user.discount_percentage + 1
-
-        if current_user.discount_percentage == 5:
-            sale = 5
-
-        if total_amount < 50000:
-            total_amount_all_percent = 50000 - total_amount
-        elif 50000 <= total_amount < 100000:
-            total_amount_all_percent = 100000 - total_amount
-        elif 100000 <= total_amount < 150000:
-            total_amount_all_percent = 150000 - total_amount
-        elif 150000 <= total_amount < 200000:
-            total_amount_all_percent = 200000 - total_amount
-        elif 200000 <= total_amount < 250000:
-            total_amount_all_percent = 250000 - total_amount
-        elif total_amount >= 250000:
-            total_amount_all_percent = total_amount
-
-        context = {
-            'sale': sale,
-            'total_amount_all_percent': total_amount_all_percent,
-            'HARUHARU_WONDER': self.HARUHARU_WONDER,
-            'DR_GLODERM': self.DR_GLODERM,
-            'add_to_cart': self.add_to_cart,
         }
 
         if request.POST.get('acсount-email'):
@@ -239,7 +256,7 @@ class Users_Lk_Page(View):
             floor = request.POST.get('floor')
             apartment_or_office = request.POST.get('apartment_or_office')
             try:
-                Delivery_Addresses.objects.update_or_create(
+                Delivery_Addresses.objects.update(
                     recipient=user,
                     city=city,
                     street=street,
@@ -250,7 +267,16 @@ class Users_Lk_Page(View):
                 )
                 messages.success(request, self.success_message_add_adresses)
             except:
-                messages.error(request, self.error_message_add_adresses)
+                Delivery_Addresses.objects.create(
+                    recipient=user,
+                    city=city,
+                    street=street,
+                    home=home,
+                    entrance=entrance,
+                    floor=floor,
+                    apartment_or_office=apartment_or_office
+                )
+                # messages.error(request, self.error_message_add_adresses)
 
         return render(
             request,

@@ -1801,6 +1801,7 @@
 </div>
 </div>
 </footer>
+
     <div class="modal left fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="settingsLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content modal-content-acount">
@@ -1850,6 +1851,9 @@
 				<div class="modal-body">
                 <div class="card">
                   <div class="card-body">
+                      {% if orders_history == None %}
+                        <h4 class="modal-title modal-title-acount">У Вас пока нет ни одного заказа</h4>
+                      {% else %}
                       <h4 class="modal-title modal-title-acount">Ваш послений заказ</h4>
 					<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
 						<p class="d-flex justify-content-start date_and_price" style="width: 100%">
@@ -1883,7 +1887,7 @@
                         <div id="carouselcard" class="carousel slide" data-ride="carousel">
                           <div class="carousel-inner">
                               {% for item in products %}
-                                {% for product_carousel in item %}
+                                {# for product_carousel in item #}
                                     {% if forloop.counter == 1  %}
                                         <div class="carousel-item carousel-item-order active">
                                             {% else %}
@@ -1891,15 +1895,15 @@
                                                 {% endif %}
                                             <div class="card-group">
                                               <div class="card card-carousel">
-                                                  <img class="orders-img" src="{{ product_carousel.product.image.url }}" alt="Card image cap">
+                                                  <img class="orders-img" src="{{ item.product.image.url }}" alt="Card image cap">
                                                 <div class="card-body-brand">
-                                                  <p class="item-header-order-history">{{ product_carousel.product.title }}</p>
-                                                  <p class="item-header-order-1-history">{{ product_carousel.product.price }} ₽ <span class="item-header-order-1-history-1"> x{{ item.quantity }}</span></p>
+                                                  <p class="item-header-order-history">{{ item.product.title }}</p>
+                                                  <p class="item-header-order-1-history">{{ item.price }} ₽ <span class="item-header-order-1-history-1"> x{{ item.quantity }}</span></p>
                                                 </div>
                                               </div>
                                             </div>
                                         </div>
-                                        {% endfor %}
+                                        {# endfor #}
                                     {% endfor %}
                                     </div>
                                 </div>
@@ -1910,52 +1914,55 @@
                           </button>
                         </div>
                   </div>
+
                         <button onclick="location.href='{% url 'orders_history' %}'" type="button" class="btn btn-modal">
                             <i class="fa fa-truck" aria-hidden="true"></i> Посмотреть все заказы
                         </button>
+                    {% endif %}
+                    </div>
+                    </div>
                 </div>
-				</div>
-			</div>
-            <div class="modal" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title modal-title-acount-1">Добавление адреса</h4>
-                        <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="update-info" name="update-info" action="" method="POST" role="form">
-                          {% csrf_token %}
-                          <div class="form-group">
-                            <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
+
+            <div class="modal center fade" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title modal-title-acount-1">Добавление адреса</h4>
+                      <button type="button" class="close-acount-1" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="update-info" name="update-info" action="" method="POST" role="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <input type="text" class="form-control-acount-1" name="city" placeholder="Город">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
                           </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control-acount-1" name="street" placeholder="Улица">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
                           </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control-acount-1" name="home" placeholder="Дом">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control-acount-1" name="entrance" placeholder="Подъезд">
-                            </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
                           </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control-acount-1" name="floor" placeholder="Этаж">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
-                            </div>
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control-acount-1" name="apartment_or_office" placeholder="Квартира/Офис">
                           </div>
-                            <div class="text-center">
-                          <button type="submit" class="btn register-button-acount-1">Добавить адрес</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                          <div class="text-center">
+                        <button type="submit" class="btn register-button-acount-1">Добавить адрес</button>
+                          </div>
+                      </form>
                   </div>
                 </div>
-            </div>
+              </div>
+          </div>
 
 {% if messages %}
     {% for msg in messages %}
@@ -1982,20 +1989,20 @@
         {% endfor %}
     {% endif %}
     <div class="modal fade" tabindex="-1" id="add_to_cart_modal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                <div class="text-center p-t-30">
-                    <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
-                    <span class="modal-text">
-                        Товар успешно добавлен в корзину
-                    </span>
-                </div>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                    <div class="text-center p-t-30">
+                        <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+                        <span class="modal-text">
+                            Товар успешно добавлен в корзину
+                        </span>
+                    </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
-          </div>
-        </div>
-      </div>
     </div>
 {% endblock content %}
