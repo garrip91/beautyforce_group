@@ -18,6 +18,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
+                        {% if orders_history == None %}
+                            <p class="p-4 text-center">
+                                У Вас пока нет заказов
+                            </p>
+                        {% else %}
                       {% for history in orders_history %}
                 <div class="card card-order-history">
                   <div class="card-body">
@@ -79,10 +84,12 @@
                 </div>
               </div>
               {% endfor %}
+                {% endif %}
             </div>
                 </div>
             </div>
         </div>
+
         </section>
         <section class="ftco-section">
           <div class="container">
@@ -95,6 +102,7 @@
                   </div>
           </div>
       </section>
+
         <section class="ftco-section">
           <div class="container d-flex justify-content-center">
               <div class="row">

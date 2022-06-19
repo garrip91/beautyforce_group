@@ -406,9 +406,12 @@ class Users_Orders_History(View):
 
         products = []
         orders_history = Orders.objects.filter(recipient=request.user)
-        for i in orders_history:
-            product_quantity = Order_Items.objects.filter(order__id=i.id)
-            products.append(product_quantity)
+        if not orders_history:
+            orders_history = None
+        else:
+            for i in orders_history:
+                product_quantity = Order_Items.objects.filter(order__id=i.id)
+                products.append(product_quantity)
         context = {
             'orders_history': orders_history,
             'products': products,
