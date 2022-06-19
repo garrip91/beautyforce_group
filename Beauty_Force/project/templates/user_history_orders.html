@@ -83,14 +83,16 @@
                   </div>
                 </div>
               </div>
-              {% endfor %}
-                {% endif %}
+                {% endfor %}
             </div>
+
+
                 </div>
+                    {% endif %}
             </div>
         </div>
-
         </section>
+
         <section class="ftco-section">
           <div class="container">
               <div class="row">
@@ -135,7 +137,7 @@
                       <div class="card">
                         <div class="card-body card-history">
                           <h5 class="card-title">Адрес<br> доставки</h5>
-                          <button type="button " class="btn btn-modal-history" data-toggle="modal" data-target="#addAdress">
+                          <button type="button" class="btn btn-modal-history" data-toggle="modal" data-target="#addAdress">
                             <i class="fa fa-plus" aria-hidden="true"></i> Добавить адрес
                         </button>
                         </div>
@@ -186,18 +188,38 @@
                 </div>
               </div>
           </div>
-
- {% if messages %}
-	<div class="modal fade" id="changeName" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+{% if messages %}
+    {% for msg in messages %}
+        {% if msg.message == '1' %}
+            {% else %}
+                <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                    <div class="text-center p-t-30">
+                                        <h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
+                                        <span class="modal-text">
+                                                {{msg.message}}
+                                        </span>
+                                    </div>
+                            </div>
+                          <div class="modal-footer d-flex justify-content-center">
+                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+	<div class="modal fade" tabindex="-1" id="changeName">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
 						<div class="text-center p-t-30">
 							<h5><img src="{% static 'images/modal-vector.png' %}"  alt=""></h5>
 							<span class="modal-text">
-								{% for msg in messages %}
-									{{ msg.message }}
-								{% endfor %}
+                                Вы успешно изменили имя
 							</span>
 						</div>
 				</div>
@@ -207,5 +229,4 @@
 			</div>
 		</div>
 	</div>
-	{% endif %}
 {% endblock content %}

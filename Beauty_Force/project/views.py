@@ -189,7 +189,6 @@ class Users_Lk_Page(View):
         total_amount_all_percent = 0
         sale = current_user.discount_percentage + 1
         products = []
-
         try:
             orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
             product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
@@ -269,7 +268,7 @@ class Users_Lk_Page(View):
                     floor=floor,
                     apartment_or_office=apartment_or_office
                 )
-                # messages.error(request, self.error_message_add_adresses)
+                messages.success(request, self.success_message_add_adresses)
 
         return render(
             request,
@@ -423,9 +422,12 @@ class Users_Orders_History(View):
 
         products = []
         orders_history = Orders.objects.filter(recipient=request.user)
-        for i in orders_history:
-            product_quantity = Order_Items.objects.filter(order__id=i.id)
-            products.append(product_quantity)
+        if not orders_history:
+            orders_history = None
+        else:
+            for i in orders_history:
+                product_quantity = Order_Items.objects.filter(order__id=i.id)
+                products.append(product_quantity)
         context = {
             'orders_history': orders_history,
             'products': products,
@@ -436,7 +438,9 @@ class Users_Orders_History(View):
                 username = Users.objects.get(username=request.user)
                 username.username = request.POST.get('change_name')
                 username.save()
-                messages.success(request, 'Вы успешно сменили имя на {}'.format(request.POST.get('change_name')))
+                messages.success(request, 'Вы успешно сменили имя')
+                return HttpResponseRedirect('/personal_account/orders_history/')
+
             except:
                 messages.error(request, 'Что-то пошло не так, попробуйте снова')
 
@@ -444,7 +448,7 @@ class Users_Orders_History(View):
 
             mail = request.POST.get('acсount-email')
             message = render_to_string('password_reset_email.html', {
-                'user': user,
+                'user': request.user,
                 'domain': '127.0.0.1:8000',
             })
             try:
@@ -467,19 +471,34 @@ class Users_Orders_History(View):
             entrance = request.POST.get('entrance')
             floor = request.POST.get('floor')
             apartment_or_office = request.POST.get('apartment_or_office')
-            try:
-                Delivery_Addresses.objects.update_or_create(
-                    recipient=request.user,
-                    city=city,
-                    street=street,
-                    home=home,
-                    entrance=entrance,
-                    floor=floor,
-                    apartment_or_office=apartment_or_office
-                )
-                messages.success(request, self.success_message_add_adresses)
-            except:
-                messages.error(request, self.error_message_add_adresses)
+            delivery_addresses = Delivery_Addresses.objects.get(recipient=request.user)
+            if not delivery_addresses:
+                try:
+                    Delivery_Addresses.objects.create(
+                        recipient=request.user,
+                        city=city,
+                        street=street,
+                        home=home,
+                        entrance=entrance,
+                        floor=floor,
+                        apartment_or_office=apartment_or_office
+                    )
+                    messages.success(request, self.success_message_add_adresses)
+                except:
+                    messages.error(request, self.error_message_add_adresses)
+            else:
+                try:
+                    delivery_addresses.recipient = request.user
+                    delivery_addresses.city = city
+                    delivery_addresses.street = street
+                    delivery_addresses.home = home
+                    delivery_addresses.entrance = entrance
+                    delivery_addresses.floor = floor
+                    delivery_addresses.apartment_or_office = apartment_or_office
+                    delivery_addresses.save()
+                    messages.success(request, self.success_message_add_adresses)
+                except:
+                    messages.error(request, self.error_message_add_adresses)
 
         return render(request, 'user_history_orders.html', context=context)
 
