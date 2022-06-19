@@ -143,16 +143,12 @@ class Users_Lk_Page(View):
         total_amount = current_user.total_amount_of_orders
         total_amount_all_percent = 0
         sale = current_user.discount_percentage + 1
-
-        products = []
         try:
             orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
             product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
         except:
             orders_history = None
             product_quantity = None
-
-
 
         if current_user.discount_percentage == 5:
             sale = 5
@@ -197,9 +193,6 @@ class Users_Lk_Page(View):
         try:
             orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
             product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
-            for i in product_quantity:
-                product_quantity = Order_Items.objects.filter(order__id=i.id)
-                products.append(product_quantity)
         except:
             orders_history = None
             product_quantity = None
@@ -227,7 +220,7 @@ class Users_Lk_Page(View):
             'DR_GLODERM': self.DR_GLODERM,
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
-            'products': products,
+            'products': product_quantity,
         }
 
         if request.POST.get('acсount-email'):
