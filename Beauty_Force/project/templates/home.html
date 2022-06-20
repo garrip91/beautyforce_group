@@ -2,24 +2,41 @@
 <html lang="en">
     {% load static %}
   <head>
-  	 <title>{% block title %} Главная страница {% endblock %}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/brands.css' %}">
-	<link rel="stylesheet" href="{% static 'css/brand.css' %}">
-	<link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-	<link rel="stylesheet" href="{% static 'css/catalog_item.css' %}">
-	<link rel="stylesheet" href="{% static 'css/partner.css' %}">
-	<link rel="stylesheet" href="{% static 'css/press.css' %}">
-	<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
-	<link rel="stylesheet" href="{% static 'css/register_and_login.css' %}">
-	<link rel="stylesheet" href="{% static 'css/basket.css' %}">
-	  <link rel="stylesheet" href="{% static 'css/acounts.css' %}">
-	  <link rel="stylesheet" href="{% static 'css/orders_history.css' %}">
+	<title>{% block title %} Главная страница {% endblock %}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	  	<!-- CSS Block -->
+
+	  	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/brands.css' %}">
+		<link rel="stylesheet" href="{% static 'css/brand.css' %}">
+		<link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+		<link rel="stylesheet" href="{% static 'css/catalog_item.css' %}">
+		<link rel="stylesheet" href="{% static 'css/partner.css' %}">
+		<link rel="stylesheet" href="{% static 'css/press.css' %}">
+		<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+		<link rel="stylesheet" href="{% static 'css/register_and_login.css' %}">
+		<link rel="stylesheet" href="{% static 'css/basket.css' %}">
+		<link rel="stylesheet" href="{% static 'css/acounts.css' %}">
+		<link rel="stylesheet" href="{% static 'css/orders_history.css' %}">
+		<script src="{% static 'js/popper.js' %}"></script>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+
+	  	<!-- JS Block -->
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/video_slider.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/b2b_form.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/comments-slider.js' %}"></script>
+		<!--<script type="text/javascript" src="{% static 'js/addCart.js' %}"></script>-->
+		<script type="text/javascript" src="{% static 'js/changeName.js' %}"></script>
+		<script src="https://malsup.github.io/jquery.form.js"></script>
+
   </head>
 	<body>
 		<!-- Navbar -->
@@ -709,18 +726,6 @@
 	</div>
 	{% endif %}
 		{% endblock content %}
-		<script src="{% static 'js/popper.js' %}"></script>
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/video_slider.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/b2b_form.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/comments-slider.js' %}"></script>
-	<!--<script type="text/javascript" src="{% static 'js/addCart.js' %}"></script>-->
-	<script type="text/javascript" src="{% static 'js/changeName.js' %}"></script>
-	<script src="https://malsup.github.io/jquery.form.js"></script>
 	<script>
 	$(document).ready(function() {
 		$("#messagesModal").modal("show");

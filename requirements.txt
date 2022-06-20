@@ -4,3 +4,4 @@ django-phonenumber-field==6.1.0
 phonenumbers==8.12.49
 python-dotenv==0.20.0
 six==1.16.0
+simplejson==3.17.6

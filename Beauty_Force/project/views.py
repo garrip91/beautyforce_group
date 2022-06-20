@@ -25,7 +25,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from django.template.loader import render_to_string
 
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
@@ -34,6 +34,8 @@ from .forms import *
 from .models import *
 from .token import *
 from .mixins import *
+
+import simplejson
 
 
 class Main_Page(View):
@@ -136,6 +138,7 @@ class Users_Lk_Page(View):
 
     HARUHARU_WONDER = Product.objects.filter(brand=2)
     DR_GLODERM = Product.objects.filter(brand=1)
+    all_products = Product.objects.all()
     add_to_cart = Add_To_Cart_Form
 
     def get(self, request, *args, **kwargs):
@@ -174,6 +177,7 @@ class Users_Lk_Page(View):
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
             'products': product_quantity,
+            'all_products': self.all_products,
         }
         return render(
             request,
@@ -220,6 +224,7 @@ class Users_Lk_Page(View):
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
             'products': product_quantity,
+            'all_products': self.all_products,
         }
 
         if request.POST.get('acсount-email'):
@@ -322,10 +327,18 @@ class Add_To_Cart(View):
         form = Add_To_Cart_Form(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            cart.add(product=product,
-                     quantity=cd['quantity'],
-                     update_quantity=cd['update'])
-        return HttpResponseRedirect('/personal_account/')
+            if cd['quantity'] > product.stock:
+                response = 'Извините, доступное количество товара для заказа {}'.format(product.stock)
+                return HttpResponse(simplejson.dumps({
+                    'response': response, 
+                    'result': 'error', 
+                    'product_id': product_id
+                    }), content_type='application/json')
+            else:
+                cart.add(product=product,
+                        quantity=cd['quantity'],
+                        update_quantity=cd['update'])
+                return HttpResponse(simplejson.dumps({'result': 'success'}))
 
 
 class Delete_From_Cart(View):
@@ -348,12 +361,18 @@ class Basket_Page(View):
     def get(self, request, *args, **kwargs):
         delivery = Delivery_Addresses.objects.get(recipient=request.user)
         cart = Cart_Mixin(request)
-        total_and_delivery_sum = delivery.delivery + cart.get_total_price()
+        if not cart:
+            cart = None
+            total_and_delivery_sum = 0
+        else:
+            total_and_delivery_sum = delivery.delivery + cart.get_total_price()
+        
         context = {
             'cart': cart,
             'delivery': delivery,
             'total_and_delivery_sum': total_and_delivery_sum,
         }
+ 
         return render(request, 'basket.html', context=context)
 
     def post(self, request, *args, **kwargs):
