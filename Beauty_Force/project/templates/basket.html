@@ -6,6 +6,11 @@
 	<section class="ftco-section">
         <div class="container" style="margin-top: 3rem; margin-bottom: 10rem;">
                     <div class="row">
+                      {% if cart == None %}
+                      <div class="col d-flex justify-content-center">
+                       <p class="p-4">Корзина пуста</p>
+                       </div>
+                      {% else %}
                         <div class="col-md-8 cart">
                             <div class="row">
                               {% for item in cart %}
@@ -21,8 +26,11 @@
                                 </div>
                                 {% endwith %}
                                 {% endfor %}
+                                {% endif %}
                             </div>
                         </div>
+                        {% if cart == None %}
+                        {% else %}
                         <div class="col-md-4 summary">
                             <hr>
                             <div class="row">
@@ -45,6 +53,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
     </section>
 <footer class="bg-light text-center text-lg-start footer-10">
   <div class="container">

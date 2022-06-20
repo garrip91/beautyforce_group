@@ -1,17 +1,17 @@
-		$(function() {
-			$(".ad_to_cart").submit(function(event) {
-				// Stop form from submitting normally
-				event.preventDefault();
-				var friendForm = $(this);
-				// Send the data using post
-				var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
-				// if success:
-				posting.done(function(data) {
-					$('#add_to_cart_modal').modal('show')
-				});
-				// if failure:
-				posting.fail(function(data) {
-					// 4xx or 5xx response, alert user about failure
-				});
-			});
-		});
+$(document).ready(function() {
+	$('#add_to_cart').ajaxForm({
+		dataType:  'json',
+		success:   processJson
+	});
+});
+function processJson(data, statusText, xhr, $form) {
+	if (data['result'] == 'success') {
+		 $('#add_to_cart')[0].reset();
+		 $('#add_to_cart_modal').modal('show');
+	}
+	else if (data['result'] == 'error') {
+		$('#add_to_cart')[0].reset();
+		$("#error_span").text(data['response']);
+		$('#add_to_cart_modal_error').modal('show');
+	}
+}
