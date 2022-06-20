@@ -136,10 +136,9 @@ class Users_Lk_Page(View):
     success_message_add_adresses = "Адрес доставки успешно добавлен"
     error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
 
-    HARUHARU_WONDER = Product.objects.filter(brand=2)
-    DR_GLODERM = Product.objects.filter(brand=1)
     all_products = Product.objects.all()
     add_to_cart = Add_To_Cart_Form
+    brands = Brands.objects.all()
 
     def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
@@ -172,12 +171,11 @@ class Users_Lk_Page(View):
         context = {
             'sale': sale,
             'total_amount_all_percent': total_amount_all_percent,
-            'HARUHARU_WONDER': self.HARUHARU_WONDER,
-            'DR_GLODERM': self.DR_GLODERM,
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
             'products': product_quantity,
             'all_products': self.all_products,
+            'brands': self.brands,
         }
         return render(
             request,
@@ -219,12 +217,11 @@ class Users_Lk_Page(View):
         context = {
             'sale': sale,
             'total_amount_all_percent': total_amount_all_percent,
-            'HARUHARU_WONDER': self.HARUHARU_WONDER,
-            'DR_GLODERM': self.DR_GLODERM,
             'add_to_cart': self.add_to_cart,
             'orders_history': orders_history,
             'products': product_quantity,
             'all_products': self.all_products,
+            'brands': self.brands,
         }
 
         if request.POST.get('acсount-email'):
@@ -330,14 +327,14 @@ class Add_To_Cart(View):
             if cd['quantity'] > product.stock:
                 response = 'Извините, доступное количество товара для заказа {}'.format(product.stock)
                 return HttpResponse(simplejson.dumps({
-                    'response': response, 
-                    'result': 'error', 
+                    'response': response,
+                    'result': 'error',
                     'product_id': product_id
-                    }), content_type='application/json')
+                }), content_type='application/json')
             else:
                 cart.add(product=product,
-                        quantity=cd['quantity'],
-                        update_quantity=cd['update'])
+                         quantity=cd['quantity'],
+                         update_quantity=cd['update'])
                 return HttpResponse(simplejson.dumps({'result': 'success'}))
 
 
@@ -366,13 +363,13 @@ class Basket_Page(View):
             total_and_delivery_sum = 0
         else:
             total_and_delivery_sum = delivery.delivery + cart.get_total_price()
-        
+
         context = {
             'cart': cart,
             'delivery': delivery,
             'total_and_delivery_sum': total_and_delivery_sum,
         }
- 
+
         return render(request, 'basket.html', context=context)
 
     def post(self, request, *args, **kwargs):

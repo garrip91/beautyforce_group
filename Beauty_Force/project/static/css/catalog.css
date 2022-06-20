@@ -13,7 +13,7 @@
 .p-catalog-brands{
     font-family: 'Futura PT';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 40px;
     line-height: 64px;
     text-transform: uppercase;
@@ -24,7 +24,7 @@
 .p-catalog-brands-category{
     font-family: 'Futura PT';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 24px;
     line-height: 31px;
     text-transform: uppercase;

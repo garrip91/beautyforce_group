@@ -6,7 +6,9 @@ from django.urls import reverse
 from django.utils import timezone
 
 """
+
 Пользователи
+
 """
 
 
@@ -36,7 +38,9 @@ class Users(AbstractUser):
 
 
 """
+
 Адреса доставки пользователей 
+
 """
 
 
@@ -63,7 +67,9 @@ class Delivery_Addresses(models.Model):
 
 
 """
+
 Название бренда
+
 """
 
 
@@ -79,7 +85,9 @@ class Brands(models.Model):
 
 
 """
+
 Категория товара
+
 """
 
 
@@ -96,7 +104,27 @@ class Category(models.Model):
 
 
 """
-Товар
+
+Линейки бестселлеров
+
+"""
+
+
+class Bestsellers_Line(models.Model):
+    line = models.CharField(max_length=200, verbose_name='Линейки бестселлеров')
+
+    def __str__(self):
+        return str(self.line)
+
+    class Meta:
+        verbose_name = "Линейки бестселлеров"
+        verbose_name_plural = "Линейки бестселлеров"
+
+
+"""
+
+Товары
+
 """
 
 
@@ -116,6 +144,9 @@ class Product(models.Model):
     mode_of_application = models.TextField(max_length=1000, null=True, verbose_name='Способ применения')
     compound = models.TextField(max_length=1000, null=True, verbose_name='Состав')
     precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности')
+    bestsellers_line = models.ForeignKey('Bestsellers_Line', on_delete=models.CASCADE, null=True, blank=True,
+                                         unique=False,
+                                         verbose_name='Линейка бестселлеров')
 
     def get_absolute_url(self):
         return reverse('catalog_item',
@@ -128,8 +159,11 @@ class Product(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
 
+
 """
+
 Заказы
+
 """
 
 
@@ -191,6 +225,13 @@ class Orders(models.Model):
     class Meta:
         verbose_name = 'Заказы'
         verbose_name_plural = 'Заказы'
+
+
+"""
+
+Заказы(Количество товара и тд)
+
+"""
 
 
 class Order_Items(models.Model):

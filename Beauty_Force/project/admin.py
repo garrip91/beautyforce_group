@@ -6,6 +6,7 @@ admin.site.register(Delivery_Addresses)
 admin.site.register(Brands)
 admin.site.register(Product)
 admin.site.register(Category)
+admin.site.register(Bestsellers_Line)
 
 
 class Order_Item_Inline(admin.TabularInline):
