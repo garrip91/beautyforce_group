@@ -36,6 +36,7 @@ from .token import *
 from .mixins import *
 
 import simplejson
+from decimal import Decimal
 
 
 class Main_Page(View):
@@ -376,6 +377,7 @@ class Basket_Page(View):
         cart = Cart_Mixin(request)
         recipient = request.user
         address = Delivery_Addresses.objects.get(recipient=recipient)
+        product = Product.objects.all()
         try:
             order = Orders.objects.create(
                 recipient=recipient,
@@ -391,6 +393,12 @@ class Basket_Page(View):
                     quantity=item['quantity']
                 )
 
+            for products in product:
+                for product_item in cart:
+                    if products.pk == product_item['product'].pk:
+                        print(products)
+                        products.stock = products.stock - product_item['quantity']
+                        products.save()
             send_mail(
                 'Заказ №{}'.format(order.id),
                 'Заказчик {}, телефон заказчика {}'.format(
@@ -401,7 +409,6 @@ class Basket_Page(View):
                 ['reg@beforce.ru'],
                 fail_silently=False,
             )
-
             cart.clear()
         except:
             messages.error(request, "Заказ не сформирован, попробуйте снова")

@@ -222,8 +222,109 @@
                                     {% endif %}
                                 {% endfor %}
                             </div>
+                            
+                            <div class="collapse" id="collapse-{{ brand.pk }}">
+                              <p class="p-catalog-brands-category" style="margin-top: 2rem;">
+                                  бестселлеры линейка 1
+                              </p>
+                            <div class="card-deck-category text-center">
+                                {% for products_all in all_products %}
+                                    {% if products_all.brand.id == brand.id %}
+                                        {% if products_all.bestsellers_line.id == 2 %}
+                                          <div class="card ">
+                                            <img class="card-img-top-catalog" src="{{ products_all.image.url }}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <a href="{{ products_all.get_absolute_url }}">
+                                                <h5 class="card-title-catalog">{{ products_all.title }}</h5>
+                                              </a>
+                                              <div class="quantity_inner">
+                                                <button type="button" class="b2b-btn-1" disabled>{{ products_all.price }} ₽</button>
+                                                <form action="{% url 'add_to_cart' products_all.id %}" method="post" id="add_to_cart{{ products_all.id }}">
+                                                  {% csrf_token %}
+                                                    {{ add_to_cart.quantity }}
+                                                    <button class="bt_plus">
+                                                      <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                  </button>
+                                              </form>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $('#add_to_cart{{ products_all.id }}').ajaxForm({
+                                                        dataType:  'json',
+                                                        success:   processJson
+                                                    });
+                                                });
+                                                function processJson(data, statusText, xhr, $form) {
+                                                    if (data['result'] == 'success') {
+                                                         $('#add_to_cart{{ products_all.id }}')[0].reset();
+                                                         $('#add_to_cart_modal').modal('show');
+                                                    }
+                                                    else if (data['result'] == 'error') {
+                                                        $('#add_to_cart{{ products_all.id }}')[0].reset();
+                                                        $("#error_span").text(data['response']);
+                                                        $('#add_to_cart_modal_error').modal('show');
+                                                    }
+                                                }
+                                            </script>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            </div>
+                            <div class="collapse" id="collapse-{{ brand.pk }}">
+                              <p class="p-catalog-brands-category" style="margin-top: 2rem;">
+                                  бестселлеры линейка 2
+                              </p>
+                            <div class="card-deck-category text-center">
+                                {% for products_all in all_products %}
+                                    {% if products_all.brand.id == brand.id %}
+                                        {% if products_all.bestsellers_line.id == 3 %}
+                                          <div class="card ">
+                                            <img class="card-img-top-catalog" src="{{ products_all.image.url }}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <a href="{{ products_all.get_absolute_url }}">
+                                                <h5 class="card-title-catalog">{{ products_all.title }}</h5>
+                                              </a>
+                                              <div class="quantity_inner">
+                                                <button type="button" class="b2b-btn-1" disabled>{{ products_all.price }} ₽</button>
+                                                <form action="{% url 'add_to_cart' products_all.id %}" method="post" id="add_to_cart{{ products_all.id }}">
+                                                  {% csrf_token %}
+                                                    {{ add_to_cart.quantity }}
+                                                    <button class="bt_plus">
+                                                      <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                  </button>
+                                              </form>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $('#add_to_cart{{ products_all.id }}').ajaxForm({
+                                                        dataType:  'json',
+                                                        success:   processJson
+                                                    });
+                                                });
+                                                function processJson(data, statusText, xhr, $form) {
+                                                    if (data['result'] == 'success') {
+                                                         $('#add_to_cart{{ products_all.id }}')[0].reset();
+                                                         $('#add_to_cart_modal').modal('show');
+                                                    }
+                                                    else if (data['result'] == 'error') {
+                                                        $('#add_to_cart{{ products_all.id }}')[0].reset();
+                                                        $("#error_span").text(data['response']);
+                                                        $('#add_to_cart_modal_error').modal('show');
+                                                    }
+                                                }
+                                            </script>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            </div>
                                   <div class="col text-center">
-                                    <button class="btn text-center" data-toggle="collapse" href="#{{ brand.brand_name }}" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                                    <button class="btn text-center" data-toggle="collapse" data-target="#collapse-{{ brand.pk }}" aria-expanded="false" aria-controls="collapse-{{ brand.pk }}"">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                             </div>
                   {% endfor %}
               </div>
@@ -429,9 +530,6 @@
                         <button type="button" class="btn btn-modal" data-toggle="modal" data-target="#addAdress">
                             <i class="fa fa-plus" aria-hidden="true"></i> Добавить адрес
                         </button>
-                        <!--<button type="button" class="btn btn-modal">
-                            <i class="fa fa-cog" aria-hidden="true"></i> Перейти к расширенным настройкам
-                        </button>-->
 				</div>
 
 			</div>
