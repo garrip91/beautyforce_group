@@ -4,7 +4,7 @@ from .models import *
 admin.site.register(Users)
 admin.site.register(Delivery_Addresses)
 admin.site.register(Brands)
-admin.site.register(Product)
+
 admin.site.register(Bestsellers_Line)
 
 
@@ -22,3 +22,14 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Orders, OrderAdmin)
+
+
+class Images_For_Product(admin.TabularInline):
+    model = Product_Images
+
+
+class PropsAdminImage(admin.ModelAdmin):
+    inlines = [Images_For_Product, ]
+
+
+admin.site.register(Product, PropsAdminImage)

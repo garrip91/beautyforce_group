@@ -290,8 +290,10 @@ class Catalog_Item(View):
 
     def get(self, request, title, slug, *args, **kwargs):
         product = get_object_or_404(Product, title=title, slug=slug)
+        product_images = Product_Images.objects.filter(product=product)
         context = {
             'product': product,
+            'product_images': product_images,
         }
         return render(request, 'catalog_item.html', context=context)
 

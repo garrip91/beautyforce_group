@@ -131,3 +131,61 @@
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 0.75rem; }
+
+
+.modal-price{
+    background: #1F1A3D;
+}
+
+.price-close {
+  float: right;
+  margin-left: auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 50px;
+  height: 50px;
+  line-height: 1;
+  background: #FFFFFF;
+  color: #1F1A3D;
+  text-shadow: 0 1px 0 #fff; }
+  .price-close:hover {
+    color: #1F1A3D;
+    text-decoration: none; }
+
+button.price-close {
+  padding: 0;
+  background-color: #FFFFFF;
+  border: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+
+  .modal-header .price-close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto; }
+
+.close-img{
+    margin-bottom: 0.5rem;
+}
+
+.modal-title-price{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.p-price{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #8F8C9E;
+}

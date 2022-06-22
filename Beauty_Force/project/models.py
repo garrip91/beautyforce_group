@@ -85,7 +85,6 @@ class Brands(models.Model):
         verbose_name_plural = "Бренды"
 
 
-
 """
 
 Линейки бестселлеров
@@ -117,7 +116,7 @@ class Product(models.Model):
     title = models.CharField(max_length=1000, null=True, verbose_name='Название товара')
     about = models.TextField(max_length=1000, null=True, verbose_name='Описание')
     hidden_description = models.TextField(max_length=1000, null=True, verbose_name='Скрытое описание')
-    image = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Фото товара')
+    image_for_cart = models.ImageField(blank=True, verbose_name='Картинка для корзины')
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Оптовая цена')
     retail_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Розничная цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
@@ -232,3 +231,15 @@ class Order_Items(models.Model):
 
     def get_cost(self):
         return self.price * self.quantity
+
+
+"""
+
+Изображения для товара
+
+"""
+
+
+class Product_Images(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Товар')
+    image = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Фото товара')

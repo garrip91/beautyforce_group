@@ -11,29 +11,28 @@
 				<div class="col-md-5">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
 						<div class="carousel-inner">
+							{% for product_image in product_images %}
+								{% if forloop.counter0 == 0  %}
 							<div class="carousel-item active">
-							<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
-						</div> <div class="carousel-item">
-							<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
-						</div>
+								{% else %}
 							<div class="carousel-item">
-								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="rounded">
+								{% endif %}
+								<img src="{{ product_image.image.url }}" class="rounded">
 							</div>
+							{% endfor %}
 						</div>
 						<ol class="carousel-indicators list-inline">
+							{% for product_image in product_images %}
+							{% if forloop.counter0 == 0  %}
 							<li class="list-inline-item active">
-								<a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-									<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
+								{% else %}
+								<li class="list-inline-item">
+								{% endif %}
+								<a id="carousel-selector-{{ forloop.counter0 }}" class="selected" data-slide-to="{{ forloop.counter0 }}" data-target="#myCarousel">
+									<img src="{{ product_image.image.url }}" class="img-fluid rounded">
 								</a>
 							</li>
-							<li class="list-inline-item"> <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
-								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
-							</a>
-							</li>
-							<li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
-								<img src="{% static 'images/catalog/Rectangle 22.png' %}" class="img-fluid rounded">
-							</a>
-							</li>
+							{% endfor %}
 						</ol>
 					</div>
 				</div>
@@ -66,7 +65,7 @@
 					  </button>
 					</p>
 					<div class="">
-						<button type="button" class="btn btn-circle btn-xl">запросить оптовый прайс-лист </button>
+						<button type="button" class="btn btn-circle btn-xl" data-toggle="modal" data-target="#staticBackdrop">запросить оптовый прайс-лист </button>
 						<button type="button" class="btn btn-circle-brands btn-xl-brands">купить в магазине {{ product.price }} ₽</button>
 					</div>
 						<div id="accordion" class="accordion accordion-item">
@@ -319,5 +318,40 @@
 	</div>
   </div>
 </footer>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-price">
+      <div class="modal-header">
+        <button type="button" class=" price-close" data-dismiss="modal" aria-label="Close">
+          <img class="close-img" src="{% static 'images/close.png' %}">
+        </button>
+      </div>
+      <div class="modal-body">
+		<div class="col d-flex justify-content-center">
+		  <form id="contact-form" class="form" action="#" method="POST" role="form">
+			  <h5 class="modal-title-price" id="staticBackdropLabel">Введите данные, чтобы <br>скачать прайс</h5>
+			  <div class="form-group">
+				  <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" tabindex="1" required>
+			  </div>
+			  <div class="form-group">
+				  <input type="email" class="form-control" id="email" name="email" placeholder="Контактное лицо" tabindex="2" required>
+			  </div>
+			  <div class="form-group">
+				  <input type="text" class="form-control" id="subject" name="subject" placeholder="Почта" tabindex="3">
+			  </div>
+			  <div class="form-group">
+				  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Компания" tabindex="4" required></textarea>
+			  </div>
+			  <div class="text-center">
+				  <button type="button" class="btn btn-circle btn-xl">Отправить</button>
+				<p class="p-price"> Нажимая кнопку, вы соглашаетесь<br> <span class="">с политикой конфиденциальности</span></p>
+			  </div>
+		  </form>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
