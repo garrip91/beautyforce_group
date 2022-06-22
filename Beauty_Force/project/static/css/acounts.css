@@ -601,6 +601,16 @@
     line-height: 150%;
     text-align: center;
     color: #1F1A3D;
+}
 
+.btn-telephone{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: #8F8C9E;
 
 }

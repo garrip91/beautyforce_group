@@ -39,15 +39,18 @@
 						  <p class="item-header-orders-1-green">{{ history.created_at }}</p>
                             <div class="btn-group dropright">
                               <button type="button" class="btn btn-toggle" data-toggle="dropdown" aria-expanded="false">
-                                {{ history.total_amount }} ₽ <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                {{ history.order_sum }} ₽ <i class="fa fa-caret-down" aria-hidden="true"></i>
                               </button>
                                 <div class="dropdown-menu text-muted dropdown-menu-history">
                                   <p class="item-header-card-order-user">Сумма</p>
-                                  <p class="item-header-card-order-user-1">{{ history.get_total_cost }} ₽</p>
+                                  <p class="item-header-card-order-user-1">{{ history.order_sum }} ₽</p>
                                   <p class="item-header-card-order-user">Доставка:</p>
                                   <p class="item-header-card-order-user-1">{{ history.delivery }} ₽</p>
                                 </div>
                             </div>
+                        <button type="button" class="btn btn-telephone" onclick="location.href='tel:+1234567890'">
+                            <img class="img-acount" src="{% static 'images/Vector_tel.png' %}"> Задать вопрос менеджеру
+                        </button>
 						  </div>
 					  </div>
 					  <div class="card">

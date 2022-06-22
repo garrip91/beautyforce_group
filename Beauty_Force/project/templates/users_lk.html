@@ -590,7 +590,7 @@
 							{{ orders_history.created_at }}
 						</p>
 						<p class="d-flex justify-content-end date_and_price" style="width: 100%">
-							{{ orders_history.total_amount }} ₽
+							{{ orders_history.order_sum }} ₽
 						</p>
 					</nav>
 					<div class="card-group">
@@ -608,7 +608,7 @@
 					  <div class="card-order">
 						<div class="card-body-brand">
 						  <p class="item-header-card-order">Сумма</p>
-						  <p class="item-header-text-order">{{ orders_history.get_total_cost }} ₽</p>
+						  <p class="item-header-text-order">{{ orders_history.order_sum }} ₽</p>
 						  <p class="item-header-card-order">Доставка:</p>
 						  <p class="item-header-text-order">{{ orders_history.delivery }} ₽</p>
 						</div>
@@ -640,15 +640,14 @@
                           <button class="carousel-control-next btn" type="button" data-target="#carouselcard" data-slide="next">
                               <img src="{% static 'images/chevron_right_black_24dp 1.png' %}" alt="...">
                           </button>
-                        </div>
-                  </div>
                         <button onclick="location.href='{% url 'orders_history' %}'" type="button" class="btn btn-modal">
                             <i class="fa fa-truck" aria-hidden="true"></i> Посмотреть все заказы
                         </button>
                     {% endif %}
                     </div>
-                    </div>
-                </div>
+    </div>
+</div>
+</div>
 
             <div class="modal fade" id="addAdress" tabindex="-1" role="dialog" aria-labelledby="upload-avatar-title" aria-hidden="true">
               <div class="modal-dialog" role="document">

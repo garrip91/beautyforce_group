@@ -179,6 +179,7 @@ class Orders(models.Model):
     paid = models.BooleanField(default=False, verbose_name='Статус оплаты')
     number_card = models.IntegerField(default=0, null=True, verbose_name='Номер карты')
     delivery = models.IntegerField(default=0, null=True, verbose_name='Сумма доставки')
+    order_sum = models.DecimalField(max_digits=10, default=0, decimal_places=2, verbose_name='Цена с учетом скидки')
     status = models.CharField(
         max_length=100,
         verbose_name='Статус заказ',

@@ -409,10 +409,13 @@ class Basket_Page(View):
         recipient = request.user
         address = Delivery_Addresses.objects.get(recipient=recipient)
         product = Product.objects.all()
+        total_and_delivery_sum = cart.get_total_price() * (100 - address.recipient.discount_percentage) / 100
         try:
             order = Orders.objects.create(
                 recipient=recipient,
-                address=address
+                address=address,
+                order_sum=total_and_delivery_sum,
+                delivery=address.delivery
             )
             order.save()
 
