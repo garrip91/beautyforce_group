@@ -125,7 +125,7 @@
                                                     <div class="progress-bar" role="progressbar" style="width: 82%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{ user.total_amount_of_orders }} ₽</div>
                                                     {% elif user.total_amount_of_orders >= 240001 and user.total_amount_of_orders < 250000 %}
                                                     <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{ user.total_amount_of_orders }} ₽</div>
-                                                    {% elif user.total_amount_of_orders == 250000 %}
+                                                    {% elif user.total_amount_of_orders >= 250000 %}
                                                     <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{ user.total_amount_of_orders }} ₽</div>
                                                     {% endif %}
                                                 </div>

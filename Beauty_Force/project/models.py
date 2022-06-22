@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from django.urls import reverse
 from django.utils import timezone
+from decimal import Decimal
 
 """
 
@@ -84,24 +85,6 @@ class Brands(models.Model):
         verbose_name_plural = "Бренды"
 
 
-"""
-
-Категория товара
-
-"""
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=200, verbose_name='Категория товара')
-    slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
-
-    def __str__(self):
-        return str(self.name)
-
-    class Meta:
-        verbose_name = "Категория товара"
-        verbose_name_plural = "Категории товара"
-
 
 """
 
@@ -135,7 +118,8 @@ class Product(models.Model):
     about = models.TextField(max_length=1000, null=True, verbose_name='Описание')
     hidden_description = models.TextField(max_length=1000, null=True, verbose_name='Скрытое описание')
     image = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Фото товара')
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Цена')
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Оптовая цена')
+    retail_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Розничная цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
     available = models.BooleanField(default=True, verbose_name='Доступность товара')
     slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
@@ -220,7 +204,7 @@ class Orders(models.Model):
         return str(self.number_card)[-4:].rjust(len(str(self.number_card)), "*")
 
     def total_amount(self):
-        return sum(item.get_cost() for item in self.items.all()) + self.delivery
+        return sum(item.get_cost() for item in self.items.all())
 
     class Meta:
         verbose_name = 'Заказы'

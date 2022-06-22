@@ -43,6 +43,10 @@
                                 <div><h5 class="basket-h5"><b>Итого</b></h5></div>
                                 <div class="col text-right"><h5 class="basket-h5-2"><b>{{ total_and_delivery_sum }} ₽</b></h5></div>
                             </div>
+                            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                                <div><h5 class="basket-h5"><b>Ваша скидка</b></h5></div>
+                                <div class="col text-right"><h5 class="basket-h5-2"><b>{{ sale }} ₽</b></h5></div>
+                            </div>
                             <form action="" method="post">
                                 {% csrf_token %}
                             <button type="submit" class="btn  btn-lg btn-block btn-basket">оформить заявку</button>

@@ -5,7 +5,6 @@ admin.site.register(Users)
 admin.site.register(Delivery_Addresses)
 admin.site.register(Brands)
 admin.site.register(Product)
-admin.site.register(Category)
 admin.site.register(Bestsellers_Line)
 
 

@@ -388,16 +388,18 @@ class Basket_Page(View):
     def get(self, request, *args, **kwargs):
         delivery = Delivery_Addresses.objects.get(recipient=request.user)
         cart = Cart_Mixin(request)
+        sale = cart.get_total_price() - (cart.get_total_price() * (100 - delivery.recipient.discount_percentage)/100)
         if not cart:
             cart = None
             total_and_delivery_sum = 0
         else:
-            total_and_delivery_sum = delivery.delivery + cart.get_total_price()
+            total_and_delivery_sum = delivery.delivery + (cart.get_total_price() * (100 - delivery.recipient.discount_percentage)/100)
 
         context = {
             'cart': cart,
             'delivery': delivery,
             'total_and_delivery_sum': total_and_delivery_sum,
+            'sale': sale,
         }
 
         return render(request, 'basket.html', context=context)
