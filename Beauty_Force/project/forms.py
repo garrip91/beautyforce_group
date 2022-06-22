@@ -141,3 +141,28 @@ class Add_To_Cart_Form(forms.Form):
             'quantity',
             'update',
         ]
+
+
+class Contact_Form(forms.Form):
+    telephone_number = forms.CharField(required=True,
+                                       widget=forms.TextInput(attrs={
+                                           'class': 'form-control',
+                                           'placeholder': "Телефон",
+                                           'tabindex': '1',
+                                           'id': 'telephone',
+                                           'name': 'telephone',
+                                       }))
+    name = forms.CharField(required=True,
+                           widget=forms.TextInput(attrs={
+                               'class': 'form-control',
+                               'placeholder': "Контактное лицо",
+                               'tabindex': '2',
+                               'id': 'name',
+                               'name': 'name',
+                           }))
+
+    class Meta:
+        fields = [
+            'telephone_number',
+            'name',
+        ]

@@ -139,6 +139,7 @@ class Users_Lk_Page(View):
     all_products = Product.objects.all()
     add_to_cart = Add_To_Cart_Form
     brands = Brands.objects.all()
+    contact_form = Contact_Form
 
     def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
@@ -176,6 +177,7 @@ class Users_Lk_Page(View):
             'products': product_quantity,
             'all_products': self.all_products,
             'brands': self.brands,
+            'contact_form': self.contact_form,
         }
         return render(
             request,
@@ -222,6 +224,7 @@ class Users_Lk_Page(View):
             'products': product_quantity,
             'all_products': self.all_products,
             'brands': self.brands,
+            'contact_form': self.contact_form,
         }
 
         if request.POST.get('acсount-email'):
@@ -243,12 +246,14 @@ class Users_Lk_Page(View):
                 messages.error(request, self.error_message)
 
         elif request.POST.get('city'):
+
             city = request.POST.get('city')
             street = request.POST.get('street')
             home = request.POST.get('home')
             entrance = request.POST.get('entrance')
             floor = request.POST.get('floor')
             apartment_or_office = request.POST.get('apartment_or_office')
+
             try:
                 Delivery_Addresses.objects.update(
                     recipient=user,
@@ -260,6 +265,7 @@ class Users_Lk_Page(View):
                     apartment_or_office=apartment_or_office
                 )
                 messages.success(request, self.success_message_add_adresses)
+
             except:
                 Delivery_Addresses.objects.create(
                     recipient=user,
@@ -353,6 +359,29 @@ class Delete_From_Cart(View):
         return HttpResponseRedirect('/basket/')
 
 
+class Contact_Us(View):
+
+    def post(self, request, *args, **kwargs):
+        form = Contact_Form(request.POST)
+        if form.is_valid():
+            try:
+                send_mail(
+                    'Заказ звонка на консультацию',
+                    'Контактное лицо {}, телефон {}'.format(
+                        form.cleaned_data['name'],
+                        form.cleaned_data['telephone_number'],
+                    ),
+                    'reg@beforce.ru',
+                    ['reg@beforce.ru'],
+                    fail_silently=False,
+                )
+                response = "Мы приняли Вашу заявку, скоро с Вами свяжется наш специалист"
+                return HttpResponse(simplejson.dumps({'result': 'success', 'response': response}))
+            except:
+                response = "Что-то пошло не так, попробуйте позднее"
+                return HttpResponse(simplejson.dumps({'result': 'error', 'response': response}))
+
+
 class Basket_Page(View):
 
     def get(self, request, *args, **kwargs):
@@ -376,6 +405,7 @@ class Basket_Page(View):
         cart = Cart_Mixin(request)
         recipient = request.user
         address = Delivery_Addresses.objects.get(recipient=recipient)
+        product = Product.objects.all()
         try:
             order = Orders.objects.create(
                 recipient=recipient,
@@ -391,6 +421,12 @@ class Basket_Page(View):
                     quantity=item['quantity']
                 )
 
+            for products in product:
+                for product_item in cart:
+                    if products.pk == product_item['product'].pk:
+                        print(products)
+                        products.stock = products.stock - product_item['quantity']
+                        products.save()
             send_mail(
                 'Заказ №{}'.format(order.id),
                 'Заказчик {}, телефон заказчика {}'.format(
@@ -401,7 +437,6 @@ class Basket_Page(View):
                 ['reg@beforce.ru'],
                 fail_silently=False,
             )
-
             cart.clear()
         except:
             messages.error(request, "Заказ не сформирован, попробуйте снова")
