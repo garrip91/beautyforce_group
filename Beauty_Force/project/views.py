@@ -36,6 +36,7 @@ from .token import *
 from .mixins import *
 
 import simplejson
+from decimal import Decimal
 
 
 class Main_Page(View):
