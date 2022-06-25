@@ -1,5 +1,5 @@
 {% extends  'home.html' %}
-{% block title %} Список брендов {% endblock %}
+{% block title %} Каталог {% endblock %}
 {% load static %}
 {% block content %}
 
@@ -15,7 +15,7 @@
 					</p>
 				</div>
 					<div class="">
-						<button type="button" class="btn btn-circle btn-xl">запросить оптовый прайс-лист </button>
+						<button type="button" class="btn btn-circle btn-xl" data-toggle="modal" data-target="#staticBackdrop">запросить оптовый прайс-лист </button>
 					</div>
 				</div>
         </div>
@@ -24,1150 +24,95 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
+					{% for brand in brands %}
 					<p class="p-catalog-brands">
-						dR. GLODERM
+						{{ brand.brand_name }}
 					</p>
 					<p class="p-catalog-brands-category">
 						бестселлеры
 					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+						<div class="card-deck-category">
+							{% for products_all in all_products %}
+								{% if products_all.brand.id == brand.id %}
+									{% if products_all.bestsellers_line.id == 1 %}
+									  <div class="card ">
+										<img class="card-img-top-catalog" src="{{ products_all.image.url }}" alt="Card image cap">
+										<div class="card-body">
+										  <a href="{{ products_all.get_absolute_url }}">
+											<h5 class="card-title-catalog">{{ products_all.title }}</h5>
+										  </a>
+										  {% if user.is_authenticated %}
+										  <p class="card-text">{{ products_all.price }} ₽</p>
+										  {% else %}
+										  <p class="card-text">{{ products_all.retail_price }} ₽</p>
+										  {% endif %}
+										</div>
+									  </div>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
 						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+						
+						<div class="collapse" id="collapse-{{ brand.pk }}">
+						  <p class="p-catalog-brands-category" style="margin-top: 2rem;">
+							  бестселлеры линейка 1
+						  </p>
+						<div class="card-deck-category">
+							{% for products_all in all_products %}
+								{% if products_all.brand.id == brand.id %}
+									{% if products_all.bestsellers_line.id == 2 %}
+									  <div class="card ">
+										<img class="card-img-top-catalog" src="{{ products_all.image.url }}" alt="Card image cap">
+										<div class="card-body">
+										  <a href="{{ products_all.get_absolute_url }}">
+											<h5 class="card-title-catalog">{{ products_all.title }}</h5>
+										  </a>
+										  {% if user.is_authenticated %}
+										  <p class="card-text">{{ products_all.price }} ₽</p>
+										  {% else %}
+										  <p class="card-text">{{ products_all.retail_price }} ₽</p>
+										  {% endif %}
+										</div>
+									  </div>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
 						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
 						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+						<div class="collapse" id="collapse-{{ brand.pk }}">
+						  <p class="p-catalog-brands-category" style="margin-top: 2rem;">
+							  бестселлеры линейка 2
+						  </p>
+						<div class="card-deck-category">
+							{% for products_all in all_products %}
+								{% if products_all.brand.id == brand.id %}
+									{% if products_all.bestsellers_line.id == 3 %}
+									  <div class="card ">
+										<img class="card-img-top-catalog" src="{{ products_all.image.url }}" alt="Card image cap">
+										<div class="card-body">
+										  <a href="{{ products_all.get_absolute_url }}">
+											<h5 class="card-title-catalog">{{ products_all.title }}</h5>
+										  </a>
+										  {% if user.is_authenticated %}
+										  <p class="card-text">{{ products_all.price }} ₽</p>
+										  {% else %}
+										  <p class="card-text">{{ products_all.retail_price }} ₽</p>
+										  {% endif %}
+										</div>
+									  </div>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
 						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="GLODERM">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
 						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+							  <div class="col text-center">
+								<button class="btn text-center" data-toggle="collapse" data-target="#collapse-{{ brand.pk }}" aria-expanded="false" aria-controls="collapse-{{ brand.pk }}"">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
 						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#GLODERM" role="button" aria-expanded="false" aria-controls="GLODERM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
+			  {% endfor %}
 			</div>
         </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						haruharu wonder
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="haruharu">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#haruharu" role="button" aria-expanded="false" aria-controls="haruharu">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						cellmiin
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="cellmiin">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#cellmiin" role="button" aria-expanded="false" aria-controls="cellmiin">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						1 Foundation
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="Foundation">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#Foundation" role="button" aria-expanded="false" aria-controls="Foundation">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						dearboo
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="dearboo">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#dearboo" role="button" aria-expanded="false" aria-controls="dearboo">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						Oattbe
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="Oattbe">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#Oattbe" role="button" aria-expanded="false" aria-controls="Oattbe">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						Foreverskin
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="Foreverskin">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#Foreverskin" role="button" aria-expanded="false" aria-controls="Foreverskin">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						CURE+
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="CURE">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#CURE" role="button" aria-expanded="false" aria-controls="CURE">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						Yejimiin
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="Yejimiin">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#Yejimiin" role="button" aria-expanded="false" aria-controls="Yejimiin">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						WELLA PROFESSIONALS
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="WELLA">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#WELLA" role="button" aria-expanded="false" aria-controls="WELLA">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						SEBMAN
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="SEBMAN">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#SEBMAN" role="button" aria-expanded="false" aria-controls="SEBMAN">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						SEBASTIAN PROFESSIONAL
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="SEBASTIAN">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#SEBASTIAN" role="button" aria-expanded="false" aria-controls="SEBASTIAN">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						SYSTEM PROFESSIONALS
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="SYSTEM">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#SYSTEM" role="button" aria-expanded="false" aria-controls="SYSTEM">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="p-catalog-brands">
-						SWAROVSKI
-					</p>
-					<p class="p-catalog-brands-category">
-						бестселлеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-					<div class="collapse" id="SWAROVSKI">
-					<p class="p-catalog-brands-category">
-						линейка 1 бестстеллеры
-					</p>
-					<div class="card-deck-category">
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-				</div>
-				</div>
-				</div>
-				<div class="col text-center">
-					<button class="btn text-center" data-toggle="collapse" href="#SWAROVSKI" role="button" aria-expanded="false" aria-controls="SWAROVSKI">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-				</div>
-			</div>
-        </div>
-    </section>
+		</div>
+	</section>
 </div>
 
 	<div class="section-7">
@@ -1206,24 +151,21 @@
 		  <div class="row">
 			  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
 				  <form id="contact-form" class="form" action="#" method="POST" role="form">
-					  <div class="form-group">
-						  <label class="form-label" for="name">Телефон</label>
-						  <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" tabindex="1" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="email">Контактное лицо</label>
-						  <input type="email" class="form-control" id="email" name="email" placeholder="Контактное лицо" tabindex="2" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="subject">Почта</label>
-						  <input type="text" class="form-control" id="subject" name="subject" placeholder="Почта" tabindex="3">
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="message">Компания</label>
-						  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Компания" tabindex="4" required></textarea>
-					  </div>
+					{% csrf_token %}
+					<div class="form-group">
+						{{ get_price.telephone_number }}
+					</div>
+					<div class="form-group">
+						{{ get_price.email }}
+					</div>
+					<div class="form-group">
+						{{ get_price.contact_name }}
+					</div>
+					<div class="form-group">
+						{{ get_price.company_name }}
+					</div>
 					  <div class="text-center">
-						<p class="p-form text-right"> <button type="button" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
+						<p class="p-form text-right"> <button type="submit" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
 					  </div>
 				  </form>
 			  </div>
@@ -1355,4 +297,81 @@
   </div>
 </footer>
 
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content modal-price">
+		<div class="modal-header">
+		  <button type="button" class=" price-close" data-dismiss="modal" aria-label="Close">
+			<img class="close-img" src="{% static 'images/close.png' %}">
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <div class="col d-flex justify-content-center">
+			<form id="contact-form" class="form" action="#" method="POST" role="form">
+			  {% csrf_token %}
+				<h5 class="modal-title-price" id="staticBackdropLabel">Введите данные, чтобы <br>скачать прайс</h5>
+				<div class="form-group">
+						{{ get_price.telephone_number }}
+				</div>
+				<div class="form-group">
+					  {{ get_price.email }}
+				</div>
+				<div class="form-group">
+					  {{ get_price.contact_name }}
+				</div>
+				<div class="form-group">
+				  {{ get_price.company_name }}
+				</div>
+				<div class="text-center">
+					<button type="submit" class="btn btn-circle btn-xl">Отправить</button>
+				  <p class="p-price"> Нажимая кнопку, вы соглашаетесь<br> <span class="">с политикой конфиденциальности</span></p>
+				</div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  {% if messages %}
+	  {% for msg in messages %}
+		  {% if msg.message == 'price' %}
+		  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content modal-price">
+					  <div class="modal-body">
+							  <div class="text-center p-t-30">
+								  <h5 style="padding-top: 2rem;"><img src="{% static 'images/done.png' %}"  alt=""></h5>
+								  <span class="modal-text">
+										  <span class="modal-price-done">Спасибо!</span><br><span class="modal-price-done-1">Данные успешно отправлены</span>
+								  </span>
+							  </div>
+					  </div>
+					<div class="modal-footer d-flex justify-content-center">
+					  <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+					</div>
+				  </div>
+			  </div>
+		  </div>
+			  {% else %}
+			  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+					  <div class="modal-content modal-price">
+						  <div class="modal-body">
+								  <div class="text-center p-t-30">
+									  
+									  <span class="modal-text">
+											  <span class="modal-price-done">{{ msg }}</span>
+									  </span>
+								  </div>
+						  </div>
+						<div class="modal-footer d-flex justify-content-center">
+						  <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+						</div>
+					  </div>
+				  </div>
+			  </div>
+			  {% endif %}
+		  {% endfor %}
+	  {% endif %}
 {% endblock content %}

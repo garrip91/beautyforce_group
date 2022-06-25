@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project.apps.ProjectConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -107,3 +108,5 @@ EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
 EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
 EMAIL_USE_TLS = str(os.getenv('EMAIL_USE_TLS'))
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
