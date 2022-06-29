@@ -32,6 +32,7 @@ from .mixins import *
 
 import simplejson
 
+
 class Main_Page(View):
 
     def get(self, request, *args, **kwargs):
@@ -61,7 +62,7 @@ class Main_Page(View):
                     [email],
                     fail_silently=False,
                 )
-                
+
                 send_mail(
                     'Заказ выгрузки прайса',
                     'Контактное лицо {}, телефон {}, компания {}'.format(
@@ -77,6 +78,8 @@ class Main_Page(View):
             except:
                 messages.error(request, "Что-то пошло не так, попробуйте снова.")
         return render(request, 'home.html', context=context)
+
+
 class Brands_Page(View):
 
     def get(self, request, *args, **kwargs):
@@ -84,7 +87,6 @@ class Brands_Page(View):
 
 
 class Catalog_Page(View):
-
     all_products = Product.objects.all()
     brands = Brands.objects.all()
     bestsellers_line = Bestsellers_Line.objects.all()[1:]
@@ -101,7 +103,7 @@ class Catalog_Page(View):
         return render(request, 'catalog.html', context=context)
 
     def post(self, request, *args, **kwargs):
-        
+
         form = Get_Price_Form(request.POST)
 
         context = {
@@ -110,7 +112,7 @@ class Catalog_Page(View):
             'brands': self.brands,
             'bestsellers_line': self.bestsellers_line,
         }
-       
+
         if form.is_valid():
             telephone_number = form.cleaned_data['telephone_number']
             email = form.cleaned_data['email']
@@ -126,7 +128,7 @@ class Catalog_Page(View):
                     [email],
                     fail_silently=False,
                 )
-                
+
                 send_mail(
                     'Заказ выгрузки прайса',
                     'Контактное лицо {}, телефон {}, компания {}'.format(
@@ -142,6 +144,7 @@ class Catalog_Page(View):
             except:
                 messages.error(request, "Что-то пошло не так, попробуйте снова.")
         return render(request, 'catalog.html', context=context)
+
 
 class Brand_Page(View):
     def get(self, request, *args, **kwargs):
@@ -234,8 +237,6 @@ class Users_Lk_Page(LoginRequiredMixin, View):
     brands = Brands.objects.all()
     contact_form = Contact_Form
     bestsellers_line = Bestsellers_Line.objects.all()[1:]
-    
-    
 
     def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
@@ -385,12 +386,12 @@ class Users_Lk_Page(LoginRequiredMixin, View):
 class Catalog_Item(View):
 
     def get(self, request, title, slug, *args, **kwargs):
-        
+
         product = get_object_or_404(Product, title=title, slug=slug)
         all_products_first = Product.objects.filter(brand=product.brand)[:4]
         all_products_last = Product.objects.filter(brand=product.brand)[4:]
         product_images = Product_Images.objects.filter(product=product)
-        
+
         context = {
             'product': product,
             'product_images': product_images,
@@ -398,11 +399,11 @@ class Catalog_Item(View):
             'all_products_first': all_products_first,
             'all_products_last': all_products_last,
         }
-        
+
         return render(request, 'catalog_item.html', context=context)
 
     def post(self, request, title, slug, *args, **kwargs):
-        
+
         product = get_object_or_404(Product, title=title, slug=slug)
         product_images = Product_Images.objects.filter(product=product)
         form = Get_Price_Form(request.POST)
@@ -414,7 +415,7 @@ class Catalog_Item(View):
             'get_price': Get_Price_Form(),
             'all_products': all_products,
         }
-       
+
         if form.is_valid():
             telephone_number = form.cleaned_data['telephone_number']
             email = form.cleaned_data['email']
@@ -430,7 +431,7 @@ class Catalog_Item(View):
                     [email],
                     fail_silently=False,
                 )
-                
+
                 send_mail(
                     'Заказ выгрузки прайса',
                     'Контактное лицо {}, телефон {}, компания {}'.format(
@@ -446,6 +447,7 @@ class Catalog_Item(View):
             except:
                 messages.error(request, "Что-то пошло не так, попробуйте снова.")
         return render(request, 'catalog_item.html', context=context)
+
 
 class Password_Reset(View):
 
@@ -535,19 +537,18 @@ class Contact_Us(View):
 
 
 class Basket_Page(LoginRequiredMixin, View):
-
     login_url = '/login/'
-
 
     def get(self, request, *args, **kwargs):
         delivery = Delivery_Addresses.objects.get(recipient=request.user)
         cart = Cart_Mixin(request)
-        sale = cart.get_total_price() - (cart.get_total_price() * (100 - delivery.recipient.discount_percentage)/100)
+        sale = cart.get_total_price() - (cart.get_total_price() * (100 - delivery.recipient.discount_percentage) / 100)
         if not cart:
             cart = None
             total_and_delivery_sum = 0
         else:
-            total_and_delivery_sum = delivery.delivery + (cart.get_total_price() * (100 - delivery.recipient.discount_percentage)/100)
+            total_and_delivery_sum = delivery.delivery + (
+                        cart.get_total_price() * (100 - delivery.recipient.discount_percentage) / 100)
 
         context = {
             'cart': cart,

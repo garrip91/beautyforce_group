@@ -80,12 +80,9 @@ class Brands(models.Model):
     def __str__(self):
         return str(self.brand_name)
 
-
-
     class Meta:
         verbose_name = "Бренды"
         verbose_name_plural = "Бренды"
-        
 
 
 """
@@ -111,7 +108,9 @@ class Bestsellers_Line(models.Model):
 Товары
 
 """
-#, to_field='brand_name', db_column='brand'
+
+
+# , to_field='brand_name', db_column='brand'
 
 class Product(models.Model):
     brand = models.ForeignKey(Brands, on_delete=models.CASCADE, null=True, blank=True, unique=False,
@@ -119,7 +118,8 @@ class Product(models.Model):
     title = models.CharField(max_length=1000, null=True, verbose_name='Название товара')
     about = models.TextField(max_length=1000, null=True, verbose_name='Описание')
     hidden_description = models.TextField(max_length=1000, null=True, verbose_name='Скрытое описание')
-    image_for_cart = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Картинка для корзины')
+    image_for_cart = models.ImageField(blank=True, upload_to='images/product_photo/',
+                                       verbose_name='Картинка для корзины')
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Оптовая цена')
     retail_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Розничная цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
@@ -129,10 +129,11 @@ class Product(models.Model):
     barcode = models.IntegerField(default=0, null=True, verbose_name='Штрихкод')
     mode_of_application = models.TextField(max_length=1000, null=True, verbose_name='Способ применения')
     compound = models.TextField(max_length=1000, null=True, verbose_name='Состав')
-    precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности', blank=True)
+    precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности',
+                                              blank=True)
     product_line = models.ForeignKey('Bestsellers_Line', on_delete=models.CASCADE, null=True, blank=True,
-                                         unique=False,
-                                         verbose_name='Товарная группа')
+                                     unique=False,
+                                     verbose_name='Товарная группа')
     supplier = models.CharField(max_length=100, null=True, verbose_name='Поставщик')
     country = models.CharField(max_length=100, null=True, verbose_name='Страна')
     shelf_life = models.CharField(max_length=100, null=True, verbose_name='Срок годности')
