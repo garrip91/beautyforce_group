@@ -14,6 +14,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project.apps.ProjectConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -107,3 +109,33 @@ EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
 EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
 EMAIL_USE_TLS = str(os.getenv('EMAIL_USE_TLS'))
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Beauty Force Admin",
+    "site_header": "Beauty Force",
+    "site_brand": "Beauty Force Admin",
+    "site_logo": "images/admin-logo.png",
+    "login_logo": None,
+    "login_logo_dark": None,
+    "site_logo_classes": "img-circle",
+    "site_icon": None,
+    "welcome_sign": "Войти в админ-панель Beauty Force",
+    "copyright": "Design & development by © BeautyForce™",
+    "search_model": "auth.User",
+    "user_avatar": None,
+    "topmenu_links": [
+        {"name": "Главная",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Связаться с разработчиком", "url": "", "new_window": True},
+    ],
+    "usermenu_links": [
+        {"name": "Связаться с разработчиком", "url": "", "new_window": True},
+        {"model": "auth.user"}
+    ],
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    "related_modal_active": False,
+}

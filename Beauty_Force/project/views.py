@@ -1,31 +1,26 @@
-from itertools import product
 from django.shortcuts import render, get_object_or_404
 
 from django.views import View
 from django.views.generic.edit import FormView
 from django.views.generic import CreateView
+from django.views.generic.list import ListView
 
 from django.urls import reverse_lazy
 
 from django.core.mail import send_mail
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.views import PasswordResetView
-from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import get_user_model
-
-from django.contrib.sites.shortcuts import get_current_site
 
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from django.template.loader import render_to_string
 
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
@@ -36,15 +31,52 @@ from .token import *
 from .mixins import *
 
 import simplejson
-from decimal import Decimal
-
 
 class Main_Page(View):
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'home.html')
+        context = {
+            'get_price': Get_Price_Form(),
+        }
+        return render(request, 'home.html', context=context)
 
+    def post(self, request, *args, **kwargs):
+        form = Get_Price_Form(request.POST)
+        context = {
+            'get_price': Get_Price_Form(),
+        }
 
+        if form.is_valid():
+            telephone_number = form.cleaned_data['telephone_number']
+            email = form.cleaned_data['email']
+            contact_name = form.cleaned_data['contact_name']
+            company_name = form.cleaned_data['company_name']
+            try:
+                send_mail(
+                    'Прайс Beauty Force',
+                    'Добрый день {}! \n Запрошенный прайс во вложении.'.format(
+                        contact_name,
+                    ),
+                    'reg@beforce.ru',
+                    [email],
+                    fail_silently=False,
+                )
+                
+                send_mail(
+                    'Заказ выгрузки прайса',
+                    'Контактное лицо {}, телефон {}, компания {}'.format(
+                        contact_name,
+                        telephone_number,
+                        company_name
+                    ),
+                    'reg@beforce.ru',
+                    ['reg@beforce.ru'],
+                    fail_silently=False,
+                )
+                messages.success(request, "price")
+            except:
+                messages.error(request, "Что-то пошло не так, попробуйте снова.")
+        return render(request, 'home.html', context=context)
 class Brands_Page(View):
 
     def get(self, request, *args, **kwargs):
@@ -53,9 +85,63 @@ class Brands_Page(View):
 
 class Catalog_Page(View):
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'catalog.html')
+    all_products = Product.objects.all()
+    brands = Brands.objects.all()
+    bestsellers_line = Bestsellers_Line.objects.all()[1:]
 
+    def get(self, request, *args, **kwargs):
+
+        context = {
+            'all_products': self.all_products,
+            'brands': self.brands,
+            'get_price': Get_Price_Form(),
+            'bestsellers_line': self.bestsellers_line,
+        }
+
+        return render(request, 'catalog.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+        
+        form = Get_Price_Form(request.POST)
+
+        context = {
+            'get_price': Get_Price_Form(),
+            'all_products': self.all_products,
+            'brands': self.brands,
+            'bestsellers_line': self.bestsellers_line,
+        }
+       
+        if form.is_valid():
+            telephone_number = form.cleaned_data['telephone_number']
+            email = form.cleaned_data['email']
+            contact_name = form.cleaned_data['contact_name']
+            company_name = form.cleaned_data['company_name']
+            try:
+                send_mail(
+                    'Прайс Beauty Force',
+                    'Добрый день {}! \n Запрошенный прайс во вложении.'.format(
+                        contact_name,
+                    ),
+                    'reg@beforce.ru',
+                    [email],
+                    fail_silently=False,
+                )
+                
+                send_mail(
+                    'Заказ выгрузки прайса',
+                    'Контактное лицо {}, телефон {}, компания {}'.format(
+                        contact_name,
+                        telephone_number,
+                        company_name
+                    ),
+                    'reg@beforce.ru',
+                    ['reg@beforce.ru'],
+                    fail_silently=False,
+                )
+                messages.success(request, "price")
+            except:
+                messages.error(request, "Что-то пошло не так, попробуйте снова.")
+        return render(request, 'catalog.html', context=context)
 
 class Brand_Page(View):
     def get(self, request, *args, **kwargs):
@@ -68,8 +154,14 @@ class Partnership_Page(View):
 
 
 class Press_Page(View):
+
     def get(self, request, *args, **kwargs):
-        return render(request, 'press.html')
+        press = Press.objects.order_by('-id')
+        context = {
+            'press': press,
+        }
+
+        return render(request, 'press.html', context=context)
 
 
 class Contacts_Page(View):
@@ -125,15 +217,15 @@ class Login_Page(SuccessMessageMixin, LoginView):
         return super().form_invalid(form)
 
 
-class B2B_Catalog_Page(View):
+class B2B_Catalog_Page(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         return render(request, 'b2b_catalog.html')
 
 
-class Users_Lk_Page(View):
+class Users_Lk_Page(LoginRequiredMixin, View):
     success_message = 'Вам на почту отправлена ссылка на изменение пароля'
     error_message = 'Что-то пошло не так, письмо не было отправлено'
-
+    login_url = '/login/'
     success_message_add_adresses = "Адрес доставки успешно добавлен"
     error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
 
@@ -141,6 +233,9 @@ class Users_Lk_Page(View):
     add_to_cart = Add_To_Cart_Form
     brands = Brands.objects.all()
     contact_form = Contact_Form
+    bestsellers_line = Bestsellers_Line.objects.all()[1:]
+    
+    
 
     def get(self, request, *args, **kwargs):
         current_user = Users.objects.get(username=request.user)
@@ -179,6 +274,7 @@ class Users_Lk_Page(View):
             'all_products': self.all_products,
             'brands': self.brands,
             'contact_form': self.contact_form,
+            'bestsellers_line': self.bestsellers_line,
         }
         return render(
             request,
@@ -193,7 +289,6 @@ class Users_Lk_Page(View):
         total_amount = current_user.total_amount_of_orders
         total_amount_all_percent = 0
         sale = current_user.discount_percentage + 1
-        products = []
         try:
             orders_history = Orders.objects.filter(recipient=request.user).order_by('id')[0]
             product_quantity = Order_Items.objects.filter(order__id=orders_history.id)
@@ -226,6 +321,7 @@ class Users_Lk_Page(View):
             'all_products': self.all_products,
             'brands': self.brands,
             'contact_form': self.contact_form,
+            'bestsellers_line': self.bestsellers_line,
         }
 
         if request.POST.get('acсount-email'):
@@ -289,14 +385,67 @@ class Users_Lk_Page(View):
 class Catalog_Item(View):
 
     def get(self, request, title, slug, *args, **kwargs):
+        
         product = get_object_or_404(Product, title=title, slug=slug)
+        all_products_first = Product.objects.filter(brand=product.brand)[:4]
+        all_products_last = Product.objects.filter(brand=product.brand)[4:]
         product_images = Product_Images.objects.filter(product=product)
+        
         context = {
             'product': product,
             'product_images': product_images,
+            'get_price': Get_Price_Form(),
+            'all_products_first': all_products_first,
+            'all_products_last': all_products_last,
         }
+        
         return render(request, 'catalog_item.html', context=context)
 
+    def post(self, request, title, slug, *args, **kwargs):
+        
+        product = get_object_or_404(Product, title=title, slug=slug)
+        product_images = Product_Images.objects.filter(product=product)
+        form = Get_Price_Form(request.POST)
+        all_products = Product.objects.filter(brand=product.brand)
+
+        context = {
+            'product': product,
+            'product_images': product_images,
+            'get_price': Get_Price_Form(),
+            'all_products': all_products,
+        }
+       
+        if form.is_valid():
+            telephone_number = form.cleaned_data['telephone_number']
+            email = form.cleaned_data['email']
+            contact_name = form.cleaned_data['contact_name']
+            company_name = form.cleaned_data['company_name']
+            try:
+                send_mail(
+                    'Прайс Beauty Force',
+                    'Добрый день {}! \n Запрошенный прайс во вложении.'.format(
+                        contact_name,
+                    ),
+                    'reg@beforce.ru',
+                    [email],
+                    fail_silently=False,
+                )
+                
+                send_mail(
+                    'Заказ выгрузки прайса',
+                    'Контактное лицо {}, телефон {}, компания {}'.format(
+                        contact_name,
+                        telephone_number,
+                        company_name
+                    ),
+                    'reg@beforce.ru',
+                    ['reg@beforce.ru'],
+                    fail_silently=False,
+                )
+                messages.success(request, "price")
+            except:
+                messages.error(request, "Что-то пошло не так, попробуйте снова.")
+        return render(request, 'catalog_item.html', context=context)
 
 class Password_Reset(View):
 
@@ -385,7 +534,10 @@ class Contact_Us(View):
                 return HttpResponse(simplejson.dumps({'result': 'error', 'response': response}))
 
 
-class Basket_Page(View):
+class Basket_Page(LoginRequiredMixin, View):
+
+    login_url = '/login/'
+
 
     def get(self, request, *args, **kwargs):
         delivery = Delivery_Addresses.objects.get(recipient=request.user)
@@ -453,12 +605,14 @@ class Basket_Page(View):
         return HttpResponseRedirect('/basket/')
 
 
-class Users_Orders_History(View):
+class Users_Orders_History(LoginRequiredMixin, View):
     success_message = 'Вам на почту отправлена ссылка на изменение пароля'
     error_message = 'Что-то пошло не так, письмо не было отправлено'
 
     success_message_add_adresses = "Адрес доставки успешно добавлен"
     error_message_add_adresses = "Что-то пошло не так, пожалуйста, попробуйте снова"
+
+    login_url = '/login/'
 
     def get(self, request, *args, **kwargs):
 

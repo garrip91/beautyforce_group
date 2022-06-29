@@ -42,7 +42,7 @@
 							Бренд: <span class="span-item">{{ product.brand }}</span>
 						</p>
 						<p class="item-header">
-							Артикул: <span class="span-item">{{ product.vendor_code }}</span>
+							Артикул: <span class="span-item">{{ product.article }}</span>
 						</p>
 						<p class="item-header">
 							Штрихкод: <span class="span-item">{{ product.barcode }}</span>
@@ -139,65 +139,31 @@
 			<div class="row">
 				<div class="col">
 					<div class="card-deck-category">
+						{% for all_products_f in all_products_first %}
 					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<img class="card-img-top-catalog" src="{{ all_products_f.image.url }}" alt="Card image cap">
 						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+							<a href="{{ products_all.get_absolute_url }}">
+								<h5 class="card-title-catalog">{{ all_products_f.title }}</h5>
+							  </a>
+						  <p class="card-text">{{ all_products_f.price }} ₽</p>
 						</div>
 					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
+					{% endfor %}
 				</div>
 					<div class="collapse" id="more">
 					<div class="card-deck-category">
+						{% for all_products_l in all_products_last %}
 					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
+						<img class="card-img-top-catalog" src="{{ all_products_l.image.url }}" alt="Card image cap">
 						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
+							<a href="{{ products_all.get_absolute_url }}">
+								<h5 class="card-title-catalog">{{ all_products_l.title }}</h5>
+							  </a>
+						  <p class="card-text">{{ all_products_l.price }} ₽</p>
 						</div>
 					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<img class="card-img-top-catalog" src="{% static 'images/catalog/Rectangle 22.png' %}" alt="Card image cap">
-						<div class="card-body">
-						  <h5 class="card-title-catalog">Dr.Gloderm TabRX Liftup Cream Крем для лица подтягивающий, 45 гр</h5>
-						  <p class="card-text">₽₽₽ Premium</p>
-						</div>
-					  </div>
+					{% endfor %}
 				</div>
 				</div>
 				</div>
@@ -330,21 +296,22 @@
       <div class="modal-body">
 		<div class="col d-flex justify-content-center">
 		  <form id="contact-form" class="form" action="#" method="POST" role="form">
+			{% csrf_token %}
 			  <h5 class="modal-title-price" id="staticBackdropLabel">Введите данные, чтобы <br>скачать прайс</h5>
 			  <div class="form-group">
-				  <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" tabindex="1" required>
+				  	{{ get_price.telephone_number }}
 			  </div>
 			  <div class="form-group">
-				  <input type="email" class="form-control" id="email" name="email" placeholder="Контактное лицо" tabindex="2" required>
+					{{ get_price.email }}
 			  </div>
 			  <div class="form-group">
-				  <input type="text" class="form-control" id="subject" name="subject" placeholder="Почта" tabindex="3">
+					{{ get_price.contact_name }}
 			  </div>
 			  <div class="form-group">
-				  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Компания" tabindex="4" required></textarea>
+				{{ get_price.company_name }}
 			  </div>
 			  <div class="text-center">
-				  <button type="button" class="btn btn-circle btn-xl">Отправить</button>
+				  <button type="submit" class="btn btn-circle btn-xl">Отправить</button>
 				<p class="p-price"> Нажимая кнопку, вы соглашаетесь<br> <span class="">с политикой конфиденциальности</span></p>
 			  </div>
 		  </form>
@@ -353,5 +320,47 @@
     </div>
   </div>
 </div>
+
+{% if messages %}
+    {% for msg in messages %}
+        {% if msg.message == 'price' %}
+		<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content modal-price">
+					<div class="modal-body">
+							<div class="text-center p-t-30">
+								<h5 style="padding-top: 2rem;"><img src="{% static 'images/done.png' %}"  alt=""></h5>
+								<span class="modal-text">
+										<span class="modal-price-done">Спасибо!</span><br><span class="modal-price-done-1">Данные успешно отправлены</span>
+								</span>
+							</div>
+					</div>
+				  <div class="modal-footer d-flex justify-content-center">
+					<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+            {% else %}
+			<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content modal-price">
+						<div class="modal-body">
+								<div class="text-center p-t-30">
+									
+									<span class="modal-text">
+											<span class="modal-price-done">{{ msg }}</span>
+									</span>
+								</div>
+						</div>
+					  <div class="modal-footer d-flex justify-content-center">
+						<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+					  </div>
+					</div>
+				</div>
+			</div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 
 {% endblock content %}

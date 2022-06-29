@@ -75,14 +75,17 @@ class Delivery_Addresses(models.Model):
 
 
 class Brands(models.Model):
-    brand_name = models.CharField(max_length=100, null=True, verbose_name='Название бренда')
+    brand_name = models.CharField(max_length=100, null=True, verbose_name='Название бренда', unique=True)
 
     def __str__(self):
         return str(self.brand_name)
 
+
+
     class Meta:
         verbose_name = "Бренды"
         verbose_name_plural = "Бренды"
+        
 
 
 """
@@ -108,28 +111,32 @@ class Bestsellers_Line(models.Model):
 Товары
 
 """
-
+#, to_field='brand_name', db_column='brand'
 
 class Product(models.Model):
-    brand = models.ForeignKey('Brands', on_delete=models.CASCADE, null=True, blank=True, unique=False,
+    brand = models.ForeignKey(Brands, on_delete=models.CASCADE, null=True, blank=True, unique=False,
                               verbose_name='Название бренда')
     title = models.CharField(max_length=1000, null=True, verbose_name='Название товара')
     about = models.TextField(max_length=1000, null=True, verbose_name='Описание')
     hidden_description = models.TextField(max_length=1000, null=True, verbose_name='Скрытое описание')
-    image_for_cart = models.ImageField(blank=True, verbose_name='Картинка для корзины')
+    image_for_cart = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Картинка для корзины')
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Оптовая цена')
     retail_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Розничная цена')
     stock = models.PositiveIntegerField(default=0, verbose_name='Остаток товара')
     available = models.BooleanField(default=True, verbose_name='Доступность товара')
-    slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка')
-    vendor_code = models.CharField(max_length=50, null=True, verbose_name='Артикул')
+    slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка', blank=True)
+    article = models.CharField(max_length=50, null=True, verbose_name='Артикул')
     barcode = models.IntegerField(default=0, null=True, verbose_name='Штрихкод')
     mode_of_application = models.TextField(max_length=1000, null=True, verbose_name='Способ применения')
     compound = models.TextField(max_length=1000, null=True, verbose_name='Состав')
-    precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности')
-    bestsellers_line = models.ForeignKey('Bestsellers_Line', on_delete=models.CASCADE, null=True, blank=True,
+    precautionary_measures = models.TextField(max_length=1000, null=True, verbose_name='Меры предосторожности', blank=True)
+    product_line = models.ForeignKey('Bestsellers_Line', on_delete=models.CASCADE, null=True, blank=True,
                                          unique=False,
-                                         verbose_name='Линейка бестселлеров')
+                                         verbose_name='Товарная группа')
+    supplier = models.CharField(max_length=100, null=True, verbose_name='Поставщик')
+    country = models.CharField(max_length=100, null=True, verbose_name='Страна')
+    shelf_life = models.CharField(max_length=100, null=True, verbose_name='Срок годности')
+    weight_brutto = models.CharField(max_length=100, null=True, verbose_name='Вес брутто')
 
     def get_absolute_url(self):
         return reverse('catalog_item',
@@ -243,3 +250,19 @@ class Order_Items(models.Model):
 class Product_Images(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Товар')
     image = models.ImageField(blank=True, upload_to='images/product_photo/', verbose_name='Фото товара')
+
+
+class Press(models.Model):
+    logo = models.ImageField(blank=True, upload_to='images/press/logo/', verbose_name='Лого')
+    title = models.CharField(max_length=100, null=True, verbose_name='Заголовок')
+    text = models.CharField(max_length=200, null=True, verbose_name='Текст статитьи', blank=True)
+    image = models.ImageField(blank=True, upload_to='images/press/image/', verbose_name='Фото статьи')
+    link = models.URLField(verbose_name='Ссылка на статью', null=True, blank=True)
+    date = models.DateField(verbose_name='Дата публикации', default=timezone.now)
+
+    def __str__(self):
+        return '{}'.format(self.title)
+
+    class Meta:
+        verbose_name = 'Статьи'
+        verbose_name_plural = 'Статьи'
