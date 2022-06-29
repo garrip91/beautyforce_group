@@ -99,7 +99,6 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 SESSION_COOKIE_SECURE = True
 CART_SESSION_ID = 'cart'
 
-
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
@@ -126,7 +125,7 @@ JAZZMIN_SETTINGS = {
     "search_model": "auth.User",
     "user_avatar": None,
     "topmenu_links": [
-        {"name": "Главная",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"name": "Связаться с разработчиком", "url": "", "new_window": True},
     ],
     "usermenu_links": [
