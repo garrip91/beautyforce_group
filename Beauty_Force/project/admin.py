@@ -23,7 +23,6 @@ class Users_Admin(admin.ModelAdmin):
         users_email = []
         for users in queryset:
             users_email.append(users.email)
-        print(users_email)
         form = Send_Mail_Admin_Form(request.POST)
         if 'apply' in request.POST:
             if form.is_valid():
