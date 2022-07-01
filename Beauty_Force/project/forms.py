@@ -166,3 +166,71 @@ class Contact_Form(forms.Form):
             'telephone_number',
             'name',
         ]
+
+
+class Get_Price_Form(forms.Form):
+    telephone_number = forms.CharField(required=True,
+                                       widget=forms.TextInput(attrs={
+                                           'class': 'form-control',
+                                           'placeholder': "Телефон",
+                                           'tabindex': '1',
+                                           'id': 'telephone_number',
+                                           'name': 'telephone_number',
+                                       }))
+    email = forms.CharField(required=True,
+                            widget=forms.EmailInput(attrs={
+                                'class': 'form-control',
+                                'placeholder': "Почта",
+                                'tabindex': '1',
+                                'id': 'email',
+                                'name': 'email',
+                            }))
+    contact_name = forms.CharField(required=True,
+                                   widget=forms.TextInput(attrs={
+                                       'class': 'form-control',
+                                       'placeholder': "Контактное лицо",
+                                       'tabindex': '1',
+                                       'id': 'contact_name',
+                                       'name': 'contact_name',
+                                   }))
+    company_name = forms.CharField(required=True,
+                                   widget=forms.TextInput(attrs={
+                                       'class': 'form-control',
+                                       'placeholder': "Компания",
+                                       'tabindex': '1',
+                                       'id': 'company_name',
+                                       'name': 'company_name',
+                                   }))
+
+    class Meta:
+        fields = [
+            'telephone_number',
+            'email',
+            'contact_name',
+            'company_name',
+        ]
+
+
+class Send_Mail_Admin_Form(forms.Form):
+    subject = forms.CharField(required=True,
+                              widget=forms.TextInput(attrs={
+                                  'class': 'form-control',
+                                  'placeholder': "Введите тему письма",
+                                  'tabindex': '1',
+                                  'id': 'subject',
+                                  'name': 'subject',
+                              }))
+    message = forms.CharField(required=True,
+                              widget=forms.Textarea(attrs={
+                                  'class': 'form-control',
+                                  'placeholder': "Введите сообщение",
+                                  'tabindex': '1',
+                                  'id': 'message',
+                                  'name': 'message',
+                              }))
+
+    class Meta:
+        fields = [
+            'subject',
+            'message',
+        ]

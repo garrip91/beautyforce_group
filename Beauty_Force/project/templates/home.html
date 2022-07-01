@@ -70,7 +70,6 @@
 	        	<li class="nav-item"><a href="{% url 'brands' %}" class="nav-link">Бренды</a></li>
 	        	<li class="nav-item"><a href="{% url 'catalog' %}" class="nav-link">Каталог</a></li>
 	        	<li class="nav-item"><a href="{% url 'partnership' %}" class="nav-link">Партнерство</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">О компании</a></li>
 	          <li class="nav-item"><a href="{% url 'press' %}" class="nav-link">Пресса</a></li>
               <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
               <li class="nav-item active"><a href="{% url 'personal_account' %}" class="nav-link">Интернет магазин</a></li>
@@ -95,7 +94,7 @@
 						Культура <br> идеального <br> ухода
 					</p>
 					<div class="to-magazine">
-						<button type="button" class="btn btn-circle btn-xl">Перейти в <br>интернет-магазин</button>
+						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'personal_account' %}'">Перейти в <br>интернет-магазин</button>
 					</div>
 				</div>
 				<div class="col align-self-end">
@@ -159,7 +158,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="">
-						<button type="button" class="btn btn-circle btn-xl">Подробнее</button>
+						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">Подробнее</button>
 					</div>
 				</div>
 				<div class="col-1-1" style="padding-right: 10px;">
@@ -197,78 +196,93 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-				<div class="slider">
-				<div class="item">
-					<img src="{% static 'images/Rectangle 30.jpg' %}" loading="lazy" alt="prcy" alt="">	
-					<p class="p-7-1">
-						ПРЕИМУЩЕСТВА
-					</p>
-					<div class="child">
-						<p class="p-4-1">
-							Эксклюзивные<br> бренды из Кореи
-						</p>
-						<p class="p-5-1">
-							Компания Beauty Force представляет косметические бренды из <br>
-							разных сегментов: масс-маркет, миддл, премиум и фармацевтический.<br>
-							Мы следим за трендами индустрии и выбираем только исключительные <br>
-							марки с безопасными составами, инновационными разработками и <br>
-							уникальной концепцией. <br>
-							Представительства компании Beauty Force открыты в Корее и Италии,<br>
-							а наши партнеры находятся по всей России.
-						</p>
-						<button type="button" onclick="minusSlide()" class="btn btn-default btn-circle btn-lg"><i class="fa fa-long-arrow-left"></i></button>
-						<button type="button" onclick="plusSlide()" class="btn btn-default btn-circle-2 btn-lg"><i class="fa fa-long-arrow-right"></i></button>
+					<div id="about" class="carousel slide carousel-fade" data-ride="carousel">
+						<div class="carousel-inner">
+						  <div class="carousel-item item active">
+							<img src="{% static 'images/Rectangle 30.jpg' %}" class="d-block w-100 p-3" loading="lazy" alt="prcy" alt="">
+							<p class="p-7-1">
+								ПРЕИМУЩЕСТВА
+							</p>
+								<div class="child">
+									<p class="p-4-1">
+										Эксклюзивные<br> бренды из Кореи
+									</p>
+									<p class="p-5-1">
+										Компания Beauty Force представляет косметические бренды из <br>
+										разных сегментов: масс-маркет, миддл, премиум и фармацевтический.<br>
+										Мы следим за трендами индустрии и выбираем только исключительные <br>
+										марки с безопасными составами, инновационными разработками и <br>
+										уникальной концепцией. <br>
+										Представительства компании Beauty Force открыты в Корее и Италии,<br>
+										а наши партнеры находятся по всей России.
+									</p>
+									<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
+										<i class="fa fa-long-arrow-left"></i>
+									</button>
+									<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
+										<i class="fa fa-long-arrow-right"></i>
+									</button>
+							</div>
+						  </div>
+						  <div class="carousel-item item">
+							<img src="{% static 'images/Rectangle 31.jpg' %}" class="d-block w-100 p-3" loading="lazy" alt="prcy" alt="" >
+							<p class="p-7-1">
+								ПРЕИМУЩЕСТВА
+							</p>
+							<div class="child">
+								<p class="p-4-1">
+									Прямой импорт<br> в страну продажи
+								</p>
+								<p class="p-5-1">
+									Все импортируемые продукты перевозятся<br>
+									согласно законодательству,<br>
+									проходят сертификацию и маркировку. <br>
+									Благодаря собственной логистике, <br>
+									каждое средство бережно упаковывается и <br>
+									доставляется с соблюдением всех норм. <br>
+								</p>
+								<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
+									<i class="fa fa-long-arrow-left"></i>
+								</button>
+								<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
+									<i class="fa fa-long-arrow-right"></i>
+								</button>
+								</div>
+							</div>
+						  <div class="carousel-item item">
+							<img src="{% static 'images/Rectangle 32.jpg' %}" class="d-block w-100 p-3" loading="lazy" alt="prcy" alt="">
+							<p class="p-7-1">
+								ПРЕИМУЩЕСТВА
+							</p>
+							<div class="child">
+								<p class="p-4-1">
+									Cильное<br> бренд-портфолио
+								</p>
+								<p class="p-5-1">
+									Компания Beauty Force представляет косметические бренды из <br>
+									разных сегментов: масс-маркет, миддл, премиум и фармацевтический.<br>
+									Мы следим за трендами индустрии и выбираем только исключительные  <br>
+									марки с безопасными составами, инновационными разработками и <br>
+									уникальной концепцией. <br>
+									Представительства компании Beauty Force открыты в Корее и Италии,<br>
+									а наши партнеры находятся по всей России.
+								</p>
+								<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
+									<i class="fa fa-long-arrow-left"></i>
+								</button>
+								<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
+									<i class="fa fa-long-arrow-right"></i>
+								</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
 					</div>
-				</div>
-				<div class="item">
-					<img src="{% static 'images/Rectangle 31.jpg' %}" loading="lazy" alt="prcy" alt="" >
-					<p class="p-7-1">
-						ПРЕИМУЩЕСТВА
-					</p>
-					<div class="child">
-						<p class="p-4-1">
-							Прямой импорт<br> в страну продажи
-						</p>
-						<p class="p-5-1">
-							Все импортируемые продукты перевозятся<br>
-							согласно законодательству,<br>
-							проходят сертификацию и маркировку. <br>
-							Благодаря собственной логистике, <br>
-							каждое средство бережно упаковывается и <br>
-							доставляется с соблюдением всех норм. <br>
-						</p>
-					<button type="button" onclick="minusSlide()" class="btn btn-default btn-circle btn-lg"><i class="fa fa-long-arrow-left"></i></button>
-					<button type="button" onclick="plusSlide()" class="btn btn-default btn-circle-2 btn-lg"><i class="fa fa-long-arrow-right"></i></button>
-					</div>
-				</div>
-				<div class="item">
-					<img src="{% static 'images/Rectangle 32.jpg' %}" loading="lazy" alt="prcy" alt="">
-					<p class="p-7-1">
-						ПРЕИМУЩЕСТВА
-					</p>
-					<div class="child">
-						<p class="p-4-1">
-							Cильное<br> бренд-портфолио
-						</p>
-						<p class="p-5-1">
-							Компания Beauty Force представляет косметические бренды из <br>
-							разных сегментов: масс-маркет, миддл, премиум и фармацевтический.<br>
-							Мы следим за трендами индустрии и выбираем только исключительные  <br>
-							марки с безопасными составами, инновационными разработками и <br>
-							уникальной концепцией. <br>
-							Представительства компании Beauty Force открыты в Корее и Италии,<br>
-							а наши партнеры находятся по всей России.
-						</p>
-					<button type="button" onclick="minusSlide()" class="btn btn-default btn-circle btn-lg"><i class="fa fa-long-arrow-left"></i></button>
-					<button type="button" onclick="plusSlide()" class="btn btn-default btn-circle-2 btn-lg"><i class="fa fa-long-arrow-right"></i></button>
-				</div>
 				</div>
 			</div>
-		</div>
-		</div>
 		</div>
 	</section>
-			</div>
+</div>
 
 <!-- Brands Section -->
 
@@ -308,7 +322,7 @@
 			<div class="row">
 				<div class="col">
 					<img src="{% static 'images/Group 1309.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
-						<button type="button" class="btn btn-circle-white btn-xl-white">Смотреть все бренды</button>
+						<button type="button" class="btn btn-circle-white btn-xl-white" onclick="location.href='{% url 'brands' %}'">Смотреть все бренды</button>
 				</div>
 			</div>
 		</div>
@@ -346,7 +360,7 @@
 						</p>
 						<img src="{% static 'images/Group 1278.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
 						<img src="{% static 'images/Group 1279.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
-						<button type="button" class="btn btn-circle-blue btn-xl-blue">Смотреть всех партнеров</button>
+						<button type="button" class="btn btn-circle-blue btn-xl-blue" onclick="location.href='{% url 'partnership' %}'">Смотреть всех партнеров</button>
 					</div>
 				</div>
 			</div>
@@ -419,7 +433,7 @@
 						<p class="card-text">Создание креативной концепции, контент-маркетинг, проведение digital-event, influencer-маркетинг, контекстная реклама активностей</p>
 					  </div>
 						<div class="col d-flex justify-content-start" style="margin-top: 1rem;">
-						<button type="button" class="btn btn-circle btn-xl">подробнее</button>
+						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">подробнее</button>
 					  </div>
 					</div>
 					<div class="card">
@@ -476,11 +490,6 @@
 					<button type="button" class="btn btn-default btn-circle-2 btn-lg" data-target="#videoCarusel" data-slide="next"><i class="fa fa-long-arrow-right"></i></button>
 				</div>
 				<div id="videoCarusel" class="carousel slide" data-ride="carousel">
-				  <ol class="carousel-indicators">
-					<li data-target="#videoCarusel" data-slide-to="0" class="active"></li>
-					<li data-target="#videoCarusel" data-slide-to="1"></li>
-					<li data-target="#videoCarusel" data-slide-to="2"></li>
-				  </ol>
 				  <div class="carousel-inner">
 					<div class="carousel-item active">
 					  <img src="{% static 'images/brand/Rectangle 295.png' %}" class="d-block w-100" alt="...">
@@ -524,7 +533,7 @@
 							больше полезного контента в instagram
 						</p>
 						<div class="to-magazine">
-							<button type="button" class="btn btn-circle btn-xl">перейти в<br> instagram</button>
+							<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">перейти в<br> instagram</button>
 						</div>
 					</div>
 				</div>
@@ -569,25 +578,22 @@
 		<div class="container">
 		  <div class="row">
 			  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
-				  <form id="contact-form" class="form" action="#" method="POST" role="form">
-					  <div class="form-group">
-						  <label class="form-label" for="name">Телефон</label>
-						  <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" tabindex="1" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="email">Контактное лицо</label>
-						  <input type="email" class="form-control" id="email" name="email" placeholder="Контактное лицо" tabindex="2" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="subject">Почта</label>
-						  <input type="text" class="form-control" id="subject" name="subject" placeholder="Почта" tabindex="3">
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="message">Компания</label>
-						  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Компания" tabindex="4" required></textarea>
-					  </div>
+				<form id="contact-form" class="form" action="#" method="POST" role="form">
+					{% csrf_token %}
+					<div class="form-group">
+						{{ get_price.telephone_number }}
+					</div>
+					<div class="form-group">
+						{{ get_price.email }}
+					</div>
+					<div class="form-group">
+						{{ get_price.contact_name }}
+					</div>
+					<div class="form-group">
+						{{ get_price.company_name }}
+					</div>
 					  <div class="text-center">
-						<p class="p-form text-right"> <button type="button" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
+						<p class="p-form text-right"> <button type="submit" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
 					  </div>
 				  </form>
 			  </div>
@@ -737,7 +743,49 @@
 	});
 	</script>
 	<script>
-		$("#telephone").mask("+7(999) 999-9999");
+		$("#telephone").mask("+7-999-999-9999");
+		$("#telephone_number").mask("+7-999-999-9999");
 	</script>
+  {% if messages %}
+  {% for msg in messages %}
+	  {% if msg.message == 'price' %}
+	  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+			  <div class="modal-content modal-price">
+				  <div class="modal-body">
+						  <div class="text-center p-t-30">
+							  <h5 style="padding-top: 2rem;"><img src="{% static 'images/done.png' %}"  alt=""></h5>
+							  <span class="modal-text">
+									  <span class="modal-price-done">Спасибо!</span><br><span class="modal-price-done-1">Данные успешно отправлены</span>
+							  </span>
+						  </div>
+				  </div>
+				<div class="modal-footer d-flex justify-content-center">
+				  <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+				</div>
+			  </div>
+		  </div>
+	  </div>
+		  {% else %}
+		  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content modal-price">
+					  <div class="modal-body">
+							  <div class="text-center p-t-30">
+								  
+								  <span class="modal-text">
+										  <span class="modal-price-done">{{ msg }}</span>
+								  </span>
+							  </div>
+					  </div>
+					<div class="modal-footer d-flex justify-content-center">
+					  <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+					</div>
+				  </div>
+			  </div>
+		  </div>
+		  {% endif %}
+	  {% endfor %}
+  {% endif %}
 	</body>
 </html>

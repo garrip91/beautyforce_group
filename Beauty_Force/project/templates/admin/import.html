@@ -1,0 +1,8 @@
+{% extends 'admin/change_list.html' %}
+{% block object-tools %}
+  <form action="process_import/" method="GET">
+    {% csrf_token %}
+    <input type="submit" value="Импорт новых товаров из Excel" />
+  </form>
+    {{ block.super }}
+{% endblock %}
