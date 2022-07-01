@@ -8,6 +8,7 @@
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form }}
+                <p>Письма будут отправлены пользователям:</p>
                 {% for order in orders %}
                 <p>
                   {{ order }}
