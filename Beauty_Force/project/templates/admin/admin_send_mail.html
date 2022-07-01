@@ -2,21 +2,38 @@
 {% block content %}
 <section class="ftco-section">
     <div class="container">
+        <div class="col text-center">
       <div class="row">
-          <div class="text-center">
-            <p>Форма отправки рассылки</p>
+
             <form action="" method="post">
+                <p>Форма отправки рассылки</p>
                 {% csrf_token %}
-                {{ form }}
-                <p>Письма будут отправлены пользователям:</p>
-                {% for order in orders %}
-                <p>
-                  {{ order }}
-                </p>
-                <input type="hidden" name="_selected_action" value="{{ order.pk }}" />
-              {% endfor %}
+                <div class="form-group">
+                  {{ form.subject }}
+                </div>
+                <div class="form-group">
+                  {{ form.message }}
+                </div>
+
+                <div class="col">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Получатели: </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for user in users %}
+                    <tr>
+                       <td>{{ forloop.counter }}. {{ user }}</td>
+                    </tr>
+                  <input type="hidden" class="btn"  name="_selected_action" value=" {{ user.pk }}" />
+                  {% endfor %}
+                  </tbody>
+                </table>
+
                 <input type="hidden" name="action" value="send_mail_admin" />
-                <input type="submit" name="apply" value="Send" />
+                <input type="submit" class="btn" name="apply" value="Сделать рассылку" />
             </form>
         </div>
         </div>

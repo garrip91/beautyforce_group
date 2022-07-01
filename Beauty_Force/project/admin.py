@@ -3,7 +3,6 @@ from .models import *
 from .forms import *
 
 from import_export.admin import ImportExportModelAdmin
-from django import forms
 from import_export import fields, resources
 from import_export.widgets import *
 from django.http import HttpResponseRedirect
@@ -20,25 +19,30 @@ class Users_Admin(admin.ModelAdmin):
     list_display = ['username', ]
     actions = ['send_mail_admin', ]
 
-    def send_mail_admin(modeladmin, request, queryset):
+    def send_mail_admin(self, request, queryset):
         users_email = []
-        for users in queryset.all():
+        for users in queryset:
             users_email.append(users.email)
+        print(users_email)
+        form = Send_Mail_Admin_Form(request.POST)
         if 'apply' in request.POST:
-            print(request.POST)
-            return HttpResponseRedirect(request.get_full_path())
-        # if 'send' in request.POST:
-        #    print('sdfs')
-        #    if form.is_valid():
-        #        subject = form.cleaned_data['subject']
-        #        message = form.cleaned_data['message']
-        #        print('fsdfs')
-        #        print(subject)
-        #        print(message)
-        #        return HttpResponseRedirect(request.get_full_path())
-        else:
-            form = Send_Mail_Admin_Form()
-        return render(request, 'admin/admin_send_mail.html', {'form': form, 'orders': queryset})
+            if form.is_valid():
+                subject = form.cleaned_data['subject']
+                message = form.cleaned_data['message']
+                try:
+                    send_mail(
+                        subject,
+                        message,
+                        'reg@beforce.ru',
+                        users_email,
+                        fail_silently=False,
+                    )
+                    self.message_user(request, 'Сообщения успешно отправлены')
+                    return HttpResponseRedirect(request.get_full_path())
+                except:
+                    self.message_user(request, 'Сообщения не отправлены, попробуйте снова')
+                    return HttpResponseRedirect(request.get_full_path())
+        return render(request, 'admin/admin_send_mail.html', {'form': form, 'users': queryset})
 
     send_mail_admin.short_description = 'Сделать рассылку'
 
