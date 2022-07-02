@@ -10,8 +10,34 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 
 admin.site.register(Delivery_Addresses)
-admin.site.register(Brands)
+
 admin.site.register(Press)
+
+
+class Brands_Category(admin.TabularInline):
+    model = Brands_Category
+
+
+class Brand_Benefits(admin.TabularInline):
+    model = Brand_Benefits
+
+
+class Compound_And_Ingredients(admin.TabularInline):
+    model = Compound_And_Ingredients
+
+
+class Reviews(admin.TabularInline):
+    model = Reviews
+
+
+class Brands_Admin(admin.ModelAdmin):
+    inlines = [Brands_Category, Brand_Benefits, Compound_And_Ingredients, Reviews, ]
+    list_display = ['brand_name', ]
+    list_filter = ['brand_name', ]
+    search_fields = ['brand_name', ]
+
+
+admin.site.register(Brands, Brands_Admin)
 
 
 @admin.register(Users)
