@@ -39,7 +39,9 @@
 </div>
 
 <!-- Decorations -->
+{% regroup brands by category as brand_list %}
 
+{% for brand in brand_list %}
 <div id="Decorations" class="section-decorations">
 	<section class="ftco-section section-3">
 		<div class="container container-white">
@@ -49,174 +51,38 @@
 				</div>
 			</div>
 </section>
+
 <section class="ftco-section-white">
 	<div class="container">
 		<div class="row">
 			<div class="col">
 				<p class="p-4-white">
-					украшения
+					{{ brand.grouper }}
 				</p>
 			</div>
 		</div>
 	</div>
 </section>
 <section class="ftco-section-white">
-	<div class="container">
+	<div class="container" style="margin-bottom: 3rem; margin-top: 3rem;">
 		<div class="row">
-			<div class="col decorations">
-				<img src="{% static 'images/brands/Group 381.png' %}" loading="lazy" alt="prcy" alt="">
-			</div>
-		</div>
-	</div>
-</section>
-</div>
-
-<!-- HAIR CARE -->
-
-<div id="hair-care" class="section-hair-care">
-	<section class="ftco-section section-3">
-		<div class="container container-white">
-			<div class="row">
-				<div class="col">
-					</div>
+			{% for brand_image in brand.list %}
+			<div class="col-sm-4">
+			  <div class="card card-border text-center">
+				<div class="card-body">
+				  <h5 class="card-title"><img src="{{ brand_image.brand_image.url }}" class="" alt=""></h5>
+				  <a href="{{ brand_image.get_absolute_url }}"> 
+				  <H5 class="card-title brands-title">{{ brand_image.brand_name }}</H5>
+				  </a>
 				</div>
+			  </div>
 			</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<p class="p-4-white">
-					УХОД ЗА ВОЛОСАМИ
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col hair-care">
-				<img src="{% static 'images/brands/Group 364.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 362.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 365.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 366.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 367.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 368.png' %}" loading="lazy" alt="prcy" alt="">
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
 </div>
-
-<!-- SKIN CARE -->
-
-<div id="skin-care" class="section-skin-care">
-	<section class="ftco-section section-3">
-		<div class="container container-white">
-			<div class="row">
-				<div class="col">
-					</div>
-				</div>
-			</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<p class="p-4-white">
-					УХОД ЗА КОЖЕЙ
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col hair-care">
-				<img src="{% static 'images/brands/Group 345.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 353.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 422.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 350.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 358.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 343.png' %}" loading="lazy" alt="prcy" alt="">
-				<img src="{% static 'images/brands/Group 383.png' %}" loading="lazy" alt="prcy" alt="">
-			</div>
-		</div>
-	</div>
-</section>
-</div>
-
-<!-- HYGIENE -->
-
-<div id="hygiene" class="section-hygiene">
-	<section class="ftco-section section-3">
-		<div class="container container-white">
-			<div class="row">
-				<div class="col">
-					</div>
-				</div>
-			</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<p class="p-4-white">
-					гигиена
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col decorations">
-				<img src="{% static 'images/brands/Group 424.png' %}" loading="lazy" alt="prcy" alt="">
-			</div>
-		</div>
-	</div>
-</section>
-</div>
-
-<!-- DECORATIVE COSMETICS -->
-
-<div id="decorative-cosmetic" class="section-decorative-cosmetic">
-	<section class="ftco-section section-3">
-		<div class="container container-white">
-			<div class="row">
-				<div class="col">
-					</div>
-				</div>
-			</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<p class="p-4-white">
-					ДЕКОРАТИВНАЯ КОСМЕТИКА
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section-white">
-	<div class="container">
-		<div class="row">
-			<div class="col decorations">
-				<img src="{% static 'images/brands/Group 360.png' %}" loading="lazy" alt="prcy" alt="">
-			</div>
-		</div>
-	</div>
-</section>
-</div>
-
-<!-- catalog button -->
-
-
+{% endfor %}
 
 <div class="section-catalog-button">
 	<section class="ftco-section section-3">
@@ -234,7 +100,7 @@
 					<p class="p-4-white">
 						смотрите все товары в каталоге
 					</p>
-					<button type="button" class="btn btn-circle-brands btn-xl-brands">открыть каталог</button>
+					<button type="button" onclick="location.href='{% url 'catalog' %}'"class="btn btn-circle-brands btn-xl-brands">открыть каталог</button>
 				</div>
 			</div>
 		</div>
