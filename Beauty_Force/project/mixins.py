@@ -1,5 +1,4 @@
 from .models import *
-from django.views.generic import View, FormView
 from decimal import Decimal
 from django.conf import settings
 

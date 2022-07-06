@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.shortcuts import render, get_object_or_404
 
 from django.views import View
@@ -81,11 +80,9 @@ class Main_Page(View):
 
 
 class Brands_Page(View):
-
     brands = Brands.objects.all()
 
     def get(self, request, *args, **kwargs):
-
         context = {
             'brands': self.brands
         }
@@ -154,7 +151,7 @@ class Catalog_Page(View):
 
 
 class Brand_Page(View):
-    
+
     def get(self, request, slug, *args, **kwargs):
 
         brand_id = 0
@@ -213,6 +210,7 @@ class Brand_Page(View):
             except:
                 messages.error(request, "Что-то пошло не так, попробуйте снова.")
         return render(request, 'brand_page.html', context=context)
+
 
 class Partnership_Page(View):
     def get(self, request, *args, **kwargs):
@@ -611,7 +609,7 @@ class Basket_Page(LoginRequiredMixin, View):
             total_and_delivery_sum = 0
         else:
             total_and_delivery_sum = delivery.delivery + (
-                        cart.get_total_price() * (100 - delivery.recipient.discount_percentage) / 100)
+                    cart.get_total_price() * (100 - delivery.recipient.discount_percentage) / 100)
 
         context = {
             'cart': cart,

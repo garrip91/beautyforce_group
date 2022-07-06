@@ -5,9 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 """
-
 Пользователи
-
 """
 
 
@@ -37,9 +35,7 @@ class Users(AbstractUser):
 
 
 """
-
 Адреса доставки пользователей 
-
 """
 
 
@@ -66,9 +62,7 @@ class Delivery_Addresses(models.Model):
 
 
 """
-
 Название бренда
-
 """
 
 
@@ -97,9 +91,7 @@ class Brands(models.Model):
 
 
 """
-
 Категории брендов
-
 """
 
 
@@ -118,9 +110,7 @@ class Brands_Category(models.Model):
 
 
 """
-
 Преимущества бренда
-
 """
 
 
@@ -139,9 +129,7 @@ class Brand_Benefits(models.Model):
 
 
 """
-
 Состав и ингредиенты
-
 """
 
 
@@ -161,9 +149,7 @@ class Compound_And_Ingredients(models.Model):
 
 
 """
-
 Отзывы бренда
-
 """
 
 
@@ -183,9 +169,7 @@ class Reviews(models.Model):
         verbose_name_plural = "Отзывы о бренде"
 
 """
-
 Картинки бренда
-
 """
 class Brands_Images(models.Model):
     brand = models.ForeignKey(Brands, related_name='brand_images', on_delete=models.CASCADE, null=True, blank=True,
@@ -208,9 +192,7 @@ class Brands_Video(models.Model):
         verbose_name = "Видео бренда"
         verbose_name_plural = "Видео бренда"
 """
-
 Линейки бестселлеров
-
 """
 
 
@@ -226,9 +208,7 @@ class Bestsellers_Line(models.Model):
 
 
 """
-
 Товары
-
 """
 
 
@@ -274,9 +254,7 @@ class Product(models.Model):
 
 
 """
-
 Заказы
-
 """
 
 
@@ -342,9 +320,7 @@ class Orders(models.Model):
 
 
 """
-
 Заказы(Количество товара и тд)
-
 """
 
 
@@ -368,9 +344,7 @@ class Order_Items(models.Model):
 
 
 """
-
 Изображения для товара
-
 """
 
 
@@ -384,9 +358,7 @@ class Product_Images(models.Model):
 
 
 """
-
 Пресса
-
 """
 
 

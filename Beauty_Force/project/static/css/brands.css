@@ -61,3 +61,13 @@ a {
     color: #FFFFFF;
     font-weight: bold;
 }
+
+.brands-title{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 18px;
+    color: #1F1A3D;
+
+}

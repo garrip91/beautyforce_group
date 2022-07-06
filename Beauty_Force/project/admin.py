@@ -29,8 +29,10 @@ class Compound_And_Ingredients(admin.TabularInline):
 class Brand_Images(admin.TabularInline):
     model = Brands_Images
 
+
 class Reviews(admin.TabularInline):
     model = Reviews
+
 
 class Brands_Video(admin.TabularInline):
     model = Brands_Video
