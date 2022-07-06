@@ -26,12 +26,18 @@ class Compound_And_Ingredients(admin.TabularInline):
     model = Compound_And_Ingredients
 
 
+class Brand_Images(admin.TabularInline):
+    model = Brands_Images
+
 class Reviews(admin.TabularInline):
     model = Reviews
 
+class Brands_Video(admin.TabularInline):
+    model = Brands_Video
 
-class Brands_Admin(admin.ModelAdmin):
-    inlines = [Brands_Category, Brand_Benefits, Compound_And_Ingredients, Reviews, ]
+
+class Brands_Admin(ImportExportModelAdmin, admin.ModelAdmin):
+    inlines = [Brands_Category, Brand_Benefits, Compound_And_Ingredients, Reviews, Brand_Images, Brands_Video, ]
     list_display = ['brand_name', ]
     list_filter = ['brand_name', ]
     search_fields = ['brand_name', ]
