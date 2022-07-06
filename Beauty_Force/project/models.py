@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from django.urls import reverse
 from django.utils import timezone
-from decimal import Decimal
 
 """
 
@@ -77,14 +75,17 @@ class Delivery_Addresses(models.Model):
 class Brands(models.Model):
     brand_name = models.CharField(max_length=100, null=True, verbose_name='Название бренда', unique=True)
     brand_image = models.ImageField(blank=True, upload_to='images/brand/', verbose_name='Картинка бренда')
-    tagline = models.CharField(max_length=100, null=True, verbose_name='Слоган')
+    tagline = models.CharField(max_length=100, null=True, verbose_name='Слоган', blank=True)
     country = models.CharField(max_length=100, null=True, verbose_name='Страна производитель')
     assortment = models.CharField(max_length=100, null=True, verbose_name='Ассортимент')
     category = models.CharField(max_length=100, null=True, verbose_name='Категория')
     price_segment = models.CharField(max_length=100, null=True, verbose_name='Ценовой сегмент')
-    description = models.CharField(max_length=100, null=True, verbose_name='Описание')
-    reviews = models.CharField(max_length=100, null=True, verbose_name='Состав и ингредиенты')
-    video = models.FileField(upload_to='videos/brands/', null=True, verbose_name="Видео")
+    description = models.TextField(max_length=1000, null=True, verbose_name='Описание')
+    slug = models.SlugField(unique=True, null=True, verbose_name='Ссылка', blank=True)
+
+    def get_absolute_url(self):
+        return reverse('brand',
+                       args=[self.slug])
 
     def __str__(self):
         return str(self.brand_name)
@@ -92,6 +93,7 @@ class Brands(models.Model):
     class Meta:
         verbose_name = "Бренды"
         verbose_name_plural = "Бренды"
+
 
 
 """
@@ -105,7 +107,7 @@ class Brands_Category(models.Model):
     brand = models.ForeignKey(Brands, related_name='brand_category', on_delete=models.CASCADE, null=True, blank=True,
                               verbose_name='Бренд')
     category = models.CharField(max_length=100, null=True, verbose_name='Категория бренда')
-    description = models.CharField(max_length=1000, null=True, verbose_name='Описание')
+    description = models.TextField(max_length=1000, null=True, verbose_name='Описание')
 
     def __str__(self):
         return str(self.brand)
@@ -126,7 +128,7 @@ class Brand_Benefits(models.Model):
     brand = models.ForeignKey(Brands, related_name='brand_benefits', on_delete=models.CASCADE, null=True, blank=True,
                               verbose_name='Бренд')
     title = models.CharField(max_length=100, null=True, verbose_name='Заголовок')
-    description = models.CharField(max_length=1000, null=True, verbose_name='Описание')
+    description = models.TextField(max_length=1000, null=True, verbose_name='Описание')
 
     def __str__(self):
         return str(self.brand)
@@ -147,7 +149,8 @@ class Compound_And_Ingredients(models.Model):
     brand = models.ForeignKey(Brands, related_name='brand_compound', on_delete=models.CASCADE, null=True, blank=True,
                               verbose_name='Бренд')
     component = models.CharField(max_length=100, null=True, verbose_name='Компонент')
-    description = models.CharField(max_length=1000, null=True, verbose_name='Описание')
+    description = models.TextField(max_length=1000, null=True, verbose_name='Описание')
+    image = models.ImageField(blank=True, upload_to='images/brand/', verbose_name='Вспомогательная картинка')
 
     def __str__(self):
         return str(self.brand)
@@ -170,6 +173,7 @@ class Reviews(models.Model):
     name = models.CharField(max_length=100, null=True, verbose_name='Имя покупателя')
     review = models.TextField(max_length=1000, null=True, verbose_name='Отзыв')
     grade = models.IntegerField(default=0, null=True, verbose_name='Оценка')
+    image = models.ImageField(blank=True, upload_to='images/brand/', verbose_name='Аватар')
 
     def __str__(self):
         return str(self.brand)
@@ -178,7 +182,31 @@ class Reviews(models.Model):
         verbose_name = "Отзывы о бренде"
         verbose_name_plural = "Отзывы о бренде"
 
+"""
 
+Картинки бренда
+
+"""
+class Brands_Images(models.Model):
+    brand = models.ForeignKey(Brands, related_name='brand_images', on_delete=models.CASCADE, null=True, blank=True,
+                              verbose_name='Бренд')
+    brands_image = models.ImageField(blank=True, upload_to='images/brand/', verbose_name='Картинки бренда')
+
+    class Meta:
+        verbose_name = "Картинки бренда"
+        verbose_name_plural = "Картинки бренда"
+
+
+class Brands_Video(models.Model):
+    brand = models.ForeignKey(Brands, related_name='brand_videos', on_delete=models.CASCADE, null=True, blank=True,
+                              verbose_name='Бренд')
+    title = models.CharField(max_length=100, null=True, verbose_name='Заголовок')
+    video = models.FileField(upload_to='videos/brands/', null=True, verbose_name="Картинка видео", blank=True)
+    link = models.URLField(verbose_name='Ссылка на видео', null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Видео бренда"
+        verbose_name_plural = "Видео бренда"
 """
 
 Линейки бестселлеров
@@ -363,6 +391,8 @@ class Product_Images(models.Model):
 
 
 class Press(models.Model):
+    brand = models.ForeignKey(Brands, related_name='brand_press', on_delete=models.CASCADE, null=True, blank=True,
+                              verbose_name='Бренд')
     logo = models.ImageField(blank=True, upload_to='images/press/logo/', verbose_name='Лого')
     title = models.CharField(max_length=100, null=True, verbose_name='Заголовок')
     text = models.CharField(max_length=200, null=True, verbose_name='Текст статитьи', blank=True)
