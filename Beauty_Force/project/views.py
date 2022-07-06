@@ -1,7 +1,7 @@
+from multiprocessing import context
 from django.shortcuts import render, get_object_or_404
 
 from django.views import View
-from django.views.generic.edit import FormView
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
 
@@ -82,8 +82,15 @@ class Main_Page(View):
 
 class Brands_Page(View):
 
+    brands = Brands.objects.all()
+
     def get(self, request, *args, **kwargs):
-        return render(request, 'brands.html')
+
+        context = {
+            'brands': self.brands
+        }
+
+        return render(request, 'brands.html', context=context)
 
 
 class Catalog_Page(View):
@@ -147,9 +154,65 @@ class Catalog_Page(View):
 
 
 class Brand_Page(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'brand_page.html')
+    
+    def get(self, request, slug, *args, **kwargs):
 
+        brand_id = 0
+        brand = Brands.objects.filter(slug=slug)
+        for id in brand:
+            brand_id = id.pk
+        brand_images = Brands_Images.objects.filter(brand=brand_id)
+        brands_category = Brands_Category.objects.filter(brand=brand_id)
+        brand_benefits = Brand_Benefits.objects.filter(brand=brand_id)
+        compound_and_ingredients = Compound_And_Ingredients.objects.filter(brand=brand_id)
+        reviews = Reviews.objects.filter(brand=brand_id)
+        video = Brands_Video.objects.filter(brand=brand_id)
+        press = Press.objects.filter(brand=brand_id)
+        context = {
+            'brand': brand,
+            'brand_images': brand_images,
+            'brands_category': brands_category,
+            'brand_benefits': brand_benefits,
+            'compound_and_ingredients': compound_and_ingredients,
+            'reviews': reviews,
+            'video': video,
+            'press': press,
+            'get_price': Get_Price_Form(),
+        }
+        return render(request, 'brand_page.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+
+        form = Get_Price_Form(request.POST)
+
+        context = {
+            'get_price': Get_Price_Form(),
+            'all_products': self.all_products,
+            'brands': self.brands,
+            'bestsellers_line': self.bestsellers_line,
+        }
+
+        if form.is_valid():
+            telephone_number = form.cleaned_data['telephone_number']
+            email = form.cleaned_data['email']
+            contact_name = form.cleaned_data['contact_name']
+            company_name = form.cleaned_data['company_name']
+            try:
+                send_mail(
+                    'Заявка на сотрудничество',
+                    'Контактное лицо {}, телефон {}, компания {}'.format(
+                        contact_name,
+                        telephone_number,
+                        company_name
+                    ),
+                    'reg@beforce.ru',
+                    ['reg@beforce.ru'],
+                    fail_silently=False,
+                )
+                messages.success(request, "price")
+            except:
+                messages.error(request, "Что-то пошло не так, попробуйте снова.")
+        return render(request, 'brand_page.html', context=context)
 
 class Partnership_Page(View):
     def get(self, request, *args, **kwargs):
