@@ -4,39 +4,42 @@
 {% block content %}
 
 <!-- name brand -->
-
+{% for brand_item in brand %}
 	<div class="section-name-brand">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
 				<div class="col align-self-center center">
 					<p class="brand-name">
-						Название бренда
+						{{ brand_item.brand_name }}
 					</p>
+					{% if brand_item.tagline == None %}
+					{% else %}
 					<p class="brand-tagline">
-						Слоган
+						{{ brand_item.tagline }}
 					</p>
+					{% endif %}
 					<div class="card-group">
 					  <div class="card">
 						<div class="card-body-brand">
 						  <p class="item-header-brand">Страна</p>
-						  <p class="item-header-text">Страна-производителя</p>
+						  <p class="item-header-text">{{ brand_item.country }}</p>
 						  <p class="item-header-brand">Ассортимент</p>
-						  <p class="item-header-text">Ассортимент товара</p>
+						  <p class="item-header-text">{{ brand_item.assortment }}</p>
 						</div>
 					  </div>
 					  <div class="card">
 						<div class="card-body-brand">
 						  <p class="item-header-brand">категория</p>
-						  <p class="item-header-text">Категория бренда</p>
+						  <p class="item-header-text">{{ brand_item.category }}</p>
 						  <p class="item-header-brand">Ценовой сегмент</p>
-						  <p class="item-header-text">₽₽₽ Premium</p>
+						  <p class="item-header-text">{{ brand_item.price_segment }}</p>
 						</div>
 					  </div>
 					</div>
 				</div>
 				<div class="col align-self-end">
-					<img src="{% static 'images/brand/Rectangle 295.png' %}" class="image_main" alt="">
+					<img src="{{ brand_images.0.brands_image.url }}" class="image_main" alt="">
 				</div>
 			</div>
 		</div>
@@ -46,7 +49,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="images-container">
-						<img src="{% static 'images/brand/Rectangle 345.png' %}" alt="">
+						<img src="{{ brand_images.1.brands_image.url }}" alt="">
 					</div>
 				</div>
 				<div class="col">
@@ -58,18 +61,7 @@
 							ОПИСАНИЕ
 						</p>
 						<p class="mission-p">
-							Haruharu Wonder создает средства для фундаментального ухода за кожей.
-							В переводе с корейского языка haruharu означает «каждый день», именно поэтому
-							основной концепцией бреда является стремление стать незаменимым спутником
-							ежедневного бьюти-ритуала.
-						</p>
-						<p class="mission-p">
-							Бренд представляет абсолютно безопасные косметические средства,
-							которые на 95% состоят из натуральных растительных ингредиентов,
-							таких как черный рис, экстракт зеленого чая, экстракт меда и ягод Маки.
-							Основываясь на постоянных экспериментах собственной лаборатории, средства
-							Haruharu Wonder обеспечивают не только мгновенный эффект, но и легкую доставку
-							активных ингредиентов в глубокие слои кожи.
+							{{ brand_item.description|linebreaks }}
 						</p>
 					</div>
 				</div>
@@ -103,85 +95,19 @@
 							линейка товаров по<br> категориям
 						</p>
 						<div class="row">
+							{% for brand_category in brands_category %}
 						  <div class="col-sm-6">
 							<div class="card">
 							  <div class="card-body">
-								<h5 class="card-title">категория 1</h5>
+								<h5 class="card-title">{{ brand_category.category }}</h5>
 								<p class="card-text">
-									Серумы и эссенции восстанавливают водный баланс после очищения кожи.
-									Они обладают выскоконцентрированными составами, которые наполняют клетки влагой и
-									защищают от агрессивного воздействия внешней среды.
+									{{ brand_category.description }}
 								</p>
 							  </div>
 							</div>
 						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="card-body">
-								<h5 class="card-title">категория 2</h5>
-								<p class="card-text">
-									Мягкий гель-пилинг бережно очищает кожу от ороговевших частиц и глубоко очищает поры.
-								</p>
-							  </div>
-							</div>
-						  </div>
+						  {% endfor %}
 						</div>
-						<div class="row">
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="card-body">
-								<h5 class="card-title">категория 3</h5>
-								<p class="card-text">
-									Кремы HaruHaru Wonder интенсивно увлажняют,
-									выравнивают тон кожи и придают здоровое сияние.
-									Натуральные растительные ингредиенты не вызывают аллергии,
-									а средства подходят даже людям с чувствительной кожей.
-								</p>
-							  </div>
-							</div>
-						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="card-body">
-								<h5 class="card-title">категория 4</h5>
-								<p class="card-text">
-									Маски созданы на основе микрофибрилла из чистого 100% хлопка.
-									В составе натуральные ингредиенты, которые обеспечивают антиоксидантный,
-									восстанавливающий, увлажняющий или сияющий эффект.
-								</p>
-							  </div>
-							</div>
-						  </div>
-						</div>
-						<div class="row">
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="card-body">
-								<h5 class="card-title">категория 5</h5>
-								<p class="card-text">
-									Масло Haruharu Wonder содержит 100% натуральные ингредиенты
-									природного происхождения, такие как: масло корейских рисовых отрубей (45%),
-									масло семян подсолнечника, масло семян жожоба, масло сладкого миндаля.
-									Средство восстанавливает липидный барьер, удерживает влагу и помогает
-									сбалансировать выработку кожного сала.
-								</p>
-							  </div>
-							</div>
-						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="card-body">
-								<h5 class="card-title">категория 6</h5>
-								<p class="card-text">
-									Мист-дымка обладает ультралегкой текстурой,
-									которая восстанавливает обезвоженную кожу.
-									В составе средства экстракт бамбуковых листьев,
-									который придает коже упругость,
-									а также бетаин – он нормализует водно-жировой баланс.
-								</p>
-							  </div>
-							</div>
-						  </div>
 						</div>
 					</div>
 				</div>
@@ -211,65 +137,25 @@
 				<div class="row">
 					<div class="col">
 						<p class="p-4">
-							Преимущества
-						</p>
-
-					  <div class="card">
-						<div class="card-body-brand">
-								<h5 class="card-title">Запатентованные технологии</h5>
-								<p class="card-text">
-									Низкотемпературное охлаждение производства эмульсионных шариков
-									обеспечивает ультра-насыщенную подачу питания. Формула отвержденной
-									жидкой эмульсии сохраняет свою форму даже при комнатной температуре.
-								</p>
+							ПРЕИМУЩЕСТВА
+							</p>
+							{% for brand_benefit in brand_benefits %}
+							<div class="card">
+								<div class="card-body-brand">
+										<h5 class="card-title">{{ brand_benefit.title }}</h5>
+										<p class="card-text">
+											{{ brand_benefit.description }}
+										</p>
+								</div>
+							  </div>
+							  {% endfor %}
 						</div>
-					  </div>
-					  <div class="card">
-						<div class="card-body-brand">
-								<h5 class="card-title">Высококонцентрированные составы</h5>
-								<p class="card-text">
-									В продуктах Dr.Gloderm все ингредиенты находятся в максимальной концентрации.
-									Благодаря этому достигается максимальное воздействие на состояние кожи:
-									она наполняется полезными веществами, становясь сияющей и красивой.
-								</p>
-						</div>
-					</div>
-					  <div class="card">
-						<div class="card-body-brand">
-								<h5 class="card-title">В состав не входят опасные ингредиенты</h5>
-								<p class="card-text">
-									Средства Dr.Gloderm не содержат парабен,
-									минеральное масло, бензофенон, феноксиэтанол, тальк.
-									Все продукты одобрены и сертифицированы
-									Сеульской Ассоциацией дерматологов.
-								</p>
-						</div>
-					  </div>
-					  <div class="card">
-						<div class="card-body-brand">
-								<h5 class="card-title">Улучшение качества кожи</h5>
-								<p class="card-text">
-									В составах средств лишь природные ингредиенты,
-									которые бережно ухаживают за кожей, придавая ей здоровый вид.
-								</p>
-						</div>
-					</div>
-					  <div class="card">
-						<div class="card-body-brand">
-								<h5 class="card-title">Клинические испытания</h5>
-								<p class="card-text">
-									Все продукты успешно прошли клинические
-									испытания на безопасность и аллергенность.
-								</p>
-						</div>
-					  </div>
-				</div>
-				<div class="col align-self-end">
-					<img src="{% static 'images/brand/Rectangle 296.png' %}" class="" alt="">
-				</div>
+				<div class="col">
+					<img src="{{ brand_images.1.brands_image.url }}" class="" alt="">
 				</div>
 			</div>
 		</section>
+		
 		<section class="ftco-section">
 			<div class="container container-blue">
 				<div class="row">
@@ -296,129 +182,26 @@
 						<p class="p-4">
 							состав<br> и ингредиенты
 						</p>
-						<div class="row">
+						<div class="row" style="margin-top: 2rem;">
+							{% for compound_and_ingredient in compound_and_ingredients %}
 						  <div class="col-sm-6">
 							<div class="card">
 							  <div class="row no-gutters">
 								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
+								  <img src="{{ compound_and_ingredient.image.url }}" style="margin-right: 1rem;" alt="...">
 								</div>
 								<div class="col">
 								  <div class="card-body">
-								<h5 class="card-title">категория 1</h5>
+								<h5 class="card-title">{{ compound_and_ingredient.component }}</h5>
 								<p class="card-text">
-									Специально для средств Haruharu Wonder черный рис выращивают н аплодородных полях
-									Кореи в регионе Ансон. После сбора урожая, черный рис проходит ферментацию.
-									Таким образом увеличивается его антиоксидантное действие.
+									{{ compound_and_ingredient.description }}
 								</p>
 								  </div>
 								</div>
 							  </div>
 							</div>
 						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="row no-gutters">
-								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
-								</div>
-								<div class="col">
-								  <div class="card-body">
-								<h5 class="card-title">категория 2</h5>
-								<p class="card-text">
-									Ягоду Маки называют «суперфудом» и «плодом молодости»,
-									так как она богата антиоксидантами и антивозрастными свойствами.
-									Она защищает кожу от внешних стрессоров, наполняет сухую и чувствительную
-									кожу влагой и возвращает здоровый цвет лица.
-								</p>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </div>
-						</div>
-						<div class="row">
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="row no-gutters">
-								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
-								</div>
-								<div class="col">
-								  <div class="card-body">
-								<h5 class="card-title">категория 3</h5>
-								<p class="card-text">
-									В средствах используется высококачественная гиалуроновая кислота с
-									низким молекулярным весом (600 ppm). Она создается  по собственной липосомной
-									технологии Haruharu Wonder из красного женьшеня. Благодаря этому она обеспечивает
-									быструю доставку ингредиентов глубоко в кожу и мгновенно увлажняет.
-								</p>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="row no-gutters">
-								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
-								</div>
-								<div class="col">
-								  <div class="card-body">
-								<h5 class="card-title">категория 4</h5>
-								<p class="card-text">
-									Этот эффективный ингредиент входит в состав миста Haruharu
-									WONDER и обеспечивает улучшение упругости кожи.
-									Также экстракт бамбука увлажняет и выравнивает рельеф кожи.
-								</p>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </div>
-						</div>
-						<div class="row">
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="row no-gutters">
-								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
-								</div>
-								<div class="col">
-								  <div class="card-body">
-								<h5 class="card-title">категория 5</h5>
-								<p class="card-text">
-										В кремах Original Line содержится
-									экстракт зеленого чая, который снимает раздражения и воспаления,
-									а также выравнивает тон лица. Кроме того, зеленый чай питает кожу влагой.
-								</p>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </div>
-						  <div class="col-sm-6">
-							<div class="card">
-							  <div class="row no-gutters">
-								<div class="">
-								  <img src="{% static 'images/brand/Rectangle 308.png' %}" alt="...">
-								</div>
-								<div class="col">
-								  <div class="card-body">
-								<h5 class="card-title">категория 6</h5>
-								<p class="card-text">
-									Масло богато ценными минералами и микроэлементами,
-									которые интенсивно питают и восстанавливают защитные функции клеток,
-									а также борются с первыми признаками увядания кожи.
-								</p>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </div>
-						</div>
-					</div>
+						  {% endfor %}
 				</div>
 			</div>
 		</section>
@@ -449,90 +232,76 @@
 							отзывы<br> покупателей
 						</p>
 					</div>
-					<button type="button" onclick="plusCommentSlide()" class="btn btn-default btn-circle btn-lg"><i class="fa fa-long-arrow-left"></i></button>
-					<button type="button" onclick="minusCommentSlide()" class="btn btn-default btn-circle-2 btn-lg"><i class="fa fa-long-arrow-right"></i></button>
+					<button type="button" class="btn btn-default btn-circle btn-lg" data-target="#reviews" data-slide="prev"><i class="fa fa-long-arrow-left"></i></button>
+					<button type="button" class="btn btn-default btn-circle-2 btn-lg" data-target="#reviews" data-slide="next"><i class="fa fa-long-arrow-right"></i></button>
 				</div>
-				<div class="slider-2">
-					<div class="item-comment">
-						<div class="container-m">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>1111111111111111111111111111111111111111111111</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
+				<div id="reviews" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner  container-m">
+						{% for review in reviews %}
+							  {% if forloop.counter == 1  %}
+								  <div class="carousel-item carousel-item-order active">
+									  {% else %}
+									  <div class="carousel-item carousel-item-order">
+									  {% endif %}
+									  <div class="card-group">
+										<div class="card card-carousel">
+											<div class="col-md-4">
+											<div class="card"> <i class="fa fa-quote-left u-color"></i>
+												<p>{{ review.review }}</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="user-about"> <span class="font-weight-bold d-block">{{ review.name }}</span>
+														<div class="d-flex flex-row mt-1"> 
+															{% if review.grade == 0 %}
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i>
+															{% elif review.grade == 1 %}
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i>
+															{% elif review.grade == 2 %}
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i>
+															{% elif review.grade == 3 %}
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star-o u-color"></i> 
+															<i class="fa fa-star-o u-color"></i>
+															{% elif review.grade == 4 %}
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star-o u-color"></i>
+															{% else %}
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i> 
+															<i class="fa fa-star u-color"></i>
+															{% endif %}
+														</div>
+													</div>
+													<div class="user-image"> <img src="{{ review.image.url }}" class="rounded-circle" width="70"> </div>
+												</div>
 											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>222222222222222222222222222222222222222222222222</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
 											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
 										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>33333333333333333333333333333333333333333333</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
-											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+									  </div>
+								  </div>
+							  {% endfor %}
+							  </div>
+						  </div>
+					  </div>
 					</div>
-				</div>
-					<div class="item-comment">
-						<div class="container-m">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>4444444444444444444444444444444444444444444444</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь 1</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
-											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>555555555555555555555555555555555555555555555555</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь 1</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
-											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="card"> <i class="fa fa-quote-left u-color"></i>
-										<p>66666666666666666666666666666666666666666666666666666</p>
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="user-about"> <span class="font-weight-bold d-block">Пользователь 1</span>
-												<div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
-											</div>
-											<div class="user-image"> <img src="{% static 'images/brand/Ellipse 51.png' %}" class="rounded-circle" width="70"> </div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 		</section>
 		<section class="ftco-section">
 			<div class="container container-blue">
@@ -565,37 +334,28 @@
 					<button type="button" class="btn btn-default btn-circle-2 btn-lg" data-target="#videoCarusel" data-slide="next"><i class="fa fa-long-arrow-right"></i></button>
 				</div>
 				<div id="videoCarusel" class="carousel slide" data-ride="carousel">
-				  <ol class="carousel-indicators">
-					<li data-target="#videoCarusel" data-slide-to="0" class="active"></li>
-					<li data-target="#videoCarusel" data-slide-to="1"></li>
-					<li data-target="#videoCarusel" data-slide-to="2"></li>
-				  </ol>
 				  <div class="carousel-inner">
-					<div class="carousel-item active">
-					  <img src="{% static 'images/brand/Rectangle 295.png' %}" class="d-block w-100" alt="...">
-					  <div class="carousel-caption d-none d-md-block">
-						<h5>1 Видео</h5>
-						<p>Описание</p>
-					  </div>
-					</div>
-					<div class="carousel-item">
-					  <img src="{% static 'images/brand/Rectangle 295.png' %}" class="d-block w-100" alt="...">
-					  <div class="carousel-caption d-none d-md-block">
-						<h5>2 Видео</h5>
-						<p>Описание</p>
-					  </div>
-					</div>
-					<div class="carousel-item">
-					  <img src="{% static 'images/brand/Rectangle 295.png' %}" class="d-block w-100" alt="...">
-					  <div class="carousel-caption d-none d-md-block">
-						<h5>3 Видео</h5>
-						<p>Описание</p>
-					  </div>
-					</div>
+					{% for item in video %}
+					{% if forloop.counter == 1  %}
+						<div class="carousel-item active">
+							{% else %}
+							<div class="carousel-item">
+							{% endif %}
+							<div class="card-group">
+							  <div class="card card-carousel">
+								  <a href="{{ item.link }}" class="video_href"><img src="{{ item.video.url }}" class="d-block w-100" alt="Card image cap"></a>
+								  <div class="carousel-caption d-none d-md-block">
+									<h5>{{ item.title }}</h5>
+								  </div>
+							  </div>
+							</div>
+						</div>
+					{% endfor %}
 				  </div>
 				</div>
 		</div>
 	</section>
+	{% endfor %}
 		<section class="ftco-section">
 			<div class="container container-blue">
 				<div class="row">
@@ -623,80 +383,25 @@
 						блок прессы
 					</p>
 					<div class="row">
+						{% for presses in press %}
 					  <div class="col-sm-6">
 						<div class="card card-border">
 						  <div class="card-body">
-							<h5 class="card-title"><img src="{% static 'images/brand/Logo 1.png' %}" class="" alt=""></h5>
-							<H5 class="card-title">Ситуация SOS: какие маски для лица помогут преобразить кожу к празднику</H5>
+							<h5 class="card-title"><img src="{{ presses.logo.url }}" class="" alt=""></h5>
+							<a href="{{ presses.link }}"><H5 class="card-title">{{ presses.title }}</H5></a>
+							{% if presses.text == None %}
+							{% else %}
+								<p class="card-text">
+									{{ presses.text }}
+								</p>
+							{% endif %}
 						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
+						  <img src="{{ presses.image.url }}" class="card-img-bottom" alt="...">
 						</div>
 					  </div>
-					  <div class="col-sm-6">
-						<div class="card card-border">
-						  <div class="card-body">
-							<h5 class="card-title-2"><img src="{% static 'images/brand/Vector.png' %}" class="" alt=""> леди</h5>
-							<h5 class="card-title">Что подарить на Новый год: 50 вариантов для самых модных</h5>
-						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
-						</div>
+					  {% endfor %}
 					  </div>
-					</div>
-					<div class="row">
-					  <div class="col-sm-6">
-						<div class="card card-border">
-						  <div class="card-body">
-							<h5 class="card-title"><img src="{% static 'images/brand/М О С К В И Ч.png' %}" class="" alt=""></h5>
-							<H5 class="card-title">6 косметических марок, приехавших в Москву в 2020-м</H5>
-							  <p class="card-text">
-									Haruharu Wonder строит составы своих средств вокруг двух ключевых ингредиентов:
-								  в линии Original это ферментированный экстракт ягод маки, а в Black Rice —
-								  экстракт черного риса, тоже ферментированный. Оба компонента богаты антиоксидантами,
-								  которые редко бывают некстати в условиях экологии большого города.
-							  </p>
-						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
-						</div>
-					  </div>
-					  <div class="col-sm-6">
-						<div class="card card-border">
-						  <div class="card-body">
-							<h5 class="card-title-2"><img src="{% static 'images/brand/image 5.png' %}" class="" alt=""></h5>
-							<h5 class="card-title">Какие бренды пришли в Россию в 2020 году</h5>
-							  <p class="card-text">
-									Корейская марка Haruharu создает безопасные и эффективные продукты,
-								  используя натуральные ингредиенты — каждое средство минимум на 95% состоит
-								  из природных компонентов. Среди них можно найти зеленый чай с медом, ягоды маки и
-								  лошадиный жир. Также принципиальным отличием бренда является использование
-								  молочнокислых бактерий.
-							  </p>
-						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
-						</div>
-					  </div>
-					</div>
-					<div class="row">
-					  <div class="col-sm-6">
-						<div class="card card-border">
-						  <div class="card-body">
-							<h5 class="card-title"><img src="{% static 'images/brand/Page 1.png' %}" class="" alt=""></h5>
-							<H5 class="card-title">Что подарить на Новый год? Модные вещи, напоминающие о путешествиях</H5>
-						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
-						</div>
-					  </div>
-					  <div class="col-sm-6">
-						<div class="card card-border">
-						  <div class="card-body">
-							<h5 class="card-title-2"><img src="{% static 'images/brand/Vector1.png' %}" class="" alt=""></h5>
-							<h5 class="card-title">Итоги года — 2020: новые бьюти-марки на российском рынке</h5>
-						  </div>
-						  <img src="{% static 'images/brand/Rectangle 48.jpg' %}" class="card-img-bottom" alt="...">
-						</div>
-					  </div>
-					</div>
-				</div>
-		</div>
+			</div>
 		</div>
 	</section>
 		<section class="ftco-section">
@@ -734,24 +439,20 @@
 		  <div class="row">
 			  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
 				  <form id="contact-form" class="form" action="#" method="POST" role="form">
-					  <div class="form-group">
-						  <label class="form-label" for="name">Телефон</label>
-						  <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" tabindex="1" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="email">Контактное лицо</label>
-						  <input type="email" class="form-control" id="email" name="email" placeholder="Контактное лицо" tabindex="2" required>
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="subject">Почта</label>
-						  <input type="text" class="form-control" id="subject" name="subject" placeholder="Почта" tabindex="3">
-					  </div>
-					  <div class="form-group">
-						  <label class="form-label" for="message">Компания</label>
-						  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Компания" tabindex="4" required></textarea>
-					  </div>
+					<div class="form-group">
+						{{ get_price.telephone_number }}
+					</div>
+					<div class="form-group">
+						{{ get_price.email }}
+					</div>
+					<div class="form-group">
+						{{ get_price.contact_name }}
+					</div>
+					<div class="form-group">
+					{{ get_price.company_name }}
+					</div>
 					  <div class="text-center">
-						<p class="p-form text-right"> <button type="button" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
+						<p class="p-form text-right"> <button type="submit" class="btn btn-circle btn-xl">Отправить</button>Нажимая кнопку, вы соглашаетесь<br> <span class="p-form text-right span-form">с политикой конфиденциальности</span></p>
 					  </div>
 				  </form>
 			  </div>
@@ -882,5 +583,47 @@
 	</div>
   </div>
 </footer>
+
+{% if messages %}
+{% for msg in messages %}
+	{% if msg.message == 'price' %}
+	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content modal-price">
+				<div class="modal-body">
+						<div class="text-center p-t-30">
+							<h5 style="padding-top: 2rem;"><img src="{% static 'images/done.png' %}"  alt=""></h5>
+							<span class="modal-text">
+									<span class="modal-price-done">Спасибо!</span><br><span class="modal-price-done-1">Данные успешно отправлены</span>
+							</span>
+						</div>
+				</div>
+			  <div class="modal-footer d-flex justify-content-center">
+				<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+		{% else %}
+		<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content modal-price">
+					<div class="modal-body">
+							<div class="text-center p-t-30">
+								
+								<span class="modal-text">
+										<span class="modal-price-done">{{ msg }}</span>
+								</span>
+							</div>
+					</div>
+				  <div class="modal-footer d-flex justify-content-center">
+					<button type="button" class="btn btn-secondary text-center" data-dismiss="modal">ОК</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}
 
 {% endblock content %}
