@@ -71,7 +71,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 0;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -8486,7 +8486,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fff;
+  background-color: #1F1A3D;
   color: gray; }
 
 a {
@@ -8972,6 +8972,7 @@ textarea {
 
 .copyright{
     text-align: start;
+    color: gray;
 
 }
 

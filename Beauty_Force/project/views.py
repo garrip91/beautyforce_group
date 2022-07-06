@@ -178,20 +178,36 @@ class Brand_Page(View):
         }
         return render(request, 'brand_page.html', context=context)
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
 
         form = Get_Price_Form(request.POST)
+        brand_id = 0
+        brand = Brands.objects.filter(slug=slug)
+        for id in brand:
+            brand_id = id.pk
+        brand_images = Brands_Images.objects.filter(brand=brand_id)
+        brands_category = Brands_Category.objects.filter(brand=brand_id)
+        brand_benefits = Brand_Benefits.objects.filter(brand=brand_id)
+        compound_and_ingredients = Compound_And_Ingredients.objects.filter(brand=brand_id)
+        reviews = Reviews.objects.filter(brand=brand_id)
+        video = Brands_Video.objects.filter(brand=brand_id)
+        press = Press.objects.filter(brand=brand_id)
 
         context = {
+            'brand': brand,
+            'brand_images': brand_images,
+            'brands_category': brands_category,
+            'brand_benefits': brand_benefits,
+            'compound_and_ingredients': compound_and_ingredients,
+            'reviews': reviews,
+            'video': video,
+            'press': press,
             'get_price': Get_Price_Form(),
-            'all_products': self.all_products,
-            'brands': self.brands,
-            'bestsellers_line': self.bestsellers_line,
+
         }
 
         if form.is_valid():
             telephone_number = form.cleaned_data['telephone_number']
-            email = form.cleaned_data['email']
             contact_name = form.cleaned_data['contact_name']
             company_name = form.cleaned_data['company_name']
             try:
