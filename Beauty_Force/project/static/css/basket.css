@@ -117,3 +117,54 @@ input{
     text-transform: uppercase;
     color: #1F1A3D;
 }
+
+.p-4-basket {
+  font-family: 'Futura PT';
+  color: #fff !important;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 60px;
+  }
+  @media (min-width: 576px) {
+    .p-4-basket {
+        } }
+  @media (min-width: 768px) {
+    .p-4-basket { } }
+  @media (min-width: 992px) {
+    .p-4-basket:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Ваша корзина пуста";} }
+  @media (min-width: 1024px) {
+    .p-4-basket:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Ваша корзина пуста";} }
+
+  @media (min-width: 1200px) {
+    .p-4-basket::after {
+      margin-top: 2rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Ваша корзина пуста"} }

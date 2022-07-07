@@ -8,3 +8,59 @@
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #8F8C9E;
 }
+.p-4-press-1 {
+  font-family: 'Futura PT';
+  color: #fff !important;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 60px;
+  }
+  @media (min-width: 576px) {
+    .p-4-press-1 {
+        } }
+  @media (min-width: 768px) {
+    .p-4-press-1 { } }
+  @media (min-width: 992px) {
+    .p-4-press-1:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Пресса";} }
+  @media (min-width: 1024px) {
+    .p-4-press-1:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Пресса";
+      }
+        .col-press{
+            max-width: 100%;
+            flex: 0 0 20%;
+        }
+      }
+
+  @media (min-width: 1200px) {
+    .p-4-press-1::after {
+      margin-top: 2rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Пресса"} }

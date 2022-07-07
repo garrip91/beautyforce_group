@@ -91,8 +91,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<p class="p-4">
-							линейка товаров по<br> категориям
+						<p class="p-4-brand-1">
 						</p>
 						<div class="row">
 							{% for brand_category in brands_category %}
@@ -111,7 +110,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</section>
 		<section class="ftco-section">
 			<div class="container container-blue">
@@ -135,9 +133,8 @@
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row">
-					<div class="col">
-						<p class="p-4">
-							ПРЕИМУЩЕСТВА
+					<div class="col col-tablet-1">
+						<p class="p-4-brand-2">
 							</p>
 							{% for brand_benefit in brand_benefits %}
 							<div class="card">
@@ -179,8 +176,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<p class="p-4">
-							состав<br> и ингредиенты
+						<p class="p-4-brand-3">
 						</p>
 						<div class="row" style="margin-top: 2rem;">
 							{% for compound_and_ingredient in compound_and_ingredients %}
@@ -228,8 +224,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<p class="p-4">
-							отзывы<br> покупателей
+						<p class="p-4-brand-4">
+
 						</p>
 					</div>
 					<button type="button" class="btn btn-default btn-circle btn-lg" data-target="#reviews" data-slide="prev"><i class="fa fa-long-arrow-left"></i></button>
@@ -326,8 +322,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="p-4">
-						видео-блок с<br> обзорами
+					<p class="p-4-brand-5">
 					</p>
 				</div>
 					<button type="button" class="btn btn-default btn-circle btn-lg" data-target="#videoCarusel" data-slide="prev"><i class="fa fa-long-arrow-left"></i></button>
@@ -379,8 +374,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="p-4">
-						блок прессы
+					<p class="p-4-brand-6">
+
 					</p>
 					<div class="row">
 						{% for presses in press %}
@@ -427,8 +422,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="p-4">
-						сделаем первый шаг<br>к сотрудничеству
+					<p class="p-4-brand-7">
+
 					</p>
 				</div>
 			</div>
@@ -478,7 +473,7 @@
 <footer class="bg-light text-center text-lg-start footer-10">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
 		  <h2 class="footer-heading list-unstyled"><img src="{% static 'images/Vector_footer.svg' %}"  alt=""></h2>
         <ul class="list-unstyled">
 			  <li class="li-footer">
@@ -486,7 +481,7 @@
 			  </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">меню</h2>
         <ul class="list-unstyled footer-links">
           <li>
@@ -512,7 +507,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">бренды</h2>
 
         <ul class="list-unstyled footer-links">
@@ -539,7 +534,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">контакты</h2>
 
         <ul class="list-unstyled footer-links">
@@ -563,9 +558,9 @@
   <div class="container">
     <div class="row mt-5 pt-4 border-top">
 	<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		<p class=" mb-0">Design & development by © BeautyForce™</p>
+		<p class="mb-0 copyright">Design & development by © BeautyForce™</p>
 	</div>
-	  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+	  <div class="">
 		<ul class="">
 		  <a href="" class=""><img src="{% static 'images/Group 1024.png' %}"  alt=""></a>
 		  <a href="" ><img src="{% static 'images/Group 1028.png' %}"  alt=""></a>
@@ -579,7 +574,7 @@
 		</ul>
 	  </div>
 		  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		  	<p class=" mb-0">Политика конфиденциальности</p>
+		  	<p class="copyright-1 mb-0">Политика конфиденциальности</p>
 		  </div>
 	</div>
   </div>

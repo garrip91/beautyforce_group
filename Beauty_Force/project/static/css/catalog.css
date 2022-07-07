@@ -34,18 +34,91 @@
 .card-deck-category {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 70rem;
+  width: 100%;
   background-color: #1F1A3D; }
   .card-deck-category .card {
     margin-bottom: 15px;
     background-color: #1F1A3D; }
   @media (min-width: 576px) {
+    .card-deck-category {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      background-color: #1F1A3D; }
+      .card-deck-category .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        background-color: #1F1A3D; } }
+  @media (min-width: 768px) {
+    .card-deck-category {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      background-color: #1F1A3D;
+      }
+      .card-deck-category .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        background-color: #1F1A3D;
+         } }
+  @media (min-width: 1024px) {
+    .card-deck-category {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      background-color: #1F1A3D;
+       width: 100%;}
+      .card-deck-category .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        background-color: #1F1A3D; } }}}
+  @media (min-width: 992px) {
     .card-deck-category {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -69,8 +142,30 @@
         margin-bottom: 0;
         margin-left: 15px;
         background-color: #1F1A3D; } }
-
-
+  @media (min-width: 1200px) {
+    .card-deck-category {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      background-color: #1F1A3D; }
+      .card-deck-category .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        background-color: #1F1A3D; } }
 .card-title-catalog {
     font-family: 'Futura PT';
     font-style: normal;
@@ -88,6 +183,36 @@
     margin-left: 15rem;
     margin-top: 2rem;
 }
+  @media (min-width: 576px) {
+    .info-catalog{
+        margin-left: 15rem;
+        margin-top: 2rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .info-catalog{
+        margin-left: 15rem;
+        margin-top: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .info-catalog{
+    margin-left: 7rem;
+    margin-top: 3rem;
+    }
+ }}}
+  @media (min-width: 992px) {
+    .info-catalog{
+        margin-left: 15rem;
+        margin-top: 2rem;
+    }
+ }
+  @media (min-width: 1200px) {
+    .info-catalog{
+        margin-left: 15rem;
+        margin-top: 2rem;
+    }
+ }
 
 .catalog-telephone{
     font-family: 'Futura PT';
@@ -181,3 +306,55 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
+
+
+.p-4-brands-items {
+  font-family: 'Futura PT';
+  color: #fff !important;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 60px;
+  }
+  @media (min-width: 576px) {
+    .p-4-brands-items {
+        } }
+  @media (min-width: 768px) {
+    .p-4-brands-items { } }
+  @media (min-width: 992px) {
+    .p-4-brands-items:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Товары бренда";} }
+  @media (min-width: 1024px) {
+    .p-4-brands-items:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "Товары бренда";} }
+
+  @media (min-width: 1200px) {
+    .p-4-brands-items::after {
+      margin-top: 2rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Товары бренда"} }

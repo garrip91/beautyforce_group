@@ -10,8 +10,7 @@
 	<div class="container container-links">
 		<div class="row">
 			<div class="col">
-				<p class="p-2">
-					Бренды
+				<p class="p-2-brands">
 				</p>
 			</div>
 			<div class="col-1-1 brands-href">
@@ -38,12 +37,13 @@
 </section>
 </div>
 
+<div class="white-container">
 <!-- Decorations -->
 {% regroup brands by category as brand_list %}
 
 {% for brand in brand_list %}
 <div id="Decorations" class="section-decorations">
-	<section class="ftco-section section-3">
+	<section class="ftco-section-white section-3">
 		<div class="container container-white">
 			<div class="row">
 				<div class="col">
@@ -83,7 +83,6 @@
 </section>
 </div>
 {% endfor %}
-
 <div class="section-catalog-button">
 	<section class="ftco-section section-3">
 		<div class="container container-white">
@@ -106,7 +105,7 @@
 		</div>
 	</section>
 </div>
-
+</div>
 <footer class="ftco-section text-center text-lg-start footer-10">
   <div class="container">
     <div class="row">
@@ -194,9 +193,9 @@
   <div class="container">
     <div class="row mt-5 pt-4 border-top">
 	<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		<p class=" mb-0">Design & development by © BeautyForce™</p>
+		<p class="copyright-blue mb-0">Design & development by © BeautyForce™</p>
 	</div>
-	  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+	  <div class="">
 		<ul class="">
 		  <a href="" class=""><img src="{% static 'images/Group 1024.png' %}"  alt=""></a>
 		  <a href="" ><img src="{% static 'images/Group 1028.png' %}"  alt=""></a>
@@ -210,7 +209,7 @@
 		</ul>
 	  </div>
 		  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		  	<p class=" mb-0">Политика конфиденциальности</p>
+		  	<p class="copyright-1-white mb-0">Политика конфиденциальности</p>
 		  </div>
 	</div>
   </div>

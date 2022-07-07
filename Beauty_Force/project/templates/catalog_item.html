@@ -127,8 +127,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="p-4">
-						товары бренда
+					<p class="p-4-brands-items">
 					</p>
 				</div>
 			</div>
@@ -141,9 +140,9 @@
 					<div class="card-deck-category">
 						{% for all_products_f in all_products_first %}
 					  <div class="card">
-						<img class="card-img-top-catalog" src="{{ all_products_f.image.url }}" alt="Card image cap">
+						<img class="card-img-top-catalog" src="{{ all_products_f.image_for_cart.url }}" alt="Card image cap">
 						<div class="card-body">
-							<a href="{{ products_all.get_absolute_url }}">
+							<a href="{{ all_products_f.get_absolute_url }}">
 								<h5 class="card-title-catalog">{{ all_products_f.title }}</h5>
 							  </a>
 						  <p class="card-text">{{ all_products_f.price }} ₽</p>
@@ -155,9 +154,9 @@
 					<div class="card-deck-category">
 						{% for all_products_l in all_products_last %}
 					  <div class="card">
-						<img class="card-img-top-catalog" src="{{ all_products_l.image.url }}" alt="Card image cap">
+						<img class="card-img-top-catalog" src="{{ all_products_l.image_for_cart.url }}" alt="Card image cap">
 						<div class="card-body">
-							<a href="{{ products_all.get_absolute_url }}">
+							<a href="{{ all_products_l.get_absolute_url }}">
 								<h5 class="card-title-catalog">{{ all_products_l.title }}</h5>
 							  </a>
 						  <p class="card-text">{{ all_products_l.price }} ₽</p>
@@ -166,9 +165,9 @@
 					{% endfor %}
 				</div>
 				</div>
-				</div>
 				<div class="col text-center">
 					<button class="btn text-center" data-toggle="collapse" href="#more" role="button" aria-expanded="false" aria-controls="more">ПОКАЗАТЬ ЕЩЕ <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+				</div>
 				</div>
 			</div>
         </div>
@@ -178,7 +177,7 @@
 <footer class="bg-light text-center text-lg-start footer-10">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
 		  <h2 class="footer-heading list-unstyled"><img src="{% static 'images/Vector_footer.svg' %}"  alt=""></h2>
         <ul class="list-unstyled">
 			  <li class="li-footer">
@@ -186,7 +185,7 @@
 			  </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">меню</h2>
         <ul class="list-unstyled footer-links">
           <li>
@@ -212,7 +211,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">бренды</h2>
 
         <ul class="list-unstyled footer-links">
@@ -239,7 +238,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">контакты</h2>
 
         <ul class="list-unstyled footer-links">
@@ -263,9 +262,9 @@
   <div class="container">
     <div class="row mt-5 pt-4 border-top">
 	<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		<p class=" mb-0">Design & development by © BeautyForce™</p>
+		<p class="mb-0 copyright">Design & development by © BeautyForce™</p>
 	</div>
-	  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+	  <div class="">
 		<ul class="">
 		  <a href="" class=""><img src="{% static 'images/Group 1024.png' %}"  alt=""></a>
 		  <a href="" ><img src="{% static 'images/Group 1028.png' %}"  alt=""></a>
@@ -279,7 +278,7 @@
 		</ul>
 	  </div>
 		  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		  	<p class=" mb-0">Политика конфиденциальности</p>
+		  	<p class="copyright-1 mb-0">Политика конфиденциальности</p>
 		  </div>
 	</div>
   </div>

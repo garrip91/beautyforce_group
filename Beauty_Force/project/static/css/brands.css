@@ -71,3 +71,67 @@ a {
     color: #1F1A3D;
 
 }
+
+.p-2-brands {
+  padding: 0.25rem !important;
+  font-family: 'Futura PT';
+  color: #fff !important;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 70px;
+  display: flex;
+  align-items: flex-end;
+  }
+  @media (min-width: 576px) {
+    .p-2-brands {
+      padding: 10rem;
+        } }
+  @media (min-width: 768px) {
+    .p-2-brands {
+      padding: 10rem;  } }
+  @media (min-width: 1024px) {
+    .p-2-brands:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 50px;
+      display: flex;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Бренды";} }} }
+  @media (min-width: 992px) {
+    .p-2-brands:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 70px;
+      display: flex;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Бренды";} }} }
+  @media (min-width: 1200px) {
+    .p-2-brands:after {
+      margin-top: 2rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 70px;
+      display: flex;
+      align-items: flex-end;
+      white-space: pre;
+      content: "Бренды"} }
+
+.white-container{
+    background-color: #FFFFFF;
+}

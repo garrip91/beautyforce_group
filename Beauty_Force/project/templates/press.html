@@ -6,8 +6,7 @@
 		<div class="container" style="margin-top: 3rem;">
 			<div class="row">
 				<div class="col">
-					<p class="p-4">
-						ПРЕССА
+					<p class="p-4-press-1">
 					</p>
 				</div>
 			</div>
@@ -19,7 +18,7 @@
 		<div class="container">
 			<div class="row">
 				{% for i in presses %}
-				<div class="col-2">
+				<div class="col-2 col-press">
 				<div class="brands-href">
 					<p><a href="#{{ i.grouper }}" class="">
 						{{ i.grouper }}
@@ -64,7 +63,7 @@
 <footer class="bg-light text-center text-lg-start footer-10">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
 		  <h2 class="footer-heading list-unstyled"><img src="{% static 'images/Vector_footer.svg' %}"  alt=""></h2>
         <ul class="list-unstyled">
 			  <li class="li-footer">
@@ -72,7 +71,7 @@
 			  </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">меню</h2>
         <ul class="list-unstyled footer-links">
           <li>
@@ -98,7 +97,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">бренды</h2>
 
         <ul class="list-unstyled footer-links">
@@ -125,7 +124,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: 3rem;">
         <h2 class="footer-heading list-unstyled text-uppercase">контакты</h2>
 
         <ul class="list-unstyled footer-links">
@@ -149,9 +148,9 @@
   <div class="container">
     <div class="row mt-5 pt-4 border-top">
 	<div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		<p class=" mb-0">Design & development by © BeautyForce™</p>
+		<p class="mb-0 copyright">Design & development by © BeautyForce™</p>
 	</div>
-	  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+	  <div class="">
 		<ul class="">
 		  <a href="" class=""><img src="{% static 'images/Group 1024.png' %}"  alt=""></a>
 		  <a href="" ><img src="{% static 'images/Group 1028.png' %}"  alt=""></a>
@@ -165,7 +164,7 @@
 		</ul>
 	  </div>
 		  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-		  	<p class=" mb-0">Политика конфиденциальности</p>
+		  	<p class="copyright-1 mb-0">Политика конфиденциальности</p>
 		  </div>
 	</div>
   </div>
