@@ -142,7 +142,7 @@
     line-height: 150%;
     color: #FFFFFF;
     margin-top: 2rem;
-} }}}
+} }
 
   @media (min-width: 1200px) {
     .progress-money {
@@ -227,7 +227,7 @@
     border-radius: 3px;
     cursor: pointer;
     text-align: center;
-} }}}
+} }
 
   @media (min-width: 1200px) {
     .label {

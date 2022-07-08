@@ -117,7 +117,7 @@
         margin-right: 15px;
         margin-bottom: 0;
         margin-left: 15px;
-        background-color: #1F1A3D; } }}}
+        background-color: #1F1A3D; } }
   @media (min-width: 992px) {
     .card-deck-category {
       -webkit-box-orient: horizontal;
@@ -200,7 +200,7 @@
     margin-left: 7rem;
     margin-top: 3rem;
     }
- }}}
+ }
   @media (min-width: 992px) {
     .info-catalog{
         margin-left: 15rem;

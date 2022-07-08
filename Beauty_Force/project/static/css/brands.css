@@ -103,7 +103,7 @@ a {
       display: flex;
       align-items: flex-end;
       white-space: pre;
-      content: "Бренды";} }} }
+      content: "Бренды";} }
   @media (min-width: 992px) {
     .p-2-brands:after {
       font-family: 'Futura PT';
