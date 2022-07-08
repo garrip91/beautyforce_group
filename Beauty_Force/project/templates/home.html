@@ -59,8 +59,9 @@
               </div>
           </div>
         </form>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
+			<div class="menu-text"></div>
+	      <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	         <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
@@ -84,16 +85,17 @@
 			<div class="row">
 				<div class="col col-tablet-1">
 					<p class="p-1">
-						Официальный дистрибьютор и импортер <br> концептуальных косметических брендов
 					</p>
 					<p class="p-2">
+					</p>
+					<p class="p-2-force">
 					</p>
 					<div class="to-magazine">
 						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'personal_account' %}'">Перейти в <br>интернет-магазин</button>
 					</div>
 				</div>
 				<div class="col col-tablet align-self-end">
-					<img src="{% static 'images/Rectangle 233.png' %}" class="image_main" alt="">
+					<div  class="image_main"></div>
 				</div>
 			</div>
 		</div>
@@ -148,11 +150,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="">
 						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">Подробнее</button>
-					</div>
 				</div>
-				<div class="col-1-1 col-tablet-1" style="padding-right: 10px;">
+				<div class="col-1-1 col-tablet-2" style="padding-right: 10px;">
 					<p class="p-6">
 						10+
 					</p>
@@ -207,12 +207,14 @@
 										Представительства компании Beauty Force открыты в Корее и Италии,<br>
 										а наши партнеры находятся по всей России.
 									</p>
+									<div class="buttons-right">
 									<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
 										<i class="fa fa-long-arrow-left"></i>
 									</button>
 									<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
 										<i class="fa fa-long-arrow-right"></i>
 									</button>
+									</div>
 							</div>
 						  </div>
 						  <div class="carousel-item item">
@@ -232,12 +234,14 @@
 									каждое средство бережно упаковывается и <br>
 									доставляется с соблюдением всех норм. <br>
 								</p>
+								<div class="buttons-right">
 								<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
 									<i class="fa fa-long-arrow-left"></i>
 								</button>
 								<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
 									<i class="fa fa-long-arrow-right"></i>
 								</button>
+								</div>
 								</div>
 							</div>
 						  <div class="carousel-item item">
@@ -258,12 +262,14 @@
 									Представительства компании Beauty Force открыты в Корее и Италии,<br>
 									а наши партнеры находятся по всей России.
 								</p>
+								<div class="buttons-right">
 								<button class="btn btn-default btn-circle btn-lg" href="#about" role="button" data-slide="prev">
 									<i class="fa fa-long-arrow-left"></i>
 								</button>
 								<button class="btn btn-default btn-circle-2 btn-lg" href="#about" role="button" data-slide="next">
 									<i class="fa fa-long-arrow-right"></i>
 								</button>
+								</div>
 							</div>
 						  </div>
 						</div>
@@ -310,8 +316,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<img src="{% static 'images/Group 1309.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
+					<div class="img-partners">
 						<button type="button" class="btn btn-circle-white btn-xl-white" onclick="location.href='{% url 'brands' %}'">Смотреть все бренды</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -347,8 +354,9 @@
 						<p class="p-4">
 							развиваем бренды<br> с надежными партнерами
 						</p>
-						<img src="{% static 'images/Group 1278.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
-						<img src="{% static 'images/Group 1279.png' %}" width="100%" loading="lazy" alt="prcy" alt="">
+
+						<div class="brands-images"></div>
+						<div class="brands-images-2"></div>
 						<button type="button" class="btn btn-circle-blue btn-xl-blue" onclick="location.href='{% url 'partnership' %}'">Смотреть всех партнеров</button>
 					</div>
 				</div>
@@ -421,7 +429,7 @@
 						<h5 class="card-title">Digital-сопровождение</h5>
 						<p class="card-text">Создание креативной концепции, контент-маркетинг, проведение digital-event, influencer-маркетинг, контекстная реклама активностей</p>
 					  </div>
-						<div class="col d-flex justify-content-start" style="margin-top: 1rem;">
+						<div class="col button-normal " style="margin-top: 1rem;">
 						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">подробнее</button>
 					  </div>
 					</div>
@@ -430,6 +438,9 @@
 					  <div class="card-body">
 						<h5 class="card-title">АНАЛИЗ</h5>
 						<p class="card-text">Проводим исследования рынка с учетом конкурентоспособности и изучения трендов для последующего построения успешной стратегии.</p>
+					  </div>
+						<div class="col button-tablet" style="margin-top: 1rem;">
+						<button type="button" class="btn btn-circle btn-xl" onclick="location.href='{% url 'main_page' %}'">подробнее</button>
 					  </div>
 					</div>
 					<div class="card">
@@ -510,7 +521,6 @@
 			<div class="row">
 				<div class="col">
 					<div class="images-container">
-						<img src="{% static 'images/Group 1221.png' %}" alt="">
 					</div>
 				</div>
 				<div class="col">
@@ -735,6 +745,14 @@
 		$("#telephone").mask("+7-999-999-9999");
 		$("#telephone_number").mask("+7-999-999-9999");
 	</script>
+		<script>
+$(document).ready(function () {
+  $('.second-button').on('click', function () {
+
+    $('.animated-icon2').toggleClass('open');
+  });
+});
+		</script>
   {% if messages %}
   {% for msg in messages %}
 	  {% if msg.message == 'price' %}

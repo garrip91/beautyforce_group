@@ -541,8 +541,50 @@ pre {
       max-width: 53%;
     }
 }
+@media (min-width: 768px) {
+    .col-tablet{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 60%;
+    }
+}
+@media (min-width: 768px) {
+    .col-tablet-1{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 30%;
+        margin-right: -1rem;
+        padding: 0px;
+        margin-top: 5rem;
+    }
+    .col-tablet-2{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 30%;
+        margin-right: 1rem;
+        padding: 0px;
+    }
+
+}
 @media (min-width: 1024px) {
     .col-tablet-1{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 43%;
+    }
+    .col-tablet-2{
       -ms-flex-preferred-size: 0;
       flex-basis: 0;
       -webkit-box-flex: 1;
@@ -554,6 +596,14 @@ pre {
 
 @media (min-width: 1200px) {
     .col-tablet-1{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+    .col-tablet-2{
       -ms-flex-preferred-size: 0;
       flex-basis: 0;
       -webkit-box-flex: 1;
@@ -967,7 +1017,7 @@ pre {
   .col-md-6 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
+    flex: 1;
     max-width: 50%; }
   .col-md-7 {
     -webkit-box-flex: 0;
@@ -3592,7 +3642,8 @@ input[type="button"].btn-block {
   flex-grow: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 1rem;}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -3708,7 +3759,8 @@ input[type="button"].btn-block {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
-      flex-direction: row; }
+      flex-direction: row;
+       }
       .navbar-expand-lg .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-lg .navbar-nav .nav-link {
@@ -3723,7 +3775,8 @@ input[type="button"].btn-block {
       display: -ms-flexbox !important;
       display: flex !important;
       -ms-flex-preferred-size: auto;
-      flex-basis: auto; }
+      flex-basis: auto;
+       margin-bottom: 1.3rem;}
     .navbar-expand-lg .navbar-toggler {
       display: none; } }
 
@@ -3960,12 +4013,7 @@ input[type="button"].btn-block {
   height: 70px;
   border-radius: calc(0.25rem - 1px); }
 
-.card-img-top {
-  width: 70px;
-  height: 70px;
-  margin-left: 1.25rem;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px); }
+
 
 .card-img-bottom {
   width: 100%;
@@ -6800,21 +6848,31 @@ button.bg-dark:focus {
     .p-1 {
       padding: 10rem;  } }
   @media (min-width: 768px) {
-    .p-1 {
-      padding: 10rem;  } }
+    .p-1:after{
+      font-family: 'Futura PT';
+      color: #fff !important;
+      font-size: 16px;
+      white-space: pre;
+       content: "Официальный дистрибьютор\A и импортер  концептуальных\A косметических брендов"; } }
   @media (min-width: 992px) {
-    .p-1 {
-      padding: 10rem;  } }
+    .p-1:after {
+      white-space: pre;
+       content: "Официальный дистрибьютор и импортер \A концептуальных косметических брендов";;
+       }}
   @media (min-width: 1024px) {
-    .p-1 {
+    .p-1:after {
       padding: 0.25rem !important;
       font-family: 'Futura PT';
       color: #fff !important;
-      font-size: 16px; }
+      font-size: 16px;
+      white-space: pre;
+       content: "Официальный дистрибьютор и импортер \A концептуальных косметических брендов";}
   }
   @media (min-width: 1200px) {
     .p-1 {
-      margin-top: 2rem !important; } }
+      margin-top: 2rem !important;
+      white-space: pre;
+       content: "Официальный дистрибьютор и импортер \A концептуальных косметических брендов";} }
 
 .image_main{
     width: 550px;
@@ -6826,16 +6884,163 @@ button.bg-dark:focus {
     height: 550px; } }
   @media (min-width: 768px) {
     .image_main {
-    width: 550px;
-    height: 550px; } }
+        width: 550px;
+        height: 550px;
+        background-image: url("../images/Rectangle 152.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .brands-images{
+        width: 100%;
+        height: 400px;
+        background-image: url("../images/Group 1231.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .brands-images-2{
+    }
+    .img-partners{
+        width: 100%;
+        height: 600px;
+        background-image: url("../images/Group 703.png");
+        background-repeat: no-repeat;
+    }
+    .card-img-top {
+      width: 70px;
+      height: 70px;
+      border-top-left-radius: calc(0.25rem - 1px);
+      border-top-right-radius: calc(0.25rem - 1px);
+       }
+      .button-normal{
+        display: none;
+       }
+      .button-tablet{
+        display: block;
+       }
+    .images-container{
+        width: 100%;
+        height: 500px;
+        background-image: url("../images/Group 1247.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .p-form{
+        font-family: 'Futura PT';
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 150%;
+        color: #8F8C9E;
+    }
+    }
+
   @media (min-width: 992px) {
     .image_main {
     width: 550px;
-    height: 550px;  } }
+    height: 550px;
+    background-image: url("../images/Rectangle 233.png");
+    background-repeat: no-repeat;
+    background-size: 100%;}
+    .img-partners{
+        width: 100%;
+        height: 600px;
+        background-image: url("../images/Group 1309.png");
+        background-repeat: no-repeat;
+    }
+    .brands-images{
+        width: 100%;
+        height: 230px;
+        background-image: url("../images/Group 1278.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .brands-images-2{
+        width: 100%;
+        height: 230px;
+        background-image: url("../images/Group 1279.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .card-img-top {
+      width: 70px;
+      height: 70px;
+      margin-left: 1.25rem;
+      border-top-left-radius: calc(0.25rem - 1px);
+      border-top-right-radius: calc(0.25rem - 1px);}
+      .button-normal{
+        display: block;
+       }
+      .button-tablet{
+        display: none;
+       }
+    .images-container{
+        width: 100%;
+        height: 500px;
+        background-image: url("../images/Group 1221.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .p-form{
+        font-family: 'Futura PT';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #8F8C9E;
+    }
+    }
   @media (min-width: 1200px) {
     .image_main {
     width: 550px;
-    height: 550px; } }
+    height: 550px;
+    background-image: url("../images/Rectangle 233.png");
+    background-repeat: no-repeat;
+    background-size: 100%;}
+    .img-partners{
+        width: 100%;
+        height: 600px;
+        background-image: url("../images/Group 1309.png");
+        background-repeat: no-repeat;
+    }
+    .brands-images{
+        width: 100%;
+        height: 230px;
+        background-image: url("../images/Group 1278.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .brands-images-2{
+        width: 100%;
+        height: 230px;
+        background-image: url("../images/Group 1279.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .card-img-top {
+      width: 70px;
+      height: 70px;
+      margin-left: 1.25rem;
+      border-top-left-radius: calc(0.25rem - 1px);
+      border-top-right-radius: calc(0.25rem - 1px); }
+      .button-normal{
+        display: block;
+       }
+      .button-tablet{
+        display: none;
+       }
+        .images-container{
+            width: 100%;
+            height: 500px;
+            background-image: url("../images/Group 1221.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .p-form{
+            font-family: 'Futura PT';
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #8F8C9E;
+        }
+     }
 .pt-1,
 .py-1 {
   padding-top: 0.25rem !important; }
@@ -6870,8 +7075,36 @@ button.bg-dark:focus {
       padding: 10rem;
         } }
   @media (min-width: 768px) {
-    .p-2 {
-      padding: 10rem;  } }
+    .p-2:after {
+    font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 100%;
+        display: flex;
+        align-items: flex-end;
+        text-transform: uppercase;
+        white-space: pre;
+        content: "Beauty";
+        letter-spacing: 1px;
+        z-index: 1;}
+    .p-2-force:after {
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 50%;
+    display: flex;
+    position: relative;
+    left: 6rem;
+    align-items: flex-end;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    white-space: pre;
+    content: "Force";
+    letter-spacing: 1px;
+    z-index: 1;} }
   @media (min-width: 1024px) {
     .p-2:after {
       font-family: 'Futura PT';
@@ -6884,7 +7117,10 @@ button.bg-dark:focus {
       display: flex;
       align-items: flex-end;
       white-space: pre;
-      content: "Культура\Aидеального\Aухода";} }
+      content: "Культура\Aидеального\Aухода";}
+       .p-2-force:after{
+       display: none;
+       }}
   @media (min-width: 992px) {
     .p-2:after {
       font-family: 'Futura PT';
@@ -6897,7 +7133,11 @@ button.bg-dark:focus {
       display: flex;
       align-items: flex-end;
       white-space: pre;
-      content: "Культура\Aидеального\Aухода";} }} }
+      content: "Культура\Aидеального\Aухода";}
+       .p-2-force:after{
+       display: none;
+       }
+       }
   @media (min-width: 1200px) {
     .p-2:after {
       margin-top: 2rem !important;
@@ -6911,7 +7151,11 @@ button.bg-dark:focus {
       display: flex;
       align-items: flex-end;
       white-space: pre;
-      content: "Культура\Aидеального\Aухода"} }
+      content: "Культура\Aидеального\Aухода";}
+       .p-2-force:after{
+       display: none;
+       }
+      }
 
 .p-2-1 {
   padding: 0.25rem !important;
@@ -6999,15 +7243,28 @@ button.bg-dark:focus {
 }
   @media (min-width: 576px) {
     .btn-circle-white.btn-xl-white {
+
         } }
   @media (min-width: 768px) {
-    .btn-circle-white.btn-xl-white { } }
+    .btn-circle-white.btn-xl-white {
+    transform: translate(-50%, 0);
+    width: 120px;
+    height: 120px;
+    padding: 13px 18px;
+    border-radius: 80px;
+    font-size: 11px;
+    text-align: center;
+    background-color: #1F1A3D;
+    color: #FFFFFF !important;
+    font-family: 'Futura PT';
+    line-height: 15.38px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+     } }
   @media (min-width: 992px) {
     .btn-circle-white.btn-xl-white {
-      position: absolute;
-      left: 50%;
       transform: translate(-50%, 0);
-      top: 38%;
       width: 150px;
       height: 150px;
       padding: 13px 18px;
@@ -7095,7 +7352,25 @@ button.bg-dark:focus {
     .btn-circle-blue.btn-xl-blue {
         } }
   @media (min-width: 768px) {
-    .btn-circle-blue.btn-xl-blue { } }
+    .btn-circle-blue.btn-xl-blue {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: 54%;
+      width: 150px;
+      height: 150px;
+      padding: 13px 18px;
+      border-radius: 80px;
+      font-size: 11px;
+      text-align: center;
+      background-color: #1F1A3D;
+      color: #FFFFFF !important;
+      font-family: 'Futura PT';
+      line-height: 15.38px;
+      letter: 5%;
+      font-weight: bold;
+      text-transform: uppercase;
+    } }
   @media (min-width: 992px) {
     .btn-circle-blue.btn-xl-blue {
       position: absolute;
@@ -7223,10 +7498,30 @@ button.bg-dark:focus {
   font-size: 60px;
   }
   @media (min-width: 576px) {
-    .p-4 {
-        } }
+    .p-4:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "надежный\Aбизнес-партнер";} }
   @media (min-width: 768px) {
-    .p-4 { } }
+    .p-4:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "надежный\Aбизнес-партнер";
+      margin-right: 7rem;
+      }
+     }
   @media (min-width: 992px) {
     .p-4:after {
       font-family: 'Futura PT';
@@ -7386,7 +7681,14 @@ button.bg-dark:focus {
     .p-6 {
         } }
   @media (min-width: 768px) {
-    .p-6 { } }
+    .p-6 {
+    font-family: 'Futura PT';
+    color: #fff !important;
+    font-size: 29px;
+    line-height: 64.1px;
+    font-style: normal;
+    border-bottom: 1px solid #FFFFFF;
+     } }
   @media (min-width: 992px) {
     .p-6 {
     font-family: 'Futura PT';
@@ -7427,17 +7729,15 @@ button.bg-dark:focus {
     font-style: normal;
     margin-top: 3rem;
    }
-
-.child {
-  position: relative;
-  bottom: 10rem;
-  left: 44rem;
-}
   @media (min-width: 576px) {
     .child {
         } }
   @media (min-width: 768px) {
-    .child { } }
+    .child {
+     }
+    .buttons-right{
+    margin-left: 33rem;
+    }}
   @media (min-width: 992px) {
     .child {
       position: relative;
@@ -8894,10 +9194,11 @@ h1, h2, h3, h4, h5,
   padding: 0; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000 !important;
+      background: #1F1A3D !important;
       position: relative;
       top: 0;
-      padding: 10px 15px; } }
+      padding: 10px 15px; }
+       }
   .ftco-navbar-light .navbar-brand {
     color: #FFFFFF;
     text-transform: uppercase; }
@@ -8908,7 +9209,10 @@ h1, h2, h3, h4, h5,
         color: #FFFFFF; } }
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav {
-      padding-bottom: 10px; } }
+      padding-bottom: 10px;
+        background: #444444;
+        align-items: center;
+        width: 70%;} }
   .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
     font-size: 13px;
     padding-top: 1.2rem;
@@ -9043,7 +9347,26 @@ h1, h2, h3, h4, h5,
   @media (max-width: 767.98px) {
     .searchform {
       display: none; } }
-
+@media (max-width: 991.98px) {
+    .searchform {
+      height: 40px;
+      border-radius: 4px;
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+      margin-left: 3rem;}
+    .menu-text:after {
+        color: #FFFFFF;
+        position: relative;
+        left: 7rem;
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        text-align: right;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        content: "МЕНЮ"
+    }
+}
 .form-control {
   height: 46px !important;
   background-color: #1F1A3D;
@@ -9280,13 +9603,7 @@ textarea {
 	color: #5e9bfc;
 }
 
-.p-form{
-    font-family: 'Futura PT';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #8F8C9E;
-}
+
 
 .span-form{
     position: relative;
@@ -9511,4 +9828,84 @@ textarea {
     text-align: center;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #1F1A3D;
+}
+
+
+/* Icon 1 */
+
+.animated-icon2 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.animated-icon2 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.animated-icon2 span {
+  background: #e3f2fd;
+}
+/* Icon 3*/
+
+.animated-icon2 span:nth-child(1) {
+  top: 0px;
+}
+
+.animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
+  top: 10px;
+}
+
+.animated-icon2 span:nth-child(4) {
+  top: 20px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.animated-icon2.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.animated-icon2.open span:nth-child(4) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
 }
