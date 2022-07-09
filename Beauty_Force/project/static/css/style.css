@@ -6884,8 +6884,8 @@ button.bg-dark:focus {
     height: 550px; } }
   @media (min-width: 768px) {
     .image_main {
-        width: 550px;
-        height: 550px;
+        width: 650px;
+        height: 600px;
         background-image: url("../images/Rectangle 152.png");
         background-repeat: no-repeat;
         background-size: 100%;
@@ -7157,30 +7157,48 @@ button.bg-dark:focus {
        }
       }
 
-.p-2-1 {
-  padding: 0.25rem !important;
-  font-family: 'Futura PT';
-  color: #fff !important;
-  line-height: 100%;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  font-size: 50px;
-  display: flex;
-  align-items: flex-end;
-  }
   @media (min-width: 576px) {
     .p-2-1 {
       padding: 10rem;  } }
   @media (min-width: 768px) {
     .p-2-1 {
-      padding: 10rem;  } }
+      margin-top: 2rem !important;
+      padding: 0.25rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 50px;
+      display: flex;
+      align-items: flex-end;}  }
   @media (min-width: 992px) {
     .p-2-1 {
-      padding: 10rem;  } }
+      margin-top: 2rem !important;
+      padding: 0.25rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 50px;
+      display: flex;
+      align-items: flex-end;} }
   @media (min-width: 1200px) {
     .p-2-1 {
-      margin-top: 2rem !important; } }
+      margin-top: 2rem !important;
+      padding: 0.25rem !important;
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 50px;
+      display: flex;
+      align-items: flex-end;} }
 
 .btn-circle.btn-xl {
     width: 150px;

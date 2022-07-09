@@ -42,7 +42,10 @@
 .center{
     margin-left: 4rem;
 }
-
+  @media (min-width: 768px) {
+    .center{
+        margin-left: 0rem;
+    } }
 .item-header-brand{
     font-family: 'Futura PT';
     font-style: normal;
@@ -192,22 +195,30 @@
       white-space: pre;
       content: "ЛИНЕЙКА ТОВАРОВ ПО\AКАТЕГОРИЯМ";} }
 
-.p-4-brand-2 {
-  font-family: 'Futura PT';
-  color: #fff !important;
-  line-height: 100%;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  font-size: 60px;
-  }
   @media (min-width: 576px) {
-    .p-4-brand-2 {
-        } }
+    .p-4-brand-2:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "ПРЕИМУЩЕСТВА";}}
   @media (min-width: 768px) {
-    .p-4-brand-2 { } }
+    .p-4-brand-2:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "ПРЕИМУЩЕСТВА";} }
   @media (min-width: 992px) {
-    .p-4-brand-1:after {
+    .p-4-brand-2:after {
       font-family: 'Futura PT';
       color: #fff !important;
       line-height: 100%;
@@ -294,23 +305,30 @@
       white-space: pre;
       content: "состав\Aи ингредиенты";} }
 
-
-.p-4-brand-4 {
-  font-family: 'Futura PT';
-  color: #fff !important;
-  line-height: 100%;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  font-size: 60px;
-  }
   @media (min-width: 576px) {
-    .p-4-brand-4 {
-        } }
+    .p-4-brand-4:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "отзывы\A покупателей";}}
   @media (min-width: 768px) {
-    .p-4-brand-4 { } }
+    .p-4-brand-4:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "отзывы\A покупателей";} }
   @media (min-width: 992px) {
-    .p-4-brand-1:after {
+    .p-4-brand-4:after {
       font-family: 'Futura PT';
       color: #fff !important;
       line-height: 100%;
@@ -357,12 +375,29 @@
   font-size: 60px;
   }
   @media (min-width: 576px) {
-    .p-4-brand-5 {
-        } }
+    .p-4-brand-5:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "видео-блок с\A обзорами";} }
   @media (min-width: 768px) {
-    .p-4-brand-5 { } }
+    .p-4-brand-5:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "видео-блок с\A обзорами";} }
   @media (min-width: 992px) {
-    .p-4-brand-1:after {
+    .p-4-brand-5:after {
       font-family: 'Futura PT';
       color: #fff !important;
       line-height: 100%;
@@ -409,10 +444,27 @@
   font-size: 60px;
   }
   @media (min-width: 576px) {
-    .p-4-brand-6 {
-        } }
+    .p-4-brand-6:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "блок прессы";} }
   @media (min-width: 768px) {
-    .p-4-brand-6 { } }
+    .p-4-brand-6:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "блок прессы";} }
   @media (min-width: 992px) {
     .p-4-brand-6:after {
       font-family: 'Futura PT';
@@ -461,10 +513,27 @@
   font-size: 60px;
   }
   @media (min-width: 576px) {
-    .p-4-brand-7 {
-        } }
+    .p-4-brand-7:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "сделаем первый шаг\Aк сотрудничеству";} }
   @media (min-width: 768px) {
-    .p-4-brand-7 { } }
+    .p-4-brand-7:after {
+      font-family: 'Futura PT';
+      color: #fff !important;
+      line-height: 100%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-size: 60px;
+      white-space: pre;
+      content: "сделаем первый шаг\Aк сотрудничеству";}}
   @media (min-width: 992px) {
     .p-4-brand-7:after {
       font-family: 'Futura PT';

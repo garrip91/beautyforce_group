@@ -360,7 +360,7 @@ class Users_Lk_Page(LoginRequiredMixin, View):
             context=context
         )
 
-    def post(self, request, product_id, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
 
         user = Users.objects.get(username=request.user)
         current_user = Users.objects.get(username=request.user)
