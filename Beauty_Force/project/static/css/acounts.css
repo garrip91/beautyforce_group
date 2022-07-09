@@ -47,6 +47,17 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+  @media (min-width: 768px) {
+    .btn-modal{
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 23px;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        color: #FFFFFF;
+} }
 
 .img-acount{
     margin-right: 0.5rem; 
@@ -78,6 +89,22 @@
     margin-left: 1rem;
     margin-top: 1rem;
 }
+  @media (min-width: 768px) {
+    .btn-circle-acount.btn-xl-acount {
+        width: 100px;
+        height: 100px;
+        padding: 13px 18px;
+        border-radius: 80px;
+        text-align: center;
+        background-color: #fff;
+        color: #1F1A3D !important;
+        font-family: 'Futura PT';
+        line-height: 15.38px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 1rem;
+        margin-top: 1rem;
+}}
 
 .percent{
     font-family: 'Futura PT';
@@ -97,7 +124,16 @@
     text-align: center;
     color: #504C67;
 }
-
+  @media (min-width: 768px) {
+    .text-percent{
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 8px;
+        line-height: 100%;
+        text-align: center;
+        color: #504C67;
+}}
 .progress-header{
     font-family: 'Futura PT';
     font-style: normal;
@@ -120,9 +156,24 @@
 }
   @media (min-width: 576px) {
     .progress-money {
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-top: 2rem;
         } }
   @media (min-width: 768px) {
-    .progress-money { } }
+    .progress-money {
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin-top: 2rem;
+        }}
   @media (min-width: 992px) {
     .progress-money {
     font-family: 'Futura PT';
@@ -207,7 +258,15 @@
     .label {
         } }
   @media (min-width: 768px) {
-    .label { } }
+    .label {
+    display: inline-block;
+    margin: 0 0px 20px;
+    color: #aaa;
+    text-shadow: 0 1px black;
+    border-radius: 3px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center; } }
   @media (min-width: 992px) {
     .label {
     display: inline-block;
@@ -257,6 +316,26 @@
     font-size: 18px;
     text-align: center;
     color: #E9E8EC;
+  }
+  @media (min-width: 768px) {
+  .progress-header-1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+    color: #E9E8EC;
+  }
+  .progress-footer{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 100%;
+    text-align: center;
+    color: #8F8C9E;
+  }
+
   }
 .quantity_inner * {
     box-sizing: border-box;   
