@@ -809,3 +809,12 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, 'Верификация не пройдена.')
         return HttpResponseRedirect('/')
+
+
+class New_Lk_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'new_lk.html'
+        )

@@ -1,0 +1,242 @@
+
+nav {
+    background-color: #FFFFFF;
+  }
+
+
+  .nav-link, .dropdown-item {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #131314;
+    margin-top: 0.5rem;
+  }
+
+  nav li {
+    padding: 0 20px;
+  }
+
+  nav li.active, nav li.active:before {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+
+  .form-inline{
+    margin-top: 0.5rem;
+  }
+
+  .input-box{
+    position: relative;
+  }
+
+  .input-box i {
+    position: absolute;
+    right: 13px;
+    top:11px;
+    color:#ced4da;
+
+  }
+
+  .form-control{
+    height: 50px;
+    background-color:#eeeeee69;
+    box-shadow: none;
+    border: none;
+  }
+
+  .form-control:focus{
+    background-color: #eeeeee69;
+    box-shadow: none;
+    border-color: #eee;
+
+  }
+
+  .dropdown-toggle::after {
+    display: none !important;
+}
+
+.icon-control {
+    margin-top: 5px;
+    float: right;
+    font-size: 80%;
+}
+
+
+
+.btn-light {
+    background-color: #fff;
+    border-color: #e4e4e4;
+}
+
+.list-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.list-menu a {
+    color: #343a40;
+}
+
+.card-product-grid .info-wrap {
+    overflow: hidden;
+    padding: 18px 20px;
+}
+
+[class*='card-product'] a.title {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #131314;
+    display: block;
+}
+
+.card-product-grid:hover .btn-overlay {
+    opacity: 1;
+}
+.card-product-grid .btn-overlay {
+    -webkit-transition: .5s;
+    transition: .5s;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+}
+.img-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.container-product-list{
+    margin-top: 3rem;
+}
+
+.card-filter-products{
+    margin-top: 4.6rem;
+}
+
+.title, .icon-control {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #131314;
+}
+
+.custom-control-label{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #424446;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #EB5772;
+    background-color: #EB5772;
+    outline: none !important;
+    box-shadow: none;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0rem;
+    outline: none !important;
+    box-shadow: none;
+    color: #424446;
+}
+
+.custom-control-label::after {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow:none !important;
+}
+
+a {
+    color: #EB5772;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #EB5772;
+    text-decoration: none;
+}
+
+.scrollable-content {
+    max-height: 150px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.scrollable-content {
+    max-height: 150px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+#scrollable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#scrollable::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: #F5F5F5;
+}
+
+#scrollable::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+.checkbox-btn{
+    width: 100px;
+}
+
+.millilitres{
+    margin-top: 1rem;
+}
+
+.nav-link-1{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #EB5772;
+
+}
+
+.nav-link-2{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #8B8C8F;
+}
+
+.img-fluid{
+    margin: 2rem 2rem 2rem 2rem;
+}

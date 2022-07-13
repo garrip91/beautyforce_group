@@ -27,7 +27,8 @@ urlpatterns = [
     path('password_reset/', Password_Reset.as_view(), name='password_reset'),
     path('add_to_cart/<product_id>/', Add_To_Cart.as_view(), name='add_to_cart'),
     path('remove_from_cart/<product_id>/', Delete_From_Cart.as_view(), name='remove_from_cart'),
-    path("contact_us/", Contact_Us.as_view(), name='contact_us')
+    path("contact_us/", Contact_Us.as_view(), name='contact_us'),
+    path("lk/", New_Lk_Test.as_view(), name='lk'),
 ]
 
 if settings.DEBUG:
