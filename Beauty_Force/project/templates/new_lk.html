@@ -16,7 +16,7 @@
 
     <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg nav-bordered">
     <div class="container">
     <a class="navbar-brand mr-5" href="#"><img src="{% static 'images/new_logo.svg' %}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,7 +124,7 @@
 				<h6 class="title">Категории</h6>
 			</a>
 		</header>
-		<div class="filter-content collapse show" id="collapse_2" style="">
+		<div class="filter-content collapse show" id="collapse_2">
 			<div class="card-body">
 				<form class="pb-3">
 				<div class="input-group">
@@ -326,7 +326,6 @@
 				  <div class="custom-control-label">25 см </div>
 				</label>
 			  </label>
-
 				</div>
 		</div>
 		</div>
@@ -338,7 +337,7 @@
 				<h6 class="title">Страна производитель</h6>
 			</a>
 		</header>
-		<div class="filter-content collapse show" id="collapse_5" style="">
+		<div class="filter-content collapse show" id="collapse_5">
 			<div class="card-body">
 				<form class="pb-3">
 				<div class="input-group">
@@ -410,170 +409,397 @@
 			  </div>
 			</nav>
 		</div>
-</header><!-- sect-heading -->
-
+</header>
+<div class="container">
 <div class="row">
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-				<span class="badge badge-danger"> NEW </span>
+				<span class="badge badge-danger"> 10% </span>
 				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Great item name goes here</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+					</div>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-						<del class="price-old">$1980</del>
-					</div> <!-- price-wrap.// -->
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-							<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-danger"> Бестселлер </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">999 ₽</span>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-								<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-not"> -- </span>
+				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<label class="radio"> <input type="radio" name="p-type-3"  checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-3" > <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-3" > <span>120 гр</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">2549 ₽</span>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-							<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-not"> -- </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">999 ₽</span>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-							<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-not"> -- </span>
+				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<label class="radio"> <input type="radio" name="p-type-3"  checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-3" > <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-3" > <span>120 гр</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">2549 ₽</span>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-							<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-danger"> 10% </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-							<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
+				<span class="badge badge-danger"> 10% </span>
+				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<label class="radio"> <input type="radio" name="p-type-7" checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-7"> <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-7"> <span>120 гр</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
+	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-				<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
-				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
+				<span class="badge badge-black"> Нет в наличии </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
+			</div>
+			<figcaption class="info-wrap disabled">
 				<div class="fix-height">
-					<a href="#" class="title">Product name goes here just for demo item</a>
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
 					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
-	</div> <!-- col.// -->
-</div> <!-- row end.// -->
+	</div>
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				<span class="badge badge-black"> Нет в наличии </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
+			</div>
+			<figcaption class="info-wrap disabled">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
+				</div>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
+			</figcaption>
+		</figure>
+	</div>
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				<span class="badge badge-danger"> 10% </span>
+				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<label class="radio"> <input type="radio" name="p-type-7" checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-7"> <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-7"> <span>120 гр</span> </label>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
+			</figcaption>
+		</figure>
+	</div>
 
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				<span class="badge badge-black"> Нет в наличии </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
+			</div>
+			<figcaption class="info-wrap disabled">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
+				</div>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
+			</figcaption>
+		</figure>
+	</div>
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				<span class="badge badge-black"> Нет в наличии </span>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
+			</div>
+			<figcaption class="info-wrap disabled">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>150 мл</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>180 мл</span> </label>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
+				</div>
+				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
+			</figcaption>
+		</figure>
+	</div>
+</div>
+</dic>
+<a href="#" class="btn btn-block btn-primary">Загрузить ещё </a>
 
-<nav class="mt-4" aria-label="Page navigation sample">
-  <ul class="pagination">
-    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-
+<nav>
+	<ul class="pagination">
+	  <li class="page-item"><a class="page-link" href="#">1</a></li>
+	  <li class="page-item"><a class="page-link" href="#">2</a></li>
+	  <li class="page-item"><a class="page-link" href="#">3</a></li>
+	  <li class="page-item"><a class="page-link" href="#">...</a></li>
+	  <li class="page-item  mr-md-auto"><a class="page-link" href="#">10</a></li>
+	  
+	  <li class="page-item">
+		<a class="page-link" href="#" aria-label="Previous">
+		  <span aria-hidden="true"><</span>
+		  <span class="sr-only">Previous</span>
+		</a>
+	  </li>
+	  <li class="page-item">
+		<a class="page-link" href="#" aria-label="Next">
+		  <span aria-hidden="true">></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </li>
+	</ul>
+  </nav>
 	</main>
 	</div>
 </div>
+
+<footer class="footer footer-bordered">
+	<div class="container">
+		<div class="row" style="margin-top: 2rem;">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4 mb-md-0 mb-4">
+						<h2 class="footer-heading"><a class="" href="#"><img src="{% static 'images/new_logo.svg' %}" alt=""></a></h2>
+					</div>
+					<div class="col-md-5 mb-md-0 mb-4">
+						<h2 class="footer-heading"></h2>
+						<ul class="list-unstyled">
+							<li><a href="#" class="d-block footer-link">Каталог</a></li>
+							<li><a href="#" class="d-block footer-link">Бренды</a></li>
+							<li><a href="#" class="d-block footer-link">Сотрудничество</a></li>
+							<li><a href="#" class="d-block footer-link">Дилерам</a></li>
+							<li><a href="#" class="d-block footer-link">Маркетинг</a></li>
+							<li><a href="#" class="d-block footer-link">О компании</a></li>
+							<li><a href="#" class="d-block footer-link">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 mb-md-0 mb-4 d-flex justify-content-end">
+						<h2 class="footer-heading"></h2>
+						<ul class="list-unstyled">
+							<li><span href="#" class="d-block footer-link-1">Россия</span></li>
+							<li><span href="#" class="d-block footer-link">+7 499 409-21-80</span></li>
+							<li><span href="#" class="d-block footer-link-1">Италия</span></li>
+							<li><span href="#" class="d-block footer-link">+39 02 3046-2659</span></li>
+							<li><span href="#" class="d-block footer-link-1">Корея</span></li>
+							<li><span href="#" class="d-block footer-link">+82 070 4680-5682</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 mb-md-0 mb-4 d-flex justify-content-end">
+				<h2 class="footer-heading"></h2>
+				<ul class="list-unstyled">
+					<li><span href="#" class="d-block footer-link-1">Почта</span></li>
+					<li><span href="#" class="d-block footer-link">info@beforce.ru</span></li>
+					<li><span href="#" class="d-block footer-link-1">Адрес</span></li>
+					<li><span href="#" class="d-block footer-link">115093 Россия, г. Москва, <br>Варшавское шоссе, д. 25а стр. 1</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" style="margin-top: 2rem;">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4 mb-md-0 mb-4">
+						<p class="copyright mb-0 footer-heading">
+							&copy; BeautyForce™ <script>document.write(new Date().getFullYear());</script></p>
+					</div>
+					<div class="col-md-5 mb-md-0 mb-4">
+						<ul class="list-unstyled">
+							<li><a href="#" class="d-block">Политика конфиденциальности</a></li>
+						</ul>
+					</div>
+					</div>
+					</div>
+					<div class="col-md-3 mb-md-0 mb-4 d-flex justify-content-end">
+						<h2 class="footer-heading"></h2>
+						<ul >
+							<a href=""><img class="socials" src="{% static 'images/instagram.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/vk.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/facebook.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/ok.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/telegram.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/youtube.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/tt.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/yadzen.svg' %}"  alt=""></a>
+							<a href=""><img class="socials" src="{% static 'images/penterest.svg' %}"  alt=""></a>
+						  </ul>
+					</div>
+				</div>
+			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
