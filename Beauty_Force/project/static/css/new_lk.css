@@ -45,13 +45,13 @@ nav {
 
   .form-control{
     height: 50px;
-    background-color:#eeeeee69;
+    background-color: transparent;
     box-shadow: none;
     border: none;
   }
 
   .form-control:focus{
-    background-color: #eeeeee69;
+    background-color: transparent;
     box-shadow: none;
     border-color: #eee;
 
@@ -117,14 +117,11 @@ nav {
 .img-wrap {
     overflow: hidden;
     position: relative;
+    background-color: #F7F7F7;
 }
 
 .container-product-list{
     margin-top: 3rem;
-}
-
-.card-filter-products{
-    margin-top: 4.6rem;
 }
 
 .title, .icon-control {
@@ -329,7 +326,7 @@ label.radio {
 }
 
 .badge-not{
-    background-color: #FFFFFF;
+    background-color: #F7F7F7;
     width: 50%;
     height: 25px;
     margin-left: 1rem;
@@ -450,4 +447,48 @@ label.radio {
     font-size: 14px;
     line-height: 140%;
     color: #BDC2C7;
+}
+
+.add-cart{
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+}
+
+.radio-marging{
+    margin-left: 1rem;
+}
+
+.card-header{
+    background-color: transparent;
+    border-bottom: transparent;
+}
+
+.card{
+    border: transparent;
+}
+
+.message-for-anonimous{
+    background: rgba(131, 201, 207, 0.25);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.message-for-anonimous-span{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    color: #131314;
+}
+
+.after-logo{
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
 }
