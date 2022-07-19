@@ -492,3 +492,73 @@ label.radio {
     margin-left: 0.3rem;
     margin-top: 0.3rem;
 }
+
+
+.nav-tabs{
+    border: none;
+}
+
+a.active {
+    border-bottom: 2px solid #EB5772;
+}
+
+
+  .nav-pills .nav-link.active {
+    background-color: #FFFFFF;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #131314;
+  }
+
+  .list-group-item{
+      border: none;
+  }
+
+  .filter-brand{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    color: #C7CCD1;
+  }
+
+  .heading{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: #444648;
+  }
+
+  .list-group-item-actio{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #9A9B9E;
+  }
+
+ .colored-container{
+    background: rgba(131, 201, 207, 0.25);
+ }
+ .colored-container-1{
+     background-color: transparent;
+ }
+
+ .list-group-item-action:hover{
+     background-color: transparent;
+     color: #EB5772;
+ }
+
+ .search-in-dropdown{
+    background: #F7F7F7;
+    width: 800px;
+ }
