@@ -9,14 +9,16 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/new_lk.css' %}">
         <link rel="stylesheet" href="{% static 'css/Neue-Haas-Unica/stylesheet.css' %}">
-
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="{% static 'js/flip.js' %}"></script>
+		<script src="{% static 'js/counter.js' %}"></script>
 	</head>
 
     <body>
@@ -103,7 +105,7 @@
 									  </div>
 									</div>
 									
-									<div class="container d-flex justify-content-center colored-container mx-auto">
+									<div class="container d-flex justify-content-center colored-container mx-auto"">
 										<div class="row my-4 ">
 										  <div class="col-md-auto">
 											<span class="list-group-item filter-brand colored-container-1">С /</span>
@@ -435,9 +437,7 @@
 								  </div>
 						  </div>
 					  </div>
-			</div>
         </li>
-
 
         <li class="nav-item dropdown position-static">
             <a class="nav-link dropdown-toggle position-static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -799,12 +799,34 @@
 <div class="row">
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
+			<div class="img-wrap front">
 				<div class="d-flex justify-content-between">
 					<span class="badge badge-danger"> 10% </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+					<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
 				</div>
 				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				<div class="radio-marging">
+					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+				</div>
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-danger"> 10% </span>
+					<b id="close" href="#"><img src="{% static 'images/close.svg' %}" class="add-cart"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart">Добавить в корзину</button>
+					</form>
+				</div>
 				<div class="radio-marging">
 					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
 					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
@@ -1123,6 +1145,7 @@
 		</figure>
 	</div>
 </div>
+</dic>
 <a href="#" class="btn btn-block btn-primary">Загрузить ещё </a>
 
 <nav>
@@ -1147,7 +1170,6 @@
 	  </li>
 	</ul>
   </nav>
-</div>
 	</main>
 	</div>
 </div>
@@ -1227,13 +1249,17 @@
 					</div>
 				</div>
 			</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
 	<script>
 	$(document).ready(function(){
 		$(".dropdown").hover(            
 			function() {
 				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown();
-				$(this).toggleClass('open');        
+				$(this).toggleClass('open');
 			},
 			function() {
 				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
@@ -1242,6 +1268,7 @@
 		);
 	});
 	</script>
+
     </body>
 
 </html>
