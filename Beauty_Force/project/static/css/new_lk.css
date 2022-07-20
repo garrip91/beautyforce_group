@@ -563,3 +563,66 @@ a.active {
     background: #F7F7F7;
     width: 800px;
  }
+ 
+ .back{
+     display: none;
+ }
+
+ .blured{
+     filter: blur(2px);
+ }
+
+ .cart-form{
+    position:relative
+ }
+
+ .back-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+ .minus, .plus{
+    border:1px solid  #E9EEF3;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background: #F7F7F7;
+    height:34px;
+    width: 30px;
+ }
+
+ .count-items{
+    height:34px;
+    width: 150px;
+    text-align: center;
+    font-size: 26px;
+    border:1px solid #F7F7F7;
+    display: inline-block;
+    vertical-align: middle;
+    background: #F7F7F7;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    
+    color: #000000;
+ }
+ .btn-add-to-cart{
+    width: 90%;
+    background: #EB5772;
+ }
+ .number{
+    max-width: 500px;
+    margin-bottom: 1rem;
+ }
