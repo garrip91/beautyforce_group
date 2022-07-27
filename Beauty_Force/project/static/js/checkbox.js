@@ -22,4 +22,8 @@ $(document).ready(function(){
         }
      });
     });
+    $('a[href="#drop"]').on("click", function () {
+        $('.custom-control-input').prop('checked', false);
+        $('.added-labels').remove();
+    });
 });
