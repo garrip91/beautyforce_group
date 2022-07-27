@@ -455,8 +455,15 @@ label.radio {
     color: #131314;
 }
 
+.close{
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+    color: #131314;
+}
+
 .radio-marging{
-    margin-left: 1rem;
+    padding-left: 1rem;
+    background-color: #F7F7F7;
 }
 
 .card-header{
@@ -626,3 +633,21 @@ a.active {
     max-width: 500px;
     margin-bottom: 1rem;
  }
+
+ .added-labels{
+    background: #444648;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    line-height: 140%;
+    color: #FFFFFF;
+    width: 100px;
+    margin: 1px 1px 1px 1px;
+ }
+
+.label-close{
+    color: #FFFFFF;
+    text-align: center;
+}
