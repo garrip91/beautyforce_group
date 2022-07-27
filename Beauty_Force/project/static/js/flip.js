@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#close").click(function(){
+  $(".close").click(function(){
     $(this).data('clicked', true);
   });
 });
