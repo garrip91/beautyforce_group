@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Navbar</title>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/new_lk.css' %}">
         <link rel="stylesheet" href="{% static 'css/Neue-Haas-Unica/stylesheet.css' %}">
@@ -19,6 +19,9 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 		<script src="{% static 'js/flip.js' %}"></script>
 		<script src="{% static 'js/counter.js' %}"></script>
+		<script src="{% static 'js/checkbox.js' %}"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		
 	</head>
 
     <body>
@@ -535,15 +538,15 @@
 		</header>
 			<div class="card-body">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" id="check" class="custom-control-input" value="Масмаркет">
 				  <div class="custom-control-label">Масмаркет</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" id="check" class="custom-control-input" value="Middle">
 				  <div class="custom-control-label">Middle</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" id="check" class="custom-control-input" value="Premium">
 				  <div class="custom-control-label">Premium</div>
 				</label>
 		</div>
@@ -563,31 +566,31 @@
 				</form>
 				<div class="scrollable-content" id="scrollable">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Помады">
 				  <div class="custom-control-label">Помады</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Крема">
 				  <div class="custom-control-label">Крема</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Маски для лица">
 				  <div class="custom-control-label">Маски для лица</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Шампуни">
 				  <div class="custom-control-label">Шампуни</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Увлажняющие сыворотки">
 				  <div class="custom-control-label">Увлажняющие сыворотки</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Маски для лица">
 				  <div class="custom-control-label">Маски для лица</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Маски для лица">
 				  <div class="custom-control-label">Маски для лица</div>
 				</label>
 				</div>
@@ -608,31 +611,31 @@
 				</form>
 				<div class="scrollable-content" id="scrollable">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Dr. Gloderm">
 				  <div class="custom-control-label">Dr. Gloderm</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Haruharu WONDER">
 				  <div class="custom-control-label">Haruharu WONDER</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Oattbe">
 				  <div class="custom-control-label">Oattbe</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Cellmiin">
 				  <div class="custom-control-label">Cellmiin</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="CURE+">
 				  <div class="custom-control-label">CURE+</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="CURE+">
 				  <div class="custom-control-label">CURE+</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="CURE+">
 				  <div class="custom-control-label">CURE+</div>
 				</label>
 				</div>
@@ -646,41 +649,41 @@
 				<div class="millilitres">
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="30 мл">
 				  <div class="custom-control-label">30 мл </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="60 мл">
 				  <div class="custom-control-label">60 мл </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="40 мл">
 				  <div class="custom-control-label">40 мл </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="90 мл">
 				  <div class="custom-control-label">90 мл </div>
 				</label>
 			  </label>
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="45 мл">
 				  <div class="custom-control-label">45 мл </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="100 мл">
 				  <div class="custom-control-label">100 мл </div>
 				</label>
 			  </label>
@@ -689,41 +692,41 @@
 				<div class="millilitres">
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="25 гр">
 				  <div class="custom-control-label">25 гр </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="60 гр">
 				  <div class="custom-control-label">60 гр </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="30 гр">
 				  <div class="custom-control-label">30 гр </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="90 гр">
 				  <div class="custom-control-label">90 гр </div>
 				</label>
 			  </label>
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="45 гр">
 				  <div class="custom-control-label">45 гр </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="100 гр">
 				  <div class="custom-control-label">100 гр </div>
 				</label>
 			  </label>
@@ -732,14 +735,14 @@
 				<div class="millilitres">
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="17,5 см">
 				  <div class="custom-control-label">17,5 см </div>
 				</label>
 			  </label>
 
 			  <label class="checkbox-btn">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="25 см">
 				  <div class="custom-control-label">25 см </div>
 				</label>
 			  </label>
@@ -761,35 +764,43 @@
 				</form>
 				<div class="scrollable-content" id="scrollable">
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Италия">
 				  <div class="custom-control-label">Италия</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Франция">
 				  <div class="custom-control-label">Франция</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Россия">
 				  <div class="custom-control-label">Россия</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Корея">
 				  <div class="custom-control-label">Корея</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="Китай">
 				  <div class="custom-control-label">Китай</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="1">
 				  <div class="custom-control-label">1</div>
 				</label>
 				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
+				  <input type="checkbox" class="custom-control-input" value="2">
 				  <div class="custom-control-label">2</div>
 				</label>
 				</div>
 			</div>
+			<div class="card-body" id="labels">
+				<label class="custom-control">
+				  </label>
+			</div>
+			<div class="card-body">
+				<a href="#" class="nav-link-1 active">Сбросить фильтры</a>
+			</div>
+			
 	</article>
 </div>
 	</aside>
@@ -800,22 +811,20 @@
 <div class="row">
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
 			<div class="img-wrap front">
 				<div class="d-flex justify-content-between">
 					<span class="badge badge-danger"> 10% </span>
-					<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
 				</div>
 				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-				</div>
 			</div>
 			<div class="img-wrap back">
 				<div class="d-flex justify-content-between">
 					<span class="badge badge-danger"> 10% </span>
-					<b id="close" href="#"><img src="{% static 'images/close.svg' %}" class="add-cart"></b>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
 				</div>
 				<div class="cart-form">
 					<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
@@ -825,15 +834,16 @@
 							<input type="text" class="count-items" value="1"/>
 							<button class="plus">+</button>
 						</div>
-						<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
 					</form>
 				</div>
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-				</div>
 			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
 					<p class="brand-title">Haruharu WONDER /</p>
@@ -846,184 +856,314 @@
 						<del class="price-old" aria-disabled="true">3000 ₽</del>
 					</div>
 				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
 	</div>
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> Бестселлер </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">999 ₽</span>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-not"> -- </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">2549 ₽</span>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-not"> -- </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">999 ₽</span>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-not"> -- </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">2549 ₽</span>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> 10% </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">999 ₽</span>
-						<del class="price-old" aria-disabled="true">2000 ₽</del>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> 10% </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
-				</div>
-				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-				</div>
-			</div>
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<p class="brand-title">Haruharu WONDER /</p>
-					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
-					<div class="price-wrap mt-2">
-						<span class="price">2549 ₽</span>
-						<del class="price-old" aria-disabled="true">3000 ₽</del>
-					</div>
-				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
-			</figcaption>
-		</figure>
-	</div>
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap">
+			<div class="flipped-card">
+				<div class="img-wrap front">
 					<div class="d-flex justify-content-between">
-						<span class="badge badge-black"> Нет в наличии </span>
-						<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
 					</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#" class="close"><img src="{% static 'images/new_lk_cart_logo.svg' %}"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+						<del class="price-old" aria-disabled="true">2000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
 			</div>
 			<figcaption class="info-wrap disabled">
 				<div class="fix-height">
@@ -1034,23 +1174,41 @@
 						<del class="price-old" aria-disabled="true">2000 ₽</del>
 					</div>
 				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
 	</div>
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-black"> Нет в наличии </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
 				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
 			</div>
 			<figcaption class="info-wrap disabled">
 				<div class="fix-height">
@@ -1061,22 +1219,41 @@
 						<del class="price-old" aria-disabled="true">2000 ₽</del>
 					</div>
 				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
 	</div>
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> 10% </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#" ><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
-				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
 				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
 			</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
@@ -1094,17 +1271,36 @@
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-black"> Нет в наличии </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-					<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
 				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
 			</div>
 			<figcaption class="info-wrap disabled">
 				<div class="fix-height">
@@ -1121,16 +1317,36 @@
 	</div>
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="img-wrap">
-				<div class="d-flex justify-content-between">
-					<span class="badge badge-black"> Нет в наличии </span>
-					<a href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></a>
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
-				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid disabled">
-				<div class="radio-marging">
-					<label class="radio"> <input type="radio" name="p-type-2" value="" checked="checked"> <span>60 мл</span> </label> 
-					<label class="radio"> <input type="radio" name="p-type-2" value=""> <span>120 мл</span> </label>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
 				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
 			</div>
 			<figcaption class="info-wrap disabled">
 				<div class="fix-height">
@@ -1141,7 +1357,6 @@
 						<del class="price-old" aria-disabled="true">2000 ₽</del>
 					</div>
 				</div>
-				<!--<a href="#" class="btn btn-block btn-primary">Add to cart </a>-->
 			</figcaption>
 		</figure>
 	</div>
@@ -1254,7 +1469,7 @@
 </footer>
 	<script>
 	$(document).ready(function(){
-		$(".dropdown").hover(            
+		$(".dropdown").hover( 
 			function() {
 				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown();
 				$(this).toggleClass('open');
