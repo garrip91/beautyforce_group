@@ -531,11 +531,24 @@ a.active {
     font-family: 'Neue Haas Unica';
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 16px;
     line-height: 120%;
-    color: #C7CCD1;
+    color: #444648;
   }
 
+  .filter-brand-2{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #444648;
+    border-bottom: 1px solid #444648;
+  }
+.filter-brand-2:hover{
+    color: #EC5EA2;
+    border-bottom: 1px solid #EC5EA2;
+}
   .heading{
     font-family: 'Neue Haas Unica';
     font-style: normal;
@@ -545,7 +558,7 @@ a.active {
     color: #444648;
   }
 
-  .list-group-item-actio{
+  .list-group-item-action{
     font-family: 'Neue Haas Unica';
     font-style: normal;
     font-weight: 400;

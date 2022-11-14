@@ -25,9 +25,10 @@
 	</head>
 
     <body>
+
 <nav class="navbar navbar-expand-lg nav-bordered">
     <div class="container">
-    <a class="navbar-brand mr-5" href="#"><img src="{% static 'images/new_logo.svg' %}" alt=""><img src="{% static 'images/after_logo.svg' %}" alt="" class="after-logo"></a>
+    <a class="navbar-brand" href="#"><img style="width: 100px; height: 30px;" src="{% static 'images/OneClickDistribution_logo 1.svg' %}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,408 +39,94 @@
 				<img src="{% static 'images/catalog_vector.svg' %}" alt="" style="margin-right: 0.5rem;"> Каталог
             </a>
 			<div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;border-top-right-radius: 0;">
-						<ul class="nav nav-pills mb-3 shadow-sm justify-content-center nav-bordered" id="pills-tab" role="tablist">
-							<li class="nav-item">
-							  <a class="nav-link active show" id="home-tab-ex" data-toggle="tab" href="#home-ex" role="tab" aria-controls="home-ex"
-								aria-selected="true">Бренды</a>
-							</li>
-							<li class="nav-item">
-							  <a class="nav-link" id="profile-tab-ex" data-toggle="tab" href="#profile-ex" role="tab" aria-controls="profile-ex"
-								aria-selected="false">Категории</a>
-							</li>
-						  </ul>
-						  <div class="tab-content" id="myTabContentEx">
-							<div class="tab-pane fade active show" id="home-ex" role="tabpanel" aria-labelledby="home-tab-ex">
-								<div class="container d-flex justify-content-center">
-									<div class="row my-4 ">
-									  <div class="col-md-auto">
-										<span class="list-group-item filter-brand">С /</span>
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Cellmiin</a>
-										  <a href="" class="list-group-item list-group-item-action">Помады</a>
-										  <a href="" class="list-group-item list-group-item-action">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-										  <a href="" class="list-group-item list-group-item-action">Маски для лица</a>
-										  <a href="" class="list-group-item list-group-item-action">Скрабы</a>
-										  <a href="" class="list-group-item list-group-item-action">Шампуни</a>
-										  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Cure +</a>
-										  <a href="" class="list-group-item list-group-item-action">Помады</a>
-										  <a href="" class="list-group-item list-group-item-action">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<span class="list-group-item filter-brand">D /</span>
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Dr. Gloderm</a>
-										  <a href="" class="list-group-item list-group-item-action">Помады</a>
-										  <a href="" class="list-group-item list-group-item-action">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-										  <a href="" class="list-group-item list-group-item-action">Маски для лица</a>
-										  <a href="" class="list-group-item list-group-item-action">Скрабы</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<span class="list-group-item filter-brand">H /</span>
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Haruharu</a>
-										  <a href="" class="list-group-item list-group-item-action">Помады</a>
-										  <a href="" class="list-group-item list-group-item-action">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-										  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Haruharu WONDER</a>
-										  <a href="" class="list-group-item list-group-item-action">Помады</a>
-										  <a href="" class="list-group-item list-group-item-action">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-										  <a href="" class="list-group-item list-group-item-action">Шампуни</a>
-										  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-										</div>
-									  </div>
-									</div>
-									
-									<div class="container d-flex justify-content-center colored-container mx-auto">
-										<div class="row my-4 ">
-										  <div class="col-md-auto">
-											<span class="list-group-item filter-brand colored-container-1">С /</span>
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Cellmiin</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Помады</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Блестки</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Маски для лица</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Скрабы</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Шампуни</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Увлажнители</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<span class="list-group-item filter-brand colored-container-1" style="color: transparent;"> - </span>
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Cure +</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Помады</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Блестки</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<span class="list-group-item filter-brand colored-container-1">D /</span>
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Dr. Gloderm</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Помады</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Блестки</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Маски для лица</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Скрабы</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<span class="list-group-item filter-brand colored-container-1">H /</span>
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Haruharu</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Помады</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Блестки</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Увлажнители</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<span class="list-group-item filter-brand colored-container-1" style="color: transparent;"> - </span>
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Haruharu WONDER</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Помады</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Блестки</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1">Шампуни</a>
-											  <a href="" class="list-group-item list-group-item-action colored-container-1 ">Увлажнители</a>
-											</div>
-										  </div>
-										</div>
-										</div>
-										
-										<div class="container d-flex justify-content-center w-100">
-											<div class="row my-4 ">
-											  <div class="col-md-auto">
-												<span class="list-group-item filter-brand">С /</span>
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading">Cellmiin</a>
-												  <a href="" class="list-group-item list-group-item-action">Помады</a>
-												  <a href="" class="list-group-item list-group-item-action">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-												  <a href="" class="list-group-item list-group-item-action">Маски для лица</a>
-												  <a href="" class="list-group-item list-group-item-action">Скрабы</a>
-												  <a href="" class="list-group-item list-group-item-action">Шампуни</a>
-												  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading">Cure +</a>
-												  <a href="" class="list-group-item list-group-item-action">Помады</a>
-												  <a href="" class="list-group-item list-group-item-action">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<span class="list-group-item filter-brand">D /</span>
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading">Dr. Gloderm</a>
-												  <a href="" class="list-group-item list-group-item-action">Помады</a>
-												  <a href="" class="list-group-item list-group-item-action">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-												  <a href="" class="list-group-item list-group-item-action">Маски для лица</a>
-												  <a href="" class="list-group-item list-group-item-action">Скрабы</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<span class="list-group-item filter-brand">H /</span>
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading">Haruharu</a>
-												  <a href="" class="list-group-item list-group-item-action">Помады</a>
-												  <a href="" class="list-group-item list-group-item-action">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-												  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading">Haruharu WONDER</a>
-												  <a href="" class="list-group-item list-group-item-action">Помады</a>
-												  <a href="" class="list-group-item list-group-item-action">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action">Блестки</a>
-												  <a href="" class="list-group-item list-group-item-action">Шампуни</a>
-												  <a href="" class="list-group-item list-group-item-action">Увлажнители</a>
-												</div>
-											  </div>
-											</div>
-										</div>
-								</div>
-							</div>
-
-							<div class="tab-pane fade" id="profile-ex" role="tabpanel" aria-labelledby="profile-tab-ex">
-								<div class="container d-flex justify-content-center">
-									<div class="row my-4">
-									  <div class="col-md-auto">
-										<div class="list-group list-group-flush">
-										  <a href="" class="list-group-item list-group-item-action heading">Крема</a>
-										  <a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-										  <a href="" class="list-group-item list-group-item-action">Cure +</a>
-										  <a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-										  <a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-										  <a href="" class="list-group-item list-group-item-action">Haruharu</a>
-										  <a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-										  <a href="" class="list-group-item list-group-item-action">Oattbe</a>
-										  <a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<div class="list-group list-group-flush">
-											<a href="" class="list-group-item list-group-item-action heading">Маски для лица</a>
-											<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-											<a href="" class="list-group-item list-group-item-action">Cure +</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-											<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-											<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<div class="list-group list-group-flush">
-											<a href="" class="list-group-item list-group-item-action heading">Помады</a>
-											<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-											<a href="" class="list-group-item list-group-item-action">Cure +</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-											<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-											<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<div class="list-group list-group-flush">
-											<a href="" class="list-group-item list-group-item-action heading">Скрабы</a>
-											<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-											<a href="" class="list-group-item list-group-item-action">Cure +</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-											<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-											<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-										</div>
-									  </div>
-									  <div class="col-md-auto">
-										<div class="list-group list-group-flush">
-											<a href="" class="list-group-item list-group-item-action heading">Увлажняющие сыворотки</a>
-											<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-											<a href="" class="list-group-item list-group-item-action">Cure +</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-											<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-											<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-											<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-											<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-										</div>
-									  </div>
-									</div>
-									</div>
-									
-									<div class="container d-flex justify-content-center colored-container mx-auto">
-										<div class="row my-4">
-											<div class="col-md-auto">
-												<div class="list-group list-group-flush">
-												  <a href="" class="list-group-item list-group-item-action heading colored-container-1">Крема</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Cellmiin</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Cure +</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Gloderm</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Seed</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu WONDER</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">Oattbe</a>
-												  <a href="" class="list-group-item list-group-item-action colored-container-1">1 Foundation</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<div class="list-group list-group-flush">
-													<a href="" class="list-group-item list-group-item-action heading colored-container-1">Маски для лица</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cellmiin</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cure +</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Gloderm</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Seed</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu WONDER</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Oattbe</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">1 Foundation</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<div class="list-group list-group-flush">
-													<a href="" class="list-group-item list-group-item-action heading colored-container-1">Помады</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cellmiin</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cure +</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Gloderm</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Seed</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu WONDER</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Oattbe</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">1 Foundation</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<div class="list-group list-group-flush">
-													<a href="" class="list-group-item list-group-item-action heading colored-container-1">Скрабы</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cellmiin</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cure +</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Gloderm</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Seed</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu WONDER</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Oattbe</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">1 Foundation</a>
-												</div>
-											  </div>
-											  <div class="col-md-auto">
-												<div class="list-group list-group-flush">
-													<a href="" class="list-group-item list-group-item-action heading colored-container-1">Увлажняющие сыворотки</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cellmiin</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Cure +</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Gloderm</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Dr. Seed</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Haruharu WONDER</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">Oattbe</a>
-													<a href="" class="list-group-item list-group-item-action colored-container-1">1 Foundation</a>
-												</div>
-											  </div>
-										</div>
-										</div>
-
-									<div class="container d-flex justify-content-center ">
-										<div class="row my-4">
-										  <div class="col-md-auto">
-											<div class="list-group list-group-flush">
-											  <a href="" class="list-group-item list-group-item-action heading">Крема</a>
-											  <a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-											  <a href="" class="list-group-item list-group-item-action">Cure +</a>
-											  <a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-											  <a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-											  <a href="" class="list-group-item list-group-item-action">Haruharu</a>
-											  <a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-											  <a href="" class="list-group-item list-group-item-action">Oattbe</a>
-											  <a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<div class="list-group list-group-flush">
-												<a href="" class="list-group-item list-group-item-action heading">Маски для лица</a>
-												<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-												<a href="" class="list-group-item list-group-item-action">Cure +</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-												<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-												<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<div class="list-group list-group-flush">
-												<a href="" class="list-group-item list-group-item-action heading">Помады</a>
-												<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-												<a href="" class="list-group-item list-group-item-action">Cure +</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-												<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-												<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<div class="list-group list-group-flush">
-												<a href="" class="list-group-item list-group-item-action heading">Скрабы</a>
-												<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-												<a href="" class="list-group-item list-group-item-action">Cure +</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-												<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-												<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-											</div>
-										  </div>
-										  <div class="col-md-auto">
-											<div class="list-group list-group-flush">
-												<a href="" class="list-group-item list-group-item-action heading">Увлажняющие сыворотки</a>
-												<a href="" class="list-group-item list-group-item-action">Cellmiin</a>
-												<a href="" class="list-group-item list-group-item-action">Cure +</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
-												<a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu</a>
-												<a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
-												<a href="" class="list-group-item list-group-item-action">Oattbe</a>
-												<a href="" class="list-group-item list-group-item-action">1 Foundation</a>
-											</div>
-										</div>
-									  </div>
-								  </div>
-						  </div>
+				<div class="container d-flex justify-content-center">
+					<div class="row my-4 ">
+					  <div class="col-md-auto">
+						<a class="list-group-item filter-brand" href="#"><span class="filter-brand-2">Все бренды</span></a>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">C</a>
+						  <a href="" class="list-group-item list-group-item-action">Cure+</a>
+						  <a href="" class="list-group-item list-group-item-action">Celimax</a>
+						  <a href="" class="list-group-item list-group-item-action">Celmiin</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">M</a>
+						  <a href="" class="list-group-item list-group-item-action">Muldream</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">V</a>
+						  <a href="" class="list-group-item list-group-item-action">Vlen</a>
+						</div>
 					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">D</a>
+						  <a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
+						  <a href="" class="list-group-item list-group-item-action">DEARBOO</a>
+						  <a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">N</a>
+						  <a href="" class="list-group-item list-group-item-action">Nature Republic</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Y</a>
+						  <a href="" class="list-group-item list-group-item-action">YEJIMIIN</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">H</a>
+						  <a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
+						  <a class="list-group-item list-group-item-action" style="color: transparent;"> - </a>
+						  <a class="list-group-item list-group-item-action" style="color: transparent;"> - </a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">O</a>
+						  <a href="" class="list-group-item list-group-item-action">OATTBE</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">#</a>
+						  <a href="" class="list-group-item list-group-item-action">1 Foundation</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<a class="list-group-item filter-brand" href="#"><span class="filter-brand-2">Все категории</span></a>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">Уход за лицом</a>
+						  <a href="" class="list-group-item list-group-item-action">Гидрофильное масло</a>
+						  <a href="" class="list-group-item list-group-item-action">Крем для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Маска для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Масло для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Мист для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Сываротка для лиц</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Уход за волосами</a>
+						  <a href="" class="list-group-item list-group-item-action">Бальзам для волос</a>
+						  <a href="" class="list-group-item list-group-item-action">Шампунь для волос</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">Уход за телом</a>
+						  <a href="" class="list-group-item list-group-item-action">Гель для душа</a>
+						  <a href="" class="list-group-item list-group-item-action">Гель после загара</a>
+						  <a href="" class="list-group-item list-group-item-action">Мыло для рук</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Другое</a>
+						  <a href="" class="list-group-item list-group-item-action">Аксессуары</a>
+						  <a href="" class="list-group-item list-group-item-action">Салфетки для снятия макияжа</a>
+						  <a href="" class="list-group-item list-group-item-action">Гигиенические прокладки</a>
+						  <a href="" class="list-group-item list-group-item-action">Разное</a>
+						</div>
+					  </div>
+					</div>
+				</div>
 			</div>
         </li>
 
