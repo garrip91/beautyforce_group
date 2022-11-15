@@ -26,6 +26,7 @@
 
     <body>
 
+	<!-- header -->
 <nav class="navbar navbar-expand-lg nav-bordered">
     <div class="container">
     <a class="navbar-brand" href="#"><img style="width: 100px; height: 30px;" src="{% static 'images/OneClickDistribution_logo 1.svg' %}" alt=""></a>
@@ -159,7 +160,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Рус
@@ -180,9 +181,16 @@
             <a class="nav-link" href="#">
             <img src="{% static 'images/Union_1.svg' %}" alt="">
             </a>
-            <a class="nav-link" href="#">
-            <img src="{% static 'images/Profile.svg' %}" alt="">
+			<li class="dropdown">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            	<img src="{% static 'images/Profile.svg' %}" alt="">
             </a>
+			  <ul class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
+				  <a class="dropdown-item btn-primary btn-primary-width" role="button" href="#">Вход</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item btn-secondary btn-primary-width" role="button" href="#">Регистрация</a>
+			 </ul>
+        	</li>
         </ul>
     </div>
     </div>

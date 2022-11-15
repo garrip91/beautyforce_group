@@ -18,7 +18,7 @@ nav {
   }
 
   nav li {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   nav li.active, nav li.active:before {
@@ -374,6 +374,17 @@ label.radio {
     color: #FFFFFF;
 }
 
+.btn-secondary{
+    border: 1px solid #444648;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #444648;
+}
+
 .btn-primary::after{
     background: #EB5772;
     border: 1px solid #EB5772;
@@ -663,4 +674,17 @@ a.active {
 .label-close{
     color: #FFFFFF;
     text-align: center;
+}
+
+.dropdown-menu-auth{
+    padding: 1rem;
+}
+
+.dropdown-menu-side {
+    padding: 1rem 3rem 1rem 2rem;
+    transform: translateX(-65%) !important;
+}
+
+.btn-primary-width{
+    width: 110%;
 }
