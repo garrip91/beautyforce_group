@@ -592,7 +592,8 @@ a.active {
 
  .search-in-dropdown{
     background: #F7F7F7;
-    width: 800px;
+    width: 100%;
+    border-bottom: 1px solid #C2C7CC;
  }
  
  .back{
@@ -687,4 +688,44 @@ a.active {
 
 .btn-primary-width{
     width: 110%;
+}
+
+.search-carousel{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    /* identical to box height, or 34px */
+
+
+    /* Основные/черный */
+
+    color: #131314;
+
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-carousel {
+  width: 500px;
+}
+
+/* The width of each slide */
+.slick-slide {
+  width: 200px;
+}
+
+.slick-track {
+    width: 100%;
+ }
+
+.slide-prev{
+    width: 30px;
+}
+.slide-next{
+    width: 30px;
 }

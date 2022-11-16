@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Navbar</title>
-
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/new_lk.css' %}">
@@ -17,11 +16,15 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script src="{% static 'js/flip.js' %}"></script>
 		<script src="{% static 'js/counter.js' %}"></script>
 		<script src="{% static 'js/checkbox.js' %}"></script>
 		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-		
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 	</head>
 
     <body>
@@ -150,9 +153,279 @@
 								</form>
 						</div>
 					  </div>
+
+					  <div class="col-md-auto">
+						<div class="list-group list-group-flush">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<p class="list-group-item heading">
+										Бестселлеры и скидки
+									</p>
+								</div>
+									<a type="button" class="btn btn-default btn-circle btn-lg slide-prev" style="margin-left: 10rem;"><i class="fa fa-angle-left"></i></a>
+									<a type="button" class="btn btn-default btn-circle-2 btn-lg slide-next"><i class="fa fa-angle-right"></i></a>
+								</div>
+								</div>
+							</div>
+						<div class="list-group list-group-flush">
+							<div class="slick-carousel">
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+						</div>
+					  </div>
 					</div>
 				  </div>
-            </div>
+				</div>
         </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -183,7 +456,7 @@
             </a>
 			<li class="dropdown">
 			<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            	<img src="{% static 'images/Profile.svg' %}" alt="">
+            	<img src="{% static 'images/Profile.svg' %}" class="user" alt="">
             </a>
 			  <ul class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
 				  <a class="dropdown-item btn-primary btn-primary-width" role="button" href="#">Вход</a>
@@ -1174,6 +1447,30 @@
 				$(this).removeClass('show');
 			}
 		);
+	});
+	</script>
+
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.slick-carousel').slick({
+		  infinite: true,
+		  variableWidth: true,
+		  slidesToShow: 3,
+		  autoplay: true,
+		  slidesToScroll: 1,
+		  arrows: true,
+		  dots: true
+		});
+	$('.slide-prev').click(function(e){
+      	//e.preventDefault();
+		$('.slick-carousel').slick('slickPrev');
+	} );
+
+	$('.slide-next').click(function(e){
+		//e.preventDefault();
+		$('.slick-carousel').slick('slickNext');
+	});
 	});
 	</script>
     </body>
