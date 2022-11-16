@@ -136,7 +136,7 @@
 
         <li class="nav-item dropdown position-static">
             <a class="nav-link dropdown-toggle position-static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<img src="{% static 'images/Search.svg' %}" alt="" style="margin-right: 0.5rem; border-top-left-radius: 0;border-top-right-radius: 0;">Поиск
+				<img src="{% static 'images/Search.svg' %}" alt="" class="search">Поиск
             </a>
             <div class="dropdown-menu w-100 mt-0" id="custom-dropdown-menu">
 				<div class="container d-flex justify-content-center">
@@ -151,6 +151,11 @@
 								  <input type="text" class="form-control" placeholder="Поиск">
 								</div>
 								</form>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item list-group-item-action">Предыдущий запрос <span class="search-int"></span></a>
+							<a href="" class="list-group-item list-group-item-action">Категория/бренд <span class="search-int">(125)<i class="fa fa-angle-right" style="margin-left: 10rem;"></i></span></a>
+							<a href="" class="list-group-item list-group-item-action">Категория/бренд <span class="search-int">(125)<i class="fa fa-angle-right" style="margin-left: 10rem;"></i></span></a>
 						</div>
 					  </div>
 

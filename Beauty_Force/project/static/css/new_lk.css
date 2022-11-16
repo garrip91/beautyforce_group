@@ -592,8 +592,9 @@ a.active {
 
  .search-in-dropdown{
     background: #F7F7F7;
-    width: 100%;
+    width: 500px;
     border-bottom: 1px solid #C2C7CC;
+    margin-top: 10rem;
  }
  
  .back{
@@ -728,4 +729,25 @@ a.active {
 }
 .slide-next{
     width: 30px;
+}
+
+.search{
+    margin-right: 0.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.search-int{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+
+
+    /* Серый/1 */
+
+    color: #444648;
+
 }
