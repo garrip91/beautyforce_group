@@ -464,7 +464,7 @@
             	<img src="{% static 'images/Profile.svg' %}" class="user" alt="">
             </a>
 			  <ul class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
-				  <a class="dropdown-item btn-primary btn-primary-width" role="button" href="#">Вход</a>
+				  <button class="dropdown-item btn-primary btn-primary-width" type="button" data-toggle="modal" data-target="#login-modal">Вход</button>
 				  <div class="dropdown-divider"></div>
 				  <a class="dropdown-item btn-secondary btn-primary-width" role="button" href="#">Регистрация</a>
 			 </ul>
@@ -1439,6 +1439,52 @@
 					</div>
 				</div>
 			</div>
+	<!-- Modals -->
+	<!-- Modal -->
+	<div class="modal right fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""</span></button>
+				</div>
+				<div class="modal-body" style="margin-top: 2rem;">
+					<form>
+					  <div class="form-group">
+						<label for="formGroupExampleInput" class="label-text" style="margin-bottom: 4rem;">Вход</label>
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="E-mail">
+					  </div>
+					  <div class="form-group">
+						<label for="formGroupExampleInput2" class="label-text"></label>
+						<input type="text" class="form-control input-main" id="formGroupExampleInput2" placeholder="Пароль">
+					  </div>
+					  <!-- 2 column grid layout for inline styling -->
+					  <div class="row mb-4">
+						<div class="col d-flex justify-content-end">
+						  <!-- Checkbox -->
+						</div>
+
+						<div class="col d-flex justify-content-end">
+						  <!-- Simple link -->
+						  <a class="nav-link" href="#">Забыли пароль?</a>
+						</div>
+					  </div>
+
+						<div class="col d-flex justify-content-center">
+						  <button type="button" class="btn btn-block btn-login">Войти</button>
+						</div>
+						<div class="form-group">
+							<p class="text-after-button">Нажимая “Войти”, вы принимаете условия <br> <a class="nav-link-2" href="#">Политики конфиденциальности</a></p>
+						</div>
+					</form>
+				</div>
+				  <div class="modal-footer">
+					<div class="col d-flex justify-content-start">
+						<p class="text-footer">Еще нет аккаунта? <br> <a class="nav-link-3" href="#">Зарегистрироваться</a></p>
+					</div>
+				  </div>
+			</div>
+		</div>
+	</div>
 </footer>
 	<script>
 	$(document).ready(function(){
@@ -1454,32 +1500,6 @@
 		);
 	});
 	</script>
-
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('.slick-carousel').slick({
-		  infinite: true,
-		  variableWidth: true,
-		  slidesToShow: 3,
-		  autoplay: true,
-		  slidesToScroll: 1,
-		  arrows: true,
-		  dots: true,
-		  autoplaySpeed: 3000,
-		  infinite: true,
-		  speed: 3000,
-		});
-	$('.slide-prev').click(function(e){
-      	//e.preventDefault();
-		$('.slick-carousel').slick('slickPrev');
-	} );
-
-	$('.slide-next').click(function(e){
-		//e.preventDefault();
-		$('.slick-carousel').slick('slickNext');
-	});
-	});
-	</script>
+	<script src="{% static 'js/slick_slider.js' %}"></script>
     </body>
 </html>

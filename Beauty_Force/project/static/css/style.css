@@ -1822,6 +1822,7 @@ textarea.form-control {
   height: auto; }
 
 .form-group {
+  margin-left: 1rem;
   margin-bottom: 1rem; }
 
 .form-text {
