@@ -807,13 +807,33 @@ a.active {
     color: #C2C7CC;
 }
 
-.label-text{
+.label-text-3{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 120%;
+    color: #131314;
+    margin-left: 1rem;
+}
+
+
+.label-text-2{
+    font.label-text{
     font-family: 'Neue Haas Unica';
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
     line-height: 120%;
     color: #131314;
+    margin-left: 1rem;
+}
+-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
     margin-left: 1rem;
 }
 

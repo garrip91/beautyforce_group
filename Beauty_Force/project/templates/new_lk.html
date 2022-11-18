@@ -1447,7 +1447,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""</span></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
 				</div>
 				<div class="modal-body" style="margin-top: 2rem;">
 					  <div class="form-group">
@@ -1490,12 +1490,12 @@
 		</div>
 	</div>
 
-	<!-- Modal Register -->
+	<!-- Modal First Register -->
 	<div class="modal right fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""</span></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
 				</div>
 				<div class="modal-body">
 					  <div class="form-group">
@@ -1532,7 +1532,63 @@
 						  <div class="form-group">
 							<div class="col d-flex justify-content-center">
 							  <button type="button" class="btn btn-secondary btn-register-width">Зарегистрироваться</button>
-							  <button type="button" class="btn btn-primary btn-register-width" style="margin-left: 1rem;">Далее к полной регистрации</button>
+							  <button type="button" class="btn btn-primary btn-register-width" style="margin-left: 1rem;" data-toggle="modal" data-target="#register-second-modal">Далее к полной регистрации</button>
+							</div>
+						  </div>
+					  <div class="form-group">
+						  <p class="text-after-button-2" style="margin-top: 1rem;">Регистрируясь, вы принимаете условия <a class="nav-link-4" href="#">Политики конфиденциальности</a></p>
+					  </div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Second Register -->
+	<div class="modal right fade" id="register-second-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+				</div>
+				<div class="modal-body">
+					  <div class="form-group">
+						<h2 class="label-text-3">Для получения договора, укажите:</h2>
+					  </div>
+					<form>
+					  <div class="form-group">
+						  <label class="label-text-2">Дополнительные данные компании</label>
+					  </div>
+					  <div class="form-group">
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Бренд">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Контакное лицо">
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <label class="label-text-2">Реквизиты</label>
+					  </div>
+					  <div class="form-group">
+
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="ИНН / КПП">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Р/с">
+						  </div>
+						  <label for="formGroupExampleInput2" class="label-text"></label>
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="ОГРН">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="БИК">
+						  </div>
+						  <label for="formGroupExampleInput2" class="label-text"></label>
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Банк">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Кор/счет">
+						  </div>
+					  </div>
+						  <div class="form-group">
+							<div class="col d-flex justify-content-center margin-top">
+							  <button type="button" class="btn btn-primary btn-register-width" style="margin-left: 1rem;">Получить договор</button>
 							</div>
 						  </div>
 					  <div class="form-group">
