@@ -956,3 +956,13 @@ input[type=radio]{
 .modal-footer{
     border-top: none;
 }
+
+.btn-red{
+    color: #FF4D4D;
+    border-color: #FF4D4D;
+}
+
+.btn-green{
+    color: #00B04C;
+    border-color: #00B04C;
+}

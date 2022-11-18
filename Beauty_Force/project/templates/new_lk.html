@@ -1600,9 +1600,7 @@
 			</div>
 		</div>
 	</div>
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#success-register-modal">
-  Launch demo modal
-</button>-->
+
 		<!-- Success Register Modal -->
 	<div class="modal right fade" id="success-register-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1634,8 +1632,41 @@
 		  <div class="modal-footer">
 			  <div class="form-group">
 				  <div class="form-check form-check-inline">
-				  <p class="text-after-button-3">Регистрируясь, вы принимаете условия <a class="nav-link-5" href="#">Политики конфиденциальности</a></p>
-					  </div>
+				  	<p class="text-after-button-3">Регистрируясь, вы принимаете условия <a class="nav-link-5" href="#">Политики конфиденциальности</a></p>
+				  </div>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#save-progress-modal">
+  Launch demo modal
+</button>-->
+	<!-- Save progress Modal -->
+	<div class="modal fade" id="save-progress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/question.svg' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3">Сохранить прогресс?</h2>
+			  </div>
+			  <div class="form-group">
+				<p class="text-after-button text-justify" style="margin-top: 1rem;">Вы можете приостановить регистрации и вернуться к ней позже, сохранить ваш прогресс? </p>
+			  </div>
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <button type="button" class="btn btn-secondary btn-red btn-register-width">Не сохранять</button>
+				  <button type="button" class="btn btn-secondary btn-register-width" style="margin-left: 1rem;">Только перв. регистрацию</button>
+				  <button type="button" class="btn btn-secondary btn-green btn-register-width" style="margin-left: 1rem;">Сохранить</button>
+				</div>
 			  </div>
 		  </div>
 		</div>
