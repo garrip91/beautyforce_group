@@ -535,6 +535,12 @@ a.active {
     color: #131314;
   }
 
+ .nav-link-4:hover {
+    color: #EB5772;
+    border-bottom: 1px solid #EB5772;
+  }
+
+
   .list-group-item{
       border: none;
   }
@@ -867,6 +873,15 @@ a.active {
     color: #9A9B9E;
     margin-left: 1rem;
 }
+
+.text-after-button-3{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #9A9B9E;
+}
 .nav-link-2 {
     font-family: 'Neue Haas Unica';
     font-style: normal;
@@ -876,7 +891,7 @@ a.active {
     color: #131314;
 }
 
-.nav-link-4{
+.nav-link-5{
     font-family: 'Neue Haas Unica';
     font-style: normal;
     font-weight: 500;
@@ -906,6 +921,16 @@ a.active {
     color: #EC5EA2;
     border-bottom: 1px solid #EC5EA2;
 }
+
+.nav-link-4{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #131314;
+    border-bottom: 1px solid #131314;
+}
 input[type=radio]{
   transform:scale(1.3);
 }
@@ -922,6 +947,10 @@ input[type=radio]{
 
 .margin-top{
     margin-top: 8rem;
+}
+
+.margin-top-1{
+    margin-top: 3rem;
 }
 
 .modal-footer{
