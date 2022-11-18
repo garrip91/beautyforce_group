@@ -466,7 +466,7 @@
 			  <ul class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
 				  <button class="dropdown-item btn-primary btn-primary-width" type="button" data-toggle="modal" data-target="#login-modal">Вход</button>
 				  <div class="dropdown-divider"></div>
-				  <a class="dropdown-item btn-secondary btn-primary-width" role="button" href="#">Регистрация</a>
+				  <button class="dropdown-item btn-secondary btn-primary-width" type="button"  data-toggle="modal" data-target="#register-modal">Регистрация</button>
 			 </ul>
         	</li>
         </ul>
@@ -1450,9 +1450,11 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""</span></button>
 				</div>
 				<div class="modal-body" style="margin-top: 2rem;">
+					  <div class="form-group">
+						<h2  class="label-text" style="margin-bottom: 4rem;">Вход</h2>
+					  </div>
 					<form>
 					  <div class="form-group">
-						<label for="formGroupExampleInput" class="label-text" style="margin-bottom: 4rem;">Вход</label>
 						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="E-mail">
 					  </div>
 					  <div class="form-group">
@@ -1484,6 +1486,61 @@
 						<p class="text-footer">Еще нет аккаунта? <br> <a class="nav-link-3" href="#">Зарегистрироваться</a></p>
 					</div>
 				  </div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Register -->
+	<div class="modal right fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""</span></button>
+				</div>
+				<div class="modal-body">
+					  <div class="form-group">
+						<h2 class="label-text">Первичная регистрация</h2>
+						  <p class="text-after-button-2" style="margin-top: 1rem;">Первичная регистрацию позволит вам только видеть оптовые цены. <br>Чтобы оформлять заказы пройдите регистрацию до конца. </p>
+					  </div>
+					<form>
+						<div class="form-group" style="margin-top: 2rem;">
+							<div class="form-check form-check-inline" style="margin-left: 1rem;">
+							  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+							  <label class="form-check-label" for="inlineRadio1">Покупатель</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+							  <label class="form-check-label" for="inlineRadio2">Продавец</label>
+							</div>
+						</div>
+					  <div class="form-group">
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="ооо “Компания”">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Пароль">
+						  </div>
+					  </div>
+					  <div class="form-group">
+						<label for="formGroupExampleInput2" class="label-text"></label>
+						  <div class="col d-flex justify-content-center">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="E-mail">
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Пароль еще раз">
+						  </div>
+					  </div>
+						<div class="col d-flex justify-content-start margin-top">
+							<p class="text-footer">Уже есть аккаунт? <br> <a class="nav-link-3" href="#">Войти</a></p>
+						</div>
+						  <div class="form-group">
+							<div class="col d-flex justify-content-center">
+							  <button type="button" class="btn btn-secondary btn-register-width">Зарегистрироваться</button>
+							  <button type="button" class="btn btn-primary btn-register-width" style="margin-left: 1rem;">Далее к полной регистрации</button>
+							</div>
+						  </div>
+					  <div class="form-group">
+						  <p class="text-after-button-2" style="margin-top: 1rem;">Регистрируясь, вы принимаете условия <a class="nav-link-4" href="#">Политики конфиденциальности</a></p>
+					  </div>
+					</form>
+				</div>
+
 			</div>
 		</div>
 	</div>

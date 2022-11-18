@@ -1822,7 +1822,7 @@ textarea.form-control {
   height: auto; }
 
 .form-group {
-  margin-left: 1rem;
+  margin-left: 1rem
   margin-bottom: 1rem; }
 
 .form-text {
@@ -1852,7 +1852,7 @@ textarea.form-control {
   margin-top: 0.3rem;
   margin-left: -1.25rem; }
   .form-check-input:disabled ~ .form-check-label {
-    color: #6c757d; }
+    color: #444648; }
 
 .form-check-label {
   margin-bottom: 0; }
@@ -1864,7 +1864,6 @@ textarea.form-control {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 0;
   margin-right: 0.75rem; }
   .form-check-inline .form-check-input {
     position: static;
@@ -1932,7 +1931,7 @@ textarea.form-control {
   display: block; }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: #28a745; }
+  color: #444648; }
 
 .was-validated .form-check-input:valid ~ .valid-feedback,
 .was-validated .form-check-input:valid ~ .valid-tooltip, .form-check-input.is-valid ~ .valid-feedback,
@@ -2134,7 +2133,7 @@ textarea.form-control {
       -ms-flex-pack: center;
       justify-content: center;
       width: auto;
-      padding-left: 0; }
+       }
     .form-inline .form-check-input {
       position: relative;
       -ms-flex-negative: 0;
@@ -2150,7 +2149,7 @@ textarea.form-control {
       -ms-flex-pack: center;
       justify-content: center; }
     .form-inline .custom-control-label {
-      margin-bottom: 0; } }
+       } }
 
 .btn {
   display: inline-block;
