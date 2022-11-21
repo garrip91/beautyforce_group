@@ -1669,9 +1669,6 @@
 		</div>
 	  </div>
 	</div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order-modal">
-  Launch demo modal
-</button>
 		<!-- Order Modal -->
 	<div class="modal right fade" id="order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1717,6 +1714,49 @@
 					  </a>
 				</div>
 			  </div>
+		  </div>
+		  <div class="modal-footer">
+			  <div class="form-group">
+				  <div class="form-check form-check-inline">
+				  	<p class="text-after-button-3">Регистрируясь, вы принимаете условия <a class="nav-link-5" href="#">Политики конфиденциальности</a></p>
+				  </div>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#success-order-modal">
+  Launch demo modal
+</button>
+
+	<!-- Success Order Modal -->
+	<div class="modal right fade" id="success-order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				  <h2 class="label-text-3">Поздравляем! Теперь вы практически <span style="color: #EC5EA2;">наш партнер</span></h2>
+			  </div>
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center margin-top-1">
+				  <img class="socials" src="{% static 'images/Done.svg' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+
+				<p class="text-after-button text-justify" style="margin-top: 1rem;">Мы должны проверить договор и также подписать его. После этого мы вышлем Вам подписанный договор. Полный доступ к сервису будет вам доступен<span class="font-weight-bold" style="color: black;"> в течении 24 часов</span>  с момента отправки.</p>
+			  </div>
+				<div class="form-group" style="margin-top: 2rem;">
+					<div class="form-check form-check-inline" style="margin-left: 1rem;">
+						<a class="nav-link-4" href="#">В каталог</a>
+					</div>
+					<div class="form-check form-check-inline">
+						<a class="nav-link-4" href="#">В личный кабинет</a>
+					</div>
+				</div>
 		  </div>
 		  <div class="modal-footer">
 			  <div class="form-group">
