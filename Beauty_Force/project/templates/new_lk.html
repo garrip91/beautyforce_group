@@ -473,6 +473,9 @@
     </div>
     </div>
 </nav>
+
+<!-- Progress Bar -->
+
 <div class="d-flex justify-content-center">
 	   <div class="container">
         <div class="row justify-content-center">
@@ -495,6 +498,19 @@
                         </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Download Specification -->
+
+<div class="d-flex justify-content-center">
+   <div class="container">
+        <div class="col">
+              <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+                <span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+                Скачать спецификацию по каталогу
+              </a>
         </div>
     </div>
 </div>
@@ -809,20 +825,20 @@
 			<div class="flipped-card" id="flipped-card">
 			<div class="img-wrap front">
 				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> 10% </span>
+					<span class="badge badge-not"> -- </span>
 					<b id="add_cart" href="#" class="add-cart">
 						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
 					</b>
 				</div>
-				<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
 			</div>
 			<div class="img-wrap back">
 				<div class="d-flex justify-content-between">
-					<span class="badge badge-danger"> 10% </span>
+					<span class="badge badge-not"> -- </span>
 					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
 				</div>
 				<div class="cart-form">
-					<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
 					<form action="#" class="back-form">
 						<div class="number">
 							<button class="minus">-</button>
@@ -902,43 +918,49 @@
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="flipped-card">
-				<div class="img-wrap front">
-					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
-						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
-					</div>
-					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
 				</div>
-				<div class="img-wrap back">
-					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
-						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
-					</div>
-					<div class="cart-form">
-						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
-						<form action="#" class="back-form">
-							<div class="number">
-								<button class="minus">-</button>
-								<input type="text" class="count-items" value="1"/>
-								<button class="plus">+</button>
-							</div>
-							<button class="btn btn-add-to-cart">Добавить в корзину</button>
-						</form>
-					</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
 				</div>
 			</div>
-			<div class="radio-marging">
-				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
 					<p class="brand-title">Haruharu WONDER /</p>
 					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
 					<div class="price-wrap mt-2">
 						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
 					</div>
 				</div>
 			</figcaption>
@@ -992,43 +1014,49 @@
 
 	<div class="col-md-4">
 		<figure class="card card-product-grid">
-			<div class="flipped-card">
-				<div class="img-wrap front">
-					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
-						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
-					</div>
-					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-danger">Бестселлер</span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
 				</div>
-				<div class="img-wrap back">
-					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
-						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
-					</div>
-					<div class="cart-form">
-						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
-						<form action="#" class="back-form">
-							<div class="number">
-								<button class="minus">-</button>
-								<input type="text" class="count-items" value="1"/>
-								<button class="plus">+</button>
-							</div>
-							<button class="btn btn-add-to-cart">Добавить в корзину</button>
-						</form>
-					</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-danger">Бестселлер</span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
 				</div>
 			</div>
-			<div class="radio-marging">
-				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label> 
-				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
-				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
-			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
 			<figcaption class="info-wrap">
 				<div class="fix-height">
 					<p class="brand-title">Haruharu WONDER /</p>
 					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
 					<div class="price-wrap mt-2">
 						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
 					</div>
 				</div>
 			</figcaption>
@@ -1269,14 +1297,14 @@
 			<div class="flipped-card">
 				<div class="img-wrap front">
 					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
+						<span class="badge badge-black"> Нет в наличии </span>
 						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
 					</div>
 					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
 				<div class="img-wrap back">
 					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
+						<span class="badge badge-black"> Нет в наличии </span>
 						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
 					</div>
 					<div class="cart-form">
@@ -1315,14 +1343,14 @@
 			<div class="flipped-card">
 				<div class="img-wrap front">
 					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
+						<span class="badge badge-black"> Нет в наличии </span>
 						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
 					</div>
 					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
 				</div>
 				<div class="img-wrap back">
 					<div class="d-flex justify-content-between">
-						<span class="badge badge-danger"> 10% </span>
+						<span class="badge badge-black"> Нет в наличии </span>
 						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
 					</div>
 					<div class="cart-form">
