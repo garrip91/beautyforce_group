@@ -1639,9 +1639,6 @@
 		</div>
 	  </div>
 	</div>
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#save-progress-modal">
-  Launch demo modal
-</button>-->
 	<!-- Save progress Modal -->
 	<div class="modal fade" id="save-progress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1667,6 +1664,65 @@
 				  <button type="button" class="btn btn-secondary btn-register-width" style="margin-left: 1rem;">Только перв. регистрацию</button>
 				  <button type="button" class="btn btn-secondary btn-green btn-register-width" style="margin-left: 1rem;">Сохранить</button>
 				</div>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order-modal">
+  Launch demo modal
+</button>
+		<!-- Order Modal -->
+	<div class="modal right fade" id="order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<h2 class="label-text-3">Для заключения договора</h2>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-text-2">Скачайте договор</label>
+			  </div>
+              <div class="form-group">
+				<div class="col">
+					  <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+						<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+						Скачать договор
+					  </a>
+				</div>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-text-2">И отправьте подписанный</label>
+			  </div>
+              <div class="form-group">
+				<div class="col d-flex">
+				<div class="input-group">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile01"
+					  aria-describedby="inputGroupFileAddon01">
+					<label class="custom-file-label" for="inputGroupFile01">Прикрепить договор</label>
+				  </div>
+				</div>
+					<button type="button" class="btn btn-primary btn-register-width" style="margin-left: 0.3rem;">Получить договор</button>
+				</div>
+			  </div>
+              <div class="form-group">
+				<div class="col">
+					  <a href="#" class="nav-link" style="border-bottom: 2px solid #EC5EA2; padding: 1rem;">
+						<span class="pull-right"><img class="socials" src="{% static 'images/delete.svg' %}"  alt=""></span>
+						1.xlx
+					  </a>
+				</div>
+			  </div>
+		  </div>
+		  <div class="modal-footer">
+			  <div class="form-group">
+				  <div class="form-check form-check-inline">
+				  	<p class="text-after-button-3">Регистрируясь, вы принимаете условия <a class="nav-link-5" href="#">Политики конфиденциальности</a></p>
+				  </div>
 			  </div>
 		  </div>
 		</div>
