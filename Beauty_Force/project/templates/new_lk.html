@@ -1451,7 +1451,7 @@
 				</div>
 				<div class="modal-body" style="margin-top: 2rem;">
 					  <div class="form-group">
-						<h2  class="label-text" style="margin-bottom: 4rem;">Вход</h2>
+						<h2  class="label-text-3" style="margin-bottom: 4rem;">Вход</h2>
 					  </div>
 					<form>
 					  <div class="form-group">
@@ -1499,7 +1499,7 @@
 				</div>
 				<div class="modal-body">
 					  <div class="form-group">
-						<h2 class="label-text">Первичная регистрация</h2>
+						<h2 class="label-text-3">Первичная регистрация</h2>
 						  <p class="text-after-button-2" style="margin-top: 1rem;">Первичная регистрацию позволит вам только видеть оптовые цены. <br>Чтобы оформлять заказы пройдите регистрацию до конца. </p>
 					  </div>
 					<form>
@@ -1725,9 +1725,6 @@
 		</div>
 	  </div>
 	</div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#success-order-modal">
-  Launch demo modal
-</button>
 
 	<!-- Success Order Modal -->
 	<div class="modal right fade" id="success-order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -1768,6 +1765,45 @@
 		</div>
 	  </div>
 	</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#password-recovery-modal">
+  Launch demo modal
+</button>
+
+<!-- Password Recovery Modal -->
+	<!-- Modal Login -->
+	<div class="modal right fade" id="password-recovery-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+				</div>
+				<div class="modal-body" style="margin-top: 2rem;">
+					  <div class="form-group">
+						<h2  class="label-text-3" style="margin-bottom: 4rem;">Восстановление пароля</h2>
+						  <p class="text-after-button" style="margin-top: 1rem;">Введите е-мейл, указанный при регистрации — мы отправим вам ссылку для восстановления пароля</p>
+					  </div>
+					<form>
+					  <div class="form-group">
+						  <label for="formGroupExampleInput2" class="label-text"></label>
+						<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="E-mail">
+					  </div>
+						<div class="col d-flex justify-content-center margin-top-1">
+						  <button type="button" class="btn btn-block btn-login">Отправить</button>
+						</div>
+						<div class="form-group">
+							<p class="text-after-button">Регистрируясь, вы принимаете условия <br> <a class="nav-link-2" href="#">Политики конфиденциальности</a></p>
+						</div>
+					</form>
+				</div>
+				  <div class="modal-footer">
+					<div class="col d-flex justify-content-center">
+						<a class="nav-link-3" href="#">Я вспомнил пароль! Вернуться</a>
+					</div>
+				  </div>
+			</div>
+		</div>
+	</div>
+
 	<script>
 	$(document).ready(function(){
 		$(".dropdown").hover( 
