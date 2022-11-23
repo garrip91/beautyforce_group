@@ -724,6 +724,10 @@ a.active {
     width: 110%;
 }
 
+.btn-primary-width-2{
+    width: 80%;
+}
+
 .btn-register-width{
     width: 100%;
 }
@@ -1365,3 +1369,30 @@ input:checked + .heart svg:nth-child(2) {
     color: #131314;
 }
 
+.p-favorites{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    text-align: center;
+    color: #9A9B9E;
+}
+
+.favorites-item{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.favorites-item-1{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #EC5EA2;
+}

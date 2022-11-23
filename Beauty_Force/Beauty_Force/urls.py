@@ -30,6 +30,7 @@ urlpatterns = [
     path("contact_us/", Contact_Us.as_view(), name='contact_us'),
     path("lk/", New_Lk_Test.as_view(), name='lk'),
     path("item/", New_Item_Test.as_view(), name='item'),
+    path("favorites/", New_Favorites_Test.as_view(), name='favorites'),
 ]
 
 if settings.DEBUG:

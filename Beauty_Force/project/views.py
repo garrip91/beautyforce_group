@@ -827,3 +827,12 @@ class New_Item_Test(View):
             request,
             'new_item.html'
         )
+
+
+class New_Favorites_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'new_favorites.html'
+        )
