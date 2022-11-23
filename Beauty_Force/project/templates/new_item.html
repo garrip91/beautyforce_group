@@ -1,0 +1,741 @@
+{% extends  'new_lk.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-center">
+	<div class="row my-4">
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="#" class="href-item-1"><i class="fa fa-angle-left" aria-hidden="true" style="margin-right: 1rem;"></i>Вернуться в каталог</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="list-group list-group-flush margin-top-2">
+			<img src="{% static 'images/item_photo.png' %}" alt="">
+		</div>
+	  </div>
+
+	  <div class="col-md-7">
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<nav aria-label="breadcrumb">
+					  <ol class="breadcrumb breadcrumb-custom">
+						  <li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Haruharu WONDER</a></li>
+						<li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Крема</a></li>
+						<li class="breadcrumb-item" aria-current="page">Корея</li>
+					  </ol>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="item-header-h2">
+						Honey Green Brilliant Крем для сияния лица
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<span class="current-price">2355 ₽</span>
+					<span class="sale-price">4537 ₽</span>
+					</div>
+				</div>
+				<p class="about-item margin-top-1">Тонер с муцином улитки оздоравливает кожу, придает сияние и здоровый вид.
+					Устраняет чувство стянутости и сухости, удерживает влагу, улучшает микроциркуляцию крови.
+					За счет натуральных природных компонентов средство стимулирует выработку коллагена.
+					Тонер обладает антивозрастным и омолаживающим действием.</p>
+				<div class="row">
+					<div class="col">
+						<span class="info">Артикул:</span>
+						<span class="after-info"> 220403</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<span class="info">Продавец:</span>
+						<span class="after-info"> ооо “Пример”</span>
+					</div>
+				</div>
+				<div class="margin-top-1">
+					<label class="radio-item"> <input type="radio" name="p-type-1" checked><span>60 гр</span> </label>
+					<label class="radio-item"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+					<label class="radio-item"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+					<label class="radio-item"> <input type="radio" name="p-type-1"> <span>180 гр</span> </label>
+				</div>
+				<div class="border-bottom-1"></div>
+					<div class="row margin-top-1">
+						<div class="col" style="margin-top: 1rem;">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+						</div>
+						<div class="col">
+							<button class="btn btn-add-to-cart-2" type="submit">Добавить в корзину</button>
+						</div>
+						<div class="col-2" style="margin-top: 1rem;">
+						  <label for="checkbox">
+							<div class="label-heart">
+							  <input type="checkbox" id="checkbox">
+							  <div class="heart">
+								<svg viewBox="0 0 544.582 544.582">
+								  <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+								C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
+								c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
+								</svg>
+								<svg viewBox="0 0 544.582 544.582">
+								  <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+								C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
+								c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
+								</svg>
+							  </div>
+							</div>
+						  </label>
+						</div>
+					</div>
+			<div class="margin-top-1"><a href="#" class="href-item">Доставка/возврат</a></div>
+			<div id="accordion" class="margin-top-1 accordion accordion-item">
+			  <div class="card card-item">
+				<div class="card-header">
+				  <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
+					Сравнить цены
+				  </a>
+				</div>
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+				  <div class="card-body">
+					Сравнить цены
+				  </div>
+				</div>
+			  </div>
+
+			  <div class="card card-item">
+				<div class="card-header">
+				  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+					Состав
+				  </a>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+				  <div class="card-body">
+					Состав
+				  </div>
+				</div>
+			  </div>
+
+			  <div class="card card-item">
+				<div class="card-header">
+				  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+					Способ применения
+				  </a>
+				</div>
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+				  <div class="card-body">
+					Способ применения
+				  </div>
+				</div>
+			  </div>
+
+			</div>
+			</div>
+		</div>
+		</div>
+	  </div>
+  </div>
+<div class="container d-flex justify-content-start margin-top-1">
+	<p class="item-header-h2">
+		Та же ценовая категория
+	</p>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+<div class="card-deck">
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+</div>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+	  <button type="button" class="btn btn-block btn-login" style="width: 100%">Перейти в каталог</button>
+</div>
+<div class="container d-flex justify-content-start margin-top-1">
+	<p class="item-header-h2">
+		Еще от Haruharu WONDER
+	</p>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+<div class="card-deck">
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+</div>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+	  <button type="button" class="btn btn-block btn-login" style="width: 100%">Перейти в каталог</button>
+</div>
+<div class="container d-flex justify-content-start margin-top-1">
+	<p class="item-header-h2">
+		Другие крема
+	</p>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+<div class="card-deck">
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="card card-product-grid">
+			<div class="flipped-card" id="flipped-card">
+			<div class="img-wrap front">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="add_cart" href="#" class="add-cart">
+						<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+					</b>
+				</div>
+				<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid">
+			</div>
+			<div class="img-wrap back">
+				<div class="d-flex justify-content-between">
+					<span class="badge badge-not"> -- </span>
+					<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+				</div>
+				<div class="cart-form">
+					<img src="{% static 'images/card_photo_2.png' %}" class="img-fluid blured">
+					<form action="#" class="back-form">
+						<div class="number">
+							<button class="minus">-</button>
+							<input type="text" class="count-items" value="1"/>
+							<button class="plus">+</button>
+						</div>
+						<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="radio-marging">
+			<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+			<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+		</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+					<div>
+
+					</div>
+					<div class="price-wrap mt-2">
+						<span class="price">2549 ₽</span>
+						<del class="price-old" aria-disabled="true">3000 ₽</del>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+
+		<figure class="card card-product-grid">
+			<div class="flipped-card">
+				<div class="img-wrap front">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="add_cart" href="#"><img src="{% static 'images/new_lk_cart_logo.svg' %}" class="add-cart"></b>
+					</div>
+					<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+				</div>
+				<div class="img-wrap back">
+					<div class="d-flex justify-content-between">
+						<span class="badge badge-danger"> 10% </span>
+						<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+					</div>
+					<div class="cart-form">
+						<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+						<form action="#" class="back-form">
+							<div class="number">
+								<button class="minus">-</button>
+								<input type="text" class="count-items" value="1"/>
+								<button class="plus">+</button>
+							</div>
+							<button class="btn btn-add-to-cart">Добавить в корзину</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="radio-marging">
+				<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+				<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<p class="brand-title">Haruharu WONDER /</p>
+					<a href="#" class="brand-title-1">Мист для лица с экстрактом...</a>
+					<div class="price-wrap mt-2">
+						<span class="price">999 ₽</span>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+</div>
+</div>
+<div class="container d-flex justify-content-center margin-top-1">
+	  <button type="button" class="btn btn-block btn-login" style="width: 100%">Перейти в каталог</button>
+</div>
+{% endblock content %}

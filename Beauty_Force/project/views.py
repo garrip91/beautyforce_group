@@ -818,3 +818,12 @@ class New_Lk_Test(View):
             request,
             'new_lk.html'
         )
+
+
+class New_Item_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'new_item.html'
+        )

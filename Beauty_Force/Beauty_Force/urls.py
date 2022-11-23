@@ -29,6 +29,7 @@ urlpatterns = [
     path('remove_from_cart/<product_id>/', Delete_From_Cart.as_view(), name='remove_from_cart'),
     path("contact_us/", Contact_Us.as_view(), name='contact_us'),
     path("lk/", New_Lk_Test.as_view(), name='lk'),
+    path("item/", New_Item_Test.as_view(), name='item'),
 ]
 
 if settings.DEBUG:

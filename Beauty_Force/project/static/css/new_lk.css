@@ -481,6 +481,7 @@ label.radio {
 .card-header{
     background-color: transparent;
     border-bottom: transparent;
+    border
 }
 
 .card{
@@ -643,7 +644,7 @@ a.active {
   }
 
  .minus, .plus{
-    border:1px solid  #E9EEF3;
+    border: none;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -673,6 +674,19 @@ a.active {
  .btn-add-to-cart{
     width: 90%;
     background: #EB5772;
+ }
+
+ .btn-add-to-cart-2{
+    width: 100%;
+    background: #EC5EA2;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    height: 100%;
  }
  .number{
     max-width: 500px;
@@ -965,6 +979,10 @@ input[type=radio]{
     margin-top: 3rem;
 }
 
+.margin-top-2{
+    margin-top: 10rem;
+}
+
 .modal-footer{
     border-top: none;
 }
@@ -1083,3 +1101,267 @@ input[type=radio]{
     line-height: 100%;
     color: #444648;
 }
+
+.breadcrumb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #FFFFFF;
+    border-radius: 0.25rem;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #9A9B9E;
+  }
+
+.breadcrumb-item + .breadcrumb-item a.breadcrumb-item{
+  padding-left: 0.5rem;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #9A9B9E;
+  }
+  .breadcrumb-item + .breadcrumb-item::before{
+    display: inline-block;
+    padding-right: 0.5rem;
+    content: "•";
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: #9A9B9E;
+    }
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline; }
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none; }
+
+.breadcrumb-item.active a.breadcrumb-item.active{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #9A9B9E; }
+
+
+.item-header-h2{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #444648;
+}
+
+.current-price{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #EC5EA2;
+}
+
+.sale-price{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-decoration-line: line-through;
+    color: #C2C7CC;
+}
+
+.about-item{
+
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.info{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #9A9B9E;
+}
+
+.after-info{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: right;
+    color: #131314;
+}
+
+label.radio-item input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+    text-align: center;
+}
+
+label.radio-item span {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #444648;
+    padding: 1rem;
+    border: 1px solid #C2C7CC;
+    display: inline-block;
+    border-radius: 0px;
+    width: 9.2rem;
+}
+
+label.radio-item input:checked + span {
+    border-color: none;
+    background: #EC5EA2;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.border-bottom-1{
+    margin-top: 1rem;
+  border-bottom: 2px solid #C2C7CC;
+}
+
+.href-item{
+  display: inline-block;
+  position: relative;
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
+
+}
+
+.href-item-1{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
+
+}
+
+.href-item:after{
+  position: absolute;
+  content: '';
+    border-bottom: 1px solid #444648;
+  width: 100%;
+  transform: translateX(-50%);
+  bottom: -0.5rem;
+  left: 50%;
+}
+
+.label-heart {
+    width: 110%;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+.heart {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+}
+
+svg {
+  height: 30px;
+  fill: none;
+  transition: all 500ms ease-in-out;
+  stroke-width: 1rem;
+  stroke: #444648;
+  width: 100%;
+}
+
+svg:nth-child(2) {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+input {
+  display: none;
+}
+
+input:checked + .heart svg {
+  fill: #EC5EA2;
+}
+
+input:checked + .heart svg:nth-child(2) {
+  filter: opacity(1);
+  animation: heart 0.3s linear forwards;
+}
+
+@keyframes heart {
+  to {
+    transform: scale(1.4);
+    filter: opacity(0);
+    fill: #EC5EA2;
+  }
+}
+
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f107";
+    float: right;
+    color: black;
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f107";
+    color: black;
+}
+
+.card-item{
+    border-top: 1px solid  #C2C7CC;
+    border-bottom: 1px solid  #C2C7CC;
+}
+
+.card-link{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #131314;
+}
+
