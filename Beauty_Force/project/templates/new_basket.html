@@ -1,0 +1,158 @@
+{% extends  'new_lk.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+<!--
+<div class="container d-flex justify-content-center">
+	<div class="row my-4">
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+                    <p class="p-favorites">Ваша корзина пуста</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+</div>
+<div class="container d-flex justify-content-center">
+	  <div class="col-8">
+		<div class="list-group list-group-flush">
+				<div class="col d-flex">
+				<div class="input-group">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile01"
+					  aria-describedby="inputGroupFileAddon01" width="100%">
+					<label class="custom-file-label" for="inputGroupFile01">Прикрепить спецификацию</label>
+				  </div>
+				</div>
+					<button type="button" class="btn btn-primary btn-register-width" style="margin-left: 0.3rem;">Перейти в каталог</button>
+				</div>
+            </div>
+        </div>
+</div>
+-->
+<header class="mt-5 d-flex justify-content-around">
+	<div class="container">
+        <div class="col d-flex justify-content-between" style="font-weight: 500;">
+          <span class="nav-item favorites-item">Корзина <span class="favorites-item-1">(2)</span></span>
+        </div>
+	</div>
+</header>
+<div class="container d-flex justify-content-center">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="basket-col">Основное</th>
+                <th scope="col" class="basket-col">Код товара</th>
+                <th scope="col" class="basket-col">Количество</th>
+                <th scope="col" class="basket-col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="d-flex align-items-center">
+                    <img src="{% static 'images/basket_photo.png' %}" class="img-fluid rounded-3">
+                    <div class="flex-column ms-4">
+                      <p class="mb-2 brand-title">Haruharu WONDER</p>
+                      <p class="mb-0 brand-title-1">Honey Green Brilliant Крем для си...</p>
+                      <div class="mt-1 radio-marging-1">
+                          <label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+                          <label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+                          <label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="mb-0 basket-code">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                      <div class="">
+                          <button class="minus"><img src="{% static 'images/basket_minus.svg' %}"></button>
+                          <input type="text" class="count-items-1" value="1"/>
+                          <button class="plus"><img src="{% static 'images/basket_plus.svg' %}"></button>
+                      </div>
+                  </div>
+                </td>
+                <td class="align-middle">
+                  <span class="price">2549 ₽</span>
+                </td>
+                <td class="align-middle">
+                  <a href="#" class="price"><img src="{% static 'images/delete.svg' %}"></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="d-flex align-items-center">
+                    <img src="{% static 'images/basket_photo2.png' %}" class="img-fluid rounded-3">
+                    <div class="flex-column ms-4">
+                      <p class="mb-2 brand-title">Haruharu WONDER</p>
+                      <p class="mb-0 brand-title-1">Мист для лица с экстрактом бамбука</p>
+                      <div class="mt-1 radio-marging-1">
+                          <label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>50 мл</span> </label>
+                          <label class="radio"> <input type="radio" name="p-type-1"> <span>100 мл</span> </label>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="mb-0 basket-code">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                      <div class="">
+                          <button class="minus"><img src="{% static 'images/basket_minus.svg' %}"></button>
+                          <input type="text" class="count-items-1" value="1"/>
+                          <button class="plus"><img src="{% static 'images/basket_plus.svg' %}"></button>
+                      </div>
+                  </div>
+                </td>
+                <td class="align-middle">
+                  <span class="price">999 ₽</span>
+                </td>
+                <td class="align-middle">
+                  <a href="#" class="price"><img src="{% static 'images/delete.svg' %}"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="#" class="href-item">Очистить</a>
+        <div class="container d-flex justify-content-end">
+          <div class="col-7">
+            <div class="d-flex justify-content-between border-top-1">
+              <p class="mb-2 basket-total mt-1">Итого:</p>
+              <p class="mb-2 basket-total-1 mt-1">2 шт <img src="{% static 'images/dot.svg' %}" class="mr-1 ml-1"> 400 гр <img src="{% static 'images/dot.svg' %}" class="mr-1 ml-1"> 1255 ₽</p>
+            </div>
+
+            <hr class="my-2">
+
+            <div class="d-flex justify-content-between">
+				<div class="input-group">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile01"
+					  aria-describedby="inputGroupFileAddon01" width="100%">
+					<label class="custom-file-label" for="inputGroupFile01">Прикрепить спецификацию</label>
+				  </div>
+				</div>
+					<button type="button" class="btn btn-primary btn-register-width" style="margin-left: 0.3rem;">Отправить на согласование</button>
+				</div>
+            <span class="basket-after-button">Необходимо отправить заказ на согласование, мы должны его проверить.</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+{% endblock content %}

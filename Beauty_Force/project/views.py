@@ -836,3 +836,12 @@ class New_Favorites_Test(View):
             request,
             'new_favorites.html'
         )
+
+
+class New_Basket_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'new_basket.html'
+        )
