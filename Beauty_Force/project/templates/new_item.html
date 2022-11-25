@@ -112,40 +112,42 @@
 			<div class="margin-top-1"><a href="#" class="href-item">Доставка/возврат</a></div>
 			<div id="accordion" class="margin-top-1 accordion accordion-item">
 			  <div class="card card-item">
-				<div class="card-header">
-				  <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
+				<div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+				  <a class="card-link">
 					Сравнить цены
 				  </a>
 				</div>
-				<div id="collapseOne" class="collapse" data-parent="#accordion">
-				  <div class="card-body">
-					Сравнить цены
+				<div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+				  <div class="card-body-item">
+					Вы можете отсканировать штрих-код товара и сравнить цены.
+					  <img src="{% static 'images/code.png' %}" class="mt-2">
 				  </div>
 				</div>
 			  </div>
 
 			  <div class="card card-item">
-				<div class="card-header">
-				  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+				  <a class="card-link">
 					Состав
 				  </a>
 				</div>
-				<div id="collapseTwo" class="collapse" data-parent="#accordion">
-				  <div class="card-body">
+				<div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+				  <div class="card-body-item">
 					Состав
 				  </div>
 				</div>
 			  </div>
 
 			  <div class="card card-item">
-				<div class="card-header">
-				  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+				<div class="card-header collapsed " data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+				  <a class="card-link">
 					Способ применения
 				  </a>
 				</div>
-				<div id="collapseThree" class="collapse" data-parent="#accordion">
-				  <div class="card-body">
-					Способ применения
+				<div id="collapseThree" class="collapse card-body" data-parent="#accordion">
+				  <div class="card-body-item">
+					Нажмите на помпу 1-2 раза, нанесите гидрофильное масло на сухие ладони и мягко промассируйте ими сухую кожу лица, избегая кожу век и губ.
+					Смочите ладони водой и продолжите массаж лица до образования эмульсии молочного цвета, затем тщательно смойте теплой водой.
 				  </div>
 				</div>
 			  </div>

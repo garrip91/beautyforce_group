@@ -155,4 +155,61 @@
     </div>
   </div>
     </div>
+
+<!-- Error Modal -->
+
+	<div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/error.png' %}" style="border-radius: 50%; border: 2px solid #DADFE4; padding: 2rem;">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3">Ошибка</h2>
+			  </div>
+			  <div class="form-group">
+				<p class="text-after-button" style="margin-top: 1rem;">Данный файл невозможно загрузить. Пожалуйста, провертье документ.</p>
+			  </div>
+			  <div class="col d-flex justify-content-center">
+				<button type="button" class="btn btn-secondary" style="width:100%;">Понял</button>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Success Order Modal -->
+	<div class="modal fade" id="success-order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/Done.svg' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3">Заказ отправлен на согласование</h2>
+			  </div>
+			  <div class="form-group">
+				<p class="text-after-button text-justify" style="margin-top: 1rem;">Спасибо, что отправили заказ на согласование, мы должны убедиться, все ли позиции есть в наличии. Вы получите ответ<span class="font-weight-bold" style="color: black;"> в течении 24 часов</span>  с момента отправки.</p>
+			  </div>
+				<div class="form-group" style="margin-top: 2rem;">
+					<div class="form-check form-check-inline" style="margin-left: 1rem;">
+						<a class="nav-link-4" href="#">К заказу</a>
+					</div>
+				</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
 {% endblock content %}

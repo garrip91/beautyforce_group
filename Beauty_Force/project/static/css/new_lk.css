@@ -1371,11 +1371,12 @@ input:checked + .heart svg:nth-child(2) {
 
 .accordion .card-header:after {
     font-family: 'FontAwesome';
-    content: "\f107";
+    content: "\f106";
     float: right;
     color: black;
 }
 .accordion .card-header.collapsed:after {
+    font-family: 'FontAwesome';
     /* symbol for "collapsed" panels */
     content: "\f107";
     color: black;
@@ -1480,4 +1481,22 @@ hr {
     font-size: 12px;
     line-height: 140%;
     color: #9A9B9E;
+}
+
+.username-link{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #EC5EA2;
+}
+
+.card-body-item{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
 }
