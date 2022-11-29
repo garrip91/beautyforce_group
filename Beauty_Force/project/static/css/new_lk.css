@@ -864,6 +864,7 @@ a.active {
     color: #C2C7CC;
 }
 
+
 .label-text-3{
     font-family: 'Neue Haas Unica';
     font-style: normal;
@@ -1434,7 +1435,7 @@ input:checked + .heart svg:nth-child(2) {
 }
 
 .table td, .table th {
-    padding: .75rem;
+    padding: .6rem;
     vertical-align: top;
     border-top: none;
     border-bottom: 2px solid #DADFE4;
@@ -1499,4 +1500,146 @@ hr {
     font-size: 16px;
     line-height: 140%;
     color: #444648;
+}
+
+/* Sidebar */
+.sidebar {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #C2C7CC;
+  width: 100%;
+  height: 100vh;
+
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.welcome{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    color: #444648;
+}
+
+.text-after-welcome{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: #9A9B9E;
+}
+
+.list-group-item.active {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #EC5EA2;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.list-group-item.inactive {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #9A9B9E;
+}
+
+.list-group-item {
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #444648;
+
+}
+
+.table-code{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: #EC5EA2;
+    text-align: center;
+}
+
+.table-date{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.table-price{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.table-status-agreement{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #FFAE4B;
+    opacity: 1;
+}
+
+.form-lk{
+    -webkit-box-shadow: 2px -4px 18px -4px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px -4px 18px -4px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px -4px 18px -4px rgba(34, 60, 80, 0.2);
+    height: 100%;
+}
+
+.form-lk-label{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #444648;
+}
+
+.label-form{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #C2C7CC;
+
 }

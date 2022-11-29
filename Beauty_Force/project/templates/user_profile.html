@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+    <html lang="en">
+    {% load static %}
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} Главная страница {% endblock %}</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/new_lk.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Neue-Haas-Unica/stylesheet.css' %}">
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="{% static 'js/flip.js' %}"></script>
+		<script src="{% static 'js/counter.js' %}"></script>
+		<script src="{% static 'js/checkbox.js' %}"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	</head>
+<header>
+
+
+  <!-- Navbar -->
+  <nav
+       id="main-navbar"
+       class="navbar navbar-expand-lg nav-bordered"
+       >
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Toggle button -->
+      <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+        <i class="fas fa-bars"></i>
+      </button>
+
+    <div class="container">
+    <a class="navbar-brand" href="#"><img style="width: 100px; height: 30px;" src="{% static 'images/OneClickDistribution_logo 1.svg' %}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<img src="{% static 'images/catalog_vector.svg' %}" alt="" style="margin-right: 0.5rem;"> Каталог
+            </a>
+			<div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0;border-top-right-radius: 0;">
+				<div class="container d-flex justify-content-center">
+					<div class="row my-4 ">
+					  <div class="col-md-auto">
+						<a class="list-group-item filter-brand" href="#"><span class="filter-brand-2">Все бренды</span></a>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">C</a>
+						  <a href="" class="list-group-item list-group-item-action">Cure+</a>
+						  <a href="" class="list-group-item list-group-item-action">Celimax</a>
+						  <a href="" class="list-group-item list-group-item-action">Celmiin</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">M</a>
+						  <a href="" class="list-group-item list-group-item-action">Muldream</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">V</a>
+						  <a href="" class="list-group-item list-group-item-action">Vlen</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">D</a>
+						  <a href="" class="list-group-item list-group-item-action">Dr. Gloderm</a>
+						  <a href="" class="list-group-item list-group-item-action">DEARBOO</a>
+						  <a href="" class="list-group-item list-group-item-action">Dr. Seed</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">N</a>
+						  <a href="" class="list-group-item list-group-item-action">Nature Republic</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Y</a>
+						  <a href="" class="list-group-item list-group-item-action">YEJIMIIN</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">H</a>
+						  <a href="" class="list-group-item list-group-item-action">Haruharu WONDER</a>
+						  <a class="list-group-item list-group-item-action" style="color: transparent;"> - </a>
+						  <a class="list-group-item list-group-item-action" style="color: transparent;"> - </a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">O</a>
+						  <a href="" class="list-group-item list-group-item-action">OATTBE</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">#</a>
+						  <a href="" class="list-group-item list-group-item-action">1 Foundation</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<a class="list-group-item filter-brand" href="#"><span class="filter-brand-2">Все категории</span></a>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">Уход за лицом</a>
+						  <a href="" class="list-group-item list-group-item-action">Гидрофильное масло</a>
+						  <a href="" class="list-group-item list-group-item-action">Крем для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Маска для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Масло для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Мист для лица</a>
+						  <a href="" class="list-group-item list-group-item-action">Сываротка для лиц</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Уход за волосами</a>
+						  <a href="" class="list-group-item list-group-item-action">Бальзам для волос</a>
+						  <a href="" class="list-group-item list-group-item-action">Шампунь для волос</a>
+						</div>
+					  </div>
+					  <div class="col-md-auto">
+						<span class="list-group-item filter-brand" style="color: transparent;"> - </span>
+						<div class="list-group list-group-flush">
+						  <a href="" class="list-group-item heading">Уход за телом</a>
+						  <a href="" class="list-group-item list-group-item-action">Гель для душа</a>
+						  <a href="" class="list-group-item list-group-item-action">Гель после загара</a>
+						  <a href="" class="list-group-item list-group-item-action">Мыло для рук</a>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item heading">Другое</a>
+						  <a href="" class="list-group-item list-group-item-action">Аксессуары</a>
+						  <a href="" class="list-group-item list-group-item-action">Салфетки для снятия макияжа</a>
+						  <a href="" class="list-group-item list-group-item-action">Гигиенические прокладки</a>
+						  <a href="" class="list-group-item list-group-item-action">Разное</a>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+        </li>
+
+        <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle position-static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<img src="{% static 'images/Search.svg' %}" alt="" class="search">Поиск
+            </a>
+            <div class="dropdown-menu w-100 mt-0" id="custom-dropdown-menu">
+				<div class="container d-flex justify-content-center">
+					<div class="row my-4">
+					  <div class="col-md-auto">
+						<div class="list-group list-group-flush">
+							<form class="pb-3">
+								<div class="input-group search-in-dropdown">
+								  <div class="input-group-append">
+									<button class="btn" type="button" disabled><img src="{% static 'images/Search.svg' %}" alt=""></button>
+								  </div>
+								  <input type="text" class="form-control" placeholder="Поиск">
+								</div>
+								</form>
+						</div>
+						<div class="list-group list-group-flush" style="margin-top: 1rem">
+						  <a href="" class="list-group-item list-group-item-action">Предыдущий запрос <span class="search-int"></span></a>
+							<a href="" class="list-group-item list-group-item-action">Категория/бренд <span class="search-int">(125)<i class="fa fa-angle-right" style="margin-left: 10rem;"></i></span></a>
+							<a href="" class="list-group-item list-group-item-action">Категория/бренд <span class="search-int">(125)<i class="fa fa-angle-right" style="margin-left: 10rem;"></i></span></a>
+						</div>
+					  </div>
+
+					  <div class="col-md-auto">
+						<div class="list-group list-group-flush">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<p class="list-group-item heading">
+										Бестселлеры и скидки
+									</p>
+								</div>
+									<a type="button" class="btn btn-default btn-circle btn-lg slide-prev" style="margin-left: 10rem;"><i class="fa fa-angle-left"></i></a>
+									<a type="button" class="btn btn-default btn-circle-2 btn-lg slide-next"><i class="fa fa-angle-right"></i></a>
+								</div>
+								</div>
+							</div>
+						<div class="list-group list-group-flush">
+							<div class="slick-carousel">
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-md-4">
+									<figure class="card card-product-grid">
+										<div class="flipped-card" id="flipped-card">
+										<div class="img-wrap front">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="add_cart" href="#" class="add-cart">
+													<img src="{% static 'images/new_lk_cart_logo.svg' %}" class="front">
+												</b>
+											</div>
+											<img src="{% static 'images/card_photo.png' %}" class="img-fluid">
+										</div>
+										<div class="img-wrap back">
+											<div class="d-flex justify-content-between">
+												<span class="badge badge-danger"> 10% </span>
+												<b id="close" href="#" class="close" data-clicked="false"><img src="{% static 'images/close.svg' %}"></b>
+											</div>
+											<div class="cart-form">
+												<img src="{% static 'images/card_photo.png' %}" class="img-fluid blured">
+												<form action="#" class="back-form">
+													<div class="number">
+														<button class="minus">-</button>
+														<input type="text" class="count-items" value="1"/>
+														<button class="plus">+</button>
+													</div>
+													<button class="btn btn-add-to-cart" type="submit">Добавить в корзину</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="radio-marging">
+										<label class="radio"> <input type="radio" name="p-type-1" checked="checked"> <span>60 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>90 гр</span> </label>
+										<label class="radio"> <input type="radio" name="p-type-1"> <span>120 гр</span> </label>
+									</div>
+										<figcaption class="info-wrap">
+											<div class="fix-height">
+												<p class="brand-title">Haruharu WONDER /</p>
+												<a href="#" class="brand-title-1">Honey Green Brilliant Крем для...</a>
+												<div>
+
+												</div>
+												<div class="price-wrap mt-2">
+													<span class="price">2549 ₽</span>
+													<del class="price-old" aria-disabled="true">3000 ₽</del>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                FAQ
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Рус
+                <i><img src="{% static 'images/Vector_1_Stroke.svg' %}" alt=""></i>
+                </a>
+                <div class="dropdown-menu" id="custom-dropdown-menu">
+                    <a class="dropdown-item disabled" href="#">Рус</a>
+                    <a class="dropdown-item" href="#">Eng</a>
+                    <a class="dropdown-item" href="#">한국인</a>
+                </div>
+            </li>
+            <a class="nav-link" href="#">
+            <img src="{% static 'images/Union.svg' %}" alt="">
+            </a>
+            <a class="nav-link" href="#">
+            <img src="{% static 'images/Heart.svg' %}" alt="">
+            </a>
+<!--            <a class="nav-link" href="#">
+            <img src="{% static 'images/Union_1.svg' %}" alt="">
+            </a>
+-->
+			<a class="nav-link" href="#" style="background: #E0F1F3; border-radius: 50%; text-align: center;">
+            	<img src="{% static 'images/Profile.svg' %}" class="user" alt="">
+            </a>
+			<a class="nav-link username-link" href="#">
+				<!--{{ user.username }} -->
+				админ
+            </a>
+        </ul>
+    </div>
+    </div>
+	</div>
+</nav>
+  <!-- Navbar -->
+</header>
+	{% block content %}
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home-active.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				 <img src="{% static 'images/Profile.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/list.svg' %}" class="mr-2" alt=""><span>Заказы</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/notifications.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				  <img src="{% static 'images/Chatbubble.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+	  <div class="col-md-9">
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-5">
+						<div class="col p-2">
+							<span class="welcome">Приветствуем вас!</span> <br> <span class="text-after-welcome">ооо “Компания”</span>
+						</div>
+						<div class="col-7">
+							  <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+								<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+								Скачать договор
+							  </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-3">
+						<div class="col-5 p-2">
+							<img class="" src="{% static 'images/welcome.png' %}"  alt="" width="100%">
+							  <a href="#" class="nav-link mt-2" style="border: 1px solid #444648; padding: 1rem;" download>
+								<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+								Спецификация по каталогу
+							  </a>
+							  <a href="#" class="nav-link mt-2" style="border: 1px solid #444648; padding: 1rem; background: #EC5EA2; color: #FFFFFF;">
+								<span class="pull-right"><img class="socials" src="{% static 'images/vector_right.svg' %}"  alt=""></span>
+								Перейти в каталог
+							  </a>
+						</div>
+						<div class="col margin-top-1">
+							<span class="welcome">Заказы</span>
+<!--							<p class="p-favorites">Ваша корзина пуста</p>
+								<div class="d-flex justify-content-around">
+								  <div class="custom-file" style="width: 50%;">
+									<input type="file" class="custom-file-input" id="inputGroupFile01"
+									  aria-describedby="inputGroupFileAddon01" width="100%">
+									<label class="custom-file-label" for="inputGroupFile01">Прикрепить спецификацию</label>
+								  </div>
+									<button type="button" class="btn btn-primary" style="margin-left: 0.1rem;">Перейти в каталог</button>
+								</div>-->
+
+								<table class="table mt-4">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+										<td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+								  </tbody>
+								</table>
+							<a href="#" class="href-item">Смотреть все</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</div>
+	{% endblock content %}
+		<script>
+	$(document).ready(function(){
+		$(".dropdown").hover(
+			function() {
+				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown();
+				$(this).toggleClass('open');
+			},
+			function() {
+				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
+				$(this).removeClass('show');
+			}
+		);
+	});
+	</script>
+	<script src="{% static 'js/slick_slider.js' %}"></script>
+<!--Main layout-->

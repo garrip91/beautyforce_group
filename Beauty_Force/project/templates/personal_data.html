@@ -1,0 +1,155 @@
+{% extends  'user_profile.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   >
+				 <img src="{% static 'images/profile-active.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/list.svg' %}" class="mr-2" alt=""><span>Заказы</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/notifications.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				  <img src="{% static 'images/Chatbubble.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+	  <div class="col-md-9">
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-5">
+						<div class="col p-3">
+							<span class="welcome">Личные данные</span>
+						</div>
+						<div class="col-7">
+							  <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+								<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+								Скачать договор
+							  </a>
+						</div>
+					</div>
+				</div>
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-3">
+						<div class="col p-2">
+							<form class="form-lk">
+							  <div class="form-group p-4" >
+								<h2  class="form-lk-label">Данные для входа</h2>
+							  </div>
+							  <div class="form-group p-4">
+								<label for="E-mail" class="label-form">E-mail</label>
+								<input type="text" class="form-control input-main input-main-2 p-4" id="E-mail" placeholder="Example@gmail.com">
+								  <a href="#" class="href-item margin-top">Сменить пароль</a>
+							  </div>
+
+							</form>
+						</div>
+						<div class="col p-2">
+							<form class="form-lk">
+							  <div class="form-group p-4" >
+								<h2  class="form-lk-label">Данные компании</h2>
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								<label for="E-mail" class="label-form">Компания</label>
+								<input type="text" class="form-control input-main input-main-2 p-4" id="E-mail" placeholder="ооо “Компания”">
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								<label for="E-mail" class="label-form">Бренд</label>
+								<input type="text" class="form-control input-main input-main-2 p-4" id="E-mail" placeholder="Haruharu">
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								<label for="E-mail" class="label-form">Контактное лицо</label>
+								<input type="text" class="form-control input-main input-main-2 p-4" id="E-mail" placeholder="Иван Иванов">
+							  </div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			</div>
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-3">
+						<div class="col p-2">
+							<form class="form-lk">
+							  <div class="form-group p-4" >
+								<h2  class="form-lk-label">Реквизиты</h2>
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								   <div class="col d-flex">
+								  <label for="formGroupExampleInput" class="form-control label-form">ИНН / КПП</label>
+								  <label for="formGroupExampleInput" class="form-control label-form">Р/с</label>
+								   </div>
+								  <div class="col d-flex">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="1092365540">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Текст">
+								  </div>
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								   <div class="col d-flex">
+								  <label for="formGroupExampleInput" class="form-control label-form">ОГРН</label>
+								  <label for="formGroupExampleInput" class="form-control label-form">БИК</label>
+								   </div>
+								  <div class="col d-flex justify-content-center">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="Текст">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="099647783">
+								  </div>
+							  </div>
+							  <div class="form-group pr-4 pl-4">
+								   <div class="col d-flex">
+								  <label for="formGroupExampleInput" class="form-control label-form">Банк</label>
+								  <label for="formGroupExampleInput" class="form-control label-form">Кор / счет</label>
+								   </div>
+								  <div class="col d-flex">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="АО “Тинькофф Банк”">
+								<input type="text" class="form-control input-main" id="formGroupExampleInput" placeholder="178958752666543550009">
+								  </div>
+							  </div>
+							</form>
+						</div>
+						<button type="button" class="btn btn-primary btn-register-width mt-3">Сохранить изменения</button>
+				</div>
+			</div>
+			</div>
+	</div>
+
+	</div>
+
+{% endblock content %}

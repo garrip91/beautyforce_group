@@ -32,6 +32,8 @@ urlpatterns = [
     path("item/", New_Item_Test.as_view(), name='item'),
     path("favorites/", New_Favorites_Test.as_view(), name='favorites'),
     path("new_basket/", New_Basket_Test.as_view(), name='new_basket'),
+    path("user_profile/", New_User_Profile_Test.as_view(), name='user_profile'),
+    path("personal_data/", New_Personal_Data_Test.as_view(), name='personal_data'),
 ]
 
 if settings.DEBUG:

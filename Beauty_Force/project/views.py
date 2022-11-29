@@ -845,3 +845,21 @@ class New_Basket_Test(View):
             request,
             'new_basket.html'
         )
+
+
+class New_User_Profile_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'user_profile.html'
+        )
+
+
+class New_Personal_Data_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'personal_data.html'
+        )
