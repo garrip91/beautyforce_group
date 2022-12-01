@@ -1,0 +1,162 @@
+{% extends  'user_profile.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-around">
+	<div class="row my-4">
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="#" class="href-item-1"><i class="fa fa-angle-left" aria-hidden="true" style="margin-right: 1rem;"></i>Назад</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="list-group list-group-flush margin-top-1">
+			<div class="card">
+			  <div class="card-header">
+				<span class="alert-warning p-1">На согласовании</span>
+			  </div>
+			  <ul class="list-group list-group-flush">
+				<li class="list-group-item table-code justify-content-start border-bottom">41961091-0010</li>
+				<li class="list-group-item table-date border-bottom">18:05 <span class="table-date-2">19 июля 2022</span></li>
+				<li class="list-group-item table-price">2 шт • 400 гр • 1999 ₽</li>
+			  </ul>
+			</div>
+		</div>
+	  </div>
+
+	  <div class="col-md-auto margin-top-1">
+		<div class="list-group list-group-flush">
+		<div class="container">
+         <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="basket-col">Основное</th>
+                <th scope="col" class="basket-col">Код товара</th>
+                <th scope="col" class="basket-col">Количество</th>
+                <th scope="col" class="basket-col">Вес</th>
+                <th scope="col" class="basket-col text-right">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="padding: 0">
+                  <div class="d-flex align-items-center mr-5">
+                    <img src="{% static 'images/basket_photo.png' %}" class="">
+                    <div class="flex-column ms-4">
+                      <p class="brand-title">Haruharu WONDER</p>
+                      <p class="mb-0 brand-title-1">Honey Green Brilliant Крем для си...</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">4 шт</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">400 гр</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code ml-5">2549 ₽</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="padding: 0">
+                  <div class="d-flex align-items-center mr-5">
+                    <img src="{% static 'images/basket_photo2.png' %}" class="">
+                    <div class="flex-column">
+                      <p class="brand-title">Haruharu WONDER</p>
+                      <p class="brand-title-1">Мист для лица с экстрактом бамбука</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="basket-code mr-4">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">1 шт</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">50 мл</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code ml-5">999 ₽</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="padding: 0">
+                  <div class="d-flex align-items-center mr-5">
+                    <img src="{% static 'images/basket_photo.png' %}" class="">
+                    <div class="flex-column ms-4">
+                      <p class="brand-title">Haruharu WONDER</p>
+                      <p class="mb-0 brand-title-1">Honey Green Brilliant Крем для си...</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">4 шт</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">400 гр</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code ml-5">2549 ₽</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="padding: 0">
+                  <div class="d-flex align-items-center mr-5">
+                    <img src="{% static 'images/basket_photo2.png' %}" class="">
+                    <div class="flex-column">
+                      <p class="brand-title">Haruharu WONDER</p>
+                      <p class="brand-title-1">Мист для лица с экстрактом бамбука</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="basket-code mr-4">220403-266354</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">1 шт</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code mr-5">50 мл</p>
+                </td>
+                <td class="align-middle">
+                  <p class="basket-code ml-5">999 ₽</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+			</div>
+		</div>
+      </div>
+    </div>
+</div>
+<header class="mt-5 d-flex justify-content-around">
+	<div class="container">
+        <div class="col d-flex justify-content-between">
+            <div class="col">
+            <button type="button" class="btn btn-secondary btn-red p-2" data-toggle="modal" data-target="#cancel-modal">Отменить заказ</button>
+            <a href="#" class="btn btn-secondary p-2 ml-3" style="border: 1px solid #444648;" download>
+                Спецификация
+                 <span class="ml-5"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+            </a>
+            </div>
+                <a type="button" class="btn p-2 orders-search btn-secondary justify-content-end" style="border: none;"><span class=""><img class="socials" src="{% static 'images/edit.svg' %}"  alt=""></span></a>
+        </div>
+	</div>
+</header>
+
+
+
+{% endblock content %}

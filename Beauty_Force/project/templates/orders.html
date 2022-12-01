@@ -1,0 +1,447 @@
+{% extends  'user_profile.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				 <img src="{% static 'images/Profile.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   ><img src="{% static 'images/list_active.svg' %}" class="mr-2" alt=""><span>Заказы</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/notifications.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				  <img src="{% static 'images/Chatbubble.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+	  <div class="col-md-9">
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-5">
+						<div class="col">
+							<span class="welcome">Ваши заказы</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="list-group list-group-flush">
+			<div class="container">
+				<div class="tabs-to-dropdown">
+				  <div class="nav-wrapper d-flex justify-content-between border-bottom">
+					<ul class="nav nav-pills d-none d-md-flex" id="pills-tab" role="tablist">
+					  <li class="nav-item" role="presentation">
+						<a class="nav-link active" id="pills-company-tab" data-toggle="pill" href="#pills-company" role="tab" aria-controls="pills-company" aria-selected="true">Активные</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+						<a class="nav-link" id="pills-product-tab" data-toggle="pill" href="#pills-product" role="tab" aria-controls="pills-product" aria-selected="false">Выставлен счет</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+						<a class="nav-link" id="pills-news-tab" data-toggle="pill" href="#pills-news" role="tab" aria-controls="pills-news" aria-selected="false">История</a>
+					  </li>
+					</ul>
+				  </div>
+
+				  <div class="tab-content mt-4" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-company" role="tabpanel" aria-labelledby="pills-company-tab">
+					  <div class="container">
+							<form class="pb-3">
+								<div class="input-group orders-search">
+								  <div class="input-group-append">
+									<button class="btn" type="button" disabled><img src="{% static 'images/Search.svg' %}" alt=""></button>
+								  </div>
+								  <input type="text" class="form-control" placeholder="Поиск">
+								</div>
+							</form>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">41961091-0010</th>
+										<td class="table-date align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-price align-middle">2 шт • 400 гр • 1999 ₽</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-warning p-1">На согласовании</span></td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary btn-red p-2" data-toggle="modal" data-target="#cancel-modal">Отменить заказ</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+										<th style="border: none;">
+											<a type="button" class="btn p-2 orders-search btn-secondary justify-content-end" style="border: none;"><span class=""><img class="socials" src="{% static 'images/edit.svg' %}"  alt=""></span></a>
+										</th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">41961091-0010</th>
+										<td class="table-date align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-price align-middle">2 шт • 400 гр • 1999 ₽</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-success p-1">Одобрено</span></td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary btn-red p-2" data-toggle="modal" data-target="#cancel-modal">Отменить заказ</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+										  <a type="button" class="btn btn-secondary btn-green p-2">Получить счет</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+										<th style="border: none;">
+											<a type="button" class="btn p-2 orders-search btn-secondary justify-content-end" style="border: none;"><span class=""><img class="socials" src="{% static 'images/edit.svg' %}"  alt=""></span></a>
+										</th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">41961091-0010</th>
+										<td class="table-date align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-price align-middle">2 шт • 400 гр • 1999 ₽</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-danger p-1">Отклонено</span></td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary btn-red p-2" data-toggle="modal" data-target="#cancel-modal">Отменить заказ</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+										<th style="border: none;">
+											<a type="button" class="btn p-2 orders-search btn-secondary justify-content-end" style="border: none;"><span class=""><img class="socials" src="{% static 'images/edit.svg' %}"  alt=""></span></a>
+										</th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+					  </div>
+					</div>
+
+
+					<div class="tab-pane fade" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab">
+					  <div class="container">
+							<form class="pb-3">
+								<div class="input-group orders-search">
+								  <div class="input-group-append">
+									<button class="btn" type="button" disabled><img src="{% static 'images/Search.svg' %}" alt=""></button>
+								  </div>
+								  <input type="text" class="form-control" placeholder="Поиск">
+								</div>
+								</form>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">41961091-0010</th>
+										<td class="table-date align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-price align-middle">2 шт • 400 гр • 1999 ₽</td>
+									  <td class="table-status-agreement align-middle"><span class="p-1" style="color: #FFFFFF;background: #EC5EA2;">Выставлен счет</span></td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary btn-red p-2" data-toggle="modal" data-target="#cancel-modal">Отменить заказ</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+										  <a type="button" class="btn btn-secondary p-2" style="color: #FFFFFF;background: #EC5EA2; border: none;">Счет <span class="ml-5"><img class="socials" src="{% static 'images/vector_up.svg' %}"  alt=""></span></a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+										<th style="border: none;">
+											<a type="button" class="btn p-2 orders-search btn-secondary justify-content-end" style="border: none;"><span class=""><img class="socials" src="{% static 'images/edit.svg' %}"  alt=""></span></a>
+										</th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+					  </div>
+					</div>
+
+
+					<div class="tab-pane fade" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">
+					  <div class="container">
+						<form class="pb-3">
+							<div class="input-group orders-search">
+							  <div class="input-group-append">
+								<button class="btn" type="button" disabled><img src="{% static 'images/Search.svg' %}" alt=""></button>
+							  </div>
+							  <input type="text" class="form-control" placeholder="Поиск">
+							</div>
+						</form>
+							<div class="d-flex justify-content-center mt-3">
+								<span class="history-span"> Декабрь 2022 </span>
+							</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-history align-middle">41961091-0010</th>
+										<td class="table-history align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-history text-right">2 шт • 400 гр • 1999 ₽</td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none; opacity: 0.5;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary p-2" data-toggle="modal" data-target="#cancel-modal">Заказать снова</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-history align-middle">41961091-0010</th>
+										<td class="table-history align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-history text-right">2 шт • 400 гр • 1999 ₽</td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none; opacity: 0.5;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary p-2" data-toggle="modal" data-target="#cancel-modal">Заказать снова</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+							<div class="d-flex justify-content-center mt-3">
+								<span class="history-span"> Январь 2022 </span>
+							</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-history align-middle">41961091-0010</th>
+										<td class="table-history align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-history text-right">2 шт • 400 гр • 1999 ₽</td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none; opacity: 0.5;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary p-2">Заказать снова</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+						<div class="card orders-search mt-3">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-history align-middle">41961091-0010</th>
+										<td class="table-history align-middle">18:05 <span class="table-date-2">19 июля 2022</span></td>
+									  <td class="table-history text-right">2 шт • 400 гр • 1999 ₽</td>
+									</tr>
+								  </tbody>
+								</table>
+						  <div class="card-body">
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="align-middle" style="border: none; opacity: 0.5;"><img src="{% static 'images/orders-photo-2.png' %}" class="rounded-3"><img src="{% static 'images/orders-photo.png' %}" class="rounded-3"></th>
+									</tr>
+								  </tbody>
+								</table>
+							  <table class="table">
+								  <tbody>
+									<tr>
+									  <th style="border: none;">
+								  			<button type="button" class="btn btn-secondary p-2">Заказать снова</button>
+								  			<a href="#" class="btn btn-secondary p-2" style="border: 1px solid #444648;" download>
+												Спецификация
+									 			 <span class="ml-3"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+							  				</a>
+								  			<a type="button" class="btn btn-secondary p-2 orders-search" style="border:none;">К заказу <span class="ml-5"><img class="socials" src="{% static 'images/vector_right_2.svg' %}"  alt=""></span></a>
+									  </th>
+									</tr>
+								  </tbody>
+								</table>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				</div>
+			</div>
+	</div>
+  </div>
+	<div class="modal fade" id="cancel-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/question.svg' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3" style="font-size: 20px;">Вы уверены, что хотите отменить ваш заказ?</h2>
+			  </div>
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+					<button type="button" class="btn btn-secondary btn-register-width p-3" >Нет, не отменять</button>
+				  <button type="button" class="btn btn-secondary btn-red btn-register-width p-3" style="margin-left: 1rem;">Да, отменить</button>
+				</div>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+{% endblock content %}

@@ -33,7 +33,12 @@ urlpatterns = [
     path("favorites/", New_Favorites_Test.as_view(), name='favorites'),
     path("new_basket/", New_Basket_Test.as_view(), name='new_basket'),
     path("user_profile/", New_User_Profile_Test.as_view(), name='user_profile'),
+    path("user_profile_seller/", New_Personal_Data_Seller_Test.as_view(), name='user_profile_seller'),
     path("personal_data/", New_Personal_Data_Test.as_view(), name='personal_data'),
+    path("personal_data_seller/", New_Personal_Data_Test.as_view(), name='personal_data_seller'),
+    path("orders/", New_Orders_Test.as_view(), name='orders'),
+    path("orders_seller/", New_Orders_Seller_Test.as_view(), name='orders_seller'),
+    path("orders_details/", New_Orders_Detail_Test.as_view(), name='orders_details'),
 ]
 
 if settings.DEBUG:

@@ -856,10 +856,55 @@ class New_User_Profile_Test(View):
         )
 
 
+class New_User_Profile_Seller_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'user_profile_seller.html'
+        )
+
+
 class New_Personal_Data_Test(View):
 
     def get(self, request, *args, **kwargs):
         return render(
             request,
             'personal_data.html'
+        )
+
+
+class New_Personal_Data_Seller_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'personal_data_seller.html'
+        )
+
+
+class New_Orders_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'orders.html'
+        )
+
+
+class New_Orders_Seller_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'orders_seller.html'
+        )
+
+
+class New_Orders_Detail_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'orders_detail.html'
         )

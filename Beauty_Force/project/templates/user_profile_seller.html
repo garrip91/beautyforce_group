@@ -1,0 +1,196 @@
+{% extends  'user_profile.html' %}
+{% block title %} 2 {% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home-active.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				 <img src="{% static 'images/Profile.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/list.svg' %}" class="mr-2" alt=""><span>Продажи</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/notifications.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				  <img src="{% static 'images/Chatbubble.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+	  <div class="col-md-9">
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-5">
+						<div class="col p-2">
+							<span class="welcome">Приветствуем вас!</span> <br> <span class="text-after-welcome">ооо “Компания”</span>
+						</div>
+						<div class="col-7">
+							  <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+								<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+								Скачать договор
+							  </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="list-group list-group-flush">
+			<div class="container d-flex justify-content-center mt-5">
+					<div class="row my-3">
+                       <div class="col">
+                                <p class="p-favorites">Ваша корзина пуста</p>
+								<button type="button" class="btn btn-secondary p-2" style="width: 100%;" data-toggle="modal" data-target="#sell-modal">Новая продажа <span class="ml-5 p-2"><img class="socials" src="{% static 'images/plus.svg' %}"  alt=""></span></button>
+							</div>
+					</div>
+			</div>
+			<!--<div class="container justify-content-center mt-5">
+					<div class="row my-3">
+							<span class="welcome mb-4">Продажи</span>
+								<table class="table">
+								  <tbody>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+									  <td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+									<tr>
+									  <th class="table-code align-middle">Код</th>
+									  <td class="table-date align-middle">Время Дата</td>
+									  <td class="table-price align-middle">Кол-во * Вес * Цена</td>
+										<td class="table-status-agreement align-middle"><span class="alert-warning">На согласовании</span></td>
+									  <td class="align-middle"><img src="{% static 'images/vector_right_2.svg' %}" class="" alt=""></td>
+									</tr>
+								  </tbody>
+								</table>
+							<a href="#" class="href-item">Смотреть все</a>
+
+					</div>
+				</div>-->
+			</div>
+	</div>
+
+	</div>
+
+	<div class="modal fade" id="sell-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/sell.png' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3">Новая продажа</h2>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-text-3" style="font-size: 18px;">Шаг 1</label>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-sell">Скачайте и заполните пустую спецификацию</label>
+			  </div>
+              <div class="form-group">
+				<div class="col">
+					  <a href="#" class="nav-link" style="border: 1px solid #444648; padding: 1rem;" download>
+						<span class="pull-right"><img class="socials" src="{% static 'images/download.svg' %}"  alt=""></span>
+						Скачать
+					  </a>
+				</div>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-text-3" style="font-size: 18px;">Шаг 2</label>
+			  </div>
+			  <div class="form-group">
+				  <label class="label-sell">Загрузите ранее заполненый вами файл и отпривьте на согласование</label>
+			  </div>
+              <div class="form-group">
+				<div class="col d-flex">
+				<div class="input-group">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile01"
+					  aria-describedby="inputGroupFileAddon01">
+					<label class="custom-file-label" for="inputGroupFile01">Загрузить</label>
+				  </div>
+				</div>
+					<button type="button" class="btn btn-primary btn-register-width" style="margin-left: 0.3rem;">Отправить на согласование</button>
+				</div>
+			  </div>
+				<div class="form-group">
+				<div class="col">
+					  <a href="#" class="nav-link" style="border-bottom: 2px solid #EC5EA2; padding: 1rem;">
+						<span class="pull-right"><img class="socials" src="{% static 'images/delete.svg' %}"  alt=""></span>
+						1.xlx
+					  </a>
+				</div>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="done-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img class="socials" src="{% static 'images/close-modal.svg' %}"  alt=""></span></button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<div class="col d-flex justify-content-center">
+				  <img class="socials" src="{% static 'images/done.svg' %}"  alt="">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<h2 class="label-text-3">Заявка на продажу отправлена на согласование</h2>
+			  </div>
+			  <div class="form-group">
+				<p class="text-after-button text-justify" style="margin-top: 1rem;">Вы получите ответ<span class="font-weight-bold" style="color: black;"> в течении 24 часов</span>  с момента отправки.</p>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+{% endblock content %}
