@@ -908,3 +908,21 @@ class New_Orders_Detail_Test(View):
             request,
             'orders_detail.html'
         )
+
+
+class New_Chat_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'chat.html'
+        )
+
+
+class New_Notifications_Test(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'notifications.html'
+        )

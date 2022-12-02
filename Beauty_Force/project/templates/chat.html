@@ -1,0 +1,115 @@
+{% extends  'user_profile.html' %}
+{% block title %} Сообщения {% endblock %}
+{% load static %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				 <img src="{% static 'images/Profile.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/list.svg' %}" class="mr-2" alt=""><span>Продажи</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/notifications.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   >
+				  <img src="{% static 'images/Chatbubble-active.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+
+        <div class="col-md-9" style="overflow: hidden; outline: none;" tabindex="5001">
+            <div class="list-group list-group-flush chat">
+            <div class="chat-body">
+            <div class="col p-4">
+                <span class="welcome">Сообщения</span>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <span class="date-text margin-top-1 mb-3">Сегодня</span>
+            </div>
+              <div class="answer right">
+                <div class="text">
+                  Добрый день! У меня вопрос по поводу продаж и
+                    покупок через ваш сервис, не могли бы вы уделить
+                    мне пару минут?
+                </div>
+                <div class="time">11:14 <img src="{% static 'images/done_message.svg' %}" class="rounded-3"></div>
+              </div>
+              <div class="answer left">
+                <div class="avatar">
+                  <div class="status mt-3">Ю</div>
+                </div>
+                <div class="name">С вами работает менеджер Юлия</div>
+                <div class="text">
+                  Здравствуйте! Что именно вас интересует?
+                </div>
+                <div class="time">11:14 <img src="{% static 'images/done_message.svg' %}" class="rounded-3"></div>
+              </div>
+              <div class="answer right">
+                <div class="text">
+                    Такие-то услуги
+                </div>
+                <div class="time">11:14 <img src="{% static 'images/done_message.svg' %}" class="rounded-3"></div>
+              </div>
+              <div class="answer left">
+                <div class="text">
+                  Менеджер Юлия печатает • • •
+                </div>
+              </div>
+            </div>
+            </div>
+             <div class="list-group list-group-flush mt-5">
+                <div class="chat-message clearfix">
+                    <div class="input-group mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img class="socials" src="{% static 'images/upload.svg' %}"></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Введите сообщение">
+                        <div class="input-group-prepend">
+                            <a href="#" class="input-group-text"><img class="socials" src="{% static 'images/msg_send.svg' %}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+<script>
+    $(function(){
+    $(".chat").niceScroll();
+})
+</script>
+{% endblock content %}

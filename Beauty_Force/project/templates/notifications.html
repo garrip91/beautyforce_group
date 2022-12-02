@@ -1,0 +1,98 @@
+{% extends  'user_profile.html' %}
+{% block title %} Уведомления {% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container d-flex justify-content-left">
+
+	  <div class="col-md-auto">
+		<div class="list-group list-group-flush">
+		  <nav
+			   id="sidebarMenu"
+			   class="collapse d-lg-block sidebar collapse"
+			   >
+			<div class="position-sticky">
+			  <div class="list-group list-group-flush mx-3 mt-4">
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   aria-current="true"
+				   >
+				  <img src="{% static 'images/home.svg' %}" class="mr-2" alt=""><span>Главная</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				 <img src="{% static 'images/Profile.svg' %}" class="mr-2" alt=""><span>Личные данные</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   ><img src="{% static 'images/list.svg' %}" class="mr-2" alt=""><span>Продажи</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple active"
+				   ><img src="{% static 'images/notifications-active.svg' %}" class="mr-2" alt=""><span>Уведомления</span></a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple"
+				   >
+				  <img src="{% static 'images/Chatbubble.svg' %}" class="mr-2" alt=""><span>Сообщения</span>
+				</a>
+				<a
+				   href="#"
+				   class="list-group-item list-group-item-action py-2 ripple margin-top inactive"
+				   ><img src="{% static 'images/exit.svg' %}" class="mr-2" alt=""><span>Выйти</span></a
+				  >
+			  </div>
+			</div>
+		  </nav>
+		</div>
+	</div>
+	  <div class="col-md-9">
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="row my-5 d-flex justify-content-between">
+						<div class="col">
+							<span class="welcome">Уведомления</span>
+						</div>
+						<div class="col-md-auto mt-2">
+							<a href="#" class="href-item">Очистить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="list-group list-group-flush">
+			<div class="container">
+					<div class="card">
+					  <div class="card-header date-text-1 border-bottom">
+						Сегодня 18:04
+					  </div>
+					  <div class="card-body d-flex">
+						  <p class="status-notify mr-3 ">Ю</p>
+							<p class="status-notify-1 p-2"> У вас одно непрочитанное сообщение. Менеджер Юлия ждет вашего ответа.</p>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="card-header date-text-1 border-bottom">
+						Сегодня 18:04
+					  </div>
+					  <div class="card-body">
+						  <p class="card-title status-notify-2">Обновлен статус по заказу <span class="table-code">41961091-0010.</span> Изменен на <span style="color: #00B04C;">одобрено</span></p>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="card-header date-text-1 border-bottom">
+						Сегодня 18:04
+					  </div>
+					  <div class="card-body">
+						<p class="card-title status-notify-2">Поздравляем! Вы прошли первичную регистрацию</p>
+						  <a href="#" class="href-item" style="color: #EC5EA2;">Перейти к полной регистрации</a>
+					  </div>
+					</div>
+				</div>
+			</div>
+	  </div>
+  </div>
+
+{% endblock content %}
